@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Cristóbal J. Ortega-Arenas — Médico e Investigador Clínico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:   #0a0a0a;
+    --charcoal:#141414;
+    --mid:     #1e1e1e;
+    --card:    #181818;
+    --white:   #ffffff;
+    --offwhite:#f2efe9;
+    --silver:  #aeaaa4;
+    --muted:   #666260;
+    --border:  rgba(255,255,255,0.09);
+    --border-hi:rgba(255,255,255,0.18);
+    --accent:  #cec8c0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--black); color:var(--offwhite); font-family:'DM Sans',sans-serif; font-weight:300; line-height:1.7; overflow-x:hidden; }
+
+  /* ── LANG TOGGLE ─────────────────────────── */
+  .lang-toggle {
+    display:flex; gap:0; align-items:center;
+  }
+  .lang-btn {
+    font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase;
+    padding:5px 12px; border:1px solid var(--border);
+    cursor:pointer; background:transparent; color:var(--muted);
+    transition:color 0.2s, background 0.2s, border-color 0.2s;
+    font-family:'DM Sans',sans-serif;
+  }
+  .lang-btn.active { background:var(--white); color:var(--black); border-color:var(--white); }
+  .lang-btn:first-child { border-right:none; }
+
+  /* ── LOGO ────────────────────────────────── */
+  .brand-logo { display:inline-flex; flex-direction:column; align-items:flex-start; }
+  .brand-logo .dr-tag { display:flex; align-items:center; gap:6px; font-family:'Bodoni Moda',serif; font-size:var(--dr-sz,0.62em); font-weight:400; letter-spacing:0.05em; color:inherit; margin-bottom:-2px; padding-left:2px; }
+  .brand-logo .dr-tag::after { content:''; display:block; height:1px; width:var(--dr-ln,40px); background:currentColor; opacity:0.55; }
+  .brand-logo .logo-frame { position:relative; padding:4px 12px 6px 6px; border:1px solid currentColor; border-left:none; }
+  .brand-logo .logo-frame::before { content:''; position:absolute; left:-8px; top:-1px; width:8px; height:1px; background:currentColor; }
+  .brand-logo .logo-frame::after  { content:''; position:absolute; left:-8px; bottom:-1px; width:8px; height:1px; background:currentColor; }
+  .brand-logo .logo-line1 { font-family:'Bodoni Moda',serif; font-size:var(--nm-sz,1.8rem); font-weight:400; line-height:1.0; letter-spacing:-0.01em; color:inherit; white-space:nowrap; }
+  .brand-logo .logo-line2 { font-family:'Bodoni Moda',serif; font-size:var(--nm-sz,1.8rem); font-weight:400; line-height:1.05; letter-spacing:-0.01em; color:inherit; white-space:nowrap; display:flex; align-items:center; }
+  .brand-logo .mic-icon { display:inline-block; font-size:0.44em; opacity:0.65; transform:rotate(-28deg) translateY(1px); margin-right:2px; }
+  .brand-logo .logo-sub { font-family:'DM Sans',sans-serif; font-size:var(--sb-sz,0.5rem); font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:inherit; opacity:0.6; margin-top:5px; padding-left:2px; }
+
+  /* ── NAV ─────────────────────────────────── */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:15px 48px; display:flex; align-items:center; justify-content:space-between; background:rgba(10,10,10,0.95); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); }
+  .nav-logo-wrap { --dr-sz:0.58em; --nm-sz:1.05rem; --sb-sz:0.38rem; --dr-ln:28px; color:var(--white); text-decoration:none; }
+  .nav-right { display:flex; align-items:center; gap:28px; }
+  .nav-links { display:flex; gap:28px; }
+  .nav-links a { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--silver); text-decoration:none; transition:color 0.25s; }
+  .nav-links a:hover { color:var(--white); }
+
+  /* ── HERO ────────────────────────────────── */
+  .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:130px 24px 90px; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 55% 45% at 50% 35%,rgba(255,255,255,0.025) 0%,transparent 70%); }
+  .hero-monogram { position:absolute; font-family:'Bodoni Moda',serif; font-size:clamp(16rem,32vw,38rem); font-weight:300; color:rgba(255,255,255,0.022); letter-spacing:-0.05em; line-height:1; pointer-events:none; top:50%; left:50%; transform:translate(-50%,-50%); user-select:none; }
+  .hero-badge { display:inline-block; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--silver); border:1px solid var(--border-hi); padding:6px 22px; margin-bottom:50px; animation:fadeUp 0.8s ease both; }
+  .hero-logo-wrap { --dr-sz:0.46em; --nm-sz:clamp(3rem,6.5vw,6rem); --sb-sz:0.68rem; --dr-ln:64px; color:var(--white); animation:fadeUp 0.9s 0.1s ease both; margin-bottom:36px; }
+  .hero-tagline { font-size:0.68rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--muted); animation:fadeUp 0.9s 0.22s ease both; margin-bottom:52px; }
+  .hero-creds { display:flex; flex-wrap:wrap; justify-content:center; border:1px solid var(--border); animation:fadeUp 0.9s 0.36s ease both; }
+  .hero-cred { padding:18px 30px; border-right:1px solid var(--border); text-align:left; }
+  .hero-cred:last-child { border-right:none; }
+  .hero-cred-label { font-size:0.56rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:5px; }
+  .hero-cred-value { font-family:'Bodoni Moda',serif; font-size:0.88rem; color:var(--accent); font-weight:300; }
+  .hero-scroll { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); animation:fadeUp 1s 0.7s ease both; }
+  .hero-scroll::after { content:''; display:block; width:1px; height:38px; background:linear-gradient(to bottom,var(--silver),transparent); margin:8px auto 0; animation:scrollPulse 2.2s 1s infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.2} 50%{opacity:0.75} }
+
+  /* ── SECTIONS ────────────────────────────── */
+  .section { padding:96px 48px; max-width:1200px; margin:0 auto; }
+  .section-full { padding:96px 0; }
+  .section-inner { max-width:1200px; margin:0 auto; padding:0 48px; }
+  .sep { height:1px; background:linear-gradient(to right,transparent,var(--border),transparent); margin:0 48px; }
+  .section-tag { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--silver); margin-bottom:11px; }
+  .section-title { font-family:'Bodoni Moda',serif; font-size:clamp(1.9rem,3.8vw,3.1rem); font-weight:300; line-height:1.1; color:var(--white); margin-bottom:13px; }
+  .section-title em { font-style:italic; color:var(--accent); }
+  .section-subtitle { font-size:0.76rem; color:var(--muted); max-width:490px; line-height:1.9; }
+  .section-header { margin-bottom:52px; }
+
+  /* ── PROFILE ─────────────────────────────── */
+  .profile-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+  .profile-text p { font-size:0.8rem; color:var(--silver); line-height:1.95; margin-bottom:18px; }
+  .profile-values { margin-top:36px; }
+  .profile-values h3 { font-family:'Bodoni Moda',serif; font-size:1.15rem; color:var(--accent); margin-bottom:18px; font-weight:300; }
+  .value-item { display:flex; gap:14px; margin-bottom:14px; }
+  .value-dot { width:4px; height:4px; background:var(--accent); border-radius:50%; margin-top:9px; flex-shrink:0; }
+  .value-item p { font-size:0.75rem; color:var(--muted); margin:0; }
+  .value-item strong { color:var(--silver); font-weight:500; }
+  .profile-aside { border:1px solid var(--border); padding:36px; }
+  .profile-aside h3 { font-family:'Bodoni Moda',serif; font-size:1.2rem; color:var(--accent); margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid var(--border); font-weight:300; }
+  .aside-row { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:0.74rem; }
+  .aside-row:last-child { border-bottom:none; }
+  .aside-label { color:var(--muted); }
+  .aside-val { color:var(--silver); text-align:right; max-width:55%; }
+  .mission-box { margin-top:24px; border:1px solid var(--border); border-left:2px solid var(--accent); padding:26px 30px; }
+  .mission-box h4 { font-family:'Bodoni Moda',serif; font-size:0.95rem; color:var(--accent); margin-bottom:9px; font-weight:300; font-style:italic; }
+  .mission-box p { font-size:0.74rem; color:var(--muted); line-height:1.8; }
+
+  /* ── SERVICES ────────────────────────────── */
+  .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; }
+  .service-card { background:var(--card); border:1px solid var(--border); padding:40px; position:relative; overflow:hidden; transition:border-color 0.3s,background 0.3s; }
+  .service-card::before { content:''; position:absolute; top:0; left:0; width:2px; height:0; background:var(--accent); transition:height 0.4s ease; }
+  .service-card:hover { border-color:var(--border-hi); background:var(--mid); }
+  .service-card:hover::before { height:100%; }
+  .service-num { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:9px; }
+  .service-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; font-weight:300; color:var(--white); margin-bottom:7px; line-height:1.0; }
+  .service-name em { font-style:italic; color:var(--accent); }
+  .service-desc { font-size:0.72rem; color:var(--muted); margin-bottom:28px; line-height:1.75; }
+  .price-table { width:100%; border-collapse:collapse; }
+  .price-table th { font-size:0.56rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--silver); text-align:left; padding:0 0 9px; border-bottom:1px solid var(--border); }
+  .price-table td { padding:11px 0; font-size:0.74rem; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--silver); vertical-align:top; }
+  .price-table tr:last-child td { border-bottom:none; }
+  .price-col { text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); white-space:nowrap; }
+  .zone-badges { display:flex; gap:6px; margin-top:16px; flex-wrap:wrap; }
+  .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
+  .zone-badge strong { color:var(--silver); margin-right:4px; }
+  .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
+  .important-note strong { color:var(--silver); }
+
+  /* ── IV THERAPY ──────────────────────────── */
+  .iv-section { background:var(--charcoal); padding:96px 0; }
+  .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
+  .iv-card:hover { transform:translateY(-4px); }
+  .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
+  .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
+  .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
+  .iv-price { font-family:'Bodoni Moda',serif; font-size:2.6rem; color:var(--white); line-height:1; margin:18px 0 3px; }
+  .iv-price-label { font-size:0.6rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:22px; }
+  .iv-goal { font-size:0.73rem; color:var(--muted); margin-bottom:18px; line-height:1.75; }
+  .iv-includes h4 { font-size:0.56rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--silver); margin-bottom:9px; }
+  .iv-includes ul { list-style:none; }
+  .iv-includes li { font-size:0.7rem; color:var(--muted); padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:7px; }
+  .iv-includes li::before { content:'+'; color:var(--accent); flex-shrink:0; }
+  .iv-formula { margin-top:44px; border:1px solid var(--border); padding:32px; background:var(--card); }
+  .iv-formula h3 { font-family:'Bodoni Moda',serif; font-size:1.2rem; color:var(--accent); margin-bottom:12px; font-weight:300; }
+  .iv-formula-eq { font-family:'Bodoni Moda',serif; font-size:0.95rem; color:var(--white); margin-bottom:18px; font-style:italic; line-height:1.55; }
+  .iv-assist-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:14px; }
+  .iv-assist-item { border:1px solid var(--border); padding:18px; background:var(--charcoal); }
+  .iv-assist-item .sched { color:var(--muted); font-size:0.63rem; margin-bottom:7px; line-height:1.5; }
+  .iv-assist-item .fee-val { font-family:'Bodoni Moda',serif; font-size:1.3rem; color:var(--white); }
+
+  /* ── PROCEDURES ──────────────────────────── */
+  .proc-cat { border:1px solid var(--border); overflow:hidden; margin-bottom:2px; }
+  .proc-cat-header { padding:18px 30px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; background:var(--card); transition:background 0.2s; }
+  .proc-cat-header:hover { background:var(--mid); }
+  .proc-cat-title { font-family:'Bodoni Moda',serif; font-size:1.1rem; color:var(--white); font-weight:300; }
+  .proc-cat-toggle { color:var(--silver); font-size:1.2rem; transition:transform 0.3s; user-select:none; }
+  .proc-cat.open .proc-cat-toggle { transform:rotate(45deg); }
+  .proc-cat-body { padding:0 30px 22px; background:var(--card); }
+  .proc-row { display:grid; grid-template-columns:1fr auto; gap:14px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); align-items:start; }
+  .proc-row:last-child { border-bottom:none; }
+  .proc-name { font-size:0.76rem; color:var(--silver); }
+  .proc-note { font-size:0.64rem; color:var(--muted); margin-top:3px; line-height:1.5; }
+  .proc-price { font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); text-align:right; white-space:nowrap; }
+
+  /* ── SCHEDULE ────────────────────────────── */
+  .schedule-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .schedule-card { border:1px solid var(--border); padding:32px; background:var(--card); }
+  .schedule-card.unavail { border-color:rgba(180,80,60,0.22); }
+  .schedule-type { font-size:0.56rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:14px; display:block; }
+  .schedule-type.official { color:var(--silver); }
+  .schedule-type.traditional { color:#88aaa0; }
+  .schedule-type.unavail { color:#b87868; }
+  .schedule-card h3 { font-family:'Bodoni Moda',serif; font-size:1.15rem; color:var(--white); margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--border); font-weight:300; }
+  .schedule-list { list-style:none; }
+  .schedule-list li { font-size:0.72rem; color:var(--muted); padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:10px; }
+  .schedule-list li:last-child { border-bottom:none; }
+  .schedule-list .sdate { color:var(--silver); flex-shrink:0; width:70px; }
+  .schedule-list li.range { color:#b07868; }
+  .schedule-list li.range .sdate { color:#c08878; }
+
+  /* ── PAYMENT ─────────────────────────────── */
+  .payment-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; }
+  .payment-card { border:1px solid var(--border); padding:32px; background:var(--card); }
+  .payment-card h3 { font-family:'Bodoni Moda',serif; font-size:1.15rem; color:var(--accent); margin-bottom:14px; font-weight:300; }
+  .payment-card p { font-size:0.74rem; color:var(--muted); line-height:1.85; }
+  .payment-card strong { color:var(--silver); font-weight:500; }
+  .payment-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:12px; }
+  .payment-tag { font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border:1px solid var(--border); color:var(--silver); }
+
+  /* ── COFEPRIS ────────────────────────────── */
+  .cofepris-bar {
+    background:var(--charcoal); border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    padding:14px 48px; text-align:center;
+    font-size:0.58rem; letter-spacing:0.12em; color:var(--muted);
+  }
+  .cofepris-bar strong { color:var(--silver); }
+
+  /* ── CONTACT ─────────────────────────────── */
+  .contact-section { border-top:1px solid var(--border); padding:96px 48px; text-align:center; position:relative; overflow:hidden; }
+  .contact-section::before { content:'CJA'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Bodoni Moda',serif; font-size:clamp(12rem,28vw,26rem); font-weight:300; color:rgba(255,255,255,0.018); pointer-events:none; letter-spacing:-0.06em; }
+  .contact-logo-wrap { --dr-sz:0.42em; --nm-sz:clamp(1.9rem,4.5vw,4.2rem); --sb-sz:0.6rem; --dr-ln:52px; color:var(--white); margin-bottom:52px; display:inline-block; }
+  .contact-items { display:inline-flex; flex-wrap:wrap; justify-content:center; border:1px solid var(--border); margin-bottom:32px; }
+  .contact-item { padding:22px 32px; border-right:1px solid var(--border); text-align:left; }
+  .contact-item:last-child { border-right:none; }
+  .contact-label { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:7px; display:block; }
+  .contact-val { font-family:'Bodoni Moda',serif; font-size:1.05rem; color:var(--white); text-decoration:none; font-weight:300; display:block; transition:color 0.3s; }
+  .contact-val:hover { color:var(--accent); }
+
+  /* Instagram */
+  .instagram-link {
+    display:inline-flex; align-items:center; gap:12px;
+    border:1px solid var(--border); padding:14px 28px;
+    color:var(--silver); text-decoration:none;
+    font-size:0.7rem; letter-spacing:0.1em;
+    transition:border-color 0.3s, color 0.3s;
+    margin-top:24px;
+  }
+  .instagram-link:hover { border-color:var(--border-hi); color:var(--white); }
+  .instagram-link svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* ── FOOTER ──────────────────────────────── */
+  footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
+  footer p { font-size:0.62rem; color:var(--muted); }
+
+  /* ── ANIMATIONS ──────────────────────────── */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────── */
+  @media(max-width:900px){
+    nav { padding:13px 18px; }
+    .nav-links { display:none; }
+    .section,.contact-section { padding:68px 20px; }
+    .section-inner { padding:0 20px; }
+    .sep,.cofepris-bar { margin:0; padding:14px 20px; }
+    .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .hero-creds { flex-direction:column; border:none; }
+    .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
+    .contact-items { flex-direction:column; }
+    .contact-item { border-right:none; border-bottom:1px solid var(--border); }
+    footer { flex-direction:column; text-align:center; padding:22px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════ -->
+<nav>
+  <a href="#inicio" class="nav-logo-wrap" style="text-decoration:none;">
+    <div class="brand-logo">
+      <div class="dr-tag">DR.</div>
+      <div class="logo-frame">
+        <div class="logo-line1">CRISTÓBAL J.</div>
+        <div class="logo-line2"><span class="mic-icon">⚕</span>ORTEGA-ARENAS</div>
+      </div>
+      <div class="logo-sub" data-es="Médico e Investigador Clínico" data-en="Physician &amp; Clinical Researcher">Médico e Investigador Clínico</div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+      <a href="#procedimientos" data-es="Procedimientos" data-en="Procedures">Procedimientos</a>
+      <a href="#iv">IV Therapy</a>
+      <a href="#calendario" data-es="Calendario" data-en="Schedule">Calendario</a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-monogram">CJA</div>
+  <div class="hero-badge" data-es="Medicina Privada · Medical Concierge · CDMX 2026" data-en="Private Medicine · Medical Concierge · Mexico City 2026">
+    Medicina Privada · Medical Concierge · CDMX 2026
+  </div>
+  <div class="hero-logo-wrap">
+    <div class="brand-logo" style="align-items:center;">
+      <div class="dr-tag">DR.</div>
+      <div class="logo-frame">
+        <div class="logo-line1">CRISTÓBAL J.</div>
+        <div class="logo-line2"><span class="mic-icon">⚕</span>ORTEGA-ARENAS</div>
+      </div>
+      <div class="logo-sub" data-es="Médico e Investigador Clínico" data-en="Physician &amp; Clinical Researcher">Médico e Investigador Clínico</div>
+    </div>
+  </div>
+  <p class="hero-tagline" data-es="Salud con Ciencia y Bienestar · Private Medical Care" data-en="Health with Science and Well-being · Private Medical Care">
+    Salud con Ciencia y Bienestar · Private Medical Care
+  </p>
+  <div class="hero-creds">
+    <div class="hero-cred">
+      <span class="hero-cred-label" data-es="Institución" data-en="Institution">Institución</span>
+      <span class="hero-cred-value" data-es="UNAM — Fac. de Medicina" data-en="UNAM — Faculty of Medicine">UNAM — Fac. de Medicina</span>
+    </div>
+    <div class="hero-cred">
+      <span class="hero-cred-label" data-es="Cédula Profesional" data-en="Medical License (Mexico)">Cédula Profesional</span>
+      <span class="hero-cred-value">14848636</span>
+    </div>
+    <div class="hero-cred">
+      <span class="hero-cred-label" data-es="Homologación España" data-en="Spain Accreditation">Homologación España</span>
+      <span class="hero-cred-value">Cred. No. 2025-17271</span>
+    </div>
+    <div class="hero-cred">
+      <span class="hero-cred-label" data-es="Reconocimiento UNAM" data-en="UNAM Recognition">Reconocimiento UNAM</span>
+      <span class="hero-cred-value" data-es="Premio Gustavo Baz Prada" data-en="Gustavo Baz Prada Award">Premio Gustavo Baz Prada</span>
+    </div>
+  </div>
+  <div class="hero-scroll" data-es="Explorar" data-en="Explore">Explorar</div>
+</section>
+
+<!-- ══ PROFILE ════════════════════════════════ -->
+<section class="section" id="perfil">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Perfil Profesional" data-en="Professional Profile">Perfil Profesional</p>
+    <h2 class="section-title" data-es="Ciencia, Precisión <em>&amp; Bienestar</em>" data-en="Science, Precision <em>&amp; Well-being</em>">Ciencia, Precisión <em>&amp; Bienestar</em></h2>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-text reveal">
+      <p data-es="Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con una destacada trayectoria en investigación clínica y medicina basada en evidencias. Galardonado con el Premio al Servicio Social «Gustavo Baz Prada» por la UNAM en la categoría de investigación por su desempeño sobresaliente en el Instituto Nacional de Neurología y Neurocirugía «Manuel Velasco Suárez»."
+         data-en="Physician (M.D.) graduated from the UNAM Faculty of Medicine, with a distinguished background in clinical research and evidence-based medicine. Recipient of the «Gustavo Baz Prada» Social Service Award by UNAM in the research category for outstanding performance at the National Institute of Neurology and Neurosurgery «Manuel Velasco Suárez».">
+        Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con una destacada trayectoria en investigación clínica y medicina basada en evidencias. Galardonado con el Premio al Servicio Social «Gustavo Baz Prada» por la UNAM en la categoría de investigación por su desempeño sobresaliente en el Instituto Nacional de Neurología y Neurocirugía «Manuel Velasco Suárez».
+      </p>
+      <p data-es="Su formación clínica en diversos Institutos Nacionales de Salud y sus intercambios clínicos internacionales de investigación, junto con su homologación profesional oficial en España, garantizan una práctica regida por los más altos estándares internacionales."
+         data-en="Clinical training across various National Institutes of Health and international clinical and research exchanges, alongside official professional accreditation in Spain, guarantee a practice held to the highest international standards.">
+        Su formación clínica en diversos Institutos Nacionales de Salud y sus intercambios clínicos internacionales de investigación, junto con su homologación profesional oficial en España, garantizan una práctica regida por los más altos estándares internacionales.
+      </p>
+      <p data-es="Con presencia en los principales nodos médicos y corporativos de la ciudad —Del Valle, Roma, Polanco y Santa Fe— el Dr. Ortega-Arenas fusiona la precisión técnica con un enfoque compasivo y centrado en el paciente."
+         data-en="With a presence in the city's key medical and corporate hubs —Del Valle, Roma, Polanco, and Santa Fe— Dr. Ortega-Arenas specializes in high-quality bilingual care, merging technical precision with a compassionate, patient-centered approach.">
+        Con presencia en los principales nodos médicos y corporativos de la ciudad —Del Valle, Roma, Polanco y Santa Fe— el Dr. Ortega-Arenas fusiona la precisión técnica con un enfoque compasivo y centrado en el paciente.
+      </p>
+      <div class="profile-values">
+        <h3 data-es="Valores" data-en="Values">Valores</h3>
+        <div class="value-item"><div class="value-dot"></div><p data-es="<strong>Rigor de Evidencia:</strong> Medicina fundamentada estrictamente en la mejor evidencia clínica disponible e investigación científica." data-en="<strong>Scientific Evidence Rigor:</strong> A medical practice strictly grounded in the best available clinical evidence and research background."><strong>Rigor de Evidencia:</strong> Medicina fundamentada estrictamente en la mejor evidencia clínica disponible e investigación científica.</p></div>
+        <div class="value-item"><div class="value-dot"></div><p data-es="<strong>Versatilidad Bilingüe:</strong> Atención técnica y compasiva a pacientes de diversas nacionalidades en su propio idioma." data-en="<strong>Bilingual Versatility:</strong> High-quality care designed for patients of diverse nationalities, delivered with technical precision and compassion."><strong>Versatilidad Bilingüe:</strong> Atención técnica y compasiva a pacientes de diversas nacionalidades en su propio idioma.</p></div>
+        <div class="value-item"><div class="value-dot"></div><p data-es="<strong>Transparencia Profesional:</strong> Claridad absoluta en honorarios, protocolos y alcances legales de la medicina general ambulatoria." data-en="<strong>Professional Transparency:</strong> Absolute clarity regarding fees, protocols, and the legal scope of outpatient general medicine."><strong>Transparencia Profesional:</strong> Claridad absoluta en honorarios, protocolos y alcances legales de la medicina general ambulatoria.</p></div>
+        <div class="value-item"><div class="value-dot"></div><p data-es="<strong>Bienestar Integral:</strong> Enfoque centrado en el paciente bajo el concepto de Private Medical Care." data-en="<strong>Holistic Well-being:</strong> A patient-centered approach focused on comprehensive health under the concept of Private Medical Care."><strong>Bienestar Integral:</strong> Enfoque centrado en el paciente bajo el concepto de Private Medical Care.</p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="profile-aside">
+        <h3 data-es="Identidad Corporativa" data-en="Corporate Identity">Identidad Corporativa</h3>
+        <div class="aside-row"><span class="aside-label" data-es="Misión" data-en="Mission">Misión</span><span class="aside-val" data-es="Proveer atención médica de primer contacto en CDMX integrando rigor de investigación clínica con atención bilingüe personalizada" data-en="To provide general medical and first-contact care in Mexico City, integrating clinical research rigor with personalized bilingual care">Proveer atención médica de primer contacto en CDMX integrando rigor de investigación clínica con atención bilingüe personalizada</span></div>
+        <div class="aside-row"><span class="aside-label" data-es="Visión 2028" data-en="Vision 2028">Visión 2028</span><span class="aside-val" data-es="Principal referente de medicina privada y Medical Concierge en CDMX" data-en="Premier reference for private medicine and Medical Concierge in Mexico City">Principal referente de medicina privada y Medical Concierge en CDMX</span></div>
+        <div class="aside-row"><span class="aside-label" data-es="Cobertura" data-en="Coverage">Cobertura</span><span class="aside-val">Del Valle · Roma · Polanco · Santa Fe</span></div>
+        <div class="aside-row"><span class="aside-label" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="aside-val">Español · English</span></div>
+        <div class="aside-row"><span class="aside-label" data-es="Moneda" data-en="Currency">Moneda</span><span class="aside-val" data-es="Todos los honorarios en MXN" data-en="All fees in Mexican Pesos (MXN)">Todos los honorarios en MXN</span></div>
+      </div>
+      <div class="mission-box">
+        <h4>"Salud con ciencia y bienestar"</h4>
+        <p data-es="Una práctica médica privada fundada en el rigor científico, la excelencia clínica y la atención personalizada bilingüe para pacientes locales e internacionales en la Ciudad de México." data-en="A private medical practice founded on scientific rigor, clinical excellence, and personalized bilingual care for local and international patients in Mexico City.">Una práctica médica privada fundada en el rigor científico, la excelencia clínica y la atención personalizada bilingüe para pacientes locales e internacionales en la Ciudad de México.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ SERVICES ═══════════════════════════════ -->
+<section class="section" id="servicios">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="I — IV · Portafolio de Servicios" data-en="I — IV · Services Portfolio">I — IV · Portafolio de Servicios</p>
+    <h2 class="section-title" data-es="Servicios Médicos <em>2026</em>" data-en="Medical Services <em>2026</em>">Servicios Médicos <em>2026</em></h2>
+    <p class="section-subtitle" data-es="Todos los honorarios están expresados y deben ser liquidados exclusivamente en Pesos Mexicanos (MXN)." data-en="All fees are quoted and payable exclusively in Mexican Pesos (MXN).">Todos los honorarios están expresados y deben ser liquidados exclusivamente en Pesos Mexicanos (MXN).</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- I -->
+    <div class="service-card reveal">
+      <p class="service-num">I</p>
+      <h3 class="service-name" data-es="Atención Premium<br>Hoteles &amp; Turismo" data-en="Premium Hotel &amp;<br>Tourism Medical Care">Atención Premium<br>Hoteles &amp; Turismo</h3>
+      <p class="service-desc" data-es="Servicios médicos bilingües especializados con disponibilidad inmediata en habitación para visitantes y turistas internacionales." data-en="Specialized bilingual medical services with immediate in-room availability for visitors and international tourists.">Servicios médicos bilingües especializados con disponibilidad inmediata en habitación para visitantes y turistas internacionales.</p>
+      <table class="price-table">
+        <thead><tr>
+          <th data-es="Horario" data-en="Schedule">Horario</th>
+          <th style="text-align:right">Zona A</th>
+          <th style="text-align:right">Zona B</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td data-es="Ordinario<br><span style='color:var(--muted);font-size:0.66rem'>Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span>" data-en="Standard Hours<br><span style='color:var(--muted);font-size:0.66rem'>Mon–Fri 09:00–20:00 / Sat 09:00–15:00</span>">Ordinario<br><span style="color:var(--muted);font-size:0.66rem">Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span></td>
+            <td class="price-col">$2,500</td><td class="price-col">$3,000</td>
+          </tr>
+          <tr>
+            <td data-es="Especial / Fuera de horario<br><span style='color:var(--muted);font-size:0.66rem'>Noches 20:01–08:59 · Sáb 15:01+ · Dom</span>" data-en="After-Hours &amp; Special<br><span style='color:var(--muted);font-size:0.66rem'>Nights 20:01–08:59 · Sat 15:01+ · Sun</span>">Especial / Fuera de horario<br><span style="color:var(--muted);font-size:0.66rem">Noches 20:01–08:59 · Sáb 15:01+ · Dom</span></td>
+            <td class="price-col">$4,000</td><td class="price-col">$4,500</td>
+          </tr>
+          <tr>
+            <td data-es="Festivos Oficiales &amp; Tradicionales<br><span style='color:var(--muted);font-size:0.66rem'>24 horas</span>" data-en="Official &amp; Traditional Holidays<br><span style='color:var(--muted);font-size:0.66rem'>24 Hours</span>">Festivos Oficiales &amp; Tradicionales<br><span style="color:var(--muted);font-size:0.66rem">24 horas</span></td>
+            <td class="price-col">$5,500</td><td class="price-col">$6,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="zone-badges" style="margin-top:18px">
+        <div class="zone-badge"><strong>A</strong> Pedregal · Coyoacán · Del Valle · Roma · Condesa</div>
+        <div class="zone-badge"><strong>B</strong> Centro · Reforma · Polanco · Santa Fe</div>
+      </div>
+    </div>
+
+    <!-- II -->
+    <div class="service-card reveal">
+      <p class="service-num">II</p>
+      <h3 class="service-name" data-es="Consultorio Privado<br><em>Previa Cita</em>" data-en="Private Clinic<br><em>By Appointment Only</em>">Consultorio Privado<br><em>Previa Cita</em></h3>
+      <p class="service-desc" data-es="Atención clínica de alta calidad. La dirección exacta se comparte al confirmar la cita por motivos de seguridad y privacidad." data-en="High-quality clinical care. The exact address is shared with the patient only after direct contact to schedule the appointment.">Atención clínica de alta calidad. La dirección exacta se comparte al confirmar la cita por motivos de seguridad y privacidad.</p>
+      <table class="price-table">
+        <thead><tr>
+          <th data-es="Sede" data-en="Location">Sede</th>
+          <th data-es="Horario" data-en="Hours">Horario</th>
+          <th style="text-align:right" data-es="Honorario" data-en="Fee">Honorario</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Del Valle</td><td style="color:var(--muted);font-size:0.65rem">L–V 10–19h / S–D 11–15h</td><td class="price-col">$1,000<br><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)" data-es="subs." data-en="follow-up">subs.</span></td></tr>
+          <tr><td>Roma</td><td style="color:var(--muted);font-size:0.65rem">L–V 10–19h / S–D 11–15h</td><td class="price-col">$1,200</td></tr>
+          <tr><td>Polanco</td><td style="color:var(--muted);font-size:0.65rem">L–V 10–19h / S–D 11–15h</td><td class="price-col">$1,500</td></tr>
+          <tr><td>Santa Fe</td><td style="color:var(--muted);font-size:0.65rem">L–V 10–19h / S–D 11–15h</td><td class="price-col">$1,800</td></tr>
+          <tr><td><strong style="color:var(--silver)" data-es="Días Festivos" data-en="Holidays">Días Festivos</strong></td><td style="color:var(--muted);font-size:0.65rem">11:00–15:00</td><td class="price-col">$2,500</td></tr>
+        </tbody>
+      </table>
+      <div class="important-note" data-es="<strong>Reservación:</strong> Anticipo mínimo 50% vía transferencia. Cancelaciones con menos de 3 hrs de anticipación: no reembolsable." data-en="<strong>Booking:</strong> Minimum 50% deposit required via bank transfer. Cancellations with less than 3 hours' notice are non-refundable."><strong>Reservación:</strong> Anticipo mínimo 50% vía transferencia. Cancelaciones con menos de 3 hrs de anticipación: no reembolsable.</div>
+    </div>
+
+    <!-- II.I -->
+    <div class="service-card reveal">
+      <p class="service-num">II.I</p>
+      <h3 class="service-name" data-es="Teleconsulta" data-en="Teleconsultation">Teleconsulta</h3>
+      <p class="service-desc" data-es="Orientación médica a distancia para seguimiento, tratamientos o consultas de medicina general que no requieran exploración física presencial." data-en="Remote medical orientation for follow-up, treatment inquiries, or general medicine consultations that do not require an in-person physical examination.">Orientación médica a distancia para seguimiento, tratamientos o consultas de medicina general que no requieran exploración física presencial.</p>
+      <table class="price-table">
+        <thead><tr>
+          <th data-es="Servicio" data-en="Service">Servicio</th>
+          <th data-es="Horario" data-en="Hours">Horario</th>
+          <th style="text-align:right" data-es="Honorario" data-en="Fee">Honorario</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-es="Teleconsulta" data-en="Teleconsultation">Teleconsulta</td><td style="color:var(--muted);font-size:0.65rem">L–V 10–19h / S–D 11–15h</td><td class="price-col">$700</td></tr>
+          <tr><td data-es="Teleconsulta (Festivos)" data-en="Teleconsultation (Holidays)">Teleconsulta (Festivos)</td><td style="color:var(--muted);font-size:0.65rem">11:00–15:00</td><td class="price-col">$1,000</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:20px">
+        <p style="font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver);margin-bottom:9px" data-es="Incluye" data-en="Includes">Incluye</p>
+        <p style="font-size:0.71rem;color:var(--muted);line-height:1.85" data-es="✦ Valoración clínica bilingüe vía Google Meet, WhatsApp o FaceTime<br>✦ Receta Médica Digital válida en farmacias locales<br>✦ Resumen Clínico Digital (PDF) para respaldo del paciente" data-en="✦ Bilingual clinical assessment via Google Meet, WhatsApp, or FaceTime<br>✦ Digital Medical Prescription valid at major pharmacies<br>✦ Digital Clinical Summary (PDF) for patient records">
+          ✦ Valoración clínica bilingüe vía Google Meet, WhatsApp o FaceTime<br>✦ Receta Médica Digital válida en farmacias locales<br>✦ Resumen Clínico Digital (PDF) para respaldo del paciente
+        </p>
+        <p style="font-size:0.63rem;color:var(--muted);margin-top:11px;font-style:italic" data-es="No cubre urgencias ni interconsultas de especialidad." data-en="Does not cover emergency care or specialty consultations.">No cubre urgencias ni interconsultas de especialidad.</p>
+      </div>
+    </div>
+
+    <!-- III -->
+    <div class="service-card reveal">
+      <p class="service-num">III</p>
+      <h3 class="service-name" data-es="Consulta a Domicilio<br><em>Medicina General</em>" data-en="Residential Home Visits<br><em>General Medicine Only</em>">Consulta a Domicilio<br><em>Medicina General</em></h3>
+      <p class="service-desc" data-es="Atención médica general directamente en su residencia, con la misma calidad y rigor clínico que en consultorio. Cobertura por zona y horario." data-en="General medical care directly at your residence, with the same quality and clinical rigor as an office visit. Coverage by zone and schedule.">Atención médica general directamente en su residencia, con la misma calidad y rigor clínico que en consultorio. Cobertura por zona y horario.</p>
+      <table class="price-table">
+        <thead><tr>
+          <th data-es="Zona / Ubicación" data-en="Zone / Location">Zona / Ubicación</th>
+          <th style="text-align:right;font-size:0.52rem" data-es="Ordinario" data-en="Standard">Ordinario</th>
+          <th style="text-align:right;font-size:0.52rem" data-es="Especial" data-en="After-Hours">Especial</th>
+          <th style="text-align:right;font-size:0.52rem" data-es="Festivo" data-en="Holiday">Festivo</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-es="Del Valle &amp; Texcoco" data-en="Del Valle &amp; Texcoco">Del Valle &amp; Texcoco</td><td class="price-col" style="font-size:0.85rem">$1,000<br><span style="font-size:0.68rem;color:var(--muted)">$900*</span></td><td class="price-col" style="font-size:0.85rem">$2,500</td><td class="price-col" style="font-size:0.85rem">$3,500</td></tr>
+          <tr><td data-es="Pedregal · Coyoacán<br>Roma · Condesa" data-en="Pedregal · Coyoacán<br>Roma · Condesa">Pedregal · Coyoacán<br>Roma · Condesa</td><td class="price-col" style="font-size:0.85rem">$1,300</td><td class="price-col" style="font-size:0.85rem">$3,000</td><td class="price-col" style="font-size:0.85rem">$4,000</td></tr>
+          <tr><td data-es="Reforma &amp; Polanco" data-en="Reforma &amp; Polanco">Reforma &amp; Polanco</td><td class="price-col" style="font-size:0.85rem">$1,800</td><td class="price-col" style="font-size:0.85rem">$3,500</td><td class="price-col" style="font-size:0.85rem">$4,500</td></tr>
+          <tr><td>Santa Fe</td><td class="price-col" style="font-size:0.85rem">$2,100</td><td class="price-col" style="font-size:0.85rem">$4,000</td><td class="price-col" style="font-size:0.85rem">$5,000</td></tr>
+        </tbody>
+      </table>
+      <p class="price-note" data-es="*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario." data-en="*$900 MXN rate applies only to follow-up visits in the Local Zone during standard hours.">*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ IV THERAPY ═════════════════════════════ -->
+<section class="section-full iv-section" id="iv">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-tag" data-es="Servicio IV.I" data-en="Service IV.I">Servicio IV.I</p>
+      <h2 class="section-title" data-es="Protocolos de <em>IV Therapy</em><br>&amp; Rehidratación" data-en="<em>IV Therapy</em> &amp;<br>Rehydration Protocols">Protocolos de <em>IV Therapy</em><br>&amp; Rehidratación</h2>
+      <p class="section-subtitle" data-es="Tratamientos de restauración especializados administrados bajo estricta supervisión médica para recuperación inmediata." data-en="Specialized restoration treatments administered under strict medical supervision for immediate recovery.">Tratamientos de restauración especializados administrados bajo estricta supervisión médica para recuperación inmediata.</p>
+    </div>
+    <div class="iv-cards">
+      <div class="iv-card reveal">
+        <p class="iv-level" data-es="Nivel I" data-en="Level I">Nivel I</p>
+        <div class="iv-name">Essential<br>Hydration</div>
+        <div class="iv-price">$1,800</div>
+        <p class="iv-price-label" data-es="suplemento MXN" data-en="supplement fee MXN">suplemento MXN</p>
+        <p class="iv-goal" data-es="Rehidratación básica y recuperación de Jet Lag." data-en="Basic rehydration and Jet Lag recovery.">Rehidratación básica y recuperación de Jet Lag.</p>
+        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes">Incluye</h4><ul>
+          <li data-es="Solución Fisiológica (IV)" data-en="Physiological Solution (IV)">Solución Fisiológica (IV)</li>
+          <li data-es="Vitamina C (Oral)" data-en="Vitamin C (Oral)">Vitamina C (Oral)</li>
+        </ul></div>
+      </div>
+      <div class="iv-card featured reveal">
+        <p class="iv-level" data-es="Nivel II — Más Solicitado" data-en="Level II — Most Requested">Nivel II — Más Solicitado</p>
+        <div class="iv-name">Executive<br>Performance</div>
+        <div class="iv-price">$2,800</div>
+        <p class="iv-price-label" data-es="suplemento MXN" data-en="supplement fee MXN">suplemento MXN</p>
+        <p class="iv-goal" data-es="Soporte neurometabólico, energía y fatiga crónica." data-en="Neuro-metabolic support, energy, and chronic fatigue.">Soporte neurometabólico, energía y fatiga crónica.</p>
+        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes">Incluye</h4><ul>
+          <li data-es="Todo lo del Nivel I" data-en="Everything in Level I">Todo lo del Nivel I</li>
+          <li>Complejo B (IM)</li>
+          <li>Magnesio (IV)</li>
+          <li data-es="Antioxidantes (Oral)" data-en="Antioxidants (Oral)">Antioxidantes (Oral)</li>
+        </ul></div>
+      </div>
+      <div class="iv-card reveal">
+        <p class="iv-level" data-es="Nivel III" data-en="Level III">Nivel III</p>
+        <div class="iv-name">World Cup<br>Recovery</div>
+        <div class="iv-price">$3,900</div>
+        <p class="iv-price-label" data-es="suplemento MXN" data-en="supplement fee MXN">suplemento MXN</p>
+        <p class="iv-goal" data-es="Restauración total: desintoxicación y alivio sintomático completo." data-en="Full restoration: Detoxification and complete symptomatic relief.">Restauración total: desintoxicación y alivio sintomático completo.</p>
+        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes">Incluye</h4><ul>
+          <li data-es="Todo lo del Nivel II" data-en="Everything in Level II">Todo lo del Nivel II</li>
+          <li>Glutapak (Oral)</li>
+          <li data-es="Manejo Analgésico (IV)" data-en="Analgesic Management (IV)">Manejo Analgésico (IV)</li>
+          <li data-es="Manejo Antiemético (IV)" data-en="Antiemetic Management (IV)">Manejo Antiemético (IV)</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="iv-formula reveal">
+      <h3 data-es="Cálculo del Costo Total" data-en="Total Fee Calculation">Cálculo del Costo Total</h3>
+      <p class="iv-formula-eq" data-es="Total = Nivel Elegido + Honorario de Visita (Zona y Hora) + Honorario de Asistente" data-en="Total = Selected Level + Medical Visit Fee (Zone &amp; Time) + Assistant Fee">Total = Nivel Elegido + Honorario de Visita (Zona y Hora) + Honorario de Asistente</p>
+      <div class="iv-assist-grid">
+        <div class="iv-assist-item"><p class="sched" data-es="Horario Ordinario" data-en="Standard Schedule">Horario Ordinario</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee">Honorario Asistente</p></div>
+        <div class="iv-assist-item"><p class="sched" data-es="Especial · Noches · Tradicionales · Dom · Sáb 15:01+" data-en="Special · Nights · Traditional · Sun · Sat 15:01+">Especial · Noches · Tradicionales · Dom · Sáb 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee">Honorario Asistente</p></div>
+        <div class="iv-assist-item"><p class="sched" data-es="Días Festivos Oficiales (24 horas)" data-en="Official Public Holidays (24 Hours)">Días Festivos Oficiales (24 horas)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee">Honorario Asistente</p></div>
+      </div>
+      <p class="price-note" style="margin-top:14px" data-es="El Honorario de Visita Médica se rige por la Sección I (Hoteles) o Sección III (Domicilio). Toda terapia IV requiere valoración médica previa obligatoria. Se requiere Consentimiento Informado firmado." data-en="The Medical Visit Fee is determined by Section I (Hotels) or Section III (Home Visits). All IV therapy requires a mandatory prior medical assessment. Signed Informed Consent is required.">El Honorario de Visita Médica se rige por la Sección I (Hoteles) o Sección III (Domicilio). Toda terapia IV requiere valoración médica previa obligatoria. Se requiere Consentimiento Informado firmado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCEDURES ══════════════════════════════ -->
+<section class="section" id="procedimientos">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Servicio IV" data-en="Service IV">Servicio IV</p>
+    <h2 class="section-title" data-es="Procedimientos &amp; <em>Cirugía Menor</em>" data-en="Procedures &amp; <em>Minor Surgery</em>">Procedimientos &amp; <em>Cirugía Menor</em></h2>
+    <p class="section-subtitle" data-es="Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita." data-en="Procedure fees are added to the applicable consultation or home visit fee, unless otherwise specified.">Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita.</p>
+  </div>
+
+  <div class="proc-cats">
+    <!-- Admin -->
+    <div class="proc-cat open reveal">
+      <div class="proc-cat-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3 class="proc-cat-title" data-es="Servicios Administrativos &amp; Documentación Internacional" data-en="Administrative Services &amp; International Documentation">Servicios Administrativos &amp; Documentación Internacional</h3>
+        <span class="proc-cat-toggle">+</span>
+      </div>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Digital" data-en="Digital Medical Certificate">Certificado Médico Digital</p><p class="proc-note" data-es="Validación vía videollamada" data-en="Validation via video call">Validación vía videollamada</p></div><div class="proc-price">$500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Presencial" data-en="In-person Medical Certificate">Certificado Médico Presencial</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Físico)" data-en="Physical Travel Summary">Resumen Clínico del Viajero (Físico)</p><p class="proc-note" data-es="Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio" data-en="Detailed clinical report in English for immigration/airlines. Delivered post-consultation. + Clinic Consultation or Home Visit fee">Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Digital)" data-en="Digital Travel Summary">Resumen Clínico del Viajero (Digital)</p><p class="proc-note" data-es="Reporte detallado en inglés. Emisión vía email / PDF" data-en="Detailed clinical report in English. Issued via email/PDF">Reporte detallado en inglés. Emisión vía email / PDF</p></div><div class="proc-price">$500</div></div>
+      </div>
+    </div>
+    <!-- Diagnostics -->
+    <div class="proc-cat open reveal">
+      <div class="proc-cat-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3 class="proc-cat-title" data-es="Diagnóstico &amp; Laboratorio" data-en="Diagnostics &amp; Laboratory">Diagnóstico &amp; Laboratorio</h3>
+        <span class="proc-cat-toggle">+</span>
+      </div>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Prueba Rápida Combo" data-en="Rapid Combo Test">Prueba Rápida Combo</p><p class="proc-note" data-es="Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Influenza A+B &amp; COVID-19. Includes all materials. + Clinic Consultation or Home Visit fee">Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Toma de Muestra Sanguínea" data-en="Laboratory Blood Sampling">Toma de Muestra Sanguínea</p><p class="proc-note" data-es="Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita" data-en="Includes phlebotomy materials and transport logistics. Lab fees not included. + Consultation/Visit fee">Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita</p></div><div class="proc-price">$700 +<br><span style="font-size:0.7rem" data-es="consulta" data-en="consult.">consulta</span></div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación y Reporte Digital de Laboratorio" data-en="Digital Laboratory Interpretation &amp; Report">Interpretación y Reporte Digital de Laboratorio</p><p class="proc-note" data-es="Informe bilingüe detallado vía PDF / Email" data-en="Detailed bilingual clinical report delivered via PDF/Email">Informe bilingüe detallado vía PDF / Email</p></div><div class="proc-price">$500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación Presencial de Laboratorio" data-en="In-person Laboratory Interpretation">Interpretación Presencial de Laboratorio</p><p class="proc-note" data-es="Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)" data-en="Fee determined by clinic rate (Section II) or visit zone (Sections I/III)">Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)</p></div><div class="proc-price" style="font-size:0.78rem" data-es="Según sede<br>/ zona" data-en="By clinic<br>/ zone">Según sede<br>/ zona</div></div>
+      </div>
+    </div>
+    <!-- Technical -->
+    <div class="proc-cat open reveal">
+      <div class="proc-cat-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3 class="proc-cat-title" data-es="Procedimientos Técnicos" data-en="Technical Procedures">Procedimientos Técnicos</h3>
+        <span class="proc-cat-toggle">+</span>
+      </div>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Inyección" data-en="Injection">Inyección</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$200</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Glucosa Capilar" data-en="Glucose Level Test">Glucosa Capilar</p><p class="proc-note" data-es="Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Includes materials. + Clinic Consultation or Home Visit fee">Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$250</div></div>
+      </div>
+    </div>
+    <!-- Surgical -->
+    <div class="proc-cat open reveal">
+      <div class="proc-cat-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3 class="proc-cat-title" data-es="Procedimientos Quirúrgicos Menores" data-en="Surgical Minor Procedures">Procedimientos Quirúrgicos Menores</h3>
+        <span class="proc-cat-toggle">+</span>
+      </div>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Sutura de Herida Simple / Curación" data-en="Suture (Simple Wound) / Wound Care">Sutura de Herida Simple / Curación</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500 –<br>$2,500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Implante Subdérmico (Colocación / Retiro)" data-en="Subdermal Implant (Placement / Removal)">Implante Subdérmico (Colocación / Retiro)</p><p class="proc-note" data-es="No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio" data-en="Does not include device. Includes other materials. + Clinic Consultation or Home Visit fee">No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resección de Lipoma" data-en="Lipoma Resection">Resección de Lipoma</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$3,500 –<br>$5,000</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Verrugas" data-en="Wart Removal">Retiro de Verrugas</p><p class="proc-note" data-es="Por lesión. Incluye material. + Costo de consulta o cargo por domicilio" data-en="Per lesion. Includes material. + Clinic Consultation or Home Visit fee">Por lesión. Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$600<br><span style="font-size:0.65rem;color:var(--muted)" data-es="/lesión" data-en="/lesion">/lesión</span></div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Puntos" data-en="Stitch Removal">Retiro de Puntos</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$700</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Cuerpo Extraño" data-en="Foreign Body Removal">Retiro de Cuerpo Extraño</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,200 –<br>$2,000</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="important-note reveal" style="margin-top:6px"
+    data-es="<strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN."
+    data-en="<strong>Informed Consent:</strong> Mandatory prior to any procedure. · <strong>Scope:</strong> General Medicine only. Death certificates are not issued. · <strong>Emergencies:</strong> Strictly outpatient services; for emergencies go immediately to a hospital Emergency Room. · All fees in MXN.">
+    <strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN.
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ CALENDAR ════════════════════════════════ -->
+<section class="section" id="calendario">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Calendario 2026" data-en="Schedule 2026">Calendario 2026</p>
+    <h2 class="section-title" data-es="Festivos &amp; <em>Disponibilidad</em>" data-en="Holidays &amp; <em>Availability</em>">Festivos &amp; <em>Disponibilidad</em></h2>
+    <p class="section-subtitle" data-es="Durante días festivos y tradicionales aplican tarifas diferenciadas. Las fechas de no disponibilidad son absolutas para cualquier modalidad de atención." data-en="Special rates apply on official and traditional holidays. Absolute unavailability dates apply to all forms of care, in-person or digital.">Durante días festivos y tradicionales aplican tarifas diferenciadas. Las fechas de no disponibilidad son absolutas para cualquier modalidad de atención.</p>
+  </div>
+  <div class="schedule-grid">
+    <div class="schedule-card reveal">
+      <span class="schedule-type official" data-es="Festivos Oficiales — Tarifa 24 Hrs" data-en="Official Public Holidays — 24 Hr Rate">Festivos Oficiales — Tarifa 24 Hrs</span>
+      <h3 data-es="Días Oficiales" data-en="Official Holidays">Días Oficiales</h3>
+      <ul class="schedule-list">
+        <li><span class="sdate">Ene 01</span><span data-es="Año Nuevo" data-en="New Year's Day">Año Nuevo</span></li>
+        <li><span class="sdate">Feb 02</span><span data-es="Día de la Constitución" data-en="Constitution Day">Día de la Constitución</span></li>
+        <li><span class="sdate">Mar 16</span><span data-es="Natalicio de Benito Juárez" data-en="Benito Juárez Day">Natalicio de Benito Juárez</span></li>
+        <li><span class="sdate">May 01</span><span data-es="Día del Trabajo" data-en="Labor Day">Día del Trabajo</span></li>
+        <li><span class="sdate">Sep 16</span><span data-es="Día de la Independencia" data-en="Independence Day">Día de la Independencia</span></li>
+        <li><span class="sdate">Nov 16</span><span data-es="Aniversario de la Revolución" data-en="Revolution Day">Aniversario de la Revolución</span></li>
+        <li><span class="sdate">Dic 25</span><span data-es="Navidad" data-en="Christmas Day">Navidad</span></li>
+      </ul>
+    </div>
+    <div class="schedule-card reveal">
+      <span class="schedule-type traditional" data-es="Festivos Tradicionales — Tarifa Especial" data-en="Traditional Holidays — Special Rate">Festivos Tradicionales — Tarifa Especial</span>
+      <h3 data-es="No Oficiales / Tradicionales" data-en="Non-Official / Traditional">No Oficiales / Tradicionales</h3>
+      <ul class="schedule-list">
+        <li><span class="sdate">Abr 02</span><span data-es="Jueves Santo" data-en="Maundy Thursday">Jueves Santo</span></li>
+        <li><span class="sdate">Abr 03</span><span data-es="Viernes Santo" data-en="Good Friday">Viernes Santo</span></li>
+        <li><span class="sdate">May 10</span><span data-es="Día de la Madre" data-en="Mother's Day">Día de la Madre</span></li>
+        <li><span class="sdate">Nov 02</span><span data-es="Día de Muertos" data-en="Day of the Dead">Día de Muertos</span></li>
+        <li><span class="sdate">Dic 12</span><span data-es="Día de la Virgen de Guadalupe" data-en="Guadalupe Day">Día de la Virgen de Guadalupe</span></li>
+        <li><span class="sdate">Dic 24</span><span data-es="Nochebuena" data-en="Christmas Eve">Nochebuena</span></li>
+        <li><span class="sdate">Dic 31</span><span data-es="Víspera de Año Nuevo" data-en="New Year's Eve">Víspera de Año Nuevo</span></li>
+      </ul>
+    </div>
+    <div class="schedule-card unavail reveal">
+      <span class="schedule-type unavail" data-es="⚠ No Disponibilidad Absoluta" data-en="⚠ Absolute Unavailability">⚠ No Disponibilidad Absoluta</span>
+      <h3 data-es="Sin Servicio" data-en="No Services">Sin Servicio</h3>
+      <p style="font-size:0.7rem;color:var(--muted);margin-bottom:14px;line-height:1.7"
+        data-es="Sin atención presencial ni digital, bajo ninguna circunstancia:"
+        data-en="No in-person or digital services will be provided under any circumstances:">Sin atención presencial ni digital, bajo ninguna circunstancia:</p>
+      <ul class="schedule-list">
+        <li class="range"><span class="sdate">Ene 11</span><span data-es="Vacaciones / Tiempo Personal" data-en="Vacation / Personal Time">Vacaciones / Tiempo Personal</span></li>
+        <li class="range"><span class="sdate">Mar 11</span><span data-es="Vacaciones / Tiempo Personal" data-en="Vacation / Personal Time">Vacaciones / Tiempo Personal</span></li>
+        <li class="range"><span class="sdate">May 07</span><span data-es="Vacaciones / Tiempo Personal" data-en="Vacation / Personal Time">Vacaciones / Tiempo Personal</span></li>
+        <li class="range"><span class="sdate">May 26</span><span data-es="Vacaciones / Tiempo Personal" data-en="Vacation / Personal Time">Vacaciones / Tiempo Personal</span></li>
+        <li class="range"><span class="sdate">Sep 24–Oct 01</span><span data-es="Vacaciones / Tiempo Personal" data-en="Vacation / Personal Time">Vacaciones / Tiempo Personal</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ PAYMENTS ════════════════════════════════ -->
+<section class="section" id="pagos">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Sección VII" data-en="Section VII">Sección VII</p>
+    <h2 class="section-title" data-es="Métodos de Pago &amp; <em>Políticas</em>" data-en="Payment Methods &amp; <em>Policies</em>">Métodos de Pago &amp; <em>Políticas</em></h2>
+  </div>
+  <div class="payment-grid">
+    <div class="payment-card reveal">
+      <h3 data-es="Formas de Pago Aceptadas" data-en="Accepted Payment Methods">Formas de Pago Aceptadas</h3>
+      <div class="payment-tags">
+        <span class="payment-tag">Visa</span><span class="payment-tag">Mastercard</span><span class="payment-tag">AMEX</span>
+        <span class="payment-tag">Apple Pay</span><span class="payment-tag">Google Pay</span>
+        <span class="payment-tag" data-es="Transferencia" data-en="Bank Transfer">Transferencia</span>
+        <span class="payment-tag" data-es="Efectivo MXN" data-en="Cash MXN">Efectivo MXN</span>
+      </div>
+      <p style="margin-top:18px"
+        data-es="<strong>Tarjetas</strong> vía terminal portátil: único método elegible para factura fiscal (CFDI) o comprobante para reembolso de seguro.<br><br><strong>Transferencia y efectivo:</strong> aceptados; no se emiten facturas ni comprobantes fiscales.<br><br><strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras."
+        data-en="<strong>Credit &amp; Debit Cards</strong> via portable terminal: the only payment method eligible for official tax invoices (CFDI) or insurance reimbursement documentation.<br><br><strong>Transfers &amp; Cash:</strong> accepted for payment; however, no invoices or tax receipts are issued.<br><br><strong>Cash in Mexican Pesos (MXN) only</strong> — foreign currency is not accepted.">
+        <strong>Tarjetas</strong> vía terminal portátil: único método elegible para factura fiscal (CFDI) o comprobante para reembolso de seguro.<br><br>
+        <strong>Transferencia y efectivo:</strong> aceptados; no se emiten facturas ni comprobantes fiscales.<br><br>
+        <strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras.
+      </p>
+    </div>
+    <div class="payment-card reveal">
+      <h3 data-es="Cancelación &amp; Reembolso" data-en="Cancellation &amp; Refund">Cancelación &amp; Reembolso</h3>
+      <p data-es="<strong>Sin reembolso</strong> una vez confirmada la atención médica.<br><br><strong>Consultorio privado:</strong> reembolso aplicable únicamente si la cancelación se realiza con más de <strong>3 horas de anticipación</strong>. Con menos de 3 horas: no reembolsable.<br><br><strong>Reservación:</strong> anticipo mínimo del 50% vía transferencia bancaria para confirmar cita.<br><br><strong>International Clinical Summary</strong> bilingüe disponible a solicitud con costo adicional."
+         data-en="<strong>No refunds</strong> once the service has been confirmed.<br><br><strong>Private Clinic:</strong> refunds are only applicable if the cancellation is made more than <strong>3 hours prior</strong> to the appointment. With less than 3 hours' notice: non-refundable.<br><br><strong>Booking:</strong> minimum 50% deposit via bank transfer required to confirm appointment.<br><br><strong>International Clinical Summary</strong> available upon request with additional cost.">
+        <strong>Sin reembolso</strong> una vez confirmada la atención médica.<br><br>
+        <strong>Consultorio privado:</strong> reembolso aplicable únicamente si la cancelación se realiza con más de <strong>3 horas de anticipación</strong>. Con menos de 3 horas: no reembolsable.<br><br>
+        <strong>Reservación:</strong> anticipo mínimo del 50% vía transferencia bancaria para confirmar cita.<br><br>
+        <strong>International Clinical Summary</strong> bilingüe disponible a solicitud con costo adicional.
+      </p>
+    </div>
+  </div>
+  <div class="important-note reveal" style="margin-top:6px"
+    data-es="<strong>Privacidad (LFPDPPP):</strong> La información personal y clínica es estrictamente confidencial. Aviso de Privacidad disponible a solicitud. · <strong>Prescripciones:</strong> Todas las consultas incluyen receta válida en las principales cadenas de farmacias y para reclamos de seguros de viaje. · <strong>Alcance:</strong> Atención estrictamente ambulatoria de medicina general."
+    data-en="<strong>Privacy (LFPDPPP):</strong> Your personal and clinical information is strictly confidential. Full Privacy Notice available upon request. · <strong>Prescriptions:</strong> All consultations include a prescription valid at major pharmacies and for travel insurance claims. · <strong>Scope:</strong> Strictly outpatient general medicine services.">
+    <strong>Privacidad (LFPDPPP):</strong> La información personal y clínica es estrictamente confidencial. Aviso de Privacidad disponible a solicitud. · <strong>Prescripciones:</strong> Todas las consultas incluyen receta válida en las principales cadenas de farmacias y para reclamos de seguros de viaje. · <strong>Alcance:</strong> Atención estrictamente ambulatoria de medicina general.
+  </div>
+</section>
+
+<!-- ══ COFEPRIS BAR ════════════════════════════ -->
+<div class="cofepris-bar reveal">
+  <span data-es="Aviso de publicidad COFEPRIS: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional: 14848636 · Medicina General · CDMX, México"
+        data-en="COFEPRIS Advertising Notice: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Medical License: 14848636 · General Medicine · Mexico City, Mexico">
+    Aviso de publicidad COFEPRIS: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional: 14848636 · Medicina General · CDMX, México
+  </span>
+</div>
+
+<!-- ══ CONTACT ══════════════════════════════════ -->
+<section class="contact-section" id="contacto">
+  <div class="contact-logo-wrap">
+    <div class="brand-logo" style="align-items:center;">
+      <div class="dr-tag">DR.</div>
+      <div class="logo-frame">
+        <div class="logo-line1">CRISTÓBAL J.</div>
+        <div class="logo-line2"><span class="mic-icon">⚕</span>ORTEGA-ARENAS</div>
+      </div>
+      <div class="logo-sub" data-es="Médico e Investigador Clínico" data-en="Physician &amp; Clinical Researcher">Médico e Investigador Clínico</div>
+    </div>
+  </div>
+
+  <div class="contact-items">
+    <div class="contact-item">
+      <span class="contact-label" data-es="Teléfono / WhatsApp" data-en="Phone / WhatsApp">Teléfono / WhatsApp</span>
+      <a href="tel:+525951093969" class="contact-val">+52 595 109 3969</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</span>
+      <a href="mailto:cristobaljoa@icloud.com" class="contact-val">cristobaljoa@icloud.com</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label" data-es="Ubicaciones" data-en="Locations">Ubicaciones</span>
+      <span class="contact-val" style="font-size:0.88rem">Del Valle · Roma · Polanco · Santa Fe</span>
+    </div>
+  </div>
+
+  <!-- Instagram -->
+  <div style="margin-top:32px;">
+    <a href="https://www.instagram.com/dr.cristobalj.ortegaarenas?igsh=ODExYzl2OG90dmw0"
+       target="_blank" rel="noopener" class="instagram-link">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>@dr.cristobalj.ortegaarenas</span>
+    </a>
+  </div>
+
+  <p style="font-size:0.62rem;color:var(--muted);margin-top:40px;letter-spacing:0.1em"
+     data-es="Todos los honorarios en Pesos Mexicanos (MXN) · Atención bilingüe Español / English · CDMX 2026"
+     data-en="All fees in Mexican Pesos (MXN) · Bilingual care Spanish / English · Mexico City 2026">
+    Todos los honorarios en Pesos Mexicanos (MXN) · Atención bilingüe Español / English · CDMX 2026
+  </p>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════ -->
+<footer>
+  <div class="footer-logo-wrap">
+    <div class="brand-logo">
+      <div class="dr-tag">DR.</div>
+      <div class="logo-frame">
+        <div class="logo-line1">CRISTÓBAL J.</div>
+        <div class="logo-line2"><span class="mic-icon" style="font-size:0.48em">⚕</span>ORTEGA-ARENAS</div>
+      </div>
+    </div>
+  </div>
+  <p data-es="Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271" data-en="Medical License 14848636 · DGP 411305 · Spain Accreditation: Cred. No. 2025-17271">Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271</p>
+  <p data-es="Portafolio de Servicios Médicos 2026 · Aviso COFEPRIS: 2515192002A00033" data-en="Medical Services Portfolio 2026 · COFEPRIS Notice: 2515192002A00033">Portafolio de Servicios Médicos 2026 · Aviso COFEPRIS: 2515192002A00033</p>
+</footer>
+
+<script>
+/* ── LANGUAGE SYSTEM ─────────────────────── */
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  // Toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+  });
+
+  // Translate all elements with data-es / data-en
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text !== null) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.innerHTML = text;
+      }
+    }
+  });
+}
+
+/* ── SCROLL REVEAL ───────────────────────── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 65);
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+
+/* ── ACCORDION ───────────────────────────── */
+document.querySelectorAll('.proc-cat-header').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+</script>
+</body>
+</html>
