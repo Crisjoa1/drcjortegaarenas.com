@@ -219,6 +219,27 @@
   .instagram-link:hover { border-color:var(--border-hi); color:var(--white); }
   .instagram-link svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
 
+  /* ── WHATSAPP FLOAT CTA ──────────────────── */
+  .wa-float {
+    position:fixed; bottom:26px; right:26px; z-index:200;
+    display:inline-flex; align-items:center; gap:11px;
+    padding:12px 20px 12px 15px;
+    background:rgba(20,20,20,0.92); backdrop-filter:blur(14px);
+    border:1px solid var(--border-hi); border-radius:40px;
+    color:var(--offwhite); text-decoration:none;
+    font-family:'DM Sans',sans-serif; font-size:0.68rem; font-weight:400;
+    letter-spacing:0.14em; text-transform:uppercase;
+    box-shadow:0 10px 34px rgba(0,0,0,0.55);
+    transition:border-color 0.3s, transform 0.3s, background 0.3s;
+    animation:fadeUp 0.8s 1s ease both;
+  }
+  .wa-float:hover { border-color:var(--accent); transform:translateY(-2px); background:rgba(32,32,32,0.96); }
+  .wa-float svg { width:22px; height:22px; flex-shrink:0; }
+  @media(max-width:600px){
+    .wa-float { padding:13px; right:18px; bottom:18px; }
+    .wa-float .wa-label { display:none; }
+  }
+
   /* ── FOOTER ──────────────────────────────── */
   footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
@@ -771,6 +792,15 @@
   <p data-es="Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271" data-en="Medical License 14848636 · DGP 411305 · Spain Accreditation: Cred. No. 2025-17271">Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271</p>
   <p data-es="Portafolio de Servicios Médicos · Aviso COFEPRIS: 2515192002A00033" data-en="Medical Services Portfolio · COFEPRIS Notice: 2515192002A00033">Portafolio de Servicios Médicos · Aviso COFEPRIS: 2515192002A00033</p>
 </footer>
+
+<!-- ══ WHATSAPP FLOAT CTA ══════════════════════ -->
+<a class="wa-float" href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta."
+   target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill="#5fce7d" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.74c0 4.46-3.63 8.09-8.1 8.09-1.5 0-2.97-.4-4.25-1.17l-.3-.18-3.12.82.83-3.04-.2-.31a8.05 8.05 0 0 1-1.24-4.31c0-4.46 3.63-8.09 8.09-8.09zm-3.86 4.4c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46h-.52z"/>
+  </svg>
+  <span class="wa-label" data-es="Agendar cita" data-en="Book a visit">Agendar cita</span>
+</a>
 
 <script>
 /* ── LANGUAGE SYSTEM ─────────────────────── */
