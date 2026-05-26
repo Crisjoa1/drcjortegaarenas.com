@@ -119,12 +119,20 @@
 <script>
 function setLang(lang){
   document.documentElement.lang=lang;
+  try{ localStorage.setItem('lang',lang); }catch(e){}
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang));
   document.querySelectorAll('[data-es]').forEach(el=>{
     const t=el.getAttribute('data-'+lang);
     if(t!==null) el.innerHTML=t;
   });
 }
+// Auto-detecta el idioma del paciente: preferencia guardada > idioma del navegador (inglés => EN, resto => ES)
+(function(){
+  var saved;
+  try{ saved = localStorage.getItem('lang'); }catch(e){}
+  var lang = saved || (((navigator.language||navigator.userLanguage||'es').toLowerCase().indexOf('en')===0) ? 'en' : 'es');
+  if(lang==='en') setLang('en');
+})();
 </script>
 </body>
 </html>
