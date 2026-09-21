@@ -63,8 +63,8 @@
 <nav>
   <a href="/" class="brand">Dr. Cristóbal J. Ortega-Arenas<span data-es="Médico e Investigador Clínico" data-en="Physician &amp; Clinical Researcher">Médico e Investigador Clínico</span></a>
   <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button type="button" class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button type="button" class="lang-btn" onclick="setLang('en')">EN</button>
   </div>
 </nav>
 
@@ -110,7 +110,7 @@
 
   <div class="note" data-es="<strong>Tus estudios médicos:</strong> dentro del Cuestionario de Salud encontrarás un apartado para adjuntar archivos (PDF o Word) de tus análisis, recetas o estudios previos. Tu información es estrictamente confidencial. Consulta nuestro <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Aviso de Privacidad</a>."
        data-en="<strong>Your medical records:</strong> inside the Health Questionnaire you'll find a section to attach files (PDF or Word) of your lab results, prescriptions, or prior studies. Your information is strictly confidential. See our <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Privacy Notice</a>.">
-    <strong>Tus estudios médicos:</strong> dentro del Cuestionario de Salud encontrarás un apartado para adjuntar archivos (PDF o Word) de tus análisis, recetas o estudios previos. Tu información es estrictamente confidencial. Consulta nuestro <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Aviso de Privacidad</a>.
+    <strong>Tus estudios médicos:</strong> dentro del Cuestionario de Salud encontrarás un apartado para adjuntar archivos (PDF o Word) de tus análisis, recetas o estudios previos. Tu información es estrictamente confidencial. Consulta nuestro <a href="/aviso-de-privacidad/" style="color:var(--accent)">Aviso de Privacidad</a>.
   </div>
 
   <a class="back" href="/" data-es="← Volver al sitio" data-en="← Back to site">← Volver al sitio</a>
@@ -119,7 +119,7 @@
 <script>
 function setLang(lang){
   document.documentElement.lang=lang;
-  try{ localStorage.setItem('lang',lang); }catch(e){}
+  try{ localStorage.setItem('lang',lang); }catch { /* localStorage no disponible */ }
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang));
   document.querySelectorAll('[data-es]').forEach(el=>{
     const t=el.getAttribute('data-'+lang);
@@ -129,7 +129,7 @@ function setLang(lang){
 // Auto-detecta el idioma del paciente: preferencia guardada > idioma del navegador (inglés => EN, resto => ES)
 (function(){
   var saved;
-  try{ saved = localStorage.getItem('lang'); }catch(e){}
+  try{ saved = localStorage.getItem('lang'); }catch { /* localStorage no disponible */ }
   var lang = saved || (((navigator.language||navigator.userLanguage||'es').toLowerCase().indexOf('en')===0) ? 'en' : 'es');
   if(lang==='en') setLang('en');
 })();
