@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://drcjortegaarenas.com/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://drcjortegaarenas.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/en/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://drcjortegaarenas.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/formularios/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/aviso-de-privacidad/</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+</urlset>
