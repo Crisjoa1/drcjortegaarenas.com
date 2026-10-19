@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dr. Cristóbal J. Ortega-Arenas — Hoja para recepción / Front-desk sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:8.5in; height:11in; }
+  body { font-family:'DM Sans',sans-serif; font-weight:400; color:#141414; background:#fff; font-size:9pt; line-height:1.36; }
+  .page { padding:0.42in 0.55in 0.34in; height:11in; display:flex; flex-direction:column; }
+  .serif { font-family:'Bodoni Moda',serif; }
+  .muted { color:#5c5852; }
+  header { display:flex; justify-content:space-between; align-items:center; border-bottom:1.2pt solid #0a0a0a; padding-bottom:9pt; }
+  header svg { width:2in; height:auto; display:block; }
+  header .tag { text-align:right; font-size:7.6pt; letter-spacing:0.16em; text-transform:uppercase; color:#5c5852; line-height:1.7; }
+  h1 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:20pt; line-height:1.15; margin:10pt 0 1pt; }
+  h1 em { font-style:italic; color:#5c5852; }
+  .contact { display:flex; gap:18pt; align-items:center; border:0.8pt solid #c9c4bd; padding:9pt 14pt; margin:9pt 0; }
+  .contact .qr { width:1.15in; height:1.15in; flex-shrink:0; }
+  .contact .qr svg { width:100%; height:100%; display:block; }
+  .contact .lines { flex:1; }
+  .lab { font-size:6.8pt; letter-spacing:0.18em; text-transform:uppercase; color:#5c5852; display:block; }
+  .big { font-family:'Bodoni Moda',serif; font-size:19pt; line-height:1.15; margin-bottom:6pt; display:block; }
+  .mid { font-size:10pt; font-weight:500; display:block; margin-bottom:5pt; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:18pt; }
+  h2 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:11.5pt; margin:0 0 4pt; border-bottom:0.6pt solid #c9c4bd; padding-bottom:3pt; }
+  .en h2, .en p, .en li { color:#3a3733; }
+  ol, ul { padding-left:12pt; margin-bottom:6pt; }
+  li { margin-bottom:1.5pt; }
+  p { margin-bottom:6pt; }
+  table { width:100%; border-collapse:collapse; margin:4pt 0 4pt; }
+  th { font-size:6.8pt; letter-spacing:0.14em; text-transform:uppercase; color:#5c5852; text-align:left; padding:0 0 4pt; border-bottom:0.8pt solid #0a0a0a; font-weight:500; }
+  td { padding:4pt 0; border-bottom:0.5pt solid #ddd8d1; vertical-align:top; }
+  td small { display:block; font-size:7.6pt; color:#5c5852; }
+  .num { text-align:right; font-family:'Bodoni Moda',serif; font-size:13pt; white-space:nowrap; padding-left:10pt; }
+  th.num { font-family:'DM Sans',sans-serif; font-size:6.8pt; }
+  .zones { font-size:8.2pt; margin:4pt 0 0; }
+  .zones b { font-weight:500; }
+  .alert { border:1pt solid #8a3b2b; border-left:3pt solid #8a3b2b; padding:7pt 12pt; margin:8pt 0 0; font-size:8.8pt; }
+  .alert b { font-weight:500; }
+  footer { margin-top:auto; border-top:0.6pt solid #c9c4bd; padding-top:7pt; font-size:7.2pt; color:#5c5852; display:flex; justify-content:space-between; gap:12pt; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <!--LOGO_SVG-->
+    <div class="tag">Médico general bilingüe · CDMX<br>Bilingual general physician · Mexico City</div>
+  </header>
+
+  <h1>Visita médica en hotel <em>/ Hotel medical visits</em></h1>
+  <p class="muted">Para recepción y concierges · For the front desk and concierges</p>
+
+  <div class="contact">
+    <div class="qr"><!--QR_SVG--></div>
+    <div class="lines">
+      <span class="lab">WhatsApp · Teléfono / Phone</span>
+      <span class="big">+52 595 109 3969</span>
+      <span class="lab">Reservar en línea / Book online</span>
+      <span class="mid">cal.com/drcjortegaarenas/visita-en-hotel</span>
+      <span class="lab">Información completa / Full information</span>
+      <span class="mid">drcjortegaarenas.com/hoteles · drcjortegaarenas.com/en/hotels</span>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Cómo solicitar</h2>
+      <ol>
+        <li>Escriba por WhatsApp o reserve en línea.</li>
+        <li>Envíe: hotel y dirección, número de habitación, nombre del huésped, idioma y un teléfono de contacto. No envíe detalles médicos por mensaje.</li>
+        <li>Se confirma disponibilidad y tarifa. Llegada estimada: <b>30 a 45 min</b>, según el tráfico.</li>
+        <li>Pago directo al médico en MXN: tarjeta, transferencia o efectivo.</li>
+      </ol>
+      <h2>Documentos para el seguro</h2>
+      <ul>
+        <li>Receta por escrito, cuando hay tratamiento.</li>
+        <li>Factura (CFDI) o comprobante de reembolso, solo con pago con tarjeta.</li>
+        <li>Resumen Clínico del Viajero en inglés, con costo adicional.</li>
+      </ul>
+    </div>
+    <div class="en">
+      <h2>How to request</h2>
+      <ol>
+        <li>Message via WhatsApp or book online.</li>
+        <li>Send: hotel and address, room number, guest name, language and a contact phone. Do not send medical details by message.</li>
+        <li>Availability and fee are confirmed. Estimated arrival: <b>30–45 min</b>, depending on traffic.</li>
+        <li>Paid directly to the doctor in MXN: card, bank transfer or cash.</li>
+      </ol>
+      <h2>Insurance documents</h2>
+      <ul>
+        <li>Written prescription, when treatment is indicated.</li>
+        <li>Tax invoice (CFDI) or reimbursement receipt, card payments only.</li>
+        <li>English-language Travel Clinical Summary, additional fee.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 style="margin-top:4pt">Tarifas por visita (MXN) / Fees per visit (MXN)</h2>
+  <!--PRECIOS_PDF-->
+  <p class="zones"><!--ZONAS_PDF--></p>
+  <p class="zones muted">Festivos: solo por WhatsApp · Holidays: WhatsApp only. Otras zonas: consulte · Other areas: please ask.</p>
+
+  <div class="alert"><b>No es un servicio de urgencias.</b> Ante dolor en el pecho, dificultad para respirar, pérdida del conocimiento, sangrado abundante u otra emergencia, llame al <b>911</b>.<br><b>Not an emergency service.</b> For chest pain, trouble breathing, loss of consciousness, heavy bleeding or any other emergency, call <b>911</b>.</div>
+
+  <footer>
+    <span>Dr. Cristóbal J. Ortega-Arenas · Médico Cirujano, UNAM · Cédula Prof. 14848636 · Medicina General</span>
+    <span>Aviso de publicidad COFEPRIS: 2515192002A00033</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,16 +1,27 @@
-"""Genera index.html (español) y en/index.html (inglés) desde _tools/plantilla.html.
+"""Genera las páginas del sitio en español e inglés desde las plantillas de _tools/.
 
 Uso, desde la carpeta del repositorio:
     python3 _tools/build.py
 
-La plantilla es la única fuente: cada texto lleva data-es y data-en. Este
-script elige el idioma, rellena la cabecera (title, description, hreflang,
-Open Graph) y los datos estructurados, y escribe las dos páginas.
+  plantilla.html                → index.html y en/index.html
+  plantilla-hoteles.html        → hoteles/index.html y en/hotels/index.html
+  plantilla-hoja-recepcion.html → assets/hoja-recepcion-hoteles.pdf (con Google Chrome)
+
+Las plantillas son la única fuente: cada texto lleva data-es y data-en, y los
+enlaces que cambian con el idioma llevan data-href-en. Este script elige el
+idioma, rellena la cabecera (title, description, hreflang, Open Graph) y los
+datos estructurados, y escribe las páginas. La página de hoteles copia los
+estilos y la tabla de tarifas de plantilla.html, así que los precios solo se
+editan en un lugar (la tarjeta marcada con data-tarifas-hotel).
 GitHub Pages no publica las carpetas que empiezan con "_", así que _tools/
 no aparece en la web.
 """
+import hashlib
 import json
 import pathlib
+import shutil
+import subprocess
+import tempfile
 
 from bs4 import BeautifulSoup
 
@@ -44,13 +55,50 @@ META = {
     },
 }
 
+META_HOTELES = {
+    'es': {
+        'path': '/hoteles/',
+        'html_lang': 'es-MX',
+        'title': 'Médico a hotel en CDMX: información para hoteles y concierges',
+        'description': 'Cómo solicitar una visita médica bilingüe para un huésped en la Ciudad de México: '
+                       'WhatsApp o reserva en línea, llegada estimada de 30 a 45 minutos, tarifas por zona y '
+                       'horario, y documentos para el seguro de viaje.',
+        'og_title': 'Para hoteles y concierges — Dr. Cristóbal J. Ortega-Arenas',
+        'og_locale': 'es_MX', 'og_alt': 'en_US',
+        'crumb': 'Para hoteles y concierges', 'home': 'Inicio',
+    },
+    'en': {
+        'path': '/en/hotels/',
+        'html_lang': 'en',
+        'title': 'Hotel Doctor in Mexico City: Information for Hotels & Concierges',
+        'description': 'How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or '
+                       'online booking, estimated arrival in 30–45 minutes, fees by zone and time of day, and '
+                       'documents for travel insurance.',
+        'og_title': 'For hotels & concierges — Dr. Cristóbal J. Ortega-Arenas',
+        'og_locale': 'en_US', 'og_alt': 'es_MX',
+        'crumb': 'For hotels & concierges', 'home': 'Home',
+    },
+}
+
+PAGES = [
+    {'template': 'plantilla.html', 'meta': META,
+     'out': {'es': 'index.html', 'en': 'en/index.html'}},
+    {'template': 'plantilla-hoteles.html', 'meta': META_HOTELES,
+     'out': {'es': 'hoteles/index.html', 'en': 'en/hotels/index.html'}},
+]
+
+PDF_OUT = ROOT / 'assets' / 'hoja-recepcion-hoteles.pdf'
+PDF_HASH = ROOT / '_tools' / '.hoja-recepcion.sha256'
+CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+
 AREAS = ['Polanco', 'Roma', 'Condesa', 'Del Valle', 'Santa Fe', 'Reforma', 'Coyoacán', 'Pedregal',
          'Centro Histórico', 'Texcoco']
 
 
-def head_meta(lang):
-    m = META[lang]
+def head_meta(meta, lang):
+    m = meta[lang]
     url = SITE + m['path']
+    es_url, en_url = SITE + meta['es']['path'], SITE + meta['en']['path']
     esc = lambda t: t.replace('&', '&amp;').replace('"', '&quot;')
     lines = [
         f'<title>{esc(m["title"])}</title>',
@@ -58,9 +106,9 @@ def head_meta(lang):
         '<meta name="author" content="Dr. Cristóbal J. Ortega-Arenas">',
         '<meta name="robots" content="index, follow">',
         f'<link rel="canonical" href="{url}">',
-        f'<link rel="alternate" hreflang="es-MX" href="{SITE}/">',
-        f'<link rel="alternate" hreflang="en" href="{SITE}/en/">',
-        f'<link rel="alternate" hreflang="x-default" href="{SITE}/">',
+        f'<link rel="alternate" hreflang="es-MX" href="{es_url}">',
+        f'<link rel="alternate" hreflang="en" href="{en_url}">',
+        f'<link rel="alternate" hreflang="x-default" href="{es_url}">',
         '<meta name="theme-color" content="#0a0a0a">',
         '<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">',
         '<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">',
@@ -123,12 +171,56 @@ def faq(soup):
     return jsonld({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': items})
 
 
-def build(lang):
-    src = (ROOT / '_tools' / 'plantilla.html').read_text(encoding='utf-8')
-    src = src.replace('<!--HEAD_META-->\n', head_meta(lang))
-    src = src.replace('<!--PHYSICIAN_JSONLD-->\n', physician(lang))
+def breadcrumb(meta, lang):
+    m = meta[lang]
+    return jsonld({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': m['home'], 'item': SITE + META[lang]['path']},
+            {'@type': 'ListItem', 'position': 2, 'name': m['crumb'], 'item': SITE + m['path']},
+        ],
+    })
+
+
+def main_template():
+    return (ROOT / '_tools' / 'plantilla.html').read_text(encoding='utf-8')
+
+
+def base_css():
+    """Los estilos de plantilla.html, para que todas las páginas se vean igual."""
+    src = main_template()
+    return src[src.index('<style>') + len('<style>'):src.index('</style>')].strip('\n') + '\n'
+
+
+def hotel_card():
+    """La tarjeta de hoteles de plantilla.html: la única fuente de las tarifas."""
+    card = BeautifulSoup(main_template(), 'html.parser').select_one('[data-tarifas-hotel]')
+    if card is None:
+        raise SystemExit('No encuentro la tarjeta con data-tarifas-hotel en plantilla.html')
+    return card.select_one('table.price-table'), card.select_one('.zone-badges')
+
+
+def hotel_prices_html():
+    table, zones = hotel_card()
+    return f'{table}\n{zones}\n'
+
+
+def render(page, lang):
+    meta = page['meta']
+    src = (ROOT / '_tools' / page['template']).read_text(encoding='utf-8')
+    fills = {
+        '<!--HEAD_META-->\n': lambda: head_meta(meta, lang),
+        '<!--PHYSICIAN_JSONLD-->\n': lambda: physician(lang),
+        '<!--BREADCRUMB_JSONLD-->\n': lambda: breadcrumb(meta, lang),
+        '<!--BASE_CSS-->\n': base_css,
+        '<!--HOTEL_PRICES-->\n': hotel_prices_html,
+    }
+    for mark, fill in fills.items():
+        if mark in src:
+            src = src.replace(mark, fill())
     soup = BeautifulSoup(src, 'html.parser')
-    soup.html['lang'] = META[lang]['html_lang']
+    soup.html['lang'] = meta[lang]['html_lang']
     missing = []
     for el in soup.select('[data-es]'):
         text = el.get('data-' + lang)
@@ -144,15 +236,84 @@ def build(lang):
         if lang == 'en':
             el['alt'] = el['data-alt-en']
         del el['data-alt-en']
+    for el in soup.select('[data-href-en]'):
+        if lang == 'en':
+            el['href'] = el['data-href-en']
+        del el['data-href-en']
+    for el in soup.select('[data-tarifas-hotel]'):
+        del el['data-tarifas-hotel']
     if missing:
         raise SystemExit('Falta traducción en:\n' + '\n'.join(missing))
-    html = str(soup).replace('<!--FAQ_JSONLD-->', faq(soup).rstrip('\n'))
-    out = ROOT / ('index.html' if lang == 'es' else 'en/index.html')
-    out.parent.mkdir(exist_ok=True)
+    html = str(soup)
+    if '<!--FAQ_JSONLD-->' in html:
+        html = html.replace('<!--FAQ_JSONLD-->', faq(soup).rstrip('\n'))
+    out = ROOT / page['out'][lang]
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding='utf-8')
     print(f'{lang}: {out.relative_to(ROOT)} ({len(html):,} bytes)')
 
 
+def bilingual(td):
+    """'Ordinario<br><span>Lun–Vie…</span>' en ES y EN → filas para la hoja impresa."""
+    parts = {}
+    for lang in ('es', 'en'):
+        cell = BeautifulSoup(td['data-' + lang], 'html.parser')
+        span = cell.find('span')
+        hours = span.get_text(' ', strip=True) if span else ''
+        if span:
+            span.extract()
+        parts[lang] = (cell.get_text(' ', strip=True), hours)
+    return parts
+
+
+def pdf_html():
+    table, zones = hotel_card()
+    rows = []
+    for tr in table.select('tbody tr'):
+        tds = tr.find_all('td')
+        p = bilingual(tds[0])
+        rows.append(f'<tr><td>{p["es"][0]} / {p["en"][0]}<small>{p["es"][1]} · {p["en"][1]}</small></td>'
+                    f'<td class="num">{tds[1].get_text(strip=True)}</td>'
+                    f'<td class="num">{tds[2].get_text(strip=True)}</td></tr>')
+    precios = ('<table><thead><tr><th>Horario / Hours</th><th class="num">Zona A / Zone A</th>'
+               '<th class="num">Zona B / Zone B</th></tr></thead><tbody>\n' + '\n'.join(rows) + '\n</tbody></table>')
+    zonas = []
+    for z in zones.select('.zone-badge'):
+        letter = z.strong.extract().get_text(strip=True)
+        zonas.append(f'<b>Zona {letter} / Zone {letter}:</b> {z.get_text(" ", strip=True)}')
+    zonas = ' &nbsp;·&nbsp; '.join(zonas)
+    logo = (ROOT / 'assets' / 'logo-white.svg').read_text(encoding='utf-8').replace('#f2efe9', '#0a0a0a')
+    qr = (ROOT / 'assets' / 'qr-whatsapp-hoteles.svg').read_text(encoding='utf-8')
+    src = (ROOT / '_tools' / 'plantilla-hoja-recepcion.html').read_text(encoding='utf-8')
+    return (src.replace('<!--LOGO_SVG-->', logo).replace('<!--QR_SVG-->', qr)
+               .replace('<!--PRECIOS_PDF-->', precios).replace('<!--ZONAS_PDF-->', zonas))
+
+
+def build_pdf():
+    """Imprime la hoja para recepción con Chrome, solo si su contenido cambió
+    (cada PDF lleva fecha de creación, y así git no registra cambios vacíos)."""
+    html = pdf_html()
+    digest = hashlib.sha256(html.encode('utf-8')).hexdigest()
+    if PDF_OUT.exists() and PDF_HASH.exists() and PDF_HASH.read_text().strip() == digest:
+        print(f'pdf: {PDF_OUT.relative_to(ROOT)} sin cambios')
+        return
+    if not pathlib.Path(CHROME).exists():
+        print('AVISO: no encontré Google Chrome; la hoja PDF para recepción no se actualizó.')
+        return
+    with tempfile.TemporaryDirectory() as tmp:
+        src = pathlib.Path(tmp) / 'hoja.html'
+        src.write_text(html, encoding='utf-8')
+        tmp_pdf = pathlib.Path(tmp) / 'hoja.pdf'
+        subprocess.run([CHROME, '--headless', '--disable-gpu', '--no-pdf-header-footer',
+                        '--virtual-time-budget=8000', f'--print-to-pdf={tmp_pdf}', src.as_uri()],
+                       check=True, capture_output=True)
+        shutil.copyfile(tmp_pdf, PDF_OUT)
+    PDF_HASH.write_text(digest + '\n')
+    print(f'pdf: {PDF_OUT.relative_to(ROOT)} ({PDF_OUT.stat().st_size:,} bytes)')
+
+
 if __name__ == '__main__':
-    build('es')
-    build('en')
+    for page in PAGES:
+        render(page, 'es')
+        render(page, 'en')
+    build_pdf()

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--HEAD_META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+<!--BASE_CSS-->
+  /* ── Página para hoteles ─────────────────── */
+  .page-hero { padding:150px 48px 64px; max-width:1200px; margin:0 auto; }
+  .page-hero .hero-badge { animation:none; margin-bottom:28px; }
+  .page-h1 { font-family:'Bodoni Moda',serif; font-weight:300; font-size:clamp(2rem,4.4vw,3.4rem); line-height:1.1; color:var(--white); margin-bottom:18px; }
+  .page-h1 em { font-style:italic; color:var(--accent); }
+  .page-lead { font-size:0.86rem; color:var(--silver); max-width:620px; line-height:1.85; margin-bottom:34px; }
+  .page-hero .hero-ctas { justify-content:flex-start; margin-bottom:0; }
+  .page-hero .hero-cta { animation:none; }
+  .breadcrumb { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
+  .breadcrumb a { color:var(--silver); text-decoration:none; }
+  .emergency-note { border:1px solid rgba(180,80,60,0.35); border-left:2px solid #b87868; background:rgba(180,80,60,0.06); padding:18px 22px; margin-top:28px; font-size:0.74rem; color:var(--silver); line-height:1.8; }
+  .emergency-note strong { color:var(--white); font-weight:500; }
+  .hotel-prices { border:1px solid var(--border); background:var(--card); padding:36px; }
+  .doc-list { list-style:none; }
+  .doc-list li { font-size:0.76rem; color:var(--muted); padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:12px; line-height:1.75; }
+  .doc-list li:last-child { border-bottom:none; }
+  .doc-list li::before { content:'+'; color:var(--accent); flex-shrink:0; }
+  .doc-list strong { color:var(--silver); font-weight:500; }
+  .pdf-card { display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .pdf-card p { max-width:560px; }
+  .footer-links { display:flex; gap:16px; flex-wrap:wrap; }
+  .footer-links a { color:var(--silver); text-decoration:none; }
+  @media(max-width:900px){
+    .page-hero { padding:116px 20px 44px; }
+    .hotel-prices { padding:24px 18px; }
+    .page-hero .hero-ctas { flex-direction:column; align-items:stretch; }
+    .page-hero .hero-cta { padding:15px 20px; }
+    .pdf-card .hero-cta { width:100%; }
+  }
+  @media(max-width:420px){
+    .price-table th, .price-table td { font-size:0.68rem; }
+    .price-col { font-size:0.92rem; padding-left:8px !important; }
+  }
+</style>
+<!--PHYSICIAN_JSONLD-->
+<!--BREADCRUMB_JSONLD-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LN7Z5TM576"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LN7Z5TM576');
+</script>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════ -->
+<nav>
+  <a href="/" data-href-en="/en/" class="nav-logo-wrap" style="text-decoration:none;">
+    <img src="/assets/logo-white.svg" alt="Dr. Cristóbal J. Ortega-Arenas — Médico e Investigador Clínico" class="logo-img logo-nav" width="872" height="280">
+  </a>
+  <div class="nav-right">
+    <div class="nav-links" id="nav-links">
+      <a href="#solicitar" data-es="Cómo solicitar" data-en="How to request">Cómo solicitar</a>
+      <a href="#tarifas" data-es="Tarifas" data-en="Fees">Tarifas</a>
+      <a href="#documentos" data-es="Documentos" data-en="Documents">Documentos</a>
+      <a href="#recepcion" data-es="Hoja para recepción" data-en="Front-desk sheet">Hoja para recepción</a>
+      <a href="/" data-href-en="/en/" data-es="Sitio principal" data-en="Main site">Sitio principal</a>
+    </div>
+    <div class="lang-toggle">
+      <a href="/hoteles/" class="lang-btn" data-lang="es" hreflang="es-MX" lang="es">ES</a>
+      <a href="/en/hotels/" class="lang-btn" data-lang="en" hreflang="en" lang="en">EN</a>
+    </div>
+    <button type="button" class="nav-menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Menú" data-es="☰" data-en="☰">☰</button>
+  </div>
+</nav>
+
+<!-- ══ ENCABEZADO ════════════════════════════ -->
+<header class="page-hero">
+  <p class="breadcrumb"><a href="/" data-href-en="/en/" data-es="Inicio" data-en="Home">Inicio</a> · <span data-es="Para hoteles y concierges" data-en="For hotels &amp; concierges">Para hoteles y concierges</span></p>
+  <div class="hero-badge" data-es="Para hoteles y concierges · CDMX" data-en="For hotels &amp; concierges · Mexico City">Para hoteles y concierges · CDMX</div>
+  <h1 class="page-h1" data-es="Médico en su hotel: <em>información para concierges</em>" data-en="A doctor at your hotel: <em>information for concierges</em>">Médico en su hotel: <em>información para concierges</em></h1>
+  <p class="page-lead" data-es="Cómo solicitar una visita médica bilingüe (español/inglés) para un huésped, cuánto cuesta según la zona y el horario, y qué documentos recibe para su seguro de viaje. Medicina general ambulatoria." data-en="How to request a bilingual (English/Spanish) medical visit for a guest, what it costs by zone and time of day, and which documents the guest receives for travel insurance. Outpatient general medicine.">Cómo solicitar una visita médica bilingüe (español/inglés) para un huésped, cuánto cuesta según la zona y el horario, y qué documentos recibe para su seguro de viaje. Medicina general ambulatoria.</p>
+  <div class="hero-ctas">
+    <a href="https://wa.me/525951093969?text=Hola%2C%20solicito%20una%20visita%20m%C3%A9dica%20en%20hotel." data-href-en="https://wa.me/525951093969?text=Hello%2C%20I%27d%20like%20to%20request%20a%20hotel%20medical%20visit." target="_blank" rel="noopener" class="hero-cta" data-es="WhatsApp +52 595 109 3969" data-en="WhatsApp +52 595 109 3969">WhatsApp +52 595 109 3969</a>
+    <a href="https://cal.com/drcjortegaarenas/visita-en-hotel" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Reservar visita en hotel" data-en="Book a hotel visit">Reservar visita en hotel</a>
+  </div>
+  <div class="emergency-note" data-es="<strong>No es un servicio de urgencias.</strong> Si el huésped tiene dolor en el pecho, dificultad para respirar, pérdida del conocimiento, sangrado abundante, signos de un evento vascular cerebral o cualquier otra emergencia, llame al <strong>911</strong> o trasládelo a urgencias hospitalarias." data-en="<strong>This is not an emergency service.</strong> If the guest has chest pain, trouble breathing, loss of consciousness, heavy bleeding, signs of a stroke or any other emergency, call <strong>911</strong> or take them to a hospital emergency room."><strong>No es un servicio de urgencias.</strong> Si el huésped tiene dolor en el pecho, dificultad para respirar, pérdida del conocimiento, sangrado abundante, signos de un evento vascular cerebral o cualquier otra emergencia, llame al <strong>911</strong> o trasládelo a urgencias hospitalarias.</div>
+</header>
+
+<div class="sep"></div>
+
+<!-- ══ CÓMO SOLICITAR ════════════════════════ -->
+<section class="section" id="solicitar">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Paso a paso" data-en="Step by step">Paso a paso</p>
+    <h2 class="section-title" data-es="Cómo <em>solicitar</em> al médico" data-en="How to <em>request</em> the doctor">Cómo <em>solicitar</em> al médico</h2>
+  </div>
+  <div class="payment-grid">
+    <div class="payment-card reveal">
+      <p class="service-num">01</p>
+      <h3 data-es="Escriba o reserve" data-en="Message or book">Escriba o reserve</h3>
+      <p data-es="Por <strong>WhatsApp al +52 595 109 3969</strong>, o en línea en <strong>cal.com/drcjortegaarenas/visita-en-hotel</strong>. Lo puede hacer el concierge o el propio huésped." data-en="Via <strong>WhatsApp at +52 595 109 3969</strong>, or online at <strong>cal.com/drcjortegaarenas/visita-en-hotel</strong>. Either the concierge or the guest can request it.">Por <strong>WhatsApp al +52 595 109 3969</strong>, o en línea en <strong>cal.com/drcjortegaarenas/visita-en-hotel</strong>. Lo puede hacer el concierge o el propio huésped.</p>
+    </div>
+    <div class="payment-card reveal">
+      <p class="service-num">02</p>
+      <h3 data-es="Envíe estos datos" data-en="Send these details">Envíe estos datos</h3>
+      <p data-es="Nombre y dirección del hotel, número de habitación, nombre del huésped, idioma preferido y un teléfono de contacto. No es necesario enviar detalles médicos por mensaje: se tratan en la consulta." data-en="Hotel name and address, room number, guest name, preferred language and a contact phone number. There is no need to send medical details by message: they are discussed during the visit.">Nombre y dirección del hotel, número de habitación, nombre del huésped, idioma preferido y un teléfono de contacto. No es necesario enviar detalles médicos por mensaje: se tratan en la consulta.</p>
+    </div>
+    <div class="payment-card reveal">
+      <p class="service-num">03</p>
+      <h3 data-es="Confirmación y llegada" data-en="Confirmation and arrival">Confirmación y llegada</h3>
+      <p data-es="Se confirma la disponibilidad y la tarifa que aplica según zona, horario y día. Tiempo estimado de llegada: <strong>30 a 45 minutos</strong>, según el tráfico." data-en="Availability and the applicable fee (by zone, time and day) are confirmed. Estimated arrival time: <strong>30–45 minutes</strong>, depending on traffic.">Se confirma la disponibilidad y la tarifa que aplica según zona, horario y día. Tiempo estimado de llegada: <strong>30 a 45 minutos</strong>, según el tráfico.</p>
+    </div>
+    <div class="payment-card reveal">
+      <p class="service-num">04</p>
+      <h3 data-es="Consulta y pago" data-en="Visit and payment">Consulta y pago</h3>
+      <p data-es="La consulta es en la habitación y se paga directamente al médico en pesos mexicanos: tarjeta (terminal portátil), transferencia o efectivo. En la primera consulta, el huésped puede llenar antes los formularios en drcjortegaarenas.com/formularios." data-en="The visit takes place in the room and is paid directly to the doctor in Mexican pesos: card (portable terminal), bank transfer or cash. For a first visit, the guest can fill in the forms beforehand at drcjortegaarenas.com/formularios.">La consulta es en la habitación y se paga directamente al médico en pesos mexicanos: tarjeta (terminal portátil), transferencia o efectivo. En la primera consulta, el huésped puede llenar antes los formularios en drcjortegaarenas.com/formularios.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ TARIFAS Y HORARIOS ═════════════════════ -->
+<section class="section" id="tarifas">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Honorarios en MXN" data-en="Fees in MXN">Honorarios en MXN</p>
+    <h2 class="section-title" data-es="Tarifas, zonas <em>&amp; horarios</em>" data-en="Fees, zones <em>&amp; hours</em>">Tarifas, zonas <em>&amp; horarios</em></h2>
+    <p class="section-subtitle" data-es="Precio por visita médica en el hotel, según la zona y el horario. Son los mismos honorarios publicados en el sitio principal." data-en="Fee per medical visit at the hotel, by zone and time of day. These are the same fees published on the main site.">Precio por visita médica en el hotel, según la zona y el horario. Son los mismos honorarios publicados en el sitio principal.</p>
+  </div>
+  <div class="hotel-prices reveal">
+<!--HOTEL_PRICES-->
+    <div class="important-note" data-es="<strong>Festivos oficiales y tradicionales:</strong> se coordinan únicamente por WhatsApp; no se reservan en línea. Fechas en el <a href='/#calendario' style='color:var(--silver)'>calendario</a>. Hay días sin servicio: confirme siempre la disponibilidad.<br><strong>Otras zonas:</strong> consulte por WhatsApp.<br><strong>No incluye</strong> procedimientos, certificados ni otros documentos, que tienen su propio costo publicado en <a href='/#procedimientos' style='color:var(--silver)'>Procedimientos</a>." data-en="<strong>Official and traditional holidays:</strong> arranged only via WhatsApp; not bookable online. Dates in the <a href='/en/#calendario' style='color:var(--silver)'>schedule</a>. Some dates have no service: always confirm availability.<br><strong>Other areas:</strong> ask via WhatsApp.<br><strong>Not included:</strong> procedures, certificates and other documents, which have their own published fees under <a href='/en/#procedimientos' style='color:var(--silver)'>Procedures</a>."><strong>Festivos oficiales y tradicionales:</strong> se coordinan únicamente por WhatsApp; no se reservan en línea.</div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ DOCUMENTOS ═══════════════════════════ -->
+<section class="section" id="documentos">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Seguro de viaje" data-en="Travel insurance">Seguro de viaje</p>
+    <h2 class="section-title" data-es="Documentos que <em>recibe el huésped</em>" data-en="Documents <em>the guest receives</em>">Documentos que <em>recibe el huésped</em></h2>
+    <p class="section-subtitle" data-es="Útiles para tramitar un reembolso con su aseguradora. La aceptación del reclamo depende de la póliza de cada huésped." data-en="Useful for an insurance reimbursement claim. Whether a claim is accepted depends on each guest's policy.">Útiles para tramitar un reembolso con su aseguradora. La aceptación del reclamo depende de la póliza de cada huésped.</p>
+  </div>
+  <div class="payment-card reveal">
+    <ul class="doc-list">
+      <li data-es="<span><strong>Receta médica por escrito</strong>, cuando hay tratamiento indicado.</span>" data-en="<span><strong>Written prescription</strong>, when treatment is indicated.</span>"><span><strong>Receta médica por escrito</strong>, cuando hay tratamiento indicado.</span></li>
+      <li data-es="<span><strong>Factura fiscal (CFDI) o comprobante para reembolso de seguro</strong>, solo si el pago es con tarjeta. Con transferencia o efectivo no se emiten comprobantes fiscales.</span>" data-en="<span><strong>Official tax invoice (CFDI) or insurance reimbursement receipt</strong>, only for card payments. No tax receipts are issued for bank transfers or cash.</span>"><span><strong>Factura fiscal (CFDI) o comprobante para reembolso de seguro</strong>, solo si el pago es con tarjeta. Con transferencia o efectivo no se emiten comprobantes fiscales.</span></li>
+      <li data-es="<span><strong>Resumen Clínico del Viajero en inglés</strong>, a solicitud y con costo adicional: $500 digital (PDF por correo) o $800 físico (entrega posterior).</span>" data-en="<span><strong>English-language Travel Clinical Summary</strong>, on request for an additional fee: $500 digital (PDF by email) or $800 printed (delivered after the visit).</span>"><span><strong>Resumen Clínico del Viajero en inglés</strong>, a solicitud y con costo adicional: $500 digital (PDF por correo) o $800 físico (entrega posterior).</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══ HOJA PARA RECEPCIÓN ═══════════════════ -->
+<section class="section" id="recepcion">
+  <div class="payment-card pdf-card reveal">
+    <div>
+      <p class="section-tag" data-es="Para imprimir" data-en="Printable">Para imprimir</p>
+      <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem)" data-es="Hoja para <em>recepción</em>" data-en="Front-desk <em>sheet</em>">Hoja para <em>recepción</em></h2>
+      <p data-es="Una página en español e inglés con contacto, código QR de WhatsApp, zonas, tarifas, documentos y avisos. Para tenerla a la mano en la recepción o en el escritorio del concierge." data-en="A single page in English and Spanish with contact details, a WhatsApp QR code, zones, fees, documents and notices. To keep at the front desk or the concierge desk.">Una página en español e inglés con contacto, código QR de WhatsApp, zonas, tarifas, documentos y avisos. Para tenerla a la mano en la recepción o en el escritorio del concierge.</p>
+    </div>
+    <a href="/assets/hoja-recepcion-hoteles.pdf" download class="hero-cta" style="margin-top:0;animation:none" data-es="Descargar PDF" data-en="Download PDF">Descargar PDF</a>
+  </div>
+</section>
+
+<!-- ══ COFEPRIS BAR ════════════════════════════ -->
+<div class="cofepris-bar">
+  <span data-es="Aviso de publicidad COFEPRIS: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional: 14848636 · Medicina General · CDMX, México"
+        data-en="COFEPRIS Advertising Notice: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Medical License: 14848636 · General Medicine · Mexico City, Mexico">
+    Aviso de publicidad COFEPRIS: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional: 14848636 · Medicina General · CDMX, México
+  </span>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════ -->
+<footer>
+  <div class="footer-logo-wrap">
+    <img src="/assets/logo-horizontal-white.svg" alt="Dr. Cristóbal J. Ortega-Arenas — Médico e Investigador Clínico" class="logo-img logo-footer" width="945" height="158" loading="lazy">
+  </div>
+  <p data-es="Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271" data-en="Professional License (Cédula) 14848636 · DGP 411305 · Degree recognition in Spain: Cred. No. 2025-17271">Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271</p>
+  <p data-es="Portafolio de Servicios Médicos · Aviso COFEPRIS: 2515192002A00033" data-en="Medical Services Portfolio · COFEPRIS Notice: 2515192002A00033">Portafolio de Servicios Médicos · Aviso COFEPRIS: 2515192002A00033</p>
+  <p class="footer-links">
+    <a href="/" data-href-en="/en/" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="/formularios/" data-es="Formularios" data-en="Forms">Formularios</a>
+    <a href="/aviso-de-privacidad/" data-es="Aviso de Privacidad" data-en="Privacy Notice">Aviso de Privacidad</a>
+  </p>
+</footer>
+
+<!-- ══ WHATSAPP FLOAT CTA ══════════════════════ -->
+<a class="wa-float" href="https://wa.me/525951093969?text=Hola%2C%20solicito%20una%20visita%20m%C3%A9dica%20en%20hotel." data-href-en="https://wa.me/525951093969?text=Hello%2C%20I%27d%20like%20to%20request%20a%20hotel%20medical%20visit."
+   target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill="#5fce7d" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.74c0 4.46-3.63 8.09-8.1 8.09-1.5 0-2.97-.4-4.25-1.17l-.3-.18-3.12.82.83-3.04-.2-.31a8.05 8.05 0 0 1-1.24-4.31c0-4.46 3.63-8.09 8.09-8.09zm-3.86 4.4c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.61-.66 1.84-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46h-.52z"/>
+  </svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+<a class="lang-hint" id="lang-hint" hidden></a>
+<script>
+/* ── IDIOMA: cada idioma tiene su propia URL (/hoteles/ y /en/hotels/) ── */
+(function(){
+  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+    b.addEventListener('click', () => { try { localStorage.setItem('lang', b.dataset.lang); } catch { /* sin almacenamiento */ } });
+  });
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch { /* sin almacenamiento */ }
+  const nav = (navigator.language || '').toLowerCase();
+  const hint = document.getElementById('lang-hint');
+  if (!saved && lang === 'es' && nav.startsWith('en')) { hint.href = '/en/hotels/'; hint.textContent = 'View in English →'; hint.hidden = false; }
+  if (!saved && lang === 'en' && nav.startsWith('es')) { hint.href = '/hoteles/'; hint.textContent = 'Ver en español →'; hint.hidden = false; }
+})();
+
+/* ── MENÚ MÓVIL ──────────────────────────── */
+(function(){
+  const btn = document.querySelector('.nav-menu-btn');
+  const links = document.getElementById('nav-links');
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); btn.setAttribute('aria-expanded', 'false');
+  }));
+})();
+
+/* ── SCROLL REVEAL ───────────────────────── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 65);
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
