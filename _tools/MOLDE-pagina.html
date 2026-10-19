@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  MOLDE para páginas de servicio y guías. Copiar como _tools/plantilla-<nombre>.html
+  y registrar la página con un _tools/paginas/<nombre>.json (ver paginas/LEEME.md).
+
+  Reglas:
+  - Todo texto visible va en atributos data-es="…" data-en="…" y el elemento queda vacío:
+        <p data-es="Texto en español" data-en="English text"></p>
+    (build.py rellena el contenido en cada idioma; si falta data-en, el build falla).
+  - Enlaces que cambian por idioma: href="/ruta-es/" data-href-en="/en/ruta-en/".
+  - Un bloque que solo existe en un idioma: data-solo="es" (y entonces no necesita data-en).
+  - Usar solo las clases ya definidas en plantilla.html (page-hero, page-body, prose,
+    side-card, callout, emergency-note, review-meta, ref-list, hero-cta, ghost…).
+  - Comillas dentro de atributos: usar &quot; o comillas simples en el HTML interno.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--HEAD_META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+<!--BASE_CSS-->
+</style>
+<!--PAGE_JSONLD-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LN7Z5TM576"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LN7Z5TM576');
+</script>
+</head>
+<body>
+
+<!--NAV-->
+
+<header class="page-hero">
+  <p class="breadcrumb"><a href="/" data-href-en="/en/" data-es="Inicio" data-en="Home"></a> · <span data-es="Nombre corto de la página" data-en="Short page name"></span></p>
+  <h1 class="page-h1" data-es="Título con la <em>palabra clave</em>" data-en="Title with the <em>keyword</em>"></h1>
+  <p class="page-lead" data-es="Dos o tres frases que respondan directo: qué es, para quién, cuánto cuesta y dónde. Es el párrafo que Google y los asistentes de IA citarán." data-en="Two or three sentences that answer directly: what it is, who it is for, what it costs and where."></p>
+  <div class="hero-ctas">
+    <a href="https://wa.me/525951093969" target="_blank" rel="noopener" class="hero-cta" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp"></a>
+    <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Reservar en línea" data-en="Book online"></a>
+  </div>
+</header>
+
+<div class="sep"></div>
+
+<main class="page-body">
+  <article class="prose">
+    <h2 data-es="Subtítulo" data-en="Subheading"></h2>
+    <p data-es="Párrafo." data-en="Paragraph."></p>
+    <ul>
+      <li data-es="Punto." data-en="Point."></li>
+    </ul>
+    <div class="emergency-note" data-es="<strong>No es un servicio de urgencias.</strong> Ante una emergencia, llame al <strong>911</strong> o acuda a urgencias hospitalarias." data-en="<strong>This is not an emergency service.</strong> In an emergency, call <strong>911</strong> or go to a hospital emergency room."></div>
+
+    <!-- Solo en guías: fuentes y revisión -->
+    <h2 data-es="Fuentes" data-en="Sources"></h2>
+    <ol class="ref-list">
+      <li data-es="Autor/Institución. Título. Año. &lt;a href='https://…'&gt;enlace&lt;/a&gt;" data-en="Same reference."></li>
+    </ol>
+    <p class="review-meta" data-es="Escrito y revisado por el Dr. Cristóbal J. Ortega-Arenas, Médico Cirujano (UNAM), cédula profesional 14848636. Última revisión: 19 de octubre de 2026. Información general; no sustituye una consulta médica." data-en="Written and reviewed by Dr. Cristóbal J. Ortega-Arenas, physician (UNAM), professional license 14848636. Last reviewed: October 19, 2026. General information; it does not replace a medical consultation."></p>
+  </article>
+
+  <aside class="side-card">
+    <h3 data-es="Resumen" data-en="At a glance"></h3>
+    <div class="side-price">$1,800 <small>MXN</small></div>
+    <p data-es="Qué incluye en una línea." data-en="What is included, in one line."></p>
+    <a href="https://wa.me/525951093969" target="_blank" rel="noopener" class="hero-cta" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp"></a>
+  </aside>
+</main>
+
+<!--PIE-->
+</body>
+</html>

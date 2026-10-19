@@ -1,0 +1,12 @@
+{
+  "plantilla": "plantilla-espana.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-19",
+  "audiencia": {"es": "Viajeros procedentes de España en la Ciudad de México"},
+  "es": {
+    "path": "/viaja-desde-espana/",
+    "title": "¿Viaja desde España? Médico en CDMX | Dr. Ortega-Arenas",
+    "description": "Médico en la Ciudad de México que atiende en español a viajeros españoles: hotel 24 h, domicilio, consultorio y teleconsulta desde $700 MXN.",
+    "crumb": "¿Viaja desde España?"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "plantilla": "plantilla-guia-altitud.html",
+  "tipo": "guia",
+  "revisado": "2026-10-19",
+  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City"},
+  "citas": [
+    {"nombre": "Hackett PH, Shlim DR. High-Altitude Travel and Altitude Illness. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"},
+    {"nombre": "Luks AM, et al. Wilderness Medical Society Clinical Practice Guidelines for the Prevention, Diagnosis, and Treatment of Acute Altitude Illness: 2024 Update. Wilderness Environ Med. 2024;35(1_suppl):2S-19S", "url": "https://doi.org/10.1016/j.wem.2023.05.013"},
+    {"nombre": "Omidi A, et al. What Is New in Altitude- and Cold-Related Illnesses of Travel: Appraisal and Summary of the Updated Guidelines from the Wilderness Medical Society. Int J Environ Res Public Health. 2025;22(2):284", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11855094/"},
+    {"nombre": "SEDEMA, Dirección de Monitoreo Atmosférico. Calidad del aire en la Ciudad de México", "url": "https://aire.cdmx.gob.mx/default.php"},
+    {"nombre": "Gobierno de la Ciudad de México. Acerca de la Ciudad de México", "url": "https://mexicocity.cdmx.gob.mx/e/about/about-mexico-city/?lang=es"}
+  ],
+  "es": {
+    "path": "/guias/altitud-cdmx/",
+    "title": "Altitud en la Ciudad de México: mal de altura",
+    "description": "La Ciudad de México está a unos 2,240 m. Qué puede notar al llegar, cómo aclimatarse, signos de alarma, quién debe consultar y la calidad del aire.",
+    "crumb": "Altitud en la CDMX"
+  },
+  "en": {
+    "path": "/en/guides/mexico-city-altitude/",
+    "title": "Mexico City Altitude: Symptoms and Tips for Travelers",
+    "description": "Mexico City sits at about 2,240 m (7,350 ft). What you may notice, how to acclimatize, warning signs, who should see a doctor, and air quality.",
+    "crumb": "Mexico City altitude"
+  }
+}

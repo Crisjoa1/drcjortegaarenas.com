@@ -1,0 +1,28 @@
+{
+  "plantilla": "plantilla-guia-urgencias.html",
+  "tipo": "guia",
+  "revisado": "2026-10-19",
+  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City"},
+  "citas": [
+    {"nombre": "C5 de la Ciudad de México. Emergencias 9-1-1", "url": "https://www.c5.cdmx.gob.mx/canales-de-atencion-emergencias/emergencias-9-1-1"},
+    {"nombre": "Hagmann SHF, Norton SA. What To Do When Sick Abroad. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/health-care-abroad/what-to-do-when-sick-abroad.html"},
+    {"nombre": "CDC. Signs and Symptoms of Stroke", "url": "https://www.cdc.gov/stroke/signs-symptoms/index.html"},
+    {"nombre": "CDC. About Heart Attack Symptoms, Risk, and Recovery", "url": "https://www.cdc.gov/heart-disease/about/heart-attack.html"},
+    {"nombre": "World Health Organization. Meningitis (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/meningitis"},
+    {"nombre": "Foreign, Commonwealth & Development Office (FCDO). Mexico travel advice: Health. GOV.UK", "url": "https://www.gov.uk/foreign-travel-advice/mexico/health"},
+    {"nombre": "MedlinePlus. Reconocimiento de emergencias médicas", "url": "https://medlineplus.gov/spanish/ency/article/001927.htm"},
+    {"nombre": "MedlinePlus. Recognizing medical emergencies", "url": "https://medlineplus.gov/ency/article/001927.htm"}
+  ],
+  "es": {
+    "path": "/guias/cuando-ir-a-urgencias/",
+    "title": "Cuándo ir a urgencias en CDMX: signos de alarma",
+    "description": "Signos de alarma para llamar al 911 o ir a urgencias en la Ciudad de México, qué llevar, cómo se paga y qué puede atender un médico en su hotel.",
+    "crumb": "Cuándo ir a urgencias"
+  },
+  "en": {
+    "path": "/en/guides/emergency-care-mexico-city/",
+    "title": "When to Go to the ER in Mexico City: Warning Signs",
+    "description": "Warning signs to call 911 or go to the ER in Mexico City, what to bring, how payment works, and what a hotel doctor can treat.",
+    "crumb": "When to go to the ER"
+  }
+}

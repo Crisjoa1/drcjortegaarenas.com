@@ -6,6 +6,11 @@ Uso, desde la carpeta del repositorio:
   plantilla.html                → index.html y en/index.html
   plantilla-hoteles.html        → hoteles/index.html y en/hotels/index.html
   plantilla-hoja-recepcion.html → assets/hoja-recepcion-hoteles.pdf (con Google Chrome)
+  paginas/*.json                → una página por archivo (servicios y guías); cada JSON
+                                  dice qué plantilla usa, sus URL ES/EN, título,
+                                  descripción y, en las guías, las fuentes citadas
+  parciales/nav.html, pie.html  → menú y pie compartidos (<!--NAV--> y <!--PIE-->)
+  También genera sitemap.xml y llms.txt.
 
 Las plantillas son la única fuente: cada texto lleva data-es y data-en, y los
 enlaces que cambian con el idioma llevan data-href-en. Este script elige el
@@ -38,6 +43,7 @@ META = {
                        'Honorarios publicados en MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en CDMX',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
+        'crumb_home': 'Inicio',
         'phys_desc': 'Médico general bilingüe (español/inglés) en la Ciudad de México: consultorio, '
                      'teleconsulta, visitas a domicilio y a hotel, y terapia de hidratación intravenosa.',
     },
@@ -50,6 +56,7 @@ META = {
                        'Fees published in MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — English-speaking doctor in Mexico City',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
+        'crumb_home': 'Home',
         'phys_desc': 'Bilingual (English/Spanish) general physician in Mexico City: clinic visits, '
                      'telemedicine, house calls, hotel visits and IV hydration therapy.',
     },
@@ -87,6 +94,25 @@ PAGES = [
      'out': {'es': 'hoteles/index.html', 'en': 'en/hotels/index.html'}},
 ]
 
+
+def load_pages():
+    """Cada _tools/paginas/*.json registra una página nueva sin tocar este script."""
+    pages = []
+    for f in sorted((ROOT / '_tools' / 'paginas').glob('*.json')):
+        cfg = json.loads(f.read_text(encoding='utf-8'))
+        meta = {lang: dict(cfg[lang], home=META[lang]['crumb_home']) for lang in ('es', 'en') if lang in cfg}
+        for lang in meta:
+            meta[lang].setdefault('html_lang', 'es-MX' if lang == 'es' else 'en')
+            meta[lang].setdefault('og_locale', 'es_MX' if lang == 'es' else 'en_US')
+            meta[lang].setdefault('og_alt', 'en_US' if lang == 'es' else 'es_MX')
+            meta[lang].setdefault('og_title', meta[lang]['title'])
+        out = {lang: meta[lang]['path'].strip('/') + '/index.html' for lang in meta}
+        pages.append({'template': cfg['plantilla'], 'meta': meta, 'out': out, 'cfg': cfg})
+    return pages
+
+
+PAGES += load_pages()
+
 PDF_OUT = ROOT / 'assets' / 'hoja-recepcion-hoteles.pdf'
 PDF_HASH = ROOT / '_tools' / '.hoja-recepcion.sha256'
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -98,7 +124,8 @@ AREAS = ['Polanco', 'Roma', 'Condesa', 'Del Valle', 'Santa Fe', 'Reforma', 'Coyo
 def head_meta(meta, lang):
     m = meta[lang]
     url = SITE + m['path']
-    es_url, en_url = SITE + meta['es']['path'], SITE + meta['en']['path']
+    es_url = SITE + meta['es']['path']
+    en_url = SITE + meta['en']['path'] if 'en' in meta else None
     esc = lambda t: t.replace('&', '&amp;').replace('"', '&quot;')
     lines = [
         f'<title>{esc(m["title"])}</title>',
@@ -107,7 +134,7 @@ def head_meta(meta, lang):
         '<meta name="robots" content="index, follow">',
         f'<link rel="canonical" href="{url}">',
         f'<link rel="alternate" hreflang="es-MX" href="{es_url}">',
-        f'<link rel="alternate" hreflang="en" href="{en_url}">',
+        *([f'<link rel="alternate" hreflang="en" href="{en_url}">'] if en_url else []),
         f'<link rel="alternate" hreflang="x-default" href="{es_url}">',
         '<meta name="theme-color" content="#0a0a0a">',
         '<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">',
@@ -121,7 +148,7 @@ def head_meta(meta, lang):
         '<meta property="og:image:width" content="1200">',
         '<meta property="og:image:height" content="630">',
         f'<meta property="og:locale" content="{m["og_locale"]}">',
-        f'<meta property="og:locale:alternate" content="{m["og_alt"]}">',
+        *([f'<meta property="og:locale:alternate" content="{m["og_alt"]}">'] if en_url else []),
         '<meta name="twitter:card" content="summary_large_image">',
         f'<meta name="twitter:title" content="{esc(m["og_title"])}">',
         f'<meta name="twitter:description" content="{esc(m["description"])}">',
@@ -140,7 +167,20 @@ def physician(lang):
     return jsonld({
         '@context': 'https://schema.org',
         '@type': 'Physician',
+        '@id': SITE + '/#medico',
         'name': 'Dr. Cristóbal J. Ortega-Arenas',
+        'alternateName': 'Cristóbal Jerónimo Ortega-Arenas',
+        'alumniOf': {'@type': 'CollegeOrUniversity', 'name': 'Universidad Nacional Autónoma de México (UNAM), Facultad de Medicina'},
+        'award': 'Premio al Servicio Social «Gustavo Baz Prada» (UNAM), categoría investigación',
+        'hasCredential': [
+            {'@type': 'EducationalOccupationalCredential', 'credentialCategory': 'Cédula profesional (Médico Cirujano)',
+             'identifier': '14848636',
+             'recognizedBy': {'@type': 'GovernmentOrganization', 'name': 'Secretaría de Educación Pública, Dirección General de Profesiones'}},
+            {'@type': 'EducationalOccupationalCredential', 'credentialCategory': 'Homologación del título de Médico en España',
+             'identifier': '2025-17271',
+             'recognizedBy': {'@type': 'GovernmentOrganization', 'name': 'Ministerio de Ciencia, Innovación y Universidades (España)'}},
+        ],
+        'makesOffer': offers(lang),
         'description': m['phys_desc'],
         'url': SITE + m['path'],
         'image': SITE + '/assets/og-image.png',
@@ -161,6 +201,46 @@ def physician(lang):
     })
 
 
+OFFERS = [  # (es, en, precio "desde" en MXN) — deben coincidir con las tarifas publicadas
+    ('Visita médica en hotel', 'Hotel medical visit', 2500),
+    ('Consulta a domicilio', 'House call', 1000),
+    ('Consulta en consultorio', 'Clinic visit', 1000),
+    ('Teleconsulta', 'Telemedicine consultation', 700),
+    ('Paquete Viajero', 'Traveler Package', 2200),
+    ('Hidratación intravenosa (cargo del nivel, sin visita)', 'IV hydration (level fee, visit not included)', 1800),
+    ('Certificado médico digital', 'Digital medical certificate', 500),
+]
+
+
+def offers(lang):
+    i = 0 if lang == 'es' else 1
+    return [{'@type': 'Offer', 'name': o[i], 'priceCurrency': 'MXN',
+             'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': o[2], 'priceCurrency': 'MXN'}}
+            for o in OFFERS]
+
+
+def medical_page(page, lang):
+    """MedicalWebPage para servicios y guías: autor, revisión y fuentes citadas."""
+    cfg, m = page['cfg'], page['meta'][lang]
+    obj = {
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        'name': m['title'],
+        'description': m['description'],
+        'url': SITE + m['path'],
+        'inLanguage': m['html_lang'],
+        'author': {'@id': SITE + '/#medico'},
+        'reviewedBy': {'@id': SITE + '/#medico'},
+        'lastReviewed': cfg.get('revisado'),
+        'publisher': {'@id': SITE + '/#medico'},
+    }
+    if cfg.get('audiencia'):
+        obj['audience'] = {'@type': 'PeopleAudience', 'audienceType': cfg['audiencia'][lang] if isinstance(cfg['audiencia'], dict) else cfg['audiencia']}
+    if cfg.get('citas'):
+        obj['citation'] = [{'@type': 'CreativeWork', 'name': c['nombre'], 'url': c['url']} for c in cfg['citas']]
+    return jsonld({k: v for k, v in obj.items() if v})
+
+
 def faq(soup):
     items = []
     for card in soup.select('.faq-item'):
@@ -173,11 +253,12 @@ def faq(soup):
 
 def breadcrumb(meta, lang):
     m = meta[lang]
+    home = m.get('home') or META[lang]['crumb_home']
     return jsonld({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': m['home'], 'item': SITE + META[lang]['path']},
+            {'@type': 'ListItem', 'position': 1, 'name': home, 'item': SITE + META[lang]['path']},
             {'@type': 'ListItem', 'position': 2, 'name': m['crumb'], 'item': SITE + m['path']},
         ],
     })
@@ -209,7 +290,11 @@ def hotel_prices_html():
 def render(page, lang):
     meta = page['meta']
     src = (ROOT / '_tools' / page['template']).read_text(encoding='utf-8')
+    for mark, part in (('<!--NAV-->', 'nav.html'), ('<!--PIE-->', 'pie.html')):
+        src = src.replace(mark, (ROOT / '_tools' / 'parciales' / part).read_text(encoding='utf-8'))
+    src = src.replace('{{URL_ES}}', meta['es']['path']).replace('{{URL_EN}}', meta['en']['path'] if 'en' in meta else '/en/')
     fills = {
+        '<!--PAGE_JSONLD-->\n': lambda: medical_page(page, lang) + breadcrumb(meta, lang),
         '<!--HEAD_META-->\n': lambda: head_meta(meta, lang),
         '<!--PHYSICIAN_JSONLD-->\n': lambda: physician(lang),
         '<!--BREADCRUMB_JSONLD-->\n': lambda: breadcrumb(meta, lang),
@@ -221,6 +306,11 @@ def render(page, lang):
             src = src.replace(mark, fill())
     soup = BeautifulSoup(src, 'html.parser')
     soup.html['lang'] = meta[lang]['html_lang']
+    for el in soup.select('[data-solo]'):  # bloques que existen en un solo idioma
+        if el['data-solo'] != lang:
+            el.decompose()
+        else:
+            del el['data-solo']
     missing = []
     for el in soup.select('[data-es]'):
         text = el.get('data-' + lang)
@@ -312,8 +402,48 @@ def build_pdf():
     print(f'pdf: {PDF_OUT.relative_to(ROOT)} ({PDF_OUT.stat().st_size:,} bytes)')
 
 
+def build_sitemap():
+    today = __import__('datetime').date.today().isoformat()
+    urls = []
+    for page in PAGES:
+        meta = page['meta']
+        alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{"es-MX" if l == "es" else "en"}" href="{SITE}{meta[l]["path"]}"/>'
+                       for l in ('es', 'en') if l in meta)
+        alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{meta["es"]["path"]}"/>'
+        for l in ('es', 'en'):
+            if l in meta:
+                urls.append(f'  <url>\n    <loc>{SITE}{meta[l]["path"]}</loc>\n    <lastmod>{today}</lastmod>{alts}\n  </url>')
+    for extra in ('/formularios/', '/aviso-de-privacidad/'):
+        urls.append(f'  <url>\n    <loc>{SITE}{extra}</loc>\n    <lastmod>{today}</lastmod>\n  </url>')
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+           + '\n'.join(urls) + '\n</urlset>\n')
+    (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    print(f'sitemap.xml ({len(urls)} URL)')
+
+
+def build_llms():
+    lines = ['# Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en Ciudad de México', '',
+             '> Médico Cirujano (UNAM, cédula profesional 14848636), título homologado en España (2025-17271). '
+             'Medicina general ambulatoria en español e inglés: visitas a hotel (24 h) y a domicilio, consultorio '
+             '(Del Valle, Roma, Polanco, Santa Fe), teleconsulta, hidratación intravenosa con valoración previa, '
+             'certificados médicos y Resumen Clínico del Viajero. Honorarios publicados en MXN. No es un servicio '
+             'de urgencias. Contacto: WhatsApp +52 595 109 3969. Aviso de publicidad COFEPRIS 2515192002A00033.', '',
+             '## Páginas / Pages', '']
+    for page in PAGES:
+        for l in ('es', 'en'):
+            if l in page['meta']:
+                m = page['meta'][l]
+                lines.append(f'- [{m["title"]}]({SITE}{m["path"]}): {m["description"]}')
+    (ROOT / 'llms.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    print('llms.txt')
+
+
 if __name__ == '__main__':
     for page in PAGES:
-        render(page, 'es')
-        render(page, 'en')
+        for lang in ('es', 'en'):
+            if lang in page['meta']:
+                render(page, lang)
     build_pdf()
+    build_sitemap()
+    build_llms()

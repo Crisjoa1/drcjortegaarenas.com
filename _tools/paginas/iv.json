@@ -1,0 +1,18 @@
+{
+  "plantilla": "plantilla-iv.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-19",
+  "audiencia": {"es": "Viajeros y residentes en CDMX", "en": "Travelers and residents in Mexico City"},
+  "es": {
+    "path": "/hidratacion-intravenosa/",
+    "title": "Hidratación intravenosa en CDMX | Dr. Ortega-Arenas",
+    "description": "Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente.",
+    "crumb": "Hidratación intravenosa"
+  },
+  "en": {
+    "path": "/en/iv-hydration-mexico-city/",
+    "title": "IV Hydration in Mexico City | Dr. Ortega-Arenas",
+    "description": "IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees.",
+    "crumb": "IV hydration"
+  }
+}
