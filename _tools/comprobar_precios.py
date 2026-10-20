@@ -68,8 +68,10 @@ def publicados():
     for txt in soup.select('.offer-text'):  # '($1,800 en Del Valle; …)' si no procede el certificado
         for area in list(extras):
             extras[area].update(re.findall(r'(\$[\d,]+) en ' + area, txt.get_text(' ')))
-    for row in soup.select('.proc-row'):  # asistente de traducción al francés: válida en todas las zonas
-        if 'Francés' in row.get_text(' '):
+    fr = ROOT / 'fr' / 'index.html'  # la asistente de traducción solo se publica en la portada en francés
+    fr_rows = BeautifulSoup(fr.read_text(encoding='utf-8'), 'html.parser').select('.proc-row') if fr.exists() else []
+    for row in soup.select('.proc-row') + fr_rows:  # válida en todas las zonas
+        if 'Francés' in row.get_text(' ') or 'francophone' in row.get_text(' ').lower() or 'Traduction' in row.get_text(' '):
             for area in list(extras):
                 extras[area].add(row.select_one('.proc-price').get_text(strip=True))
     return hotel, zona_de, consultorio, domicilio, extras
