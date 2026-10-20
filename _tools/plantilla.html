@@ -171,6 +171,7 @@
   .proc-cat-toggle { color:var(--silver); font-size:1.2rem; transition:transform 0.3s; user-select:none; }
   .proc-cat.open .proc-cat-toggle { transform:rotate(45deg); }
   .proc-cat-body { padding:0 30px 22px; background:var(--card); }
+  .proc-cat:not(.open) .proc-cat-body { display:none; }
   .proc-row { display:grid; grid-template-columns:1fr auto; gap:14px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); align-items:start; }
   .proc-row:last-child { border-bottom:none; }
   .proc-name { font-size:0.76rem; color:var(--silver); }
@@ -298,7 +299,7 @@
 
   /* ── Foto de perfil ──────────────────────── */
   .profile-photo { margin:0 0 26px; border:1px solid var(--border); background:var(--card); }
-  .profile-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; filter:grayscale(1) contrast(1.05); }
+  .profile-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 50%; }
   .profile-photo figcaption { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); padding:12px 16px; }
 
   /* ── Aviso de versión en inglés ──────────── */
@@ -383,7 +384,7 @@
   .hero2 .hero-ctas { justify-content:flex-start; margin-bottom:16px; }
   .hero2 .hero-cta { animation:none; }
   .hero2-note { font-size:0.82rem; color:var(--muted); }
-  .hero2-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 28%; filter:grayscale(1) contrast(1.05); border:1px solid var(--border); }
+  .hero2-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 50%; border:1px solid var(--border); }
   .hero2-photo figcaption { font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:12px; }
   .creds-band { display:flex; justify-content:center; padding:0 48px 24px; }
   .creds-band .hero-creds { animation:none; }
@@ -417,7 +418,8 @@
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
   .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:0; }
+  .cv-more { margin-top:48px; }
   .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
   .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
   .cv-card ul { list-style:none; }
@@ -474,6 +476,43 @@
     .contact-item { border-right:none; border-bottom:1px solid var(--border); }
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
+
+  /* ── Legibilidad y conversión (oct-2026) ───── */
+  body { font-weight:400; }
+  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .svc-card { color:inherit; }
+  .contact-ctas { justify-content:center; margin:0 0 32px; }
+  .contact-ctas .hero-cta { animation:none; }
+  .section-tag, .hero-cred-label, .service-num, .iv-level, .iv-includes h4, .schedule-type,
+  .contact-label, .zone-badge, .payment-tag, .iv-price-label { font-size:0.72rem; letter-spacing:0.14em; }
+  .lang-btn, .cred-verify, .sede-dir, footer p { font-size:0.78rem; }
+  .nav-links a { font-size:0.7rem; }
+  .cofepris-bar { font-size:0.75rem; letter-spacing:0.06em; line-height:1.6; }
+  .proc-name { font-size:0.9rem; }
+  .cv-note { font-size:0.9rem; }
+  .hero-cred-value, .verify-list .v-val, .proc-price, .price-col { font-weight:400; }
+  .t-sub { display:block; color:var(--muted); font-size:0.8rem; line-height:1.5; }
+  .price-table th { font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; }
+  .price-table th + th, .price-table td + td { padding-left:12px; }
+  .lang-hint { left:0; right:0; bottom:auto; display:flex; justify-content:center; align-items:center; gap:14px; padding:10px 16px; border:0; border-bottom:1px solid var(--border-hi); font-size:0.85rem; }
+  .lang-hint[hidden] { display:none; }
+  .lang-hint a { color:var(--offwhite); text-underline-offset:3px; }
+  .lang-hint button { background:none; border:1px solid var(--border); color:var(--silver); width:32px; height:32px; cursor:pointer; font-size:1rem; }
+  @media(max-width:900px){
+    .mobile-bar { transform:translateY(110%); transition:transform .25s ease; }
+    .mobile-bar.visible { transform:none; }
+    .lang-hint { bottom:auto; }
+    .hero2-badge { font-size:0.72rem; letter-spacing:0.12em; margin-bottom:16px; }
+    .hero2-photo { max-width:none; }
+    .hero2-photo img { aspect-ratio:4/3; object-position:50% 38%; }
+    .hero2-facts li { font-size:0.8rem; }
+    .creds-band .hero-creds { display:grid; grid-template-columns:1fr 1fr; width:100%; border:1px solid var(--border); }
+    .creds-band .hero-cred { padding:14px 16px; border-bottom:1px solid var(--border); border-right:none; }
+    .creds-band .hero-cred:nth-child(odd) { border-right:1px solid var(--border); }
+    .creds-band .hero-cred:nth-last-child(-n+2) { border-bottom:none; }
+    .hero-cred-value { font-size:0.95rem; }
+  }
+  @media(max-width:600px){ .price-col { font-size:0.95rem; } }
 </style>
 <!--PHYSICIAN_JSONLD-->
 <!-- Google tag (gtag.js) -->
@@ -501,13 +540,14 @@
       <li data-es="<strong>24 h</strong>en hotel, según disponibilidad" data-en="<strong>24 h</strong>hotel visits, subject to availability"></li>
     </ul>
     <div class="hero-ctas">
-      <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="hero-cta" data-es="Reservar cita" data-en="Book an appointment"></a>
-      <a href="https://wa.me/525951093969" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp"></a>
+      <a href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." data-href-en="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." target="_blank" rel="noopener" class="hero-cta" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp"></a>
+      <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Reservar en línea" data-en="Book online"></a>
     </div>
     <p class="hero2-note" data-es="Medicina general ambulatoria. No es un servicio de urgencias: ante una emergencia, llame al 911." data-en="Outpatient general medicine. Not an emergency service: in an emergency, call 911."></p>
+    <p class="hero2-note" data-es="Cédula profesional 14848636 · <a href='https://www.cedulaprofesional.sep.gob.mx/' target='_blank' rel='noopener' class='cred-verify'>verificar en SEP</a>" data-en="Professional license (Cédula) 14848636 · <a href='https://www.cedulaprofesional.sep.gob.mx/' target='_blank' rel='noopener' class='cred-verify'>verify (SEP)</a>"></p>
   </div>
   <figure class="hero2-photo">
-    <img src="/assets/foto-perfil-900.webp" srcset="/assets/foto-perfil-600.webp 600w, /assets/foto-perfil-900.webp 900w" sizes="(max-width:900px) 92vw, 460px" width="900" height="1125" fetchpriority="high" decoding="async"
+    <img src="/assets/foto-perfil-color-813.webp" srcset="/assets/foto-perfil-color-600.webp 600w, /assets/foto-perfil-color-813.webp 813w" sizes="(max-width:900px) 92vw, 460px" width="813" height="1016" fetchpriority="high" decoding="async"
          alt="Dr. Cristóbal J. Ortega-Arenas con bata de la Facultad de Medicina de la UNAM" data-alt-en="Dr. Cristóbal J. Ortega-Arenas wearing a UNAM Faculty of Medicine white coat">
     <figcaption data-es="Dr. Cristóbal J. Ortega-Arenas · Médico Cirujano, UNAM" data-en="Dr. Cristóbal J. Ortega-Arenas · Physician (M.D.), UNAM"></figcaption>
   </figure>
@@ -580,27 +620,6 @@
   </div>
 </section>
 
-<!-- ══ PAQUETE VIAJERO ══════════════════════ -->
-<section class="band reveal" id="paquete-viajero">
-  <div class="offer-band">
-    <div>
-      <p class="section-tag" data-es="Nuevo · Paquete Viajero" data-en="New · Traveler Package"></p>
-      <h2 class="offer-title" data-es="Consulta + Resumen Clínico del Viajero en inglés + certificado médico (si procede)" data-en="Consultation + English Travel Clinical Summary + medical certificate (if appropriate)"></h2>
-      <p class="offer-text" data-es="Incluye la consulta, el Resumen Clínico del Viajero impreso en inglés y, si la valoración clínica lo sustenta, un certificado médico presencial. Si el certificado no procede, solo se cobran la consulta y el resumen ($1,800 en Del Valle; $3,300 en hotel Zona A). Precio vigente durante 2026. Otras sedes, zonas u horarios: cotización por WhatsApp." data-en="Includes the consultation, the printed Travel Clinical Summary in English and, if the clinical assessment supports it, an in-person medical certificate. If the certificate is not appropriate, only the consultation and the summary are charged ($1,800 at Del Valle; $3,300 for a Zone A hotel visit). Price valid through 2026. Other locations, zones or times: quote via WhatsApp."></p>
-    </div>
-    <div>
-      <div class="offer-prices">
-        <div class="offer-price" data-es="<strong>$2,200</strong>Consultorio Del Valle<small>por separado, según honorarios publicados: $2,600</small>" data-en="<strong>$2,200</strong>Del Valle clinic<small>separately, at published fees: $2,600</small>"></div>
-        <div class="offer-price" data-es="<strong>$3,500</strong>Hotel, Zona A, horario ordinario<small>por separado, según honorarios publicados: $4,100</small>" data-en="<strong>$3,500</strong>Hotel, Zone A, standard hours<small>separately, at published fees: $4,100</small>"></div>
-      </div>
-      <div class="hero-ctas" style="justify-content:flex-start;margin:22px 0 0">
-        <a href="https://wa.me/525951093969?text=Hola%2C%20me%20interesa%20el%20Paquete%20Viajero." data-href-en="https://wa.me/525951093969?text=Hello%2C%20I%27m%20interested%20in%20the%20Traveler%20Package." target="_blank" rel="noopener" class="hero-cta" data-es="Pedir el Paquete Viajero" data-en="Request the Traveler Package"></a>
-        <a href="/certificados-y-viajeros/" data-href-en="/en/travel-medical-certificates/" class="hero-cta ghost" data-es="Ver detalles" data-en="See details"></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ CÓMO FUNCIONA ════════════════════════ -->
 <section class="section" id="como-funciona">
   <div class="section-header reveal">
@@ -627,6 +646,41 @@
   </div>
 </section>
 
+<!-- ══ PAQUETE VIAJERO ══════════════════════ -->
+<section class="band reveal" id="paquete-viajero">
+  <div class="offer-band">
+    <div>
+      <p class="section-tag" data-es="Nuevo · Paquete Viajero" data-en="New · Traveler Package"></p>
+      <h2 class="offer-title" data-es="Consulta + Resumen Clínico del Viajero en inglés + certificado médico (si procede)" data-en="Consultation + English Travel Clinical Summary + medical certificate (if appropriate)"></h2>
+      <p class="offer-text" data-es="Incluye la consulta, el Resumen Clínico del Viajero impreso en inglés y, si la valoración clínica lo sustenta, un certificado médico presencial. Si el certificado no procede, solo se cobran la consulta y el resumen ($1,800 en Del Valle; $3,300 en hotel Zona A). Precio vigente durante 2026. Otras sedes, zonas u horarios: cotización por WhatsApp." data-en="Includes the consultation, the printed Travel Clinical Summary in English and, if the clinical assessment supports it, an in-person medical certificate. If the certificate is not appropriate, only the consultation and the summary are charged ($1,800 at Del Valle; $3,300 for a Zone A hotel visit). Price valid through 2026. Other locations, zones or times: quote via WhatsApp."></p>
+    </div>
+    <div>
+      <div class="offer-prices">
+        <div class="offer-price" data-es="<strong>$2,200</strong>Consultorio Del Valle<small>por separado, según honorarios publicados: $2,600</small>" data-en="<strong>$2,200</strong>Del Valle clinic<small>separately, at published fees: $2,600</small>"></div>
+        <div class="offer-price" data-es="<strong>$3,500</strong>Hotel, Zona A, horario ordinario<small>por separado, según honorarios publicados: $4,100</small>" data-en="<strong>$3,500</strong>Hotel, Zone A, standard hours<small>separately, at published fees: $4,100</small>"></div>
+      </div>
+      <div class="hero-ctas" style="justify-content:flex-start;margin:22px 0 0">
+        <a href="https://wa.me/525951093969?text=Hola%2C%20me%20interesa%20el%20Paquete%20Viajero." data-href-en="https://wa.me/525951093969?text=Hello%2C%20I%27m%20interested%20in%20the%20Traveler%20Package." target="_blank" rel="noopener" class="hero-cta" data-es="Pedir el Paquete Viajero" data-en="Request the Traveler Package"></a>
+        <a href="/certificados-y-viajeros/" data-href-en="/en/travel-medical-certificates/" class="hero-cta ghost" data-es="Ver detalles" data-en="See details"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEGURO Y DOCUMENTOS ══════════════════ -->
+<section class="section" id="documentos">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Seguro y documentos" data-en="Insurance and documents"></p>
+    <h2 class="section-title" data-es="Lo que recibe para su <em>seguro de viaje</em>" data-en="What you receive for your <em>travel insurance</em>"></h2>
+    <p class="section-subtitle" data-es="La aceptación de su reclamo depende de su póliza. Si su seguro tiene central de asistencia, contáctela antes de la consulta." data-en="Whether your claim is accepted depends on your policy. If your insurer has an assistance line, contact it before the visit."></p>
+  </div>
+  <div class="doc-cards">
+    <div class="doc-card reveal"><h3 data-es="Receta" data-en="Prescription"></h3><p data-es="Por escrito, física o digital, cuando hay tratamiento indicado." data-en="Written, printed or digital, when treatment is indicated."></p></div>
+    <div class="doc-card reveal"><h3 data-es="Resumen Clínico del Viajero" data-en="Travel Clinical Summary"></h3><p data-es="En inglés: $500 digital o $800 impreso (+ consulta)." data-en="In English: $500 digital or $800 printed (+ visit)."></p></div>
+    <div class="doc-card reveal"><h3 data-es="Certificado médico" data-en="Medical certificate"></h3><p data-es="$500 digital (por videollamada) o $800 presencial (+ consulta)." data-en="$500 digital (by video call) or $800 in person (+ visit)."></p></div>
+  </div>
+</section>
+
 <div class="sep"></div>
 
 <!-- ══ LO QUE PUEDE VERIFICAR ═══════════════ -->
@@ -647,6 +701,8 @@
       <li><span data-es="Idiomas" data-en="Languages"></span><span class="v-val" data-es="Español · Inglés" data-en="English · Spanish"></span></li>
     </ul>
   </div>
+  <details class="more reveal cv-more">
+    <summary data-es="Ver formación, investigación y estancias" data-en="See education, research and stays"></summary>
   <div class="cv-grid">
     <div class="cv-card reveal">
       <h3 data-es="Formación" data-en="Education"></h3>
@@ -683,22 +739,55 @@
       </ul>
     </div>
   </div>
+  </details>
   <p class="cv-note reveal" data-es="Ejerce como médico general. Su experiencia en investigación no corresponde a una especialidad médica." data-en="He practices as a general physician. His research experience does not constitute a medical specialty."></p>
 </section>
 
-<!-- ══ SEGURO Y DOCUMENTOS ══════════════════ -->
-<section class="section" id="documentos">
+<div class="sep"></div>
+
+<!-- ══ PREGUNTAS FRECUENTES ═════════════════ -->
+<section class="section" id="faq">
   <div class="section-header reveal">
-    <p class="section-tag" data-es="Seguro y documentos" data-en="Insurance and documents"></p>
-    <h2 class="section-title" data-es="Lo que recibe para su <em>seguro de viaje</em>" data-en="What you receive for your <em>travel insurance</em>"></h2>
-    <p class="section-subtitle" data-es="La aceptación de su reclamo depende de su póliza. Si su seguro tiene central de asistencia, contáctela antes de la consulta." data-en="Whether your claim is accepted depends on your policy. If your insurer has an assistance line, contact it before the visit."></p>
+    <p class="section-tag" data-es="Preguntas frecuentes" data-en="FAQ"></p>
+    <h2 class="section-title" data-es="Dudas <em>comunes</em>" data-en="Common <em>questions</em>"></h2>
   </div>
-  <div class="doc-cards">
-    <div class="doc-card reveal"><h3 data-es="Receta" data-en="Prescription"></h3><p data-es="Por escrito, física o digital, cuando hay tratamiento indicado." data-en="Written, printed or digital, when treatment is indicated."></p></div>
-    <div class="doc-card reveal"><h3 data-es="Resumen Clínico del Viajero" data-en="Travel Clinical Summary"></h3><p data-es="En inglés: $500 digital o $800 impreso (+ consulta)." data-en="In English: $500 digital or $800 printed (+ visit)."></p></div>
-    <div class="doc-card reveal"><h3 data-es="Certificado médico" data-en="Medical certificate"></h3><p data-es="$500 digital (por videollamada) o $800 presencial (+ consulta)." data-en="$500 digital (by video call) or $800 in person (+ visit)."></p></div>
+  <div class="payment-grid">
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Cómo agendo una cita?" data-en="How do I book?">¿Cómo agendo una cita?</h3>
+      <p data-es="En línea en cal.com/drcjortegaarenas o por WhatsApp al +52 595 109 3969." data-en="Online at cal.com/drcjortegaarenas or via WhatsApp at +52 595 109 3969.">En línea en cal.com/drcjortegaarenas o por WhatsApp al +52 595 109 3969.</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Atiende en inglés?" data-en="Do you speak English?">¿Atiende en inglés?</h3>
+      <p data-es="Sí. Atención bilingüe en español e inglés para pacientes locales e internacionales." data-en="Yes. Bilingual care in Spanish and English for local and international patients.">Sí. Atención bilingüe en español e inglés para pacientes locales e internacionales.</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Dónde están los consultorios?" data-en="Where are the clinics?">¿Dónde están los consultorios?</h3>
+      <p data-es="En Briyam Coworking Médico, con cita, en cuatro sedes: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; y Santa Fe, <span data-sede='Santa Fe'></span>." data-en="At Briyam Coworking Médico, by appointment, in four locations: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; and Santa Fe, <span data-sede='Santa Fe'></span>."></p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Atiende urgencias?" data-en="Do you handle emergencies?">¿Atiende urgencias?</h3>
+      <p data-es="No. Los servicios son estrictamente ambulatorios de medicina general. Ante una emergencia, acuda de inmediato a urgencias hospitalarias." data-en="No. Services are strictly outpatient general medicine. In an emergency, go immediately to a hospital ER.">No. Los servicios son estrictamente ambulatorios de medicina general. Ante una emergencia, acuda de inmediato a urgencias hospitalarias.</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Cuánto tarda en llegar a mi hotel?" data-en="How long does it take to reach my hotel?">¿Cuánto tarda en llegar a mi hotel?</h3>
+      <p data-es="Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar." data-en="It depends on the area: about 45 minutes to Del Valle, Roma and Condesa; 60–90 minutes to Polanco; about 1 hour 50 minutes to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit. After booking, send a WhatsApp to +52 595 109 3969 to confirm.">Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Me dan documentos para mi seguro de viaje?" data-en="Will I get documents for my travel insurance?">¿Me dan documentos para mi seguro de viaje?</h3>
+      <p data-es="Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)." data-en="When treatment is indicated, a written prescription is provided for your claim; acceptance depends on your policy. The English-language Travel Clinical Summary has an additional fee ($500 digital, $800 printed).">Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Cuál es el horario del consultorio?" data-en="What are the clinic hours?">¿Cuál es el horario del consultorio?</h3>
+      <p data-es="Lunes a viernes de 17:00 a 20:00 y sábados de 11:00 a 15:00, con cita. La cita de las 20:00 es exclusiva para consultas subsecuentes; las primeras consultas se agendan de 17:00 a 19:00 o en sábado. La teleconsulta y las visitas a hotel y domicilio tienen su propio horario (ver Servicios)." data-en="Monday to Friday 5–8 pm and Saturdays 11 am–3 pm, by appointment. The 8:00 pm slot is for follow-up visits only; first visits are booked 5–7 pm or on Saturday. Telemedicine, hotel visits and house calls have their own hours (see Services).">Lunes a viernes de 17:00 a 20:00 y sábados de 11:00 a 15:00, con cita. La cita de las 20:00 es exclusiva para consultas subsecuentes; las primeras consultas se agendan de 17:00 a 19:00 o en sábado. La teleconsulta y las visitas a hotel y domicilio tienen su propio horario (ver Servicios).</p>
+    </div>
+    <div class="payment-card reveal faq-item">
+      <h3 data-es="¿Qué es el Paquete Viajero?" data-en="What is the Traveler Package?"></h3>
+      <p data-es="Consulta + Resumen Clínico del Viajero en inglés + certificado médico si la valoración lo sustenta: $2,200 MXN en el consultorio de Del Valle o $3,500 MXN en visita a hotel (Zona A, horario ordinario). Otras sedes y horarios: cotización por WhatsApp." data-en="Consultation + English-language Travel Clinical Summary + medical certificate if the assessment supports it: MXN 2,200 at the Del Valle clinic or MXN 3,500 for a hotel visit (Zone A, standard hours). Other locations and times: quote via WhatsApp."></p>
+    </div>
   </div>
 </section>
+
+<!--FAQ_JSONLD-->
 
 <div class="sep"></div>
 
@@ -723,15 +812,15 @@
         </tr></thead>
         <tbody>
           <tr>
-            <td data-es="Ordinario<br><span style='color:var(--muted);font-size:0.66rem'>Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span>" data-en="Standard Hours<br><span style='color:var(--muted);font-size:0.66rem'>Mon–Fri 09:00–20:00 / Sat 09:00–15:00</span>">Ordinario<br><span style="color:var(--muted);font-size:0.66rem">Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span></td>
+            <td data-es="Ordinario<br><span class='t-sub'>Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span>" data-en="Standard Hours<br><span class='t-sub'>Mon–Fri 09:00–20:00 / Sat 09:00–15:00</span>">Ordinario<br><span class="t-sub">Lun–Vie 09:00–20:00 / Sáb 09:00–15:00</span></td>
             <td class="price-col">$2,500</td><td class="price-col">$3,000</td>
           </tr>
           <tr>
-            <td data-es="Especial / Fuera de horario<br><span style='color:var(--muted);font-size:0.66rem'>Noches 20:01–08:59 · Sáb 15:01+ · Dom</span>" data-en="After-Hours &amp; Special<br><span style='color:var(--muted);font-size:0.66rem'>Nights 20:01–08:59 · Sat 15:01+ · Sun</span>">Especial / Fuera de horario<br><span style="color:var(--muted);font-size:0.66rem">Noches 20:01–08:59 · Sáb 15:01+ · Dom</span></td>
+            <td data-es="Especial / Fuera de horario<br><span class='t-sub'>Noches 20:01–08:59 · Sáb 15:01+ · Dom</span>" data-en="After-Hours &amp; Special<br><span class='t-sub'>Nights 20:01–08:59 · Sat 15:01+ · Sun</span>">Especial / Fuera de horario<br><span class="t-sub">Noches 20:01–08:59 · Sáb 15:01+ · Dom</span></td>
             <td class="price-col">$4,000</td><td class="price-col">$4,500</td>
           </tr>
           <tr>
-            <td data-es="Festivos Oficiales &amp; Tradicionales<br><span style='color:var(--muted);font-size:0.66rem'>24 horas</span>" data-en="Official &amp; Traditional Holidays<br><span style='color:var(--muted);font-size:0.66rem'>24 Hours</span>">Festivos Oficiales &amp; Tradicionales<br><span style="color:var(--muted);font-size:0.66rem">24 horas</span></td>
+            <td data-es="Festivos Oficiales &amp; Tradicionales<br><span class='t-sub'>24 horas</span>" data-en="Official &amp; Traditional Holidays<br><span class='t-sub'>24 Hours</span>">Festivos Oficiales &amp; Tradicionales<br><span class="t-sub">24 horas</span></td>
             <td class="price-col">$5,500</td><td class="price-col">$6,000</td>
           </tr>
         </tbody>
@@ -754,11 +843,11 @@
           <th style="text-align:right" data-es="Honorario" data-en="Fee">Honorario</th>
         </tr></thead>
         <tbody>
-          <tr><td>Del Valle<br><span class="sede-dir" data-sede="Del Valle"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,000<br><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)" data-es="subs." data-en="follow-up">subs.</span></td></tr>
-          <tr><td>Roma<br><span class="sede-dir" data-sede="Roma"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,200</td></tr>
-          <tr><td>Polanco<br><span class="sede-dir" data-sede="Polanco"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,500</td></tr>
-          <tr><td>Santa Fe<br><span class="sede-dir" data-sede="Santa Fe"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,800</td></tr>
-          <tr><td><strong style="color:var(--silver)" data-es="Días Festivos" data-en="Holidays">Días Festivos</strong></td><td style="color:var(--muted);font-size:0.65rem" data-es="Coordinar por WhatsApp" data-en="Arrange via WhatsApp">Coordinar por WhatsApp</td><td class="price-col">$2,500</td></tr>
+          <tr><td>Del Valle<br><span class="sede-dir" data-sede="Del Valle"></span></td><td class="t-sub" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,000<br><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)" data-es="subs." data-en="follow-up">subs.</span></td></tr>
+          <tr><td>Roma<br><span class="sede-dir" data-sede="Roma"></span></td><td class="t-sub" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,200</td></tr>
+          <tr><td>Polanco<br><span class="sede-dir" data-sede="Polanco"></span></td><td class="t-sub" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,500</td></tr>
+          <tr><td>Santa Fe<br><span class="sede-dir" data-sede="Santa Fe"></span></td><td class="t-sub" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,800</td></tr>
+          <tr><td><strong style="color:var(--silver)" data-es="Días Festivos" data-en="Holidays">Días Festivos</strong></td><td class="t-sub" data-es="Coordinar por WhatsApp" data-en="Arrange via WhatsApp">Coordinar por WhatsApp</td><td class="price-col">$2,500</td></tr>
         </tbody>
       </table>
       <p class="price-note" data-es="*La cita de las 20:00 (lunes a viernes) es exclusiva para consultas subsecuentes." data-en="*The 8:00 pm slot (Monday–Friday) is for follow-up visits only."></p>
@@ -776,8 +865,8 @@
           <th style="text-align:right" data-es="Honorario" data-en="Fee">Honorario</th>
         </tr></thead>
         <tbody>
-          <tr><td data-es="Teleconsulta" data-en="Teleconsultation">Teleconsulta</td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 10–19h / S–D 11–15h" data-en="Mon–Fri 10 am–7 pm / Sat–Sun 11 am–3 pm">L–V 10–19h / S–D 11–15h</td><td class="price-col">$700</td></tr>
-          <tr><td data-es="Teleconsulta (Festivos)" data-en="Teleconsultation (Holidays)">Teleconsulta (Festivos)</td><td style="color:var(--muted);font-size:0.65rem">11:00–15:00</td><td class="price-col">$1,000</td></tr>
+          <tr><td data-es="Teleconsulta" data-en="Teleconsultation">Teleconsulta</td><td class="t-sub" data-es="L–V 10–19h / S–D 11–15h" data-en="Mon–Fri 10 am–7 pm / Sat–Sun 11 am–3 pm">L–V 10–19h / S–D 11–15h</td><td class="price-col">$700</td></tr>
+          <tr><td data-es="Teleconsulta (Festivos)" data-en="Teleconsultation (Holidays)">Teleconsulta (Festivos)</td><td class="t-sub">11:00–15:00</td><td class="price-col">$1,000</td></tr>
         </tbody>
       </table>
       <div style="margin-top:20px">
@@ -796,9 +885,9 @@
       <table class="price-table">
         <thead><tr>
           <th data-es="Zona / Ubicación" data-en="Zone / Location">Zona / Ubicación</th>
-          <th style="text-align:right;font-size:0.52rem" data-es="Ordinario" data-en="Standard">Ordinario</th>
-          <th style="text-align:right;font-size:0.52rem" data-es="Especial" data-en="After-Hours">Especial</th>
-          <th style="text-align:right;font-size:0.52rem" data-es="Festivo" data-en="Holiday">Festivo</th>
+          <th style="text-align:right" data-es="Ordinario" data-en="Standard">Ordinario</th>
+          <th style="text-align:right" data-es="Especial" data-en="After-Hours">Especial</th>
+          <th style="text-align:right" data-es="Festivo" data-en="Holiday">Festivo</th>
         </tr></thead>
         <tbody>
           <tr><td data-es="Del Valle &amp; Texcoco" data-en="Del Valle &amp; Texcoco">Del Valle &amp; Texcoco</td><td class="price-col" style="font-size:0.85rem">$1,000<br><span style="font-size:0.68rem;color:var(--muted)">$900*</span></td><td class="price-col" style="font-size:0.85rem">$2,500</td><td class="price-col" style="font-size:0.85rem">$3,500</td></tr>
@@ -829,7 +918,7 @@
         <li><span class="sdate">May 01</span><span data-es="Día del Trabajo" data-en="Labor Day">Día del Trabajo</span></li>
         <li><span class="sdate">Sep 16</span><span data-es="Día de la Independencia" data-en="Independence Day">Día de la Independencia</span></li>
         <li><span class="sdate">Nov 16</span><span data-es="Aniversario de la Revolución" data-en="Revolution Day">Aniversario de la Revolución</span></li>
-        <li><span class="sdate" data-es="Dic 25" data-en="Dec 25">Dic 25</span><span data-es="Navidad" data-en="Christmas Day">Navidad</span></li>
+        <li><span class="sdate" data-es="Dic 25" data-en="Dec 25">Dic 25</span><span data-es="Navidad · <em>sin servicio</em>" data-en="Christmas Day · <em>no service</em>"></span></li>
       </ul>
     </div>
     <div class="schedule-card reveal">
@@ -841,14 +930,21 @@
         <li><span class="sdate">May 10</span><span data-es="Día de la Madre" data-en="Mother's Day">Día de la Madre</span></li>
         <li><span class="sdate">Nov 02</span><span data-es="Día de Muertos" data-en="Day of the Dead">Día de Muertos</span></li>
         <li><span class="sdate" data-es="Dic 12" data-en="Dec 12">Dic 12</span><span data-es="Día de la Virgen de Guadalupe" data-en="Guadalupe Day">Día de la Virgen de Guadalupe</span></li>
-        <li><span class="sdate" data-es="Dic 24" data-en="Dec 24">Dic 24</span><span data-es="Nochebuena" data-en="Christmas Eve">Nochebuena</span></li>
-        <li><span class="sdate" data-es="Dic 31" data-en="Dec 31">Dic 31</span><span data-es="Víspera de Año Nuevo" data-en="New Year's Eve">Víspera de Año Nuevo</span></li>
+        <li><span class="sdate" data-es="Dic 24" data-en="Dec 24">Dic 24</span><span data-es="Nochebuena · <em>sin servicio desde las 16:00</em>" data-en="Christmas Eve · <em>no service from 4:00 pm</em>"></span></li>
+        <li><span class="sdate" data-es="Dic 31" data-en="Dec 31">Dic 31</span><span data-es="Víspera de Año Nuevo · <em>sin servicio desde las 16:00</em>" data-en="New Year's Eve · <em>no service from 4:00 pm</em>"></span></li>
       </ul>
     </div>
     <div class="schedule-card unavail reveal">
       <span class="schedule-type unavail" data-es="⚠ No Disponibilidad Absoluta" data-en="⚠ Absolute Unavailability">⚠ No Disponibilidad Absoluta</span>
       <h3 data-es="Sin Servicio" data-en="No Services">Sin Servicio</h3>
-      <p style="font-size:0.78rem;color:var(--muted);line-height:1.7" data-es="Hay fechas en las que no se brinda atención presencial ni digital. Consulte la disponibilidad en la agenda en línea o por WhatsApp." data-en="On some dates no in-person or digital care is available. Check availability in the online calendar or via WhatsApp.">Hay fechas en las que no se brinda atención presencial ni digital. Consulte la disponibilidad en la agenda en línea o por WhatsApp.</p>
+      <ul class="schedule-list">
+        <li><span class="sdate" data-es="Dic 1–5" data-en="Dec 1–5"></span><span data-es="Todo el día" data-en="All day"></span></li>
+        <li><span class="sdate" data-es="Dic 24" data-en="Dec 24"></span><span data-es="Desde las 16:00" data-en="From 4:00 pm"></span></li>
+        <li><span class="sdate" data-es="Dic 25" data-en="Dec 25"></span><span data-es="Todo el día" data-en="All day"></span></li>
+        <li><span class="sdate" data-es="Dic 31" data-en="Dec 31"></span><span data-es="Desde las 16:00" data-en="From 4:00 pm"></span></li>
+        <li><span class="sdate" data-es="Ene 01" data-en="Jan 01"></span><span data-es="Año Nuevo 2027 · todo el día" data-en="New Year 2027 · all day"></span></li>
+      </ul>
+      <p style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px" data-es="En estas fechas no se brinda atención presencial ni digital. El 24 y el 31 de diciembre, antes de las 16:00, la atención se coordina solo por WhatsApp, como en todos los festivos. Para cualquier otra fecha, confirme la disponibilidad en la agenda en línea o por WhatsApp." data-en="No in-person or digital care is available on these dates. On December 24 and 31, before 4:00 pm, care is arranged via WhatsApp only, as on all holidays. For any other date, check availability in the online calendar or via WhatsApp."></p>
     </div>
   </div>
   </details>
@@ -882,6 +978,63 @@
     <strong>Privacidad (LFPDPPP):</strong> La información personal y clínica es estrictamente confidencial. Consulte nuestro <a href="/aviso-de-privacidad/" style="color:inherit;text-decoration:underline">Aviso de Privacidad</a>. · <strong>Recetas:</strong> cuando hay tratamiento indicado, se entrega receta por escrito (física o digital, según corresponda). Su aceptación por la aseguradora depende de la póliza. · <strong>Alcance:</strong> Atención estrictamente ambulatoria de medicina general.
   </div>
   </details>
+</section>
+
+<section class="section" id="procedimientos">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Procedimientos" data-en="Procedures"></p>
+    <h2 class="section-title" data-es="Procedimientos &amp; <em>Cirugía Menor</em>" data-en="Procedures &amp; <em>Minor Surgery</em>">Procedimientos &amp; <em>Cirugía Menor</em></h2>
+    <p class="section-subtitle" data-es="Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita." data-en="Procedure fees are added to the applicable consultation or home visit fee, unless otherwise specified.">Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita.</p>
+  </div>
+
+  <div class="proc-cats">
+    <!-- Admin -->
+    <div class="proc-cat open reveal">
+      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="true"><span class="proc-cat-title" data-es="Servicios Administrativos &amp; Documentación Internacional" data-en="Administrative Services &amp; International Documentation">Servicios Administrativos &amp; Documentación Internacional</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Digital" data-en="Digital Medical Certificate">Certificado Médico Digital</p><p class="proc-note" data-es="Validación vía videollamada" data-en="Validation via video call">Validación vía videollamada</p></div><div class="proc-price">$500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Presencial" data-en="In-person Medical Certificate">Certificado Médico Presencial</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Físico)" data-en="Physical Travel Summary">Resumen Clínico del Viajero (Físico)</p><p class="proc-note" data-es="Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio" data-en="Detailed clinical report in English for immigration/airlines. Delivered post-consultation. + Clinic Consultation or Home Visit fee">Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Digital)" data-en="Digital Travel Summary">Resumen Clínico del Viajero (Digital)</p><p class="proc-note" data-es="Reporte detallado en inglés. Emisión vía email / PDF" data-en="Detailed clinical report in English. Issued via email/PDF">Reporte detallado en inglés. Emisión vía email / PDF</p></div><div class="proc-price">$500</div></div>
+      </div>
+    </div>
+    <!-- Diagnostics -->
+    <div class="proc-cat reveal">
+      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="false"><span class="proc-cat-title" data-es="Diagnóstico &amp; Laboratorio" data-en="Diagnostics &amp; Laboratory">Diagnóstico &amp; Laboratorio</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Prueba Rápida Combo" data-en="Rapid Combo Test">Prueba Rápida Combo</p><p class="proc-note" data-es="Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Influenza A+B &amp; COVID-19. Includes all materials. + Clinic Consultation or Home Visit fee">Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Toma de Muestra Sanguínea" data-en="Laboratory Blood Sampling">Toma de Muestra Sanguínea</p><p class="proc-note" data-es="Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita" data-en="Includes phlebotomy materials and transport logistics. Lab fees not included. + Consultation/Visit fee">Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita</p></div><div class="proc-price">$700 +<br><span style="font-size:0.7rem" data-es="consulta" data-en="consult.">consulta</span></div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación y Reporte Digital de Laboratorio" data-en="Digital Laboratory Interpretation &amp; Report">Interpretación y Reporte Digital de Laboratorio</p><p class="proc-note" data-es="Informe bilingüe detallado vía PDF / Email" data-en="Detailed bilingual clinical report delivered via PDF/Email">Informe bilingüe detallado vía PDF / Email</p></div><div class="proc-price">$500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación Presencial de Laboratorio" data-en="In-person Laboratory Interpretation">Interpretación Presencial de Laboratorio</p><p class="proc-note" data-es="Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)" data-en="Fee determined by clinic rate (Section II) or visit zone (Sections I/III)">Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)</p></div><div class="proc-price" style="font-size:0.78rem" data-es="Según sede<br>/ zona" data-en="By clinic<br>/ zone">Según sede<br>/ zona</div></div>
+      </div>
+    </div>
+    <!-- Technical -->
+    <div class="proc-cat reveal">
+      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="false"><span class="proc-cat-title" data-es="Procedimientos Técnicos" data-en="Technical Procedures">Procedimientos Técnicos</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Inyección" data-en="Injection">Inyección</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$200</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Glucosa Capilar" data-en="Glucose Level Test">Glucosa Capilar</p><p class="proc-note" data-es="Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Includes materials. + Clinic Consultation or Home Visit fee">Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$250</div></div>
+      </div>
+    </div>
+    <!-- Surgical -->
+    <div class="proc-cat reveal">
+      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="false"><span class="proc-cat-title" data-es="Procedimientos Quirúrgicos Menores" data-en="Surgical Minor Procedures">Procedimientos Quirúrgicos Menores</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
+      <div class="proc-cat-body">
+        <div class="proc-row"><div><p class="proc-name" data-es="Sutura de Herida Simple / Curación" data-en="Suture (Simple Wound) / Wound Care">Sutura de Herida Simple / Curación</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500 –<br>$2,500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Implante Subdérmico (Colocación / Retiro)" data-en="Subdermal Implant (Placement / Removal)">Implante Subdérmico (Colocación / Retiro)</p><p class="proc-note" data-es="No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio" data-en="Does not include device. Includes other materials. + Clinic Consultation or Home Visit fee">No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Resección de Lipoma" data-en="Lipoma Resection">Resección de Lipoma</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$3,500 –<br>$5,000</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Verrugas" data-en="Wart Removal">Retiro de Verrugas</p><p class="proc-note" data-es="Por lesión. Incluye material. + Costo de consulta o cargo por domicilio" data-en="Per lesion. Includes material. + Clinic Consultation or Home Visit fee">Por lesión. Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$600<br><span style="font-size:0.65rem;color:var(--muted)" data-es="/lesión" data-en="/lesion">/lesión</span></div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Puntos" data-en="Stitch Removal">Retiro de Puntos</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$700</div></div>
+        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Cuerpo Extraño" data-en="Foreign Body Removal">Retiro de Cuerpo Extraño</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,200 –<br>$2,000</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="important-note reveal" style="margin-top:6px"
+    data-es="<strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN."
+    data-en="<strong>Informed Consent:</strong> Mandatory prior to any procedure. · <strong>Scope:</strong> General Medicine only. Death certificates are not issued. · <strong>Emergencies:</strong> Strictly outpatient services; for emergencies go immediately to a hospital Emergency Room. · All fees in MXN.">
+    <strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN.
+  </div>
 </section>
 
 <section class="section-full iv-section" id="iv">
@@ -943,63 +1096,6 @@
   </div>
 </section>
 
-<section class="section" id="procedimientos">
-  <div class="section-header reveal">
-    <p class="section-tag" data-es="Procedimientos" data-en="Procedures"></p>
-    <h2 class="section-title" data-es="Procedimientos &amp; <em>Cirugía Menor</em>" data-en="Procedures &amp; <em>Minor Surgery</em>">Procedimientos &amp; <em>Cirugía Menor</em></h2>
-    <p class="section-subtitle" data-es="Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita." data-en="Procedure fees are added to the applicable consultation or home visit fee, unless otherwise specified.">Los honorarios de procedimientos se suman al costo de consulta o cargo por domicilio correspondiente, salvo indicación explícita.</p>
-  </div>
-
-  <div class="proc-cats">
-    <!-- Admin -->
-    <div class="proc-cat open reveal">
-      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="true"><span class="proc-cat-title" data-es="Servicios Administrativos &amp; Documentación Internacional" data-en="Administrative Services &amp; International Documentation">Servicios Administrativos &amp; Documentación Internacional</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
-      <div class="proc-cat-body">
-        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Digital" data-en="Digital Medical Certificate">Certificado Médico Digital</p><p class="proc-note" data-es="Validación vía videollamada" data-en="Validation via video call">Validación vía videollamada</p></div><div class="proc-price">$500</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Certificado Médico Presencial" data-en="In-person Medical Certificate">Certificado Médico Presencial</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Físico)" data-en="Physical Travel Summary">Resumen Clínico del Viajero (Físico)</p><p class="proc-note" data-es="Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio" data-en="Detailed clinical report in English for immigration/airlines. Delivered post-consultation. + Clinic Consultation or Home Visit fee">Reporte en inglés para migración / aerolíneas. Entrega posterior. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Resumen Clínico del Viajero (Digital)" data-en="Digital Travel Summary">Resumen Clínico del Viajero (Digital)</p><p class="proc-note" data-es="Reporte detallado en inglés. Emisión vía email / PDF" data-en="Detailed clinical report in English. Issued via email/PDF">Reporte detallado en inglés. Emisión vía email / PDF</p></div><div class="proc-price">$500</div></div>
-      </div>
-    </div>
-    <!-- Diagnostics -->
-    <div class="proc-cat open reveal">
-      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="true"><span class="proc-cat-title" data-es="Diagnóstico &amp; Laboratorio" data-en="Diagnostics &amp; Laboratory">Diagnóstico &amp; Laboratorio</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
-      <div class="proc-cat-body">
-        <div class="proc-row"><div><p class="proc-name" data-es="Prueba Rápida Combo" data-en="Rapid Combo Test">Prueba Rápida Combo</p><p class="proc-note" data-es="Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Influenza A+B &amp; COVID-19. Includes all materials. + Clinic Consultation or Home Visit fee">Influenza A+B &amp; COVID-19. Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$800</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Toma de Muestra Sanguínea" data-en="Laboratory Blood Sampling">Toma de Muestra Sanguínea</p><p class="proc-note" data-es="Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita" data-en="Includes phlebotomy materials and transport logistics. Lab fees not included. + Consultation/Visit fee">Incluye material de flebotomía y logística. Costo de laboratorio no incluido. + Honorario de consulta / visita</p></div><div class="proc-price">$700 +<br><span style="font-size:0.7rem" data-es="consulta" data-en="consult.">consulta</span></div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación y Reporte Digital de Laboratorio" data-en="Digital Laboratory Interpretation &amp; Report">Interpretación y Reporte Digital de Laboratorio</p><p class="proc-note" data-es="Informe bilingüe detallado vía PDF / Email" data-en="Detailed bilingual clinical report delivered via PDF/Email">Informe bilingüe detallado vía PDF / Email</p></div><div class="proc-price">$500</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Interpretación Presencial de Laboratorio" data-en="In-person Laboratory Interpretation">Interpretación Presencial de Laboratorio</p><p class="proc-note" data-es="Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)" data-en="Fee determined by clinic rate (Section II) or visit zone (Sections I/III)">Según tarifa de la sede (Sección II) o zona de visita (Secciones I / III)</p></div><div class="proc-price" style="font-size:0.78rem" data-es="Según sede<br>/ zona" data-en="By clinic<br>/ zone">Según sede<br>/ zona</div></div>
-      </div>
-    </div>
-    <!-- Technical -->
-    <div class="proc-cat open reveal">
-      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="true"><span class="proc-cat-title" data-es="Procedimientos Técnicos" data-en="Technical Procedures">Procedimientos Técnicos</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
-      <div class="proc-cat-body">
-        <div class="proc-row"><div><p class="proc-name" data-es="Inyección" data-en="Injection">Inyección</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$200</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Glucosa Capilar" data-en="Glucose Level Test">Glucosa Capilar</p><p class="proc-note" data-es="Incluye materiales. + Costo de consulta o cargo por domicilio" data-en="Includes materials. + Clinic Consultation or Home Visit fee">Incluye materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$250</div></div>
-      </div>
-    </div>
-    <!-- Surgical -->
-    <div class="proc-cat open reveal">
-      <h3 class="proc-cat-h"><button type="button" class="proc-cat-header" aria-expanded="true"><span class="proc-cat-title" data-es="Procedimientos Quirúrgicos Menores" data-en="Surgical Minor Procedures">Procedimientos Quirúrgicos Menores</span><span class="proc-cat-toggle" aria-hidden="true">+</span></button></h3>
-      <div class="proc-cat-body">
-        <div class="proc-row"><div><p class="proc-name" data-es="Sutura de Herida Simple / Curación" data-en="Suture (Simple Wound) / Wound Care">Sutura de Herida Simple / Curación</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500 –<br>$2,500</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Implante Subdérmico (Colocación / Retiro)" data-en="Subdermal Implant (Placement / Removal)">Implante Subdérmico (Colocación / Retiro)</p><p class="proc-note" data-es="No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio" data-en="Does not include device. Includes other materials. + Clinic Consultation or Home Visit fee">No incluye dispositivo. Incluye otros materiales. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,500</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Resección de Lipoma" data-en="Lipoma Resection">Resección de Lipoma</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$3,500 –<br>$5,000</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Verrugas" data-en="Wart Removal">Retiro de Verrugas</p><p class="proc-note" data-es="Por lesión. Incluye material. + Costo de consulta o cargo por domicilio" data-en="Per lesion. Includes material. + Clinic Consultation or Home Visit fee">Por lesión. Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$600<br><span style="font-size:0.65rem;color:var(--muted)" data-es="/lesión" data-en="/lesion">/lesión</span></div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Puntos" data-en="Stitch Removal">Retiro de Puntos</p><p class="proc-note" data-es="Incluye material. + Costo de consulta o cargo por domicilio" data-en="Includes material. + Clinic Consultation or Home Visit fee">Incluye material. + Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$700</div></div>
-        <div class="proc-row"><div><p class="proc-name" data-es="Retiro de Cuerpo Extraño" data-en="Foreign Body Removal">Retiro de Cuerpo Extraño</p><p class="proc-note" data-es="+ Costo de consulta o cargo por domicilio" data-en="+ Clinic Consultation or Home Visit fee">+ Costo de consulta o cargo por domicilio</p></div><div class="proc-price">$1,200 –<br>$2,000</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="important-note reveal" style="margin-top:6px"
-    data-es="<strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN."
-    data-en="<strong>Informed Consent:</strong> Mandatory prior to any procedure. · <strong>Scope:</strong> General Medicine only. Death certificates are not issued. · <strong>Emergencies:</strong> Strictly outpatient services; for emergencies go immediately to a hospital Emergency Room. · All fees in MXN.">
-    <strong>Consentimiento Informado:</strong> Obligatorio previo a cualquier procedimiento. · <strong>Alcance:</strong> Medicina General únicamente. No se emiten certificados de defunción. · <strong>Emergencias:</strong> Servicios estrictamente ambulatorios; para emergencias acudir de inmediato a urgencias hospitalarias. · Todos los honorarios en MXN.
-  </div>
-</section>
-
 <div class="sep"></div>
 
 <!-- ══ GUÍAS ═════════════════════════════════ -->
@@ -1037,53 +1133,9 @@
 
 <div class="sep"></div>
 
-<!-- ══ PREGUNTAS FRECUENTES ═════════════════ -->
-<section class="section" id="faq">
-  <div class="section-header reveal">
-    <p class="section-tag" data-es="Preguntas frecuentes" data-en="FAQ"></p>
-    <h2 class="section-title" data-es="Dudas <em>comunes</em>" data-en="Common <em>questions</em>"></h2>
-  </div>
-  <div class="payment-grid">
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Cómo agendo una cita?" data-en="How do I book?">¿Cómo agendo una cita?</h3>
-      <p data-es="En línea en cal.com/drcjortegaarenas o por WhatsApp al +52 595 109 3969." data-en="Online at cal.com/drcjortegaarenas or via WhatsApp at +52 595 109 3969.">En línea en cal.com/drcjortegaarenas o por WhatsApp al +52 595 109 3969.</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Atiende en inglés?" data-en="Do you speak English?">¿Atiende en inglés?</h3>
-      <p data-es="Sí. Atención bilingüe en español e inglés para pacientes locales e internacionales." data-en="Yes. Bilingual care in Spanish and English for local and international patients.">Sí. Atención bilingüe en español e inglés para pacientes locales e internacionales.</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Dónde están los consultorios?" data-en="Where are the clinics?">¿Dónde están los consultorios?</h3>
-      <p data-es="En Briyam Coworking Médico, con cita, en cuatro sedes: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; y Santa Fe, <span data-sede='Santa Fe'></span>." data-en="At Briyam Coworking Médico, by appointment, in four locations: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; and Santa Fe, <span data-sede='Santa Fe'></span>."></p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Atiende urgencias?" data-en="Do you handle emergencies?">¿Atiende urgencias?</h3>
-      <p data-es="No. Los servicios son estrictamente ambulatorios de medicina general. Ante una emergencia, acuda de inmediato a urgencias hospitalarias." data-en="No. Services are strictly outpatient general medicine. In an emergency, go immediately to a hospital ER.">No. Los servicios son estrictamente ambulatorios de medicina general. Ante una emergencia, acuda de inmediato a urgencias hospitalarias.</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Cuánto tarda en llegar a mi hotel?" data-en="How long does it take to reach my hotel?">¿Cuánto tarda en llegar a mi hotel?</h3>
-      <p data-es="Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar." data-en="It depends on the area: about 45 minutes to Del Valle, Roma and Condesa; 60–90 minutes to Polanco; about 1 hour 50 minutes to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit. After booking, send a WhatsApp to +52 595 109 3969 to confirm.">Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Me dan documentos para mi seguro de viaje?" data-en="Will I get documents for my travel insurance?">¿Me dan documentos para mi seguro de viaje?</h3>
-      <p data-es="Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)." data-en="When treatment is indicated, a written prescription is provided for your claim; acceptance depends on your policy. The English-language Travel Clinical Summary has an additional fee ($500 digital, $800 printed).">Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Cuál es el horario del consultorio?" data-en="What are the clinic hours?">¿Cuál es el horario del consultorio?</h3>
-      <p data-es="Lunes a viernes de 17:00 a 20:00 y sábados de 11:00 a 15:00, con cita. La cita de las 20:00 es exclusiva para consultas subsecuentes; las primeras consultas se agendan de 17:00 a 19:00 o en sábado. La teleconsulta y las visitas a hotel y domicilio tienen su propio horario (ver Servicios)." data-en="Monday to Friday 5–8 pm and Saturdays 11 am–3 pm, by appointment. The 8:00 pm slot is for follow-up visits only; first visits are booked 5–7 pm or on Saturday. Telemedicine, hotel visits and house calls have their own hours (see Services).">Lunes a viernes de 17:00 a 20:00 y sábados de 11:00 a 15:00, con cita. La cita de las 20:00 es exclusiva para consultas subsecuentes; las primeras consultas se agendan de 17:00 a 19:00 o en sábado. La teleconsulta y las visitas a hotel y domicilio tienen su propio horario (ver Servicios).</p>
-    </div>
-    <div class="payment-card reveal faq-item">
-      <h3 data-es="¿Qué es el Paquete Viajero?" data-en="What is the Traveler Package?"></h3>
-      <p data-es="Consulta + Resumen Clínico del Viajero en inglés + certificado médico si la valoración lo sustenta: $2,200 MXN en el consultorio de Del Valle o $3,500 MXN en visita a hotel (Zona A, horario ordinario). Otras sedes y horarios: cotización por WhatsApp." data-en="Consultation + English-language Travel Clinical Summary + medical certificate if the assessment supports it: MXN 2,200 at the Del Valle clinic or MXN 3,500 for a hotel visit (Zone A, standard hours). Other locations and times: quote via WhatsApp."></p>
-    </div>
-  </div>
-</section>
-
-<!--FAQ_JSONLD-->
-
 <section class="contact-section" id="contacto">
   <div class="contact-logo-wrap">
-    <img src="/assets/logo-white.svg" alt="Dr. Cristóbal J. Ortega-Arenas — Médico e Investigador Clínico" class="logo-img logo-contact" width="872" height="280" loading="lazy">
+    <img src="/assets/logo-white.svg" alt="Dr. Cristóbal J. Ortega-Arenas — Médico e Investigador Clínico" data-alt-en="Dr. Cristóbal J. Ortega-Arenas — Physician and Clinical Researcher" class="logo-img logo-contact" width="872" height="280" loading="lazy">
   </div>
 
   <div class="contact-items">
@@ -1099,6 +1151,10 @@
       <span class="contact-label" data-es="Ubicaciones" data-en="Locations">Ubicaciones</span>
       <span class="contact-val" style="font-size:0.88rem">Del Valle · Roma · Polanco · Santa Fe</span>
     </div>
+  </div>
+  <div class="hero-ctas contact-ctas">
+    <a href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." data-href-en="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." target="_blank" rel="noopener" class="hero-cta" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp"></a>
+    <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Reservar en línea" data-en="Book online"></a>
   </div>
 
   <!-- Social / Profile links -->

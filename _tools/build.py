@@ -40,9 +40,8 @@ META = {
         'path': '/',
         'html_lang': 'es-MX',
         'title': 'Médico a domicilio y hotel en CDMX | Dr. Ortega-Arenas',
-        'description': 'Médico general bilingüe (español/inglés) en Ciudad de México: consulta en hotel, a domicilio, '
-                       'en consultorio (Del Valle, Roma, Polanco, Santa Fe) y teleconsulta. Egresado de la UNAM. '
-                       'Honorarios publicados en MXN.',
+        'description': 'Médico general bilingüe en CDMX: visita a su hotel, a domicilio, en consultorio '
+                       '(Del Valle, Roma, Polanco, Santa Fe) y teleconsulta. Honorarios publicados en MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en CDMX',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
         'crumb_home': 'Inicio',
@@ -53,9 +52,8 @@ META = {
         'path': '/en/',
         'html_lang': 'en',
         'title': 'English-Speaking Doctor in Mexico City | Hotel & House Calls',
-        'description': 'Bilingual (English/Spanish) general physician in Mexico City: hotel visits, house calls, '
-                       'clinic in Polanco, Roma, Del Valle and Santa Fe, and telemedicine. UNAM-trained. '
-                       'Fees published in MXN.',
+        'description': 'English-speaking doctor in Mexico City: hotel visits, house calls, clinics in Polanco, '
+                       'Roma, Del Valle and Santa Fe, and telemedicine. Fees published in MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — English-speaking doctor in Mexico City',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
         'crumb_home': 'Home',
@@ -69,9 +67,8 @@ META_HOTELES = {
         'path': '/hoteles/',
         'html_lang': 'es-MX',
         'title': 'Médico a hotel en CDMX: información para hoteles y concierges',
-        'description': 'Cómo solicitar una visita médica bilingüe para un huésped en la Ciudad de México: '
-                       'WhatsApp o reserva en línea, llegada estimada según la zona, tarifas por zona y '
-                       'horario, y documentos para el seguro de viaje.',
+        'description': 'Visita médica bilingüe para huéspedes en CDMX: cómo solicitarla por WhatsApp o en línea, '
+                       'llegada estimada por zona, tarifas y documentos para el seguro.',
         'og_title': 'Para hoteles y concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
         'crumb': 'Para hoteles y concierges', 'home': 'Inicio',
@@ -79,10 +76,9 @@ META_HOTELES = {
     'en': {
         'path': '/en/hotels/',
         'html_lang': 'en',
-        'title': 'Hotel Doctor in Mexico City: Information for Hotels & Concierges',
-        'description': 'How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or '
-                       'online booking, estimated arrival by area, fees by zone and time of day, and '
-                       'documents for travel insurance.',
+        'title': 'Hotel Doctor in Mexico City: Info for Hotels & Concierges',
+        'description': 'Bilingual doctor visits for hotel guests in Mexico City: how to request one by WhatsApp '
+                       'or online, arrival time by area, fees and travel insurance documents.',
         'og_title': 'For hotels & concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
         'crumb': 'For hotels & concierges', 'home': 'Home',
@@ -154,6 +150,12 @@ def clinica(sede):
     return {'@type': 'MedicalClinic', '@id': f'{SITE}/#consultorio-{sede.lower().replace(" ", "-")}',
             'name': f'Consultorio {sede} — Dr. Cristóbal J. Ortega-Arenas',
             'telephone': '+52 595 109 3969', 'hasMap': sede_maps(sede),
+            'url': SITE + {'Polanco': '/zonas/polanco/', 'Roma': '/zonas/roma-condesa/',
+                           'Del Valle': '/zonas/del-valle/', 'Santa Fe': '/zonas/santa-fe/'}[sede],
+            'openingHoursSpecification': [  # el mismo horario publicado en la tarjeta de consultorio
+                {'@type': 'OpeningHoursSpecification', 'opens': '17:00', 'closes': '20:00',
+                 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']},
+                {'@type': 'OpeningHoursSpecification', 'dayOfWeek': 'Saturday', 'opens': '11:00', 'closes': '15:00'}],
             'address': direccion,
             'containedInPlace': {'@type': 'Place', 'name': f'Briyam Coworking Médico, sede {briyam}', 'address': direccion}}
 
@@ -174,9 +176,9 @@ def head_meta(meta, lang):
         '<meta name="author" content="Dr. Cristóbal J. Ortega-Arenas">',
         '<meta name="robots" content="index, follow">',
         f'<link rel="canonical" href="{url}">',
-        f'<link rel="alternate" hreflang="es-MX" href="{es_url}">',
+        f'<link rel="alternate" hreflang="es" href="{es_url}">',
         *([f'<link rel="alternate" hreflang="en" href="{en_url}">'] if en_url else []),
-        f'<link rel="alternate" hreflang="x-default" href="{es_url}">',
+        f'<link rel="alternate" hreflang="x-default" href="{en_url or es_url}">',
         '<meta name="theme-color" content="#0a0a0a">',
         '<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">',
         '<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">',
@@ -224,7 +226,7 @@ def physician(lang):
         'makesOffer': offers(lang),
         'description': m['phys_desc'],
         'url': SITE + m['path'],
-        'image': SITE + '/assets/og-image.png',
+        'image': SITE + '/assets/foto-perfil-color-813.webp',
         'logo': SITE + '/assets/logo-white.svg',
         'telephone': '+52 595 109 3969',
         'email': 'cristobaljoa@icloud.com',
@@ -264,6 +266,8 @@ def offers(lang):
 def medical_page(page, lang):
     """MedicalWebPage para servicios y guías: autor, revisión y fuentes citadas."""
     cfg, m = page['cfg'], page['meta'][lang]
+    medico = {'@type': 'Physician', '@id': SITE + '/#medico', 'name': 'Dr. Cristóbal J. Ortega-Arenas',
+              'url': SITE + META[lang]['path']}
     obj = {
         '@context': 'https://schema.org',
         '@type': 'MedicalWebPage',
@@ -271,10 +275,10 @@ def medical_page(page, lang):
         'description': m['description'],
         'url': SITE + m['path'],
         'inLanguage': m['html_lang'],
-        'author': {'@id': SITE + '/#medico'},
-        'reviewedBy': {'@id': SITE + '/#medico'},
+        'author': medico,
+        'reviewedBy': medico,
         'lastReviewed': cfg.get('revisado'),
-        'publisher': {'@id': SITE + '/#medico'},
+        'publisher': medico,
     }
     if cfg.get('audiencia'):
         obj['audience'] = {'@type': 'PeopleAudience', 'audienceType': cfg['audiencia'][lang] if isinstance(cfg['audiencia'], dict) else cfg['audiencia']}
@@ -522,17 +526,26 @@ def build_pdf():
     print(f'pdf: {PDF_OUT.relative_to(ROOT)} ({PDF_OUT.stat().st_size:,} bytes)')
 
 
+def fecha(page, today):
+    """Fecha de revisión de la página (JSON) o, si no tiene, del último commit de su plantilla."""
+    if page.get('cfg', {}).get('revisado'):
+        return page['cfg']['revisado']
+    r = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', f'_tools/{page["template"]}'],
+                       cwd=ROOT, capture_output=True, text=True)
+    return r.stdout.strip() or today
+
+
 def build_sitemap():
     today = __import__('datetime').date.today().isoformat()
     urls = []
     for page in PAGES:
         meta = page['meta']
-        alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{"es-MX" if l == "es" else "en"}" href="{SITE}{meta[l]["path"]}"/>'
+        alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{meta[l]["path"]}"/>'
                        for l in ('es', 'en') if l in meta)
-        alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{meta["es"]["path"]}"/>'
+        alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{meta["en" if "en" in meta else "es"]["path"]}"/>'
         for l in ('es', 'en'):
             if l in meta:
-                urls.append(f'  <url>\n    <loc>{SITE}{meta[l]["path"]}</loc>\n    <lastmod>{today}</lastmod>{alts}\n  </url>')
+                urls.append(f'  <url>\n    <loc>{SITE}{meta[l]["path"]}</loc>\n    <lastmod>{fecha(page, today)}</lastmod>{alts}\n  </url>')
     for extra in ('/formularios/', '/aviso-de-privacidad/'):
         urls.append(f'  <url>\n    <loc>{SITE}{extra}</loc>\n    <lastmod>{today}</lastmod>\n  </url>')
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'

@@ -10,17 +10,9 @@
 <style>
 <!--BASE_CSS-->
   /* ── Página para hoteles ─────────────────── */
-  .page-hero { padding:150px 48px 64px; max-width:1200px; margin:0 auto; }
   .page-hero .hero-badge { animation:none; margin-bottom:28px; }
-  .page-h1 { font-family:'Bodoni Moda',serif; font-weight:300; font-size:clamp(2rem,4.4vw,3.4rem); line-height:1.1; color:var(--white); margin-bottom:18px; }
-  .page-h1 em { font-style:italic; color:var(--accent); }
-  .page-lead { font-size:0.86rem; color:var(--silver); max-width:620px; line-height:1.85; margin-bottom:34px; }
   .page-hero .hero-ctas { justify-content:flex-start; margin-bottom:0; }
   .page-hero .hero-cta { animation:none; }
-  .breadcrumb { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
-  .breadcrumb a { color:var(--silver); text-decoration:none; }
-  .emergency-note { border:1px solid rgba(180,80,60,0.35); border-left:2px solid #b87868; background:rgba(180,80,60,0.06); padding:18px 22px; margin-top:28px; font-size:0.74rem; color:var(--silver); line-height:1.8; }
-  .emergency-note strong { color:var(--white); font-weight:500; }
   .hotel-prices { border:1px solid var(--border); background:var(--card); padding:36px; }
   .doc-list { list-style:none; }
   .doc-list li { font-size:0.76rem; color:var(--muted); padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:12px; line-height:1.75; }
@@ -32,15 +24,10 @@
   .footer-links { display:flex; gap:16px; flex-wrap:wrap; }
   .footer-links a { color:var(--silver); text-decoration:none; }
   @media(max-width:900px){
-    .page-hero { padding:116px 20px 44px; }
     .hotel-prices { padding:24px 18px; }
     .page-hero .hero-ctas { flex-direction:column; align-items:stretch; }
     .page-hero .hero-cta { padding:15px 20px; }
     .pdf-card .hero-cta { width:100%; }
-  }
-  @media(max-width:420px){
-    .price-table th, .price-table td { font-size:0.68rem; }
-    .price-col { font-size:0.92rem; padding-left:8px !important; }
   }
 </style>
 <!--PHYSICIAN_JSONLD-->

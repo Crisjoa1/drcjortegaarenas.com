@@ -47,13 +47,13 @@
   "es": {
     "path": "/guias/farmacias-cdmx/",
     "title": "Farmacias en la CDMX: recetas, antibióticos y 24 horas",
-    "description": "Qué medicamentos requieren receta en México, por qué los antibióticos se venden solo con receta, si sirve una receta extranjera y cómo encontrar una farmacia 24 horas en la CDMX.",
+    "description": "Qué medicamentos piden receta en México, por qué los antibióticos solo se venden con receta, si sirve una receta extranjera y farmacias 24 horas en la CDMX.",
     "crumb": "Farmacias en la CDMX"
   },
   "en": {
     "path": "/en/guides/pharmacies-mexico-city/",
     "title": "Pharmacies in Mexico City: Prescriptions, Antibiotics, 24 h",
-    "description": "Which medicines need a prescription in Mexico, why antibiotics are sold only with one, whether a foreign prescription works and how to find a 24-hour pharmacy in Mexico City.",
+    "description": "Which medicines need a prescription in Mexico, why antibiotics require one, whether a foreign prescription works, and 24-hour pharmacies in Mexico City.",
     "crumb": "Pharmacies in Mexico City"
   }
 }

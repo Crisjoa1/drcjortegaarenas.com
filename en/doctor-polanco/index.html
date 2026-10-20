@@ -10,20 +10,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>English-Speaking General Physician in Polanco, Mexico City</title>
+<title>English-Speaking Hotel Doctor in Polanco, Mexico City</title>
 <meta content="Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival." name="description"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" name="author"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://drcjortegaarenas.com/en/doctor-polanco/" rel="canonical"/>
-<link href="https://drcjortegaarenas.com/zonas/polanco/" hreflang="es-MX" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/zonas/polanco/" hreflang="es" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/doctor-polanco/" hreflang="en" rel="alternate"/>
-<link href="https://drcjortegaarenas.com/zonas/polanco/" hreflang="x-default" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/en/doctor-polanco/" hreflang="x-default" rel="alternate"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon"/>
 <meta content="website" property="og:type"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" property="og:site_name"/>
-<meta content="English-Speaking General Physician in Polanco, Mexico City" property="og:title"/>
+<meta content="English-Speaking Hotel Doctor in Polanco, Mexico City" property="og:title"/>
 <meta content="Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival." property="og:description"/>
 <meta content="https://drcjortegaarenas.com/en/doctor-polanco/" property="og:url"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" property="og:image"/>
@@ -32,7 +32,7 @@
 <meta content="en_US" property="og:locale"/>
 <meta content="es_MX" property="og:locale:alternate"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="English-Speaking General Physician in Polanco, Mexico City" name="twitter:title"/>
+<meta content="English-Speaking Hotel Doctor in Polanco, Mexico City" name="twitter:title"/>
 <meta content="Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -202,6 +202,7 @@
   .proc-cat-toggle { color:var(--silver); font-size:1.2rem; transition:transform 0.3s; user-select:none; }
   .proc-cat.open .proc-cat-toggle { transform:rotate(45deg); }
   .proc-cat-body { padding:0 30px 22px; background:var(--card); }
+  .proc-cat:not(.open) .proc-cat-body { display:none; }
   .proc-row { display:grid; grid-template-columns:1fr auto; gap:14px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.04); align-items:start; }
   .proc-row:last-child { border-bottom:none; }
   .proc-name { font-size:0.76rem; color:var(--silver); }
@@ -329,7 +330,7 @@
 
   /* ── Foto de perfil ──────────────────────── */
   .profile-photo { margin:0 0 26px; border:1px solid var(--border); background:var(--card); }
-  .profile-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%; filter:grayscale(1) contrast(1.05); }
+  .profile-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 50%; }
   .profile-photo figcaption { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); padding:12px 16px; }
 
   /* ── Aviso de versión en inglés ──────────── */
@@ -414,7 +415,7 @@
   .hero2 .hero-ctas { justify-content:flex-start; margin-bottom:16px; }
   .hero2 .hero-cta { animation:none; }
   .hero2-note { font-size:0.82rem; color:var(--muted); }
-  .hero2-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 28%; filter:grayscale(1) contrast(1.05); border:1px solid var(--border); }
+  .hero2-photo img { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:50% 50%; border:1px solid var(--border); }
   .hero2-photo figcaption { font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-top:12px; }
   .creds-band { display:flex; justify-content:center; padding:0 48px 24px; }
   .creds-band .hero-creds { animation:none; }
@@ -448,7 +449,8 @@
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
   .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:0; }
+  .cv-more { margin-top:48px; }
   .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
   .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
   .cv-card ul { list-style:none; }
@@ -505,24 +507,70 @@
     .contact-item { border-right:none; border-bottom:1px solid var(--border); }
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
+
+  /* ── Legibilidad y conversión (oct-2026) ───── */
+  body { font-weight:400; }
+  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .svc-card { color:inherit; }
+  .contact-ctas { justify-content:center; margin:0 0 32px; }
+  .contact-ctas .hero-cta { animation:none; }
+  .section-tag, .hero-cred-label, .service-num, .iv-level, .iv-includes h4, .schedule-type,
+  .contact-label, .zone-badge, .payment-tag, .iv-price-label { font-size:0.72rem; letter-spacing:0.14em; }
+  .lang-btn, .cred-verify, .sede-dir, footer p { font-size:0.78rem; }
+  .nav-links a { font-size:0.7rem; }
+  .cofepris-bar { font-size:0.75rem; letter-spacing:0.06em; line-height:1.6; }
+  .proc-name { font-size:0.9rem; }
+  .cv-note { font-size:0.9rem; }
+  .hero-cred-value, .verify-list .v-val, .proc-price, .price-col { font-weight:400; }
+  .t-sub { display:block; color:var(--muted); font-size:0.8rem; line-height:1.5; }
+  .price-table th { font-size:0.72rem; letter-spacing:0.08em; white-space:nowrap; }
+  .price-table th + th, .price-table td + td { padding-left:12px; }
+  .lang-hint { left:0; right:0; bottom:auto; display:flex; justify-content:center; align-items:center; gap:14px; padding:10px 16px; border:0; border-bottom:1px solid var(--border-hi); font-size:0.85rem; }
+  .lang-hint[hidden] { display:none; }
+  .lang-hint a { color:var(--offwhite); text-underline-offset:3px; }
+  .lang-hint button { background:none; border:1px solid var(--border); color:var(--silver); width:32px; height:32px; cursor:pointer; font-size:1rem; }
+  @media(max-width:900px){
+    .mobile-bar { transform:translateY(110%); transition:transform .25s ease; }
+    .mobile-bar.visible { transform:none; }
+    .lang-hint { bottom:auto; }
+    .hero2-badge { font-size:0.72rem; letter-spacing:0.12em; margin-bottom:16px; }
+    .hero2-photo { max-width:none; }
+    .hero2-photo img { aspect-ratio:4/3; object-position:50% 38%; }
+    .hero2-facts li { font-size:0.8rem; }
+    .creds-band .hero-creds { display:grid; grid-template-columns:1fr 1fr; width:100%; border:1px solid var(--border); }
+    .creds-band .hero-cred { padding:14px 16px; border-bottom:1px solid var(--border); border-right:none; }
+    .creds-band .hero-cred:nth-child(odd) { border-right:1px solid var(--border); }
+    .creds-band .hero-cred:nth-last-child(-n+2) { border-bottom:none; }
+    .hero-cred-value { font-size:0.95rem; }
+  }
+  @media(max-width:600px){ .price-col { font-size:0.95rem; } }
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  "name": "English-Speaking General Physician in Polanco, Mexico City",
+  "name": "English-Speaking Hotel Doctor in Polanco, Mexico City",
   "description": "Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival.",
   "url": "https://drcjortegaarenas.com/en/doctor-polanco/",
   "inLanguage": "en",
   "author": {
-    "@id": "https://drcjortegaarenas.com/#medico"
+    "@type": "Physician",
+    "@id": "https://drcjortegaarenas.com/#medico",
+    "name": "Dr. Cristóbal J. Ortega-Arenas",
+    "url": "https://drcjortegaarenas.com/en/"
   },
   "reviewedBy": {
-    "@id": "https://drcjortegaarenas.com/#medico"
+    "@type": "Physician",
+    "@id": "https://drcjortegaarenas.com/#medico",
+    "name": "Dr. Cristóbal J. Ortega-Arenas",
+    "url": "https://drcjortegaarenas.com/en/"
   },
   "lastReviewed": "2026-10-19",
   "publisher": {
-    "@id": "https://drcjortegaarenas.com/#medico"
+    "@type": "Physician",
+    "@id": "https://drcjortegaarenas.com/#medico",
+    "name": "Dr. Cristóbal J. Ortega-Arenas",
+    "url": "https://drcjortegaarenas.com/en/"
   },
   "audience": {
     "@type": "PeopleAudience",
@@ -534,6 +582,27 @@
     "name": "Consultorio Polanco — Dr. Cristóbal J. Ortega-Arenas",
     "telephone": "+52 595 109 3969",
     "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico",
+    "url": "https://drcjortegaarenas.com/zonas/polanco/",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "opens": "17:00",
+        "closes": "20:00",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ]
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "11:00",
+        "closes": "15:00"
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
@@ -602,7 +671,7 @@
 </div>
 <a class="nav-cta" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book</a>
 <div class="lang-toggle">
-<a class="lang-btn" data-lang="es" href="/zonas/polanco/" hreflang="es-MX" lang="es">ES</a>
+<a class="lang-btn" data-lang="es" href="/zonas/polanco/" hreflang="es" lang="es">ES</a>
 <a class="lang-btn" data-lang="en" href="/en/doctor-polanco/" hreflang="en" lang="en">EN</a>
 </div>
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Menu" class="nav-menu-btn" type="button">☰</button>
@@ -673,11 +742,20 @@
 <a href="/formularios/">Forms</a>
 <a href="/aviso-de-privacidad/">Privacy Notice</a>
 </p>
+<p class="footer-links">
+<a href="/en/doctor-del-valle/">Del Valle</a>
+<a href="/en/doctor-polanco/">Polanco</a>
+<a href="/en/doctor-roma-condesa/">Roma &amp; Condesa</a>
+<a href="/en/doctor-santa-fe/">Santa Fe</a>
+<a href="/en/guides/mexico-city-altitude/">Altitude</a>
+<a href="/en/guides/travelers-diarrhea-mexico-city/">Traveler's diarrhea</a>
+<a href="/en/guides/pharmacies-mexico-city/">Pharmacies</a>
+</p>
 </footer>
 <!-- ══ BARRA FIJA DE RESERVA (móvil) ══ -->
 <div class="mobile-bar">
-<a class="mobile-bar-btn primary" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book a visit</a>
-<a class="mobile-bar-btn" href="https://wa.me/525951093969" rel="noopener" target="_blank">WhatsApp</a>
+<a class="mobile-bar-btn primary" href="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." rel="noopener" target="_blank">WhatsApp</a>
+<a class="mobile-bar-btn" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book online</a>
 </div>
 <!-- ══ WHATSAPP FLOAT CTA ══════════════════════ -->
 <a aria-label="WhatsApp" class="wa-float" href="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." rel="noopener" target="_blank">
@@ -686,7 +764,7 @@
 </svg>
 <span class="wa-label">WhatsApp</span>
 </a>
-<a class="lang-hint" hidden="" id="lang-hint"></a>
+<div class="lang-hint" hidden="" id="lang-hint"><a id="lang-hint-link"></a><button aria-label="Cerrar / Close" id="lang-hint-x" type="button">×</button></div>
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
@@ -700,8 +778,16 @@
   try { saved = localStorage.getItem('lang'); } catch { /* sin almacenamiento */ }
   const nav = (navigator.language || '').toLowerCase();
   const hint = document.getElementById('lang-hint');
-  if (!saved && lang === 'es' && nav.startsWith('en')) { hint.href = '/en/doctor-polanco/'; hint.textContent = 'View in English →'; hint.hidden = false; }
-  if (!saved && lang === 'en' && nav.startsWith('es')) { hint.href = '/zonas/polanco/'; hint.textContent = 'Ver en español →'; hint.hidden = false; }
+  const link = document.getElementById('lang-hint-link');
+  const show = (href, text) => {
+    link.href = href; link.textContent = text; hint.hidden = false;
+    const bar = document.querySelector('nav'); hint.style.top = (bar ? bar.offsetHeight : 0) + 'px';
+  };
+  if (!saved && lang === 'es' && nav.startsWith('en')) show('/en/doctor-polanco/', 'View this page in English →');
+  if (!saved && lang === 'en' && nav.startsWith('es')) show('/zonas/polanco/', 'Ver esta página en español →');
+  document.getElementById('lang-hint-x').addEventListener('click', () => {
+    hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
+  });
 })();
 
 /* ── MENÚ MÓVIL ──────────────────────────── */
@@ -723,6 +809,26 @@ document.querySelectorAll('.proc-cat-header').forEach(btn => {
     const open = btn.closest('.proc-cat').classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   });
+});
+
+/* ── BARRA MÓVIL: aparece al pasar los botones principales ── */
+(function(){
+  const bar = document.querySelector('.mobile-bar');
+  const ctas = document.querySelector('.hero2 .hero-ctas, .page-hero .hero-ctas');
+  if (!bar) return;
+  if (!ctas) { bar.classList.add('visible'); return; }
+  const check = () => bar.classList.toggle('visible', ctas.getBoundingClientRect().bottom < 0);
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  check();
+})();
+
+/* ── MEDICIÓN: clics en WhatsApp y en reservar (Google Analytics) ── */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="wa.me"], a[href*="cal.com"]');
+  if (!a || typeof gtag !== 'function') return;
+  gtag('event', a.href.includes('wa.me') ? 'clic_whatsapp' : 'clic_reservar',
+       { ubicacion: a.className || 'enlace', pagina: location.pathname });
 });
 
 /* ── SCROLL REVEAL ───────────────────────── */

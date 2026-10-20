@@ -15,12 +15,21 @@
     <a href="/formularios/" data-es="Formularios" data-en="Forms"></a>
     <a href="/aviso-de-privacidad/" data-es="Aviso de Privacidad" data-en="Privacy Notice"></a>
   </p>
+  <p class="footer-links">
+    <a href="/zonas/del-valle/" data-href-en="/en/doctor-del-valle/" data-es="Del Valle" data-en="Del Valle"></a>
+    <a href="/zonas/polanco/" data-href-en="/en/doctor-polanco/" data-es="Polanco" data-en="Polanco"></a>
+    <a href="/zonas/roma-condesa/" data-href-en="/en/doctor-roma-condesa/" data-es="Roma y Condesa" data-en="Roma &amp; Condesa"></a>
+    <a href="/zonas/santa-fe/" data-href-en="/en/doctor-santa-fe/" data-es="Santa Fe" data-en="Santa Fe"></a>
+    <a href="/guias/altitud-cdmx/" data-href-en="/en/guides/mexico-city-altitude/" data-es="Altitud" data-en="Altitude"></a>
+    <a href="/guias/diarrea-del-viajero/" data-href-en="/en/guides/travelers-diarrhea-mexico-city/" data-es="Diarrea del viajero" data-en="Traveler's diarrhea"></a>
+    <a href="/guias/farmacias-cdmx/" data-href-en="/en/guides/pharmacies-mexico-city/" data-es="Farmacias" data-en="Pharmacies"></a>
+  </p>
 </footer>
 
 <!-- ══ BARRA FIJA DE RESERVA (móvil) ══ -->
 <div class="mobile-bar">
-  <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="mobile-bar-btn primary" data-es="Reservar cita" data-en="Book a visit"></a>
-  <a href="https://wa.me/525951093969" target="_blank" rel="noopener" class="mobile-bar-btn" data-es="WhatsApp" data-en="WhatsApp"></a>
+  <a href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." data-href-en="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." target="_blank" rel="noopener" class="mobile-bar-btn primary" data-es="WhatsApp" data-en="WhatsApp"></a>
+  <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="mobile-bar-btn" data-es="Reservar en línea" data-en="Book online"></a>
 </div>
 
 <!-- ══ WHATSAPP FLOAT CTA ══════════════════════ -->
@@ -32,7 +41,7 @@
   <span class="wa-label" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</span>
 </a>
 
-<a class="lang-hint" id="lang-hint" hidden></a>
+<div class="lang-hint" id="lang-hint" hidden><a id="lang-hint-link"></a><button type="button" id="lang-hint-x" aria-label="Cerrar / Close">×</button></div>
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
@@ -46,8 +55,16 @@
   try { saved = localStorage.getItem('lang'); } catch { /* sin almacenamiento */ }
   const nav = (navigator.language || '').toLowerCase();
   const hint = document.getElementById('lang-hint');
-  if (!saved && lang === 'es' && nav.startsWith('en')) { hint.href = '{{URL_EN}}'; hint.textContent = 'View in English →'; hint.hidden = false; }
-  if (!saved && lang === 'en' && nav.startsWith('es')) { hint.href = '{{URL_ES}}'; hint.textContent = 'Ver en español →'; hint.hidden = false; }
+  const link = document.getElementById('lang-hint-link');
+  const show = (href, text) => {
+    link.href = href; link.textContent = text; hint.hidden = false;
+    const bar = document.querySelector('nav'); hint.style.top = (bar ? bar.offsetHeight : 0) + 'px';
+  };
+  if (!saved && lang === 'es' && nav.startsWith('en')) show('{{URL_EN}}', 'View this page in English →');
+  if (!saved && lang === 'en' && nav.startsWith('es')) show('{{URL_ES}}', 'Ver esta página en español →');
+  document.getElementById('lang-hint-x').addEventListener('click', () => {
+    hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
+  });
 })();
 
 /* ── MENÚ MÓVIL ──────────────────────────── */
@@ -69,6 +86,26 @@ document.querySelectorAll('.proc-cat-header').forEach(btn => {
     const open = btn.closest('.proc-cat').classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   });
+});
+
+/* ── BARRA MÓVIL: aparece al pasar los botones principales ── */
+(function(){
+  const bar = document.querySelector('.mobile-bar');
+  const ctas = document.querySelector('.hero2 .hero-ctas, .page-hero .hero-ctas');
+  if (!bar) return;
+  if (!ctas) { bar.classList.add('visible'); return; }
+  const check = () => bar.classList.toggle('visible', ctas.getBoundingClientRect().bottom < 0);
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  check();
+})();
+
+/* ── MEDICIÓN: clics en WhatsApp y en reservar (Google Analytics) ── */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href*="wa.me"], a[href*="cal.com"]');
+  if (!a || typeof gtag !== 'function') return;
+  gtag('event', a.href.includes('wa.me') ? 'clic_whatsapp' : 'clic_reservar',
+       { ubicacion: a.className || 'enlace', pagina: location.pathname });
 });
 
 /* ── SCROLL REVEAL ───────────────────────── */
