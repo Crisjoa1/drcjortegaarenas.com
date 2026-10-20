@@ -1,0 +1,22 @@
+{
+  "plantilla": "plantilla-zona-santa-fe.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-19",
+  "audiencia": {
+    "es": "Personas que trabajan, viven o se hospedan en Santa Fe",
+    "en": "People who work, live or stay in Santa Fe"
+  },
+  "es": {
+    "path": "/zonas/santa-fe/",
+    "title": "Médico en Santa Fe, CDMX | Dr. Ortega-Arenas",
+    "description": "Médico general bilingüe en Santa Fe, CDMX: consultorio con cita por las tardes y sábados, visita en hotel (Zona B) y a domicilio. Tarifas publicadas en MXN.",
+    "crumb": "Médico en Santa Fe"
+  },
+  "en": {
+    "path": "/en/doctor-santa-fe/",
+    "title": "English-Speaking General Physician in Santa Fe, Mexico City",
+    "description": "Bilingual general physician in Santa Fe, Mexico City: evening and Saturday clinic by appointment, hotel visits (Zone B) and house calls. Published fees in MXN.",
+    "crumb": "Doctor in Santa Fe"
+  },
+  "sede": "Santa Fe"
+}

@@ -1,0 +1,22 @@
+{
+  "plantilla": "plantilla-zona-roma-condesa.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-19",
+  "audiencia": {
+    "es": "Viajeros y residentes en las colonias Roma y Condesa",
+    "en": "Travelers and residents in the Roma and Condesa neighborhoods"
+  },
+  "es": {
+    "path": "/zonas/roma-condesa/",
+    "title": "Médico en la Roma y la Condesa, CDMX | Dr. Ortega-Arenas",
+    "description": "Médico general bilingüe en la Roma y la Condesa: visita en hotel (Zona A), a domicilio o en renta temporal, y consultorio en la Roma. Tarifas publicadas en MXN.",
+    "crumb": "Médico en Roma y Condesa"
+  },
+  "en": {
+    "path": "/en/doctor-roma-condesa/",
+    "title": "English-Speaking General Physician in Roma & Condesa, CDMX",
+    "description": "Bilingual general physician in Roma and Condesa: hotel visits (Zone A), house calls including short-term rentals, and a clinic in Roma. Published fees in MXN.",
+    "crumb": "Doctor in Roma & Condesa"
+  },
+  "sede": "Roma"
+}

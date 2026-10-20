@@ -154,6 +154,8 @@
   .price-table td { padding:11px 0; font-size:0.74rem; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--silver); vertical-align:top; }
   .price-table tr:last-child td { border-bottom:none; }
   .price-col { text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); white-space:nowrap; }
+  .sede-dir { display:block; font-size:0.62rem; color:var(--muted); line-height:1.5; margin-top:3px; }
+  .sede-dir a { color:var(--muted); text-underline-offset:2px; }
   .zone-badges { display:flex; gap:6px; margin-top:16px; flex-wrap:wrap; }
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
@@ -291,6 +293,8 @@
   footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
   footer p { font-size:0.62rem; color:var(--muted); }
+  .footer-links a { color:var(--silver); text-decoration:none; margin:0 7px; white-space:nowrap; }
+  .footer-links a:hover { color:var(--white); text-decoration:underline; text-underline-offset:3px; }
 
 
   /* ── H1 y CTAs del hero ──────────────────── */
@@ -408,6 +412,7 @@
   .creds-band .hero-creds { animation:none; }
   .text-link { color:var(--offwhite); font-size:0.86rem; letter-spacing:0.04em; text-underline-offset:4px; }
   .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .svc-grid.g2 { grid-template-columns:repeat(2,1fr); }
   .svc-card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--border); padding:30px 28px; text-decoration:none; transition:background 0.25s, border-color 0.25s; }
   .svc-card:hover { background:var(--mid); border-color:var(--border-hi); }
   .svc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.4rem; color:var(--white); margin-bottom:10px; }
@@ -455,7 +460,7 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -607,6 +612,108 @@
     "addressRegion": "CDMX",
     "addressCountry": "MX"
   },
+  "location": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-del-valle",
+      "name": "Consultorio Del Valle — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Río Mixcoac 25, piso 8",
+        "addressLocality": "Benito Juárez",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Florida del Valle",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Río Mixcoac 25, piso 8",
+          "addressLocality": "Benito Juárez",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-roma",
+      "name": "Consultorio Roma — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+        "addressLocality": "Cuauhtémoc",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Roma Sur",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+          "addressLocality": "Cuauhtémoc",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-polanco",
+      "name": "Consultorio Polanco — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+        "addressLocality": "Miguel Hidalgo",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Masaryk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+          "addressLocality": "Miguel Hidalgo",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-santa-fe",
+      "name": "Consultorio Santa Fe — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+        "addressLocality": "Cuajimalpa de Morelos",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Santa Fe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+          "addressLocality": "Cuajimalpa de Morelos",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    }
+  ],
   "areaServed": [
     {
       "@type": "Place",
@@ -811,7 +918,7 @@
 <div class="step reveal">
 <span class="step-num">02</span>
 <h3>Confirme</h3>
-<p>Consultorio: anticipo del 50% con tarjeta al reservar. Teleconsulta: pago completo en línea. Hotel y domicilio: se pagan directamente con el médico.</p>
+<p>Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Teleconsulta: pago completo en línea al reservar. Hotel y domicilio: sin anticipo; se pagan directamente al médico.</p>
 </div>
 <div class="step reveal">
 <span class="step-num">03</span>
@@ -898,7 +1005,7 @@
 <!-- II -->
 <div class="service-card reveal">
 <h3 class="service-name">Consultorio Privado<br/><em>Previa Cita</em></h3>
-<p class="service-desc">Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. La dirección exacta se comparte al confirmar la cita, por seguridad y privacidad.</p>
+<p class="service-desc">Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. Los consultorios están en Briyam Coworking Médico; la dirección de cada sede está en la tabla.</p>
 <table class="price-table">
 <thead><tr>
 <th>Sede</th>
@@ -906,15 +1013,15 @@
 <th style="text-align:right">Honorario</th>
 </tr></thead>
 <tbody>
-<tr><td>Del Valle</td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,000<br/><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)">subs.</span></td></tr>
-<tr><td>Roma</td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,200</td></tr>
-<tr><td>Polanco</td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,500</td></tr>
-<tr><td>Santa Fe</td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,800</td></tr>
+<tr><td>Del Valle<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,000<br/><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)">subs.</span></td></tr>
+<tr><td>Roma<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,200</td></tr>
+<tr><td>Polanco<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,500</td></tr>
+<tr><td>Santa Fe<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">L–V 17:00–20:00* / Sáb 11:00–15:00</td><td class="price-col">$1,800</td></tr>
 <tr><td><strong style="color:var(--silver)">Días Festivos</strong></td><td style="color:var(--muted);font-size:0.65rem">Coordinar por WhatsApp</td><td class="price-col">$2,500</td></tr>
 </tbody>
 </table>
 <p class="price-note">*La cita de las 20:00 (lunes a viernes) es exclusiva para consultas subsecuentes.</p>
-<div class="important-note"><strong>Reservación:</strong> Anticipo del 50% al agendar (pago en línea con tarjeta). Cancelaciones con menos de 3 hrs de anticipación: no reembolsable.</div>
+<div class="important-note"><strong>Reservación:</strong> la cita queda confirmada al pagar el anticipo del 50% al agendar (en línea, con tarjeta); el resto se paga en el consultorio. Cancelación: si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo. Con menos de 3 horas, o si no se presenta a la cita, el anticipo no es reembolsable.</div>
 </div>
 <!-- II.I -->
 <div class="service-card reveal">
@@ -1010,7 +1117,7 @@
 </div>
 <div class="payment-card reveal">
 <h3>Cancelación &amp; Reembolso</h3>
-<p><strong>Sin reembolso</strong> una vez confirmada la atención médica.<br/><br/><strong>Consultorio privado:</strong> reembolso aplicable únicamente si la cancelación se realiza con más de <strong>3 horas de anticipación</strong>. Con menos de 3 horas: no reembolsable.<br/><br/><strong>Reservación:</strong> anticipo del 50% para confirmar su cita (pago en línea con tarjeta al agendar).<br/><br/><strong>International Clinical Summary</strong> bilingüe disponible a solicitud con costo adicional.</p>
+<p><strong>Consultorio:</strong> si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo. Con menos de 3 horas, o si no se presenta a la cita, el anticipo no es reembolsable.<br/><br/><strong>Teleconsulta:</strong> si cancela con al menos 3 horas de anticipación, se reembolsa el pago. Con menos de 3 horas, o si no se conecta a la cita, el pago no es reembolsable.<br/><br/><strong>Hotel y domicilio:</strong> no se cobra anticipo ni cargo por cancelación. Si necesita cancelar o cambiar la hora, avise por WhatsApp lo antes posible.<br/><br/><strong>Resumen Clínico del Viajero</strong> en inglés, a solicitud y con costo adicional.</p>
 </div>
 </div>
 <div class="important-note reveal" style="margin-top:6px"><strong>Privacidad (LFPDPPP):</strong> La información personal y clínica es estrictamente confidencial. Consulte nuestro <a href="/aviso-de-privacidad/" style="color:inherit;text-decoration:underline">Aviso de Privacidad</a>. · <strong>Recetas:</strong> cuando hay tratamiento indicado, se entrega receta por escrito (física o digital, según corresponda). Su aceptación por la aseguradora depende de la póliza. · <strong>Alcance:</strong> Atención estrictamente ambulatoria de medicina general.</div>
@@ -1132,7 +1239,7 @@
 <h2 class="section-title">Información con <em>fuentes</em></h2>
 <p class="section-subtitle">Información general basada en evidencia y revisada por el médico. No sustituye una consulta.</p>
 </div>
-<div class="svc-grid">
+<div class="svc-grid g2">
 <a class="svc-card reveal" href="/guias/cuando-ir-a-urgencias/">
 <h3>Cuándo ir a urgencias</h3>
 <p>Signos de alarma, cómo llamar al 911 y qué puede atender un médico general en su hotel.</p>
@@ -1148,7 +1255,13 @@
 <p>Prevención, hidratación oral y signos de alarma.</p>
 <span class="svc-link">Leer guía →</span>
 </a>
+<a class="svc-card reveal" href="/guias/farmacias-cdmx/">
+<h3>Farmacias en la CDMX</h3>
+<p>Qué medicamentos piden receta, antibióticos y farmacias abiertas las 24 horas.</p>
+<span class="svc-link">Leer guía →</span>
+</a>
 </div>
+<p class="reveal" style="margin-top:22px">Por zona: <a class="text-link" href="/zonas/del-valle/">Del Valle</a> · <a class="text-link" href="/zonas/polanco/">Polanco</a> · <a class="text-link" href="/zonas/roma-condesa/">Roma y Condesa</a> · <a class="text-link" href="/zonas/santa-fe/">Santa Fe</a></p>
 <p class="reveal" style="margin-top:22px"><a class="text-link" href="/viaja-desde-espana/">¿Viaja desde España? Información para viajeros españoles →</a></p>
 </section>
 <div class="sep"></div>
@@ -1169,7 +1282,7 @@
 </div>
 <div class="payment-card reveal faq-item">
 <h3>¿Dónde están los consultorios?</h3>
-<p>Del Valle, Roma, Polanco y Santa Fe. La dirección exacta se comparte de forma privada al confirmar la cita.</p>
+<p>En Briyam Coworking Médico, con cita, en cuatro sedes: Del Valle, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span>; Roma, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span>; Polanco, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span>; y Santa Fe, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span>.</p>
 </div>
 <div class="payment-card reveal faq-item">
 <h3>¿Atiende urgencias?</h3>
@@ -1219,7 +1332,7 @@
       "name": "¿Dónde están los consultorios?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Del Valle, Roma, Polanco y Santa Fe. La dirección exacta se comparte de forma privada al confirmar la cita."
+        "text": "En Briyam Coworking Médico, con cita, en cuatro sedes: Del Valle, Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX; Roma, Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX; Polanco, Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX; y Santa Fe, Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX."
       }
     },
     {

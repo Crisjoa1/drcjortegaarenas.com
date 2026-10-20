@@ -24,9 +24,11 @@ no aparece en la web.
 import hashlib
 import json
 import pathlib
+import re
 import shutil
 import subprocess
 import tempfile
+import urllib.parse
 
 from bs4 import BeautifulSoup
 
@@ -117,6 +119,45 @@ PDF_OUT = ROOT / 'assets' / 'hoja-recepcion-hoteles.pdf'
 PDF_HASH = ROOT / '_tools' / '.hoja-recepcion.sha256'
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
+# Consultorios: todos en Briyam Coworking Médico. Direcciones tal como están en Cal.com (cada evento de
+# consultorio), revisadas el 19-oct-2026. Única fuente de las direcciones: <span data-sede="Polanco"></span>
+# en una plantilla se convierte en la dirección con enlace a Google Maps, y aquí salen también en el JSON-LD.
+# Sin código postal: no está verificado.
+SEDES = {  # sede: (sede en Briyam, calle y número con piso, colonia o None, alcaldía corta, alcaldía oficial)
+    'Del Valle': ('Florida del Valle', 'Av. Río Mixcoac 25, piso 8', None, 'Benito Juárez', 'Benito Juárez'),
+    'Roma': ('Roma Sur', 'Monterrey 243, piso 5', 'Roma Sur', 'Cuauhtémoc', 'Cuauhtémoc'),
+    'Polanco': ('Masaryk', 'Av. Presidente Masaryk 134, piso 4', 'Polanco', 'Miguel Hidalgo', 'Miguel Hidalgo'),
+    'Santa Fe': ('Santa Fe', 'Vasco de Quiroga 3900, Torre B, piso 5', 'Santa Fe', 'Cuajimalpa', 'Cuajimalpa de Morelos'),
+}
+
+
+def sede_texto(sede):
+    _, calle, colonia, alcaldia, _ = SEDES[sede]
+    return ', '.join(x for x in (calle, colonia, alcaldia, 'CDMX') if x)
+
+
+def sede_maps(sede):
+    _, calle, colonia, _, alcaldia = SEDES[sede]
+    calle = calle.split(', piso')[0].split(', Torre')[0]  # Maps no necesita piso ni torre
+    lugar = ', '.join(x for x in (calle, colonia, alcaldia, 'Ciudad de México') if x)
+    return 'https://www.google.com/maps/search/?api=1&query=' + urllib.parse.quote_plus(lugar)
+
+
+def sede_html(sede):
+    return f'<a href="{sede_maps(sede)}" target="_blank" rel="noopener">{sede_texto(sede)}</a>'
+
+
+def clinica(sede):
+    briyam, calle, colonia, _, alcaldia = SEDES[sede]
+    direccion = {'@type': 'PostalAddress', 'streetAddress': ', '.join(x for x in (calle, colonia) if x),
+                 'addressLocality': alcaldia, 'addressRegion': 'CDMX', 'addressCountry': 'MX'}
+    return {'@type': 'MedicalClinic', '@id': f'{SITE}/#consultorio-{sede.lower().replace(" ", "-")}',
+            'name': f'Consultorio {sede} — Dr. Cristóbal J. Ortega-Arenas',
+            'telephone': '+52 595 109 3969', 'hasMap': sede_maps(sede),
+            'address': direccion,
+            'containedInPlace': {'@type': 'Place', 'name': f'Briyam Coworking Médico, sede {briyam}', 'address': direccion}}
+
+
 AREAS = ['Polanco', 'Roma', 'Condesa', 'Del Valle', 'Santa Fe', 'Reforma', 'Coyoacán', 'Pedregal',
          'Centro Histórico', 'Texcoco']
 
@@ -194,6 +235,7 @@ def physician(lang):
         'knowsLanguage': ['es', 'en'],
         'address': {'@type': 'PostalAddress', 'addressLocality': 'Ciudad de México',
                     'addressRegion': 'CDMX', 'addressCountry': 'MX'},
+        'location': [clinica(sede) for sede in SEDES],
         'areaServed': [{'@type': 'Place', 'name': f'{a}, Ciudad de México' if a != 'Texcoco' else 'Texcoco, Estado de México'}
                        for a in AREAS],
         'sameAs': ['https://www.instagram.com/dr.cristobalj.ortegaarenas',
@@ -236,6 +278,8 @@ def medical_page(page, lang):
     }
     if cfg.get('audiencia'):
         obj['audience'] = {'@type': 'PeopleAudience', 'audienceType': cfg['audiencia'][lang] if isinstance(cfg['audiencia'], dict) else cfg['audiencia']}
+    if cfg.get('sede'):
+        obj['about'] = clinica(cfg['sede'])
     if cfg.get('citas'):
         obj['citation'] = [{'@type': 'CreativeWork', 'name': c['nombre'], 'url': c['url']} for c in cfg['citas']]
     return jsonld({k: v for k, v in obj.items() if v})
@@ -245,7 +289,7 @@ def faq(soup):
     items = []
     for card in soup.select('.faq-item'):
         q = card.find('h3').get_text(' ', strip=True)
-        a = card.find('p').get_text(' ', strip=True)
+        a = re.sub(r'\s+([;,.])', r'\1', card.find('p').get_text(' ', strip=True))  # 'CDMX ;' → 'CDMX;'
         items.append({'@type': 'Question', 'name': q,
                       'acceptedAnswer': {'@type': 'Answer', 'text': a}})
     return jsonld({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': items})
@@ -285,6 +329,61 @@ def hotel_card():
 def hotel_prices_html():
     table, zones = hotel_card()
     return f'{table}\n{zones}\n'
+
+
+def tarifas():
+    """Precios publicados en plantilla.html para las páginas por zona, por clave:
+      zona:Polanco          → 'A' o 'B' (zona de hotel según las etiquetas de zona)
+      hotel:Polanco:0..2    → visita a hotel en esa zona (0 ordinario, 1 especial, 2 festivo)
+      consultorio:Polanco   → consulta en la sede de ese nombre
+      domicilio:Polanco:0..2 → consulta a domicilio en la fila que menciona ese nombre
+      anticipo:Polanco       → 50 % de la consulta en esa sede (lo que se paga al reservar en Cal.com)
+      subsecuente:Del Valle  → segundo precio de la celda del consultorio (consulta subsecuente)
+      seguimiento:Del Valle  → segundo precio de la celda de domicilio ordinario (seguimiento*)
+      paquete:Del Valle      → Paquete Viajero cuya etiqueta menciona ese nombre
+      paquete-sin-certificado:Del Valle → lo que se cobra si el certificado no procede
+    En las plantillas: <span data-tarifa="hotel:Polanco:0"></span>, y build.py escribe el precio."""
+    soup = BeautifulSoup(main_template(), 'html.parser')
+    first = lambda td: td.find(string=True).strip()  # '$1,000<br>$900*' → '$1,000'
+    t = {}
+    table, zones = hotel_card()
+    hotel = [[first(td) for td in tr.find_all('td')[1:]] for tr in table.select('tbody tr')]
+    for z in zones.select('.zone-badge'):
+        letter = z.strong.get_text(strip=True)
+        col = 'AB'.index(letter)
+        for area in z.get_text(' ', strip=True)[len(letter):].split('·'):
+            area = area.strip()
+            t[f'zona:{area}'] = letter
+            for i, row in enumerate(hotel):
+                t[f'hotel:{area}:{i}'] = row[col]
+    for tr in soup.select('[data-tarifas-consultorio] tbody tr'):
+        tds = tr.find_all('td')
+        sede = first(tds[0])
+        t[f'consultorio:{sede}'] = first(tds[2])
+        t[f'anticipo:{sede}'] = f"${int(first(tds[2]).strip('$').replace(',', '')) // 2:,}"
+        precios = [s for s in tds[2].stripped_strings if s.startswith('$')]
+        if len(precios) > 1:
+            t[f'subsecuente:{sede}'] = precios[1]
+    for tr in soup.select('[data-tarifas-domicilio] tbody tr'):
+        tds = tr.find_all('td')
+        label = '·'.join(tds[0].stripped_strings).replace('&', '·')
+        seguimiento = [s.rstrip('*') for s in tds[1].stripped_strings][1:2]
+        for area in label.split('·'):
+            for i, td in enumerate(tds[1:]):
+                t[f'domicilio:{area.strip()}:{i}'] = first(td)
+            if seguimiento:
+                t[f'seguimiento:{area.strip()}'] = seguimiento[0]
+    for txt in soup.select('.offer-text[data-es]'):  # '($1,800 en Del Valle; …)' si no procede el certificado
+        for area in ('Del Valle',):
+            m = re.search(r'(\$[\d,]+) en ' + area, txt['data-es'])
+            if m:
+                t[f'paquete-sin-certificado:{area}'] = m.group(1)
+    for div in soup.select('.offer-price[data-es]'):
+        oferta = BeautifulSoup(div['data-es'], 'html.parser')
+        for area in ('Del Valle',):
+            if area in oferta.get_text():
+                t[f'paquete:{area}'] = oferta.strong.get_text(strip=True)
+    return t
 
 
 def render(page, lang):
@@ -330,8 +429,23 @@ def render(page, lang):
         if lang == 'en':
             el['href'] = el['data-href-en']
         del el['data-href-en']
-    for el in soup.select('[data-tarifas-hotel]'):
-        del el['data-tarifas-hotel']
+    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio'):
+        for el in soup.select(f'[{attr}]'):
+            del el[attr]
+    for el in soup.select('[data-sede]'):
+        if el['data-sede'] not in SEDES:
+            raise SystemExit(f'No conozco la sede {el["data-sede"]!r} (ver SEDES en build.py)')
+        el.clear()
+        el.append(BeautifulSoup(sede_html(el['data-sede']), 'html.parser'))
+        del el['data-sede']
+    marked = soup.select('[data-tarifa]')
+    if marked:
+        precios = tarifas()
+        for el in marked:
+            if el['data-tarifa'] not in precios:
+                raise SystemExit(f'No encuentro la tarifa {el["data-tarifa"]!r} en plantilla.html')
+            el.string = precios[el['data-tarifa']]
+            del el['data-tarifa']
     if missing:
         raise SystemExit('Falta traducción en:\n' + '\n'.join(missing))
     html = str(soup)
@@ -429,6 +543,8 @@ def build_llms():
              '(Del Valle, Roma, Polanco, Santa Fe), teleconsulta, hidratación intravenosa con valoración previa, '
              'certificados médicos y Resumen Clínico del Viajero. Honorarios publicados en MXN. No es un servicio '
              'de urgencias. Contacto: WhatsApp +52 595 109 3969. Aviso de publicidad COFEPRIS 2515192002A00033.', '',
+             '## Consultorios / Clinics (Briyam Coworking Médico, con cita / by appointment)', '',
+             *[f'- {sede}: {sede_texto(sede)}' for sede in SEDES], '',
              '## Páginas / Pages', '']
     for page in PAGES:
         for l in ('es', 'en'):

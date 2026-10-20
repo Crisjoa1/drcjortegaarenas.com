@@ -1,0 +1,59 @@
+{
+  "plantilla": "plantilla-guia-farmacias.html",
+  "tipo": "guia",
+  "revisado": "2026-10-19",
+  "audiencia": {
+    "es": "Viajeros adultos en la Ciudad de México",
+    "en": "Adult travelers in Mexico City"
+  },
+  "citas": [
+    {
+      "nombre": "Cámara de Diputados. Ley General de Salud (arts. 226, 241, 251, 252)",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf"
+    },
+    {
+      "nombre": "Secretaría de Salud. Acuerdo sobre la venta y dispensación de antibióticos. DOF, 27-05-2010",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5144336&fecha=27/05/2010"
+    },
+    {
+      "nombre": "Reglamento de Insumos para la Salud (arts. 29 y 30)",
+      "url": "https://www.ordenjuridico.gob.mx/Documentos/Federal/html/wo88318.html"
+    },
+    {
+      "nombre": "COFEPRIS. Aviso de riesgo: Sobre la comercialización de medicamentos y dispositivos médicos a través de sitios web. 2024",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/913763/Aviso_de_Riesgo_venta_de_medicamentos_en_sitios_web_03052024.pdf"
+    },
+    {
+      "nombre": "COFEPRIS. Alertas sanitarias de medicamentos",
+      "url": "https://www.gob.mx/cofepris/documentos/alertas-sanitarias-de-medicamentos"
+    },
+    {
+      "nombre": "Agencia Nacional de Aduanas de México. Equipaje y franquicia",
+      "url": "https://www.anam.gob.mx/equipaje-y-franquicia/"
+    },
+    {
+      "nombre": "Hagmann SHF, Norton SA. What To Do When Sick Abroad. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/health-care-abroad/what-to-do-when-sick-abroad.html"
+    },
+    {
+      "nombre": "Halsey ES, Evans DP. Traveling with Prohibited or Restricted Medications. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/travelers-with-additional-considerations/traveling-with-prohibited-or-restricted-medications.html"
+    },
+    {
+      "nombre": "Foreign, Commonwealth & Development Office (FCDO). Mexico travel advice: Health. GOV.UK",
+      "url": "https://www.gov.uk/foreign-travel-advice/mexico/health"
+    }
+  ],
+  "es": {
+    "path": "/guias/farmacias-cdmx/",
+    "title": "Farmacias en la CDMX: recetas, antibióticos y 24 horas",
+    "description": "Qué medicamentos requieren receta en México, por qué los antibióticos se venden solo con receta, si sirve una receta extranjera y cómo encontrar una farmacia 24 horas en la CDMX.",
+    "crumb": "Farmacias en la CDMX"
+  },
+  "en": {
+    "path": "/en/guides/pharmacies-mexico-city/",
+    "title": "Pharmacies in Mexico City: Prescriptions, Antibiotics, 24 h",
+    "description": "Which medicines need a prescription in Mexico, why antibiotics are sold only with one, whether a foreign prescription works and how to find a 24-hour pharmacy in Mexico City.",
+    "crumb": "Pharmacies in Mexico City"
+  }
+}

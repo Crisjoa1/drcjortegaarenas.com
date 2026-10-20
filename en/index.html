@@ -154,6 +154,8 @@
   .price-table td { padding:11px 0; font-size:0.74rem; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--silver); vertical-align:top; }
   .price-table tr:last-child td { border-bottom:none; }
   .price-col { text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); white-space:nowrap; }
+  .sede-dir { display:block; font-size:0.62rem; color:var(--muted); line-height:1.5; margin-top:3px; }
+  .sede-dir a { color:var(--muted); text-underline-offset:2px; }
   .zone-badges { display:flex; gap:6px; margin-top:16px; flex-wrap:wrap; }
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
@@ -291,6 +293,8 @@
   footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
   footer p { font-size:0.62rem; color:var(--muted); }
+  .footer-links a { color:var(--silver); text-decoration:none; margin:0 7px; white-space:nowrap; }
+  .footer-links a:hover { color:var(--white); text-decoration:underline; text-underline-offset:3px; }
 
 
   /* ── H1 y CTAs del hero ──────────────────── */
@@ -408,6 +412,7 @@
   .creds-band .hero-creds { animation:none; }
   .text-link { color:var(--offwhite); font-size:0.86rem; letter-spacing:0.04em; text-underline-offset:4px; }
   .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .svc-grid.g2 { grid-template-columns:repeat(2,1fr); }
   .svc-card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--border); padding:30px 28px; text-decoration:none; transition:background 0.25s, border-color 0.25s; }
   .svc-card:hover { background:var(--mid); border-color:var(--border-hi); }
   .svc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.4rem; color:var(--white); margin-bottom:10px; }
@@ -455,7 +460,7 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -607,6 +612,108 @@
     "addressRegion": "CDMX",
     "addressCountry": "MX"
   },
+  "location": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-del-valle",
+      "name": "Consultorio Del Valle — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Río Mixcoac 25, piso 8",
+        "addressLocality": "Benito Juárez",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Florida del Valle",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Río Mixcoac 25, piso 8",
+          "addressLocality": "Benito Juárez",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-roma",
+      "name": "Consultorio Roma — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+        "addressLocality": "Cuauhtémoc",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Roma Sur",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+          "addressLocality": "Cuauhtémoc",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-polanco",
+      "name": "Consultorio Polanco — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+        "addressLocality": "Miguel Hidalgo",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Masaryk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+          "addressLocality": "Miguel Hidalgo",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-santa-fe",
+      "name": "Consultorio Santa Fe — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+        "addressLocality": "Cuajimalpa de Morelos",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Santa Fe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+          "addressLocality": "Cuajimalpa de Morelos",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    }
+  ],
   "areaServed": [
     {
       "@type": "Place",
@@ -811,7 +918,7 @@
 <div class="step reveal">
 <span class="step-num">02</span>
 <h3>Confirm</h3>
-<p>Clinic: 50% card deposit when booking. Telemedicine: full online payment. Hotel and house calls: paid directly to the physician.</p>
+<p>Clinic: your appointment is confirmed once you pay the 50% deposit online by card; the rest is paid at the clinic. Telemedicine: full payment online when booking. Hotel visits and house calls: no deposit; paid directly to the physician.</p>
 </div>
 <div class="step reveal">
 <span class="step-num">03</span>
@@ -898,7 +1005,7 @@
 <!-- II -->
 <div class="service-card reveal">
 <h3 class="service-name">Private Clinic<br/><em>By Appointment Only</em></h3>
-<p class="service-desc">By appointment: Monday to Friday 5–8 pm (the 8:00 pm slot is for follow-up visits only), and Saturdays 11 am–3 pm. The exact address is shared once your appointment is confirmed, for safety and privacy.</p>
+<p class="service-desc">By appointment: Monday to Friday 5–8 pm (the 8:00 pm slot is for follow-up visits only), and Saturdays 11 am–3 pm. The clinics are located at Briyam Coworking Médico; each location's address is in the table.</p>
 <table class="price-table">
 <thead><tr>
 <th>Location</th>
@@ -906,15 +1013,15 @@
 <th style="text-align:right">Fee</th>
 </tr></thead>
 <tbody>
-<tr><td>Del Valle</td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,000<br/><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)">follow-up</span></td></tr>
-<tr><td>Roma</td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,200</td></tr>
-<tr><td>Polanco</td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,500</td></tr>
-<tr><td>Santa Fe</td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,800</td></tr>
+<tr><td>Del Valle<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,000<br/><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)">follow-up</span></td></tr>
+<tr><td>Roma<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,200</td></tr>
+<tr><td>Polanco<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,500</td></tr>
+<tr><td>Santa Fe<br/><span class="sede-dir"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span></td><td style="color:var(--muted);font-size:0.65rem">Mon–Fri 5–8 pm* / Sat 11 am–3 pm</td><td class="price-col">$1,800</td></tr>
 <tr><td><strong style="color:var(--silver)">Holidays</strong></td><td style="color:var(--muted);font-size:0.65rem">Arrange via WhatsApp</td><td class="price-col">$2,500</td></tr>
 </tbody>
 </table>
 <p class="price-note">*The 8:00 pm slot (Monday–Friday) is for follow-up visits only.</p>
-<div class="important-note"><strong>Booking:</strong> 50% deposit at booking (paid online by card). Cancellations with less than 3 hours' notice are non-refundable.</div>
+<div class="important-note"><strong>Booking:</strong> your appointment is confirmed once you pay the 50% deposit at booking (online, by card); the rest is paid at the clinic. Cancellation: if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable.</div>
 </div>
 <!-- II.I -->
 <div class="service-card reveal">
@@ -1010,7 +1117,7 @@
 </div>
 <div class="payment-card reveal">
 <h3>Cancellation &amp; Refund</h3>
-<p><strong>No refunds</strong> once the service has been confirmed.<br/><br/><strong>Private Clinic:</strong> refunds are only applicable if the cancellation is made more than <strong>3 hours prior</strong> to the appointment. With less than 3 hours' notice: non-refundable.<br/><br/><strong>Booking:</strong> 50% deposit to confirm your appointment (paid online by card at booking).<br/><br/><strong>International Clinical Summary</strong> available upon request with additional cost.</p>
+<p><strong>Clinic:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable.<br/><br/><strong>Telemedicine:</strong> if you cancel at least 3 hours in advance, your payment is refunded. With less than 3 hours' notice, or if you do not join the call, the payment is non-refundable.<br/><br/><strong>Hotel visits and house calls:</strong> no deposit and no cancellation fee. If you need to cancel or change the time, let us know on WhatsApp as soon as possible.<br/><br/><strong>Travel Clinical Summary</strong> in English, on request for an additional fee.</p>
 </div>
 </div>
 <div class="important-note reveal" style="margin-top:6px"><strong>Privacy (LFPDPPP):</strong> Your personal and clinical information is strictly confidential. See our <a href="/aviso-de-privacidad/" style="color:inherit;text-decoration:underline">Privacy Notice</a>. · <strong>Prescriptions:</strong> when treatment is indicated, a written prescription is provided (printed or digital, as applicable). Acceptance by your insurer depends on your policy. · <strong>Scope:</strong> Strictly outpatient general medicine services.</div>
@@ -1132,7 +1239,7 @@
 <h2 class="section-title">Information with <em>sources</em></h2>
 <p class="section-subtitle">General, evidence-based information reviewed by the physician. It does not replace a consultation.</p>
 </div>
-<div class="svc-grid">
+<div class="svc-grid g2">
 <a class="svc-card reveal" href="/en/guides/emergency-care-mexico-city/">
 <h3>When to go to the ER</h3>
 <p>Warning signs, how to call 911 and what a general physician can treat at your hotel.</p>
@@ -1148,7 +1255,13 @@
 <p>Prevention, oral rehydration and warning signs.</p>
 <span class="svc-link">Read guide →</span>
 </a>
+<a class="svc-card reveal" href="/en/guides/pharmacies-mexico-city/">
+<h3>Pharmacies in Mexico City</h3>
+<p>Which medicines need a prescription, antibiotics and 24-hour pharmacies.</p>
+<span class="svc-link">Read guide →</span>
+</a>
 </div>
+<p class="reveal" style="margin-top:22px">By area: <a class="text-link" href="/en/doctor-del-valle/">Del Valle</a> · <a class="text-link" href="/en/doctor-polanco/">Polanco</a> · <a class="text-link" href="/en/doctor-roma-condesa/">Roma &amp; Condesa</a> · <a class="text-link" href="/en/doctor-santa-fe/">Santa Fe</a></p>
 
 </section>
 <div class="sep"></div>
@@ -1169,7 +1282,7 @@
 </div>
 <div class="payment-card reveal faq-item">
 <h3>Where are the clinics?</h3>
-<p>Del Valle, Roma, Polanco and Santa Fe. The exact address is shared privately upon confirmation.</p>
+<p>At Briyam Coworking Médico, by appointment, in four locations: Del Valle, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span>; Roma, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span>; Polanco, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span>; and Santa Fe, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span>.</p>
 </div>
 <div class="payment-card reveal faq-item">
 <h3>Do you handle emergencies?</h3>
@@ -1219,7 +1332,7 @@
       "name": "Where are the clinics?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Del Valle, Roma, Polanco and Santa Fe. The exact address is shared privately upon confirmation."
+        "text": "At Briyam Coworking Médico, by appointment, in four locations: Del Valle, Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX; Roma, Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX; Polanco, Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX; and Santa Fe, Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX."
       }
     },
     {

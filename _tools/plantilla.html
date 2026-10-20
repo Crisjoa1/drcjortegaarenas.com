@@ -129,6 +129,8 @@
   .price-table td { padding:11px 0; font-size:0.74rem; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--silver); vertical-align:top; }
   .price-table tr:last-child td { border-bottom:none; }
   .price-col { text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); white-space:nowrap; }
+  .sede-dir { display:block; font-size:0.62rem; color:var(--muted); line-height:1.5; margin-top:3px; }
+  .sede-dir a { color:var(--muted); text-underline-offset:2px; }
   .zone-badges { display:flex; gap:6px; margin-top:16px; flex-wrap:wrap; }
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
@@ -266,6 +268,8 @@
   footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
   footer p { font-size:0.62rem; color:var(--muted); }
+  .footer-links a { color:var(--silver); text-decoration:none; margin:0 7px; white-space:nowrap; }
+  .footer-links a:hover { color:var(--white); text-decoration:underline; text-underline-offset:3px; }
 
 
   /* ── H1 y CTAs del hero ──────────────────── */
@@ -383,6 +387,7 @@
   .creds-band .hero-creds { animation:none; }
   .text-link { color:var(--offwhite); font-size:0.86rem; letter-spacing:0.04em; text-underline-offset:4px; }
   .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .svc-grid.g2 { grid-template-columns:repeat(2,1fr); }
   .svc-card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--border); padding:30px 28px; text-decoration:none; transition:background 0.25s, border-color 0.25s; }
   .svc-card:hover { background:var(--mid); border-color:var(--border-hi); }
   .svc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.4rem; color:var(--white); margin-bottom:10px; }
@@ -430,7 +435,7 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -599,7 +604,7 @@
     <div class="step reveal">
       <span class="step-num">02</span>
       <h3 data-es="Confirme" data-en="Confirm"></h3>
-      <p data-es="Consultorio: anticipo del 50% con tarjeta al reservar. Teleconsulta: pago completo en línea. Hotel y domicilio: se pagan directamente con el médico." data-en="Clinic: 50% card deposit when booking. Telemedicine: full online payment. Hotel and house calls: paid directly to the physician."></p>
+      <p data-es="Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Teleconsulta: pago completo en línea al reservar. Hotel y domicilio: sin anticipo; se pagan directamente al médico." data-en="Clinic: your appointment is confirmed once you pay the 50% deposit online by card; the rest is paid at the clinic. Telemedicine: full payment online when booking. Hotel visits and house calls: no deposit; paid directly to the physician."></p>
     </div>
     <div class="step reveal">
       <span class="step-num">03</span>
@@ -691,9 +696,9 @@
     </div>
 
     <!-- II -->
-    <div class="service-card reveal">
+    <div class="service-card reveal" data-tarifas-consultorio>
       <h3 class="service-name" data-es="Consultorio Privado<br><em>Previa Cita</em>" data-en="Private Clinic<br><em>By Appointment Only</em>">Consultorio Privado<br><em>Previa Cita</em></h3>
-      <p class="service-desc" data-es="Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. La dirección exacta se comparte al confirmar la cita, por seguridad y privacidad." data-en="By appointment: Monday to Friday 5–8 pm (the 8:00 pm slot is for follow-up visits only), and Saturdays 11 am–3 pm. The exact address is shared once your appointment is confirmed, for safety and privacy.">Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. La dirección exacta se comparte al confirmar la cita, por seguridad y privacidad.</p>
+      <p class="service-desc" data-es="Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. Los consultorios están en Briyam Coworking Médico; la dirección de cada sede está en la tabla." data-en="By appointment: Monday to Friday 5–8 pm (the 8:00 pm slot is for follow-up visits only), and Saturdays 11 am–3 pm. The clinics are located at Briyam Coworking Médico; each location's address is in the table.">Consulta con cita: lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. Los consultorios están en Briyam Coworking Médico; la dirección de cada sede está en la tabla.</p>
       <table class="price-table">
         <thead><tr>
           <th data-es="Sede" data-en="Location">Sede</th>
@@ -701,15 +706,15 @@
           <th style="text-align:right" data-es="Honorario" data-en="Fee">Honorario</th>
         </tr></thead>
         <tbody>
-          <tr><td>Del Valle</td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,000<br><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)" data-es="subs." data-en="follow-up">subs.</span></td></tr>
-          <tr><td>Roma</td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,200</td></tr>
-          <tr><td>Polanco</td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,500</td></tr>
-          <tr><td>Santa Fe</td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,800</td></tr>
+          <tr><td>Del Valle<br><span class="sede-dir" data-sede="Del Valle"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,000<br><span style="font-size:0.78rem">$800</span> <span style="font-size:0.62rem;color:var(--muted)" data-es="subs." data-en="follow-up">subs.</span></td></tr>
+          <tr><td>Roma<br><span class="sede-dir" data-sede="Roma"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,200</td></tr>
+          <tr><td>Polanco<br><span class="sede-dir" data-sede="Polanco"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,500</td></tr>
+          <tr><td>Santa Fe<br><span class="sede-dir" data-sede="Santa Fe"></span></td><td style="color:var(--muted);font-size:0.65rem" data-es="L–V 17:00–20:00* / Sáb 11:00–15:00" data-en="Mon–Fri 5–8 pm* / Sat 11 am–3 pm"></td><td class="price-col">$1,800</td></tr>
           <tr><td><strong style="color:var(--silver)" data-es="Días Festivos" data-en="Holidays">Días Festivos</strong></td><td style="color:var(--muted);font-size:0.65rem" data-es="Coordinar por WhatsApp" data-en="Arrange via WhatsApp">Coordinar por WhatsApp</td><td class="price-col">$2,500</td></tr>
         </tbody>
       </table>
       <p class="price-note" data-es="*La cita de las 20:00 (lunes a viernes) es exclusiva para consultas subsecuentes." data-en="*The 8:00 pm slot (Monday–Friday) is for follow-up visits only."></p>
-      <div class="important-note" data-es="<strong>Reservación:</strong> Anticipo del 50% al agendar (pago en línea con tarjeta). Cancelaciones con menos de 3 hrs de anticipación: no reembolsable." data-en="<strong>Booking:</strong> 50% deposit at booking (paid online by card). Cancellations with less than 3 hours' notice are non-refundable."><strong>Reservación:</strong> Anticipo del 50% al agendar (pago en línea con tarjeta). Cancelaciones con menos de 3 hrs de anticipación: no reembolsable.</div>
+      <div class="important-note" data-es="<strong>Reservación:</strong> la cita queda confirmada al pagar el anticipo del 50% al agendar (en línea, con tarjeta); el resto se paga en el consultorio. Cancelación: si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo. Con menos de 3 horas, o si no se presenta a la cita, el anticipo no es reembolsable." data-en="<strong>Booking:</strong> your appointment is confirmed once you pay the 50% deposit at booking (online, by card); the rest is paid at the clinic. Cancellation: if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable."><strong>Reservación:</strong> Anticipo del 50% al agendar (pago en línea con tarjeta). Cancelaciones con menos de 3 hrs de anticipación: no reembolsable.</div>
     </div>
 
     <!-- II.I -->
@@ -737,7 +742,7 @@
     </div>
 
     <!-- III -->
-    <div class="service-card reveal">
+    <div class="service-card reveal" data-tarifas-domicilio>
       <h3 class="service-name" data-es="Consulta a Domicilio<br><em>Medicina General</em>" data-en="Residential Home Visits<br><em>General Medicine Only</em>">Consulta a Domicilio<br><em>Medicina General</em></h3>
       <p class="service-desc" data-es="Atención médica general en su domicilio. Algunos estudios o procedimientos pueden requerir acudir a consultorio u hospital. Cobertura por zona y horario." data-en="General medical care at your residence. Some tests or procedures may require a clinic or hospital visit. Coverage by zone and schedule.">Atención médica general en su domicilio. Algunos estudios o procedimientos pueden requerir acudir a consultorio u hospital. Cobertura por zona y horario.</p>
       <table class="price-table">
@@ -819,13 +824,7 @@
     </div>
     <div class="payment-card reveal">
       <h3 data-es="Cancelación &amp; Reembolso" data-en="Cancellation &amp; Refund">Cancelación &amp; Reembolso</h3>
-      <p data-es="<strong>Sin reembolso</strong> una vez confirmada la atención médica.<br><br><strong>Consultorio privado:</strong> reembolso aplicable únicamente si la cancelación se realiza con más de <strong>3 horas de anticipación</strong>. Con menos de 3 horas: no reembolsable.<br><br><strong>Reservación:</strong> anticipo del 50% para confirmar su cita (pago en línea con tarjeta al agendar).<br><br><strong>International Clinical Summary</strong> bilingüe disponible a solicitud con costo adicional."
-         data-en="<strong>No refunds</strong> once the service has been confirmed.<br><br><strong>Private Clinic:</strong> refunds are only applicable if the cancellation is made more than <strong>3 hours prior</strong> to the appointment. With less than 3 hours' notice: non-refundable.<br><br><strong>Booking:</strong> 50% deposit to confirm your appointment (paid online by card at booking).<br><br><strong>International Clinical Summary</strong> available upon request with additional cost.">
-        <strong>Sin reembolso</strong> una vez confirmada la atención médica.<br><br>
-        <strong>Consultorio privado:</strong> reembolso aplicable únicamente si la cancelación se realiza con más de <strong>3 horas de anticipación</strong>. Con menos de 3 horas: no reembolsable.<br><br>
-        <strong>Reservación:</strong> anticipo del 50% para confirmar su cita (pago en línea con tarjeta al agendar).<br><br>
-        <strong>International Clinical Summary</strong> bilingüe disponible a solicitud con costo adicional.
-      </p>
+      <p data-es="<strong>Consultorio:</strong> si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo. Con menos de 3 horas, o si no se presenta a la cita, el anticipo no es reembolsable.<br><br><strong>Teleconsulta:</strong> si cancela con al menos 3 horas de anticipación, se reembolsa el pago. Con menos de 3 horas, o si no se conecta a la cita, el pago no es reembolsable.<br><br><strong>Hotel y domicilio:</strong> no se cobra anticipo ni cargo por cancelación. Si necesita cancelar o cambiar la hora, avise por WhatsApp lo antes posible.<br><br><strong>Resumen Clínico del Viajero</strong> en inglés, a solicitud y con costo adicional." data-en="<strong>Clinic:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable.<br><br><strong>Telemedicine:</strong> if you cancel at least 3 hours in advance, your payment is refunded. With less than 3 hours' notice, or if you do not join the call, the payment is non-refundable.<br><br><strong>Hotel visits and house calls:</strong> no deposit and no cancellation fee. If you need to cancel or change the time, let us know on WhatsApp as soon as possible.<br><br><strong>Travel Clinical Summary</strong> in English, on request for an additional fee."></p>
     </div>
   </div>
     <div class="important-note reveal" style="margin-top:6px"
@@ -961,7 +960,7 @@
     <h2 class="section-title" data-es="Información con <em>fuentes</em>" data-en="Information with <em>sources</em>"></h2>
     <p class="section-subtitle" data-es="Información general basada en evidencia y revisada por el médico. No sustituye una consulta." data-en="General, evidence-based information reviewed by the physician. It does not replace a consultation."></p>
   </div>
-  <div class="svc-grid">
+  <div class="svc-grid g2">
     <a class="svc-card reveal" href="/guias/cuando-ir-a-urgencias/" data-href-en="/en/guides/emergency-care-mexico-city/">
       <h3 data-es="Cuándo ir a urgencias" data-en="When to go to the ER"></h3>
       <p data-es="Signos de alarma, cómo llamar al 911 y qué puede atender un médico general en su hotel." data-en="Warning signs, how to call 911 and what a general physician can treat at your hotel."></p>
@@ -977,7 +976,13 @@
       <p data-es="Prevención, hidratación oral y signos de alarma." data-en="Prevention, oral rehydration and warning signs."></p>
       <span class="svc-link" data-es="Leer guía →" data-en="Read guide →"></span>
     </a>
+    <a class="svc-card reveal" href="/guias/farmacias-cdmx/" data-href-en="/en/guides/pharmacies-mexico-city/">
+      <h3 data-es="Farmacias en la CDMX" data-en="Pharmacies in Mexico City"></h3>
+      <p data-es="Qué medicamentos piden receta, antibióticos y farmacias abiertas las 24 horas." data-en="Which medicines need a prescription, antibiotics and 24-hour pharmacies."></p>
+      <span class="svc-link" data-es="Leer guía →" data-en="Read guide →"></span>
+    </a>
   </div>
+  <p class="reveal" style="margin-top:22px" data-es="Por zona: <a href='/zonas/del-valle/' class='text-link'>Del Valle</a> · <a href='/zonas/polanco/' class='text-link'>Polanco</a> · <a href='/zonas/roma-condesa/' class='text-link'>Roma y Condesa</a> · <a href='/zonas/santa-fe/' class='text-link'>Santa Fe</a>" data-en="By area: <a href='/en/doctor-del-valle/' class='text-link'>Del Valle</a> · <a href='/en/doctor-polanco/' class='text-link'>Polanco</a> · <a href='/en/doctor-roma-condesa/' class='text-link'>Roma &amp; Condesa</a> · <a href='/en/doctor-santa-fe/' class='text-link'>Santa Fe</a>"></p>
   <p class="reveal" data-solo="es" style="margin-top:22px"><a href="/viaja-desde-espana/" class="text-link">¿Viaja desde España? Información para viajeros españoles →</a></p>
 </section>
 
@@ -1000,7 +1005,7 @@
     </div>
     <div class="payment-card reveal faq-item">
       <h3 data-es="¿Dónde están los consultorios?" data-en="Where are the clinics?">¿Dónde están los consultorios?</h3>
-      <p data-es="Del Valle, Roma, Polanco y Santa Fe. La dirección exacta se comparte de forma privada al confirmar la cita." data-en="Del Valle, Roma, Polanco and Santa Fe. The exact address is shared privately upon confirmation.">Del Valle, Roma, Polanco y Santa Fe. La dirección exacta se comparte de forma privada al confirmar la cita.</p>
+      <p data-es="En Briyam Coworking Médico, con cita, en cuatro sedes: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; y Santa Fe, <span data-sede='Santa Fe'></span>." data-en="At Briyam Coworking Médico, by appointment, in four locations: Del Valle, <span data-sede='Del Valle'></span>; Roma, <span data-sede='Roma'></span>; Polanco, <span data-sede='Polanco'></span>; and Santa Fe, <span data-sede='Santa Fe'></span>."></p>
     </div>
     <div class="payment-card reveal faq-item">
       <h3 data-es="¿Atiende urgencias?" data-en="Do you handle emergencies?">¿Atiende urgencias?</h3>

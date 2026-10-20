@@ -154,6 +154,8 @@
   .price-table td { padding:11px 0; font-size:0.74rem; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--silver); vertical-align:top; }
   .price-table tr:last-child td { border-bottom:none; }
   .price-col { text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; color:var(--white); white-space:nowrap; }
+  .sede-dir { display:block; font-size:0.62rem; color:var(--muted); line-height:1.5; margin-top:3px; }
+  .sede-dir a { color:var(--muted); text-underline-offset:2px; }
   .zone-badges { display:flex; gap:6px; margin-top:16px; flex-wrap:wrap; }
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
@@ -291,6 +293,8 @@
   footer { padding:26px 48px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   .footer-logo-wrap { --dr-sz:0.55em; --nm-sz:0.88rem; --sb-sz:0.34rem; --dr-ln:24px; color:var(--silver); }
   footer p { font-size:0.62rem; color:var(--muted); }
+  .footer-links a { color:var(--silver); text-decoration:none; margin:0 7px; white-space:nowrap; }
+  .footer-links a:hover { color:var(--white); text-decoration:underline; text-underline-offset:3px; }
 
 
   /* ── H1 y CTAs del hero ──────────────────── */
@@ -408,6 +412,7 @@
   .creds-band .hero-creds { animation:none; }
   .text-link { color:var(--offwhite); font-size:0.86rem; letter-spacing:0.04em; text-underline-offset:4px; }
   .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .svc-grid.g2 { grid-template-columns:repeat(2,1fr); }
   .svc-card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--border); padding:30px 28px; text-decoration:none; transition:background 0.25s, border-color 0.25s; }
   .svc-card:hover { background:var(--mid); border-color:var(--border-hi); }
   .svc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.4rem; color:var(--white); margin-bottom:10px; }
@@ -455,7 +460,7 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -640,6 +645,108 @@
     "addressRegion": "CDMX",
     "addressCountry": "MX"
   },
+  "location": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-del-valle",
+      "name": "Consultorio Del Valle — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Río Mixcoac 25, piso 8",
+        "addressLocality": "Benito Juárez",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Florida del Valle",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Río Mixcoac 25, piso 8",
+          "addressLocality": "Benito Juárez",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-roma",
+      "name": "Consultorio Roma — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+        "addressLocality": "Cuauhtémoc",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Roma Sur",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Monterrey 243, piso 5, Roma Sur",
+          "addressLocality": "Cuauhtémoc",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-polanco",
+      "name": "Consultorio Polanco — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+        "addressLocality": "Miguel Hidalgo",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Masaryk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Presidente Masaryk 134, piso 4, Polanco",
+          "addressLocality": "Miguel Hidalgo",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drcjortegaarenas.com/#consultorio-santa-fe",
+      "name": "Consultorio Santa Fe — Dr. Cristóbal J. Ortega-Arenas",
+      "telephone": "+52 595 109 3969",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+        "addressLocality": "Cuajimalpa de Morelos",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Briyam Coworking Médico, sede Santa Fe",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe",
+          "addressLocality": "Cuajimalpa de Morelos",
+          "addressRegion": "CDMX",
+          "addressCountry": "MX"
+        }
+      }
+    }
+  ],
   "areaServed": [
     {
       "@type": "Place",

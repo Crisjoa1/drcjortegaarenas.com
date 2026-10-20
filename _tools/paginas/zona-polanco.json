@@ -1,0 +1,22 @@
+{
+  "plantilla": "plantilla-zona-polanco.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-19",
+  "audiencia": {
+    "es": "Huéspedes de hotel, residentes y personas que trabajan en Polanco",
+    "en": "Hotel guests, residents and people working in Polanco"
+  },
+  "es": {
+    "path": "/zonas/polanco/",
+    "title": "Médico a hotel y domicilio en Polanco | Dr. Ortega-Arenas",
+    "description": "Médico general bilingüe en Polanco, CDMX: visita en hotel (Zona B), consultorio con cita y consulta a domicilio. Tarifas publicadas en MXN y llegada estimada.",
+    "crumb": "Médico en Polanco"
+  },
+  "en": {
+    "path": "/en/doctor-polanco/",
+    "title": "English-Speaking General Physician in Polanco, Mexico City",
+    "description": "Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival.",
+    "crumb": "Doctor in Polanco"
+  },
+  "sede": "Polanco"
+}
