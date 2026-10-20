@@ -160,6 +160,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -439,7 +441,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -460,7 +471,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -803,7 +815,7 @@
 <p class="hero2-lead">Con cédula profesional verificable y honorarios que conoce antes de llamar. También consulta a domicilio, en consultorio y por videollamada.</p>
 <ul class="hero2-facts">
 <li><strong>$2,500</strong>desde, visita en hotel (MXN)</li>
-<li><strong>30–45 min</strong>llegada aproximada</li>
+<li><strong>Desde 45 min</strong>llegada estimada, según la zona</li>
 <li><strong>24 h</strong>en hotel, según disponibilidad</li>
 </ul>
 <div class="hero-ctas">
@@ -833,7 +845,7 @@
 </div>
 <div class="hero-cred">
 <span class="hero-cred-label">Reconocimiento UNAM</span>
-<span class="hero-cred-value">Premio Gustavo Baz Prada</span>
+<span class="hero-cred-value">Premio Dr. Gustavo Baz Prada</span>
 </div>
 </div>
 </div>
@@ -847,7 +859,7 @@
 <div class="svc-grid">
 <a class="svc-card reveal" href="/hoteles/">
 <h3>Visita en hotel</h3>
-<p>En su habitación, las 24 horas según disponibilidad. Llegada aproximada de 30 a 45 minutos, según la zona y el tráfico.</p>
+<p>En su habitación, las 24 horas según disponibilidad. Llegada estimada: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita.</p>
 <div class="svc-price">$2,500 <small>desde</small></div>
 <span class="svc-link">Información para hoteles →</span>
 </a>
@@ -918,12 +930,12 @@
 <div class="step reveal">
 <span class="step-num">02</span>
 <h3>Confirme</h3>
-<p>Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Domicilio: al solicitar la visita se le confirma la tarifa según zona y horario, y cómo pagar el anticipo del 50% que la confirma; el resto se paga en la visita. Teleconsulta: pago completo en línea al reservar. Hotel: sin anticipo; se paga directamente al médico.</p>
+<p>Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Domicilio: se solicita por WhatsApp y se confirma con una transferencia del 50% de la tarifa ordinaria de su zona; el resto, y en horario especial o festivo la diferencia, se paga al médico en la visita. Teleconsulta: pago completo en línea al reservar. Hotel: sin anticipo; se paga directamente al médico.</p>
 </div>
 <div class="step reveal">
 <span class="step-num">03</span>
 <h3>Atención y documentos</h3>
-<p>Receta cuando hay tratamiento indicado y factura con pago con tarjeta. Antes de su primera consulta, complete sus formularios en línea.</p>
+<p>Receta cuando hay tratamiento indicado. Antes de su primera consulta, complete sus formularios en línea.</p>
 <a class="text-link" href="/formularios/">Ir a formularios →</a>
 </div>
 </div>
@@ -935,18 +947,57 @@
 <div class="reveal">
 <p class="section-tag">Perfil profesional</p>
 <h2 class="section-title">Credenciales y <em>datos profesionales</em></h2>
-<p class="verify-bio">Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con trayectoria en investigación clínica y medicina basada en evidencia, y formación clínica en Institutos Nacionales de Salud de México. Atiende en español e inglés a pacientes locales e internacionales en la Ciudad de México.</p>
+<p class="verify-bio">Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con trayectoria en investigación clínica y medicina basada en evidencia, y servicio social en investigación en el Instituto Nacional de Neurología y Neurocirugía. Atiende en español e inglés a pacientes locales e internacionales en la Ciudad de México.</p>
 </div>
 <ul class="verify-list reveal">
 <li><span>Cédula profesional (SEP)</span><span class="v-val">14848636 <a href="https://www.cedulaprofesional.sep.gob.mx/" rel="noopener" target="_blank">verificar</a></span></li>
 <li><span>Título</span><span class="v-val">Médico Cirujano, UNAM</span></li>
 <li><span>Homologación en España</span><span class="v-val">Cred. 2025-17271</span></li>
-<li><span>Reconocimiento</span><span class="v-val">Premio al Servicio Social «Gustavo Baz Prada», UNAM</span></li>
+<li><span>Reconocimiento</span><span class="v-val">Premio Dr. Gustavo Baz Prada al Servicio Social, modalidad Investigación, UNAM (2025)</span></li>
 <li><span>Publicaciones</span><span class="v-val"><a href="https://orcid.org/0000-0002-1924-8781" rel="noopener" target="_blank">ORCID 0000-0002-1924-8781</a></span></li>
 <li><span>Aviso de publicidad</span><span class="v-val">COFEPRIS 2515192002A00033</span></li>
 <li><span>Idiomas</span><span class="v-val">Español · Inglés</span></li>
 </ul>
 </div>
+<div class="cv-grid">
+<div class="cv-card reveal">
+<h3>Formación</h3>
+<ul>
+<li><strong>Médico Cirujano</strong>, Facultad de Medicina, UNAM (2017–2025).</li>
+<li><strong>Homologación al título español de Grado en Medicina</strong>, Ministerio de Ciencia, Innovación y Universidades de España (2025).</li>
+<li>Estancia de investigación en demencias de origen genético, Hospital Clínic de Barcelona – Universitat de Barcelona (2021–2022).</li>
+</ul>
+</div>
+<div class="cv-card reveal">
+<h3>Investigación y práctica clínica</h3>
+<ul>
+<li>Investigador principal de un estudio prospectivo de estimulación eléctrica focal transcraneal en epilepsia refractaria, en su servicio social en el Instituto Nacional de Neurología y Neurocirugía (2024–2025).</li>
+<li>Asistente de investigación clínica en Cirugía Plástica y Reconstructiva, Hospital General Dr. Manuel Gea González (2025–2026).</li>
+<li>Instructor de Anatomía, Facultad de Medicina, UNAM (2019–2022).</li>
+<li>Brigadas de vacunación contra COVID-19, UNAM (2021–2023).</li>
+<li>Consulta de medicina general en la Ciudad de México desde 2025.</li>
+<li>Actualmente colabora en algunos proyectos de investigación clínica en neurología.</li>
+</ul>
+</div>
+<div class="cv-card reveal">
+<h3>Publicaciones (selección)</h3>
+<ul>
+<li>García Gómez E, San-Juan D, Romero Valencia J, Ortega-Arenas CJ. Focal refractory epilepsy associated to 15q13.3 microduplication. <em>BMJ Case Reports</em>. 2025;18(3):e264671. <a href="https://doi.org/10.1136/bcr-2024-264671" rel="noopener" target="_blank">doi</a></li>
+<li>García Gómez E, Pimentel Saona DC, Romero Valencia J, Sandoval Luna L, Ortega-Arenas CJ, San-Juan D. Epilepsy secondary to a giant AVM: a case report. <em>Case Reports in Vascular Medicine</em>. 2025. <a href="https://doi.org/10.1155/crvm/5668999" rel="noopener" target="_blank">doi</a></li>
+<li>Coautor de dos artículos en <em>International Surgery Journal</em> (2026): lesiones autoinfligidas de muñeca en zona V y colecistectomía laparoscópica en situs inversus totalis. <a href="https://doi.org/10.18203/2349-2902.isj20262492" rel="noopener" target="_blank">doi</a> · <a href="https://doi.org/10.18203/2349-2902.isj20262467" rel="noopener" target="_blank">doi</a></li>
+<li>Más publicaciones en <a href="https://orcid.org/0000-0002-1924-8781" rel="noopener" target="_blank">ORCID</a>.</li>
+</ul>
+</div>
+<div class="cv-card reveal">
+<h3>Congresos y reconocimientos</h3>
+<ul>
+<li>Pósteres en el American Epilepsy Society Annual Meeting (Los Ángeles, 2024) y el Congress of Neurological Surgeons Annual Meeting (Houston, 2024).</li>
+<li>Dos resúmenes en el MDS Virtual Congress 2021, publicados en <em>Movement Disorders</em>.</li>
+<li>Premio Dr. Gustavo Baz Prada al Servicio Social 2025, modalidad Investigación, UNAM.</li>
+</ul>
+</div>
+</div>
+<p class="cv-note reveal">Ejerce como médico general. Su experiencia en investigación no corresponde a una especialidad médica.</p>
 </section>
 <!-- ══ SEGURO Y DOCUMENTOS ══════════════════ -->
 <section class="section" id="documentos">
@@ -957,7 +1008,6 @@
 </div>
 <div class="doc-cards">
 <div class="doc-card reveal"><h3>Receta</h3><p>Por escrito, física o digital, cuando hay tratamiento indicado.</p></div>
-<div class="doc-card reveal"><h3>Factura (CFDI)</h3><p>O comprobante para reembolso. Solo con pago con tarjeta.</p></div>
 <div class="doc-card reveal"><h3>Resumen Clínico del Viajero</h3><p>En inglés: $500 digital o $800 impreso (+ consulta).</p></div>
 <div class="doc-card reveal"><h3>Certificado médico</h3><p>$500 digital (por videollamada) o $800 presencial (+ consulta).</p></div>
 </div>
@@ -974,7 +1024,7 @@
 <!-- I -->
 <div class="service-card reveal">
 <h3 class="service-name">Atención en Hoteles<br/>&amp; para Viajeros</h3>
-<p class="service-desc">Atención médica bilingüe en su habitación, las 24 horas según disponibilidad, para visitantes y turistas internacionales. Llegada aproximada de 30 a 45 minutos, según el tráfico. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias.</p>
+<p class="service-desc">Atención médica bilingüe en su habitación, las 24 horas según disponibilidad, para visitantes y turistas internacionales. Llegada estimada: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias.</p>
 <table class="price-table">
 <thead><tr>
 <th>Horario</th>
@@ -1063,6 +1113,7 @@
 </tbody>
 </table>
 <p class="price-note">*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario.</p>
+<p class="price-note"><strong>Anticipo por zona</strong> (50 % de la tarifa ordinaria, por transferencia; se solicita por WhatsApp): Del Valle y Texcoco (<span>$500</span>) · Pedregal, Coyoacán, Roma y Condesa (<span>$650</span>) · Reforma y Polanco (<span>$900</span>) · Santa Fe (<span>$1,050</span>). El resto, y en horario especial o festivo la diferencia, se paga al médico en la visita.</p>
 </div>
 </div>
 <details class="more reveal">
@@ -1113,7 +1164,7 @@
 <span class="payment-tag">Transferencia</span>
 <span class="payment-tag">Efectivo MXN</span>
 </div>
-<p style="margin-top:18px"><strong>Tarjetas</strong> vía terminal portátil: único método elegible para factura fiscal (CFDI) o comprobante para reembolso de seguro.<br/><br/><strong>Transferencia y efectivo:</strong> aceptados; no se emiten facturas ni comprobantes fiscales.<br/><br/><strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras.</p>
+<p style="margin-top:18px"><strong>Tarjetas</strong> vía terminal portátil.<br/><br/><strong>Transferencia y efectivo:</strong> aceptados.<br/><br/><strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras.</p>
 </div>
 <div class="payment-card reveal">
 <h3>Cancelación &amp; Reembolso</h3>
@@ -1290,11 +1341,11 @@
 </div>
 <div class="payment-card reveal faq-item">
 <h3>¿Cuánto tarda en llegar a mi hotel?</h3>
-<p>Aproximadamente de 30 a 45 minutos, según la zona y el tráfico. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
+<p>Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
 </div>
 <div class="payment-card reveal faq-item">
 <h3>¿Me dan documentos para mi seguro de viaje?</h3>
-<p>Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. Con pago con tarjeta puede solicitar factura (CFDI) o comprobante para reembolso. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
+<p>Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
 </div>
 <div class="payment-card reveal faq-item">
 <h3>¿Cuál es el horario del consultorio?</h3>
@@ -1348,7 +1399,7 @@
       "name": "¿Cuánto tarda en llegar a mi hotel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Aproximadamente de 30 a 45 minutos, según la zona y el tráfico. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar."
+        "text": "Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar."
       }
     },
     {
@@ -1356,7 +1407,7 @@
       "name": "¿Me dan documentos para mi seguro de viaje?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. Con pago con tarjeta puede solicitar factura (CFDI) o comprobante para reembolso. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)."
+        "text": "Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)."
       }
     },
     {

@@ -70,7 +70,7 @@ META_HOTELES = {
         'html_lang': 'es-MX',
         'title': 'Médico a hotel en CDMX: información para hoteles y concierges',
         'description': 'Cómo solicitar una visita médica bilingüe para un huésped en la Ciudad de México: '
-                       'WhatsApp o reserva en línea, llegada estimada de 30 a 45 minutos, tarifas por zona y '
+                       'WhatsApp o reserva en línea, llegada estimada según la zona, tarifas por zona y '
                        'horario, y documentos para el seguro de viaje.',
         'og_title': 'Para hoteles y concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
@@ -81,7 +81,7 @@ META_HOTELES = {
         'html_lang': 'en',
         'title': 'Hotel Doctor in Mexico City: Information for Hotels & Concierges',
         'description': 'How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or '
-                       'online booking, estimated arrival in 30–45 minutes, fees by zone and time of day, and '
+                       'online booking, estimated arrival by area, fees by zone and time of day, and '
                        'documents for travel insurance.',
         'og_title': 'For hotels & concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
@@ -338,6 +338,7 @@ def tarifas():
       consultorio:Polanco   → consulta en la sede de ese nombre
       domicilio:Polanco:0..2 → consulta a domicilio en la fila que menciona ese nombre
       anticipo:Polanco       → 50 % de la consulta en esa sede (lo que se paga al reservar en Cal.com)
+      anticipo-domicilio:Polanco → 50 % de la tarifa ordinaria a domicilio (anticipo en Cal.com)
       subsecuente:Del Valle  → segundo precio de la celda del consultorio (consulta subsecuente)
       seguimiento:Del Valle  → segundo precio de la celda de domicilio ordinario (seguimiento*)
       paquete:Del Valle      → Paquete Viajero cuya etiqueta menciona ese nombre
@@ -373,6 +374,7 @@ def tarifas():
                 t[f'domicilio:{area.strip()}:{i}'] = first(td)
             if seguimiento:
                 t[f'seguimiento:{area.strip()}'] = seguimiento[0]
+            t[f'anticipo-domicilio:{area.strip()}'] = f"${int(first(tds[1]).strip('$').replace(',', '')) // 2:,}"
     for txt in soup.select('.offer-text[data-es]'):  # '($1,800 en Del Valle; …)' si no procede el certificado
         for area in ('Del Valle',):
             m = re.search(r'(\$[\d,]+) en ' + area, txt['data-es'])

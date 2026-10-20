@@ -166,6 +166,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -445,7 +447,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -466,7 +477,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -599,7 +611,7 @@
 <header class="page-hero">
 <p class="breadcrumb"><a href="/en/">Home</a> · <span>Doctor in Roma &amp; Condesa</span></p>
 <h1 class="page-h1">English-speaking general physician in <em>Roma &amp; Condesa</em></h1>
-<p class="page-lead">Medical visits in English or Spanish in the Roma and Condesa neighborhoods: hotel visits from MXN <span>$2,500</span> (Zone <span>A</span>, standard hours), house calls from MXN <span>$1,300</span>, and a clinic in Roma by appointment for MXN <span>$1,200</span>. Estimated arrival 30–45 minutes, depending on traffic.</p>
+<p class="page-lead">Medical visits in English or Spanish in the Roma and Condesa neighborhoods: hotel visits from MXN <span>$2,500</span> (Zone <span>A</span>, standard hours), house calls from MXN <span>$1,300</span>, and a clinic in Roma by appointment for MXN <span>$1,200</span>. Estimated arrival: about 45 minutes, depending on traffic; it may be shorter.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%2C%20I%27d%20like%20to%20request%20a%20doctor%20in%20Roma%20or%20Condesa." rel="noopener" target="_blank">Message on WhatsApp</a>
 <a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book online</a>
@@ -624,11 +636,12 @@
 <tr><td>Roma clinic (by appointment)</td><td class="price-col">$1,200</td><td class="price-col">—</td><td class="price-col">$2,500</td></tr>
 </tbody>
 </table>
-<p>The fee depends on the time and day, and is confirmed when you request the visit; holidays are arranged via WhatsApp only. Hotel visits need no deposit: they are paid directly to the doctor, in Mexican pesos. For house calls, when you request the visit you are told the applicable fee and how to pay the 50% deposit, which confirms the visit; the rest is paid at the visit. If you cancel at least 3 hours in advance, the deposit is refunded; with less than 3 hours' notice, or if you are not at the address at the agreed time, it is non-refundable. Standard, after-hours and holiday times are in the <a href="/en/#tarifas">fees section</a>, with the same fees.</p>
+<p>The fee depends on the time and day, and is confirmed when you request the visit; holidays are arranged via WhatsApp only. Standard, after-hours and holiday times are in the <a href="/en/#tarifas">fees section</a>, with the same fees.</p>
+<p><strong>Deposit and cancellation.</strong> Hotel visits need no deposit: they are paid directly to the doctor, in Mexican pesos. House calls are requested via WhatsApp and confirmed with a bank transfer of <span>$650</span>, 50% of the standard fee. The rest, and the difference for after-hours or holiday visits, is paid to the doctor at the visit. If you cancel at least 3 hours in advance, the deposit is refunded; with less than 3 hours' notice, or if you are not at the address at the agreed time, it is non-refundable.</p>
 <h2>If you are staying in a short-term rental</h2>
 <p>When you message on WhatsApp, say whether you are at a hotel, a short-term rental apartment or a private home, and give the address. That way the applicable fee is confirmed before the visit. Have the building name and apartment number ready and, if there is a security desk, let them know you are expecting the doctor.</p>
 <h2>How long it takes to arrive</h2>
-<p>Subject to availability, the estimated arrival time in Roma and Condesa is <strong>30–45 minutes</strong>, depending on traffic. When you book, send a WhatsApp to +52 595 109 3969 and you will be given an estimated time.</p>
+<p>Subject to availability, the estimated arrival time in Roma and Condesa is <strong>about 45 minutes</strong>, depending on traffic; it may be shorter. When you book, send a WhatsApp to +52 595 109 3969 and you will be given an estimated time.</p>
 <h2>Clinic in Roma</h2>
 <p>By appointment on weekday evenings and Saturday mornings. The clinic is at Briyam Coworking Médico, Roma Sur location: <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span>. Your appointment is confirmed once you pay the 50% deposit online by card (<span>$600</span> of <span>$1,200</span>); the rest is paid at the clinic. Detailed hours and cancellation policy are in the <a href="/en/#tarifas">fees section</a>.</p>
 <h2>For travelers</h2>
@@ -639,7 +652,7 @@
 <aside class="side-card">
 <h3>Roma &amp; Condesa at a glance</h3>
 <div class="side-price"><span>$2,500</span> <small>MXN · hotel, from</small></div>
-<p>Hotel zone <span>A</span>. House calls: from <span>$1,300</span>. Roma clinic: <span>$1,200</span>. Estimated arrival: 30–45 minutes.</p>
+<p>Hotel zone <span>A</span>. House calls: from <span>$1,300</span>. Roma clinic: <span>$1,200</span>. Estimated arrival: about 45 minutes.</p>
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%2C%20I%27d%20like%20to%20request%20a%20doctor%20in%20Roma%20or%20Condesa." rel="noopener" target="_blank">Message on WhatsApp</a>
 </aside>
 </main>

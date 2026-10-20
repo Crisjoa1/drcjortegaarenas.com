@@ -166,6 +166,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -445,7 +447,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -466,7 +477,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -599,7 +611,7 @@
 <header class="page-hero">
 <p class="breadcrumb"><a href="/en/">Home</a> · <span>Doctor in Del Valle</span></p>
 <h1 class="page-h1">English-speaking general physician in <em>Del Valle</em></h1>
-<p class="page-lead">Medical visits in English or Spanish in the Del Valle neighborhood of Mexico City: a clinic by appointment for MXN <span>$1,000</span> (follow-up visit, MXN <span>$800</span>), house calls from MXN <span>$1,000</span> and hotel visits from MXN <span>$2,500</span> (Zone <span>A</span>, standard hours). Estimated arrival 30–45 minutes, depending on traffic.</p>
+<p class="page-lead">Medical visits in English or Spanish in the Del Valle neighborhood of Mexico City: a clinic by appointment for MXN <span>$1,000</span> (follow-up visit, MXN <span>$800</span>), house calls from MXN <span>$1,000</span> and hotel visits from MXN <span>$2,500</span> (Zone <span>A</span>, standard hours). Estimated arrival: about 45 minutes, depending on traffic; it may be shorter.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%2C%20I%27d%20like%20to%20request%20a%20doctor%20in%20Del%20Valle." rel="noopener" target="_blank">Message on WhatsApp</a>
 <a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book online</a>
@@ -624,7 +636,8 @@
 <tr><td>Hotel visit</td><td class="price-col">$2,500</td><td class="price-col">$4,000</td><td class="price-col">$5,500</td></tr>
 </tbody>
 </table>
-<p>The fee depends on the time and day, and is confirmed when you request the visit; holidays are arranged via WhatsApp only. Hotel visits need no deposit: they are paid directly to the doctor, in Mexican pesos. For house calls, when you request the visit you are told the applicable fee and how to pay the 50% deposit, which confirms the visit; the rest is paid at the visit. If you cancel at least 3 hours in advance, the deposit is refunded; with less than 3 hours' notice, or if you are not at the address at the agreed time, it is non-refundable. Standard, after-hours and holiday times are in the <a href="/en/#tarifas">fees section</a>, with the same fees.</p>
+<p>The fee depends on the time and day, and is confirmed when you request the visit; holidays are arranged via WhatsApp only. Standard, after-hours and holiday times are in the <a href="/en/#tarifas">fees section</a>, with the same fees.</p>
+<p><strong>Deposit and cancellation.</strong> Hotel visits need no deposit: they are paid directly to the doctor, in Mexican pesos. House calls are requested via WhatsApp and confirmed with a bank transfer of <span>$500</span>, 50% of the standard fee. The rest, and the difference for after-hours or holiday visits, is paid to the doctor at the visit. If you cancel at least 3 hours in advance, the deposit is refunded; with less than 3 hours' notice, or if you are not at the address at the agreed time, it is non-refundable.</p>
 <h2>Follow-up visits at the clinic and at home</h2>
 <ul>
 <li><strong>At the clinic:</strong> a follow-up clinic visit costs <span>$800</span>. The 8:00 pm slot, Monday to Friday, is for follow-up visits only.</li>
@@ -635,7 +648,7 @@
 <h2>Clinic in Del Valle</h2>
 <p>By appointment on weekday evenings and Saturday mornings. The clinic is at Briyam Coworking Médico, Florida del Valle location: <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span>. Your appointment is confirmed once you pay the 50% deposit online by card (<span>$500</span> of <span>$1,000</span>); the rest is paid at the clinic. Detailed hours and cancellation policy are in the <a href="/en/#tarifas">fees section</a>. For a first visit, you can fill in the <a href="/formularios/">forms</a> beforehand.</p>
 <h2>How long it takes to arrive</h2>
-<p>For house calls or hotel visits in Del Valle, subject to availability, the estimated arrival time is <strong>30–45 minutes</strong>, depending on traffic. When you book, send a WhatsApp to +52 595 109 3969 and you will be given an estimated time.</p>
+<p>For house calls or hotel visits in Del Valle, subject to availability, the estimated arrival time is <strong>about 45 minutes</strong>, depending on traffic; it may be shorter. When you book, send a WhatsApp to +52 595 109 3969 and you will be given an estimated time.</p>
 <p>This is outpatient general medicine for mild conditions; it does not replace a hospital. See <a href="/en/guides/emergency-care-mexico-city/">when to go to the ER</a> and the <a href="/en/guides/pharmacies-mexico-city/">Mexico City pharmacy guide</a>.</p>
 <p class="review-meta">Dr. Cristóbal J. Ortega-Arenas, physician (UNAM), professional license 14848636. Information reviewed October 19, 2026. Other areas: <a href="/en/doctor-polanco/">Polanco</a> · <a href="/en/doctor-roma-condesa/">Roma-Condesa</a> · <a href="/en/doctor-santa-fe/">Santa Fe</a>.</p>
 </article>

@@ -160,6 +160,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -439,7 +441,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -460,7 +471,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -652,7 +664,6 @@
 <h2>Documents for your travel insurance</h2>
 <ul>
 <li>When treatment is prescribed, you receive a written prescription (printed or digital).</li>
-<li>If you pay by card, you can request an invoice (CFDI) or a receipt for reimbursement. No tax receipts are issued for bank transfer or cash payments.</li>
 <li>Whether a claim is reimbursed depends on each patient's policy.</li>
 </ul>
 <h2>Settings and hours</h2>
@@ -687,7 +698,7 @@
 </tr>
 <tr>
 <td>Hotel visit</td>
-<td>24 hours. Estimated arrival 30 to 45 minutes.</td>
+<td>24 hours, subject to availability. Estimated arrival from 45 minutes, depending on the area.</td>
 <td class="price-col">from $2,500</td>
 </tr>
 </tbody>
@@ -712,7 +723,7 @@
 </div>
 <div class="faq-item">
 <h3>Will my travel insurance reimburse the visit?</h3>
-<p>It depends on your policy. If you pay by card, you can request an invoice (CFDI) or a receipt for reimbursement; no tax receipts are issued for bank transfer or cash payments.</p>
+<p>It depends on your policy. For your claim you can use the prescription and, on request for an additional fee, the English-language Travel Clinical Summary.</p>
 </div>
 <div class="faq-item">
 <h3>When do I receive the Traveler Clinical Summary?</h3>
@@ -760,7 +771,7 @@
       "name": "Will my travel insurance reimburse the visit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on your policy. If you pay by card, you can request an invoice (CFDI) or a receipt for reimbursement; no tax receipts are issued for bank transfer or cash payments."
+        "text": "It depends on your policy. For your claim you can use the prescription and, on request for an additional fee, the English-language Travel Clinical Summary."
       }
     },
     {

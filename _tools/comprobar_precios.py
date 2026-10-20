@@ -60,6 +60,7 @@ def publicados():
         for area in '·'.join(tds[0].stripped_strings).replace('&', '·').split('·'):
             domicilio[area.strip()] = [primero(td) for td in tds[1:]]
             extras.setdefault(area.strip(), set()).update(s.rstrip('*') for s in tds[1].stripped_strings)
+            extras[area.strip()].add(f"${int(primero(tds[1]).strip('$').replace(',', '')) // 2:,}")  # anticipo domicilio
     for div in soup.select('.offer-price'):  # Paquete Viajero, por sede
         for area in list(extras):
             if area in div.get_text(' '):

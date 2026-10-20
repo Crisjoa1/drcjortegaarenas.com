@@ -166,6 +166,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -445,7 +447,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -466,7 +477,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -599,7 +611,7 @@
 <header class="page-hero">
 <p class="breadcrumb"><a href="/">Inicio</a> · <span>Médico en Roma y Condesa</span></p>
 <h1 class="page-h1">Médico general bilingüe en <em>la Roma y la Condesa</em></h1>
-<p class="page-lead">Consulta médica en español o inglés en las colonias Roma y Condesa: visita en su hotel desde <span>$2,500</span> MXN (Zona <span>A</span>, horario ordinario), consulta a domicilio desde <span>$1,300</span> MXN y consultorio en la Roma con cita por <span>$1,200</span> MXN. Llegada estimada de 30 a 45 minutos, según el tráfico.</p>
+<p class="page-lead">Consulta médica en español o inglés en las colonias Roma y Condesa: visita en su hotel desde <span>$2,500</span> MXN (Zona <span>A</span>, horario ordinario), consulta a domicilio desde <span>$1,300</span> MXN y consultorio en la Roma con cita por <span>$1,200</span> MXN. Llegada estimada: unos 45 minutos, según el tráfico; puede ser menos.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hola%2C%20solicito%20una%20consulta%20en%20Roma%20o%20Condesa." rel="noopener" target="_blank">Escribir por WhatsApp</a>
 <a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Reservar en línea</a>
@@ -624,11 +636,12 @@
 <tr><td>Consultorio Roma (con cita)</td><td class="price-col">$1,200</td><td class="price-col">—</td><td class="price-col">$2,500</td></tr>
 </tbody>
 </table>
-<p>La tarifa depende del horario y del día, y se confirma al solicitar la visita; los festivos se coordinan solo por WhatsApp. La visita a hotel no requiere anticipo: se paga directamente al médico, en pesos mexicanos. En la consulta a domicilio, al solicitar la visita se le confirma la tarifa que aplica y cómo pagar el anticipo del 50 %, que confirma la visita; el resto se paga en la visita. Si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo; con menos de 3 horas, o si no está en el domicilio a la hora acordada, no es reembolsable. Horarios ordinario, especial y festivo en la <a href="/#tarifas">sección de tarifas</a>, con los mismos honorarios.</p>
+<p>La tarifa depende del horario y del día, y se confirma al solicitar la visita; los festivos se coordinan solo por WhatsApp. Horarios ordinario, especial y festivo en la <a href="/#tarifas">sección de tarifas</a>, con los mismos honorarios.</p>
+<p><strong>Anticipo y cancelación.</strong> La visita a hotel no requiere anticipo: se paga directamente al médico, en pesos mexicanos. La consulta a domicilio se solicita por WhatsApp y se confirma con una transferencia de <span>$650</span>, el 50 % de la tarifa ordinaria. El resto, y en horario especial o festivo la diferencia, se paga al médico en la visita. Si cancela con al menos 3 horas de anticipación, se reembolsa el anticipo; con menos de 3 horas, o si no está en el domicilio a la hora acordada, no es reembolsable.</p>
 <h2>Si se hospeda en un departamento de renta temporal</h2>
 <p>Al escribir por WhatsApp, indique si está en un hotel, en un departamento de renta temporal o en una casa particular, y la dirección. Así se le confirma qué tarifa aplica antes de la visita. Tenga a la mano el nombre del edificio, el número de departamento y, si hay vigilancia en la entrada, avise que espera al médico.</p>
 <h2>Cuánto tarda en llegar</h2>
-<p>Sujeto a disponibilidad, el tiempo estimado de llegada a la Roma y la Condesa es de <strong>30 a 45 minutos</strong>, según el tráfico. Al reservar, envíe un WhatsApp al +52 595 109 3969 y se le confirmará una hora estimada.</p>
+<p>Sujeto a disponibilidad, el tiempo estimado de llegada a la Roma y la Condesa es de <strong>unos 45 minutos</strong>, según el tráfico; puede ser menos. Al reservar, envíe un WhatsApp al +52 595 109 3969 y se le confirmará una hora estimada.</p>
 <h2>Consultorio en la Roma</h2>
 <p>Con cita, de lunes a viernes por la tarde y los sábados por la mañana. El consultorio está en Briyam Coworking Médico, sede Roma Sur: <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span>. Su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50 % (<span>$600</span> de <span>$1,200</span>); el resto se paga en el consultorio. Horario detallado y política de cancelación en la <a href="/#tarifas">sección de tarifas</a>.</p>
 <h2>Para viajeros</h2>
@@ -639,7 +652,7 @@
 <aside class="side-card">
 <h3>Roma y Condesa en resumen</h3>
 <div class="side-price"><span>$2,500</span> <small>MXN · hotel, desde</small></div>
-<p>Zona de hotel <span>A</span>. A domicilio: desde <span>$1,300</span>. Consultorio Roma: <span>$1,200</span>. Llegada estimada: 30 a 45 minutos.</p>
+<p>Zona de hotel <span>A</span>. A domicilio: desde <span>$1,300</span>. Consultorio Roma: <span>$1,200</span>. Llegada estimada: unos 45 minutos.</p>
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hola%2C%20solicito%20una%20consulta%20en%20Roma%20o%20Condesa." rel="noopener" target="_blank">Escribir por WhatsApp</a>
 </aside>
 </main>

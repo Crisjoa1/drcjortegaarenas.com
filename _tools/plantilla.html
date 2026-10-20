@@ -135,6 +135,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -414,7 +416,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -435,7 +446,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -485,7 +497,7 @@
     <p class="hero2-lead" data-es="Con cédula profesional verificable y honorarios que conoce antes de llamar. También consulta a domicilio, en consultorio y por videollamada." data-en="With a verifiable professional license and fees you see before you call. House calls, clinic visits and telemedicine are also available."></p>
     <ul class="hero2-facts">
       <li data-es="<strong>$2,500</strong>desde, visita en hotel (MXN)" data-en="<strong>MXN 2,500</strong>from, hotel visit"></li>
-      <li data-es="<strong>30–45 min</strong>llegada aproximada" data-en="<strong>30–45 min</strong>estimated arrival"></li>
+      <li data-es="<strong>Desde 45 min</strong>llegada estimada, según la zona" data-en="<strong>From 45 min</strong>estimated arrival, by area"></li>
       <li data-es="<strong>24 h</strong>en hotel, según disponibilidad" data-en="<strong>24 h</strong>hotel visits, subject to availability"></li>
     </ul>
     <div class="hero-ctas">
@@ -516,7 +528,7 @@
     </div>
     <div class="hero-cred">
       <span class="hero-cred-label" data-es="Reconocimiento UNAM" data-en="UNAM Recognition">Reconocimiento UNAM</span>
-      <span class="hero-cred-value" data-es="Premio Gustavo Baz Prada" data-en="Gustavo Baz Prada Award">Premio Gustavo Baz Prada</span>
+      <span class="hero-cred-value" data-es="Premio Dr. Gustavo Baz Prada" data-en="Dr. Gustavo Baz Prada Award">Premio Dr. Gustavo Baz Prada</span>
     </div>
   </div>
 </div>
@@ -531,7 +543,7 @@
   <div class="svc-grid">
     <a class="svc-card reveal" href="/hoteles/" data-href-en="/en/hotels/">
       <h3 data-es="Visita en hotel" data-en="Hotel visit"></h3>
-      <p data-es="En su habitación, las 24 horas según disponibilidad. Llegada aproximada de 30 a 45 minutos, según la zona y el tráfico." data-en="In your room, 24 hours a day subject to availability. Estimated arrival 30–45 minutes, depending on area and traffic."></p>
+      <p data-es="En su habitación, las 24 horas según disponibilidad. Llegada estimada: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita." data-en="In your room, 24 hours a day subject to availability. Estimated arrival: about 45 minutes to Del Valle, Roma and Condesa; 60–90 minutes to Polanco; about 1 hour 50 minutes to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit."></p>
       <div class="svc-price" data-es="$2,500 <small>desde</small>" data-en="$2,500 <small>from</small>"></div>
       <span class="svc-link" data-es="Información para hoteles →" data-en="Hotel information →"></span>
     </a>
@@ -604,12 +616,12 @@
     <div class="step reveal">
       <span class="step-num">02</span>
       <h3 data-es="Confirme" data-en="Confirm"></h3>
-      <p data-es="Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Domicilio: al solicitar la visita se le confirma la tarifa según zona y horario, y cómo pagar el anticipo del 50% que la confirma; el resto se paga en la visita. Teleconsulta: pago completo en línea al reservar. Hotel: sin anticipo; se paga directamente al médico." data-en="Clinic: your appointment is confirmed once you pay the 50% deposit of the consultation fee online by card; the rest is paid at the clinic. House calls: when you request the visit you are told the fee by zone and time, and how to pay the 50% deposit that confirms it; the rest is paid at the visit. Telemedicine: full payment online when booking. Hotel visits: no deposit; paid directly to the physician."></p>
+      <p data-es="Consultorio: su cita queda confirmada al pagar en línea, con tarjeta, el anticipo del 50% de la consulta; el resto se paga en el consultorio. Domicilio: se solicita por WhatsApp y se confirma con una transferencia del 50% de la tarifa ordinaria de su zona; el resto, y en horario especial o festivo la diferencia, se paga al médico en la visita. Teleconsulta: pago completo en línea al reservar. Hotel: sin anticipo; se paga directamente al médico." data-en="Clinic: your appointment is confirmed once you pay the 50% deposit of the consultation fee online by card; the rest is paid at the clinic. House calls: requested via WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your zone; the rest, and the difference for after-hours or holiday visits, is paid to the doctor at the visit. Telemedicine: full payment online when booking. Hotel visits: no deposit; paid directly to the physician."></p>
     </div>
     <div class="step reveal">
       <span class="step-num">03</span>
       <h3 data-es="Atención y documentos" data-en="Care and documents"></h3>
-      <p data-es="Receta cuando hay tratamiento indicado y factura con pago con tarjeta. Antes de su primera consulta, complete sus formularios en línea." data-en="A prescription when treatment is indicated and an invoice when paying by card. Before your first visit, complete your forms online."></p>
+      <p data-es="Receta cuando hay tratamiento indicado. Antes de su primera consulta, complete sus formularios en línea." data-en="A prescription when treatment is indicated. Before your first visit, complete your forms online."></p>
       <a href="/formularios/" class="text-link" data-es="Ir a formularios →" data-en="Go to forms →"></a>
     </div>
   </div>
@@ -623,18 +635,57 @@
     <div class="reveal">
       <p class="section-tag" data-es="Perfil profesional" data-en="Professional profile"></p>
       <h2 class="section-title" data-es="Credenciales y <em>datos profesionales</em>" data-en="Credentials and <em>professional details</em>"></h2>
-      <p class="verify-bio" data-es="Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con trayectoria en investigación clínica y medicina basada en evidencia, y formación clínica en Institutos Nacionales de Salud de México. Atiende en español e inglés a pacientes locales e internacionales en la Ciudad de México." data-en="Physician (M.D.) trained at the UNAM Faculty of Medicine, with a background in clinical research and evidence-based medicine, and clinical training at Mexico's National Institutes of Health. He sees local and international patients in Mexico City in English and Spanish."></p>
+      <p class="verify-bio" data-es="Médico Cirujano egresado de la Facultad de Medicina de la UNAM, con trayectoria en investigación clínica y medicina basada en evidencia, y servicio social en investigación en el Instituto Nacional de Neurología y Neurocirugía. Atiende en español e inglés a pacientes locales e internacionales en la Ciudad de México." data-en="Physician (M.D.) trained at the UNAM Faculty of Medicine, with a background in clinical research and evidence-based medicine, and a research social-service year at Mexico's National Institute of Neurology and Neurosurgery (INNN). He sees local and international patients in Mexico City in English and Spanish."></p>
     </div>
     <ul class="verify-list reveal">
       <li><span data-es="Cédula profesional (SEP)" data-en="Professional license (SEP)"></span><span class="v-val">14848636 <a href="https://www.cedulaprofesional.sep.gob.mx/" target="_blank" rel="noopener" data-es="verificar" data-en="verify"></a></span></li>
       <li><span data-es="Título" data-en="Degree"></span><span class="v-val" data-es="Médico Cirujano, UNAM" data-en="Physician (M.D.), UNAM"></span></li>
       <li><span data-es="Homologación en España" data-en="Degree recognition in Spain"></span><span class="v-val">Cred. 2025-17271</span></li>
-      <li><span data-es="Reconocimiento" data-en="Recognition"></span><span class="v-val" data-es="Premio al Servicio Social «Gustavo Baz Prada», UNAM" data-en="«Gustavo Baz Prada» Social Service Award, UNAM"></span></li>
+      <li><span data-es="Reconocimiento" data-en="Recognition"></span><span class="v-val" data-es="Premio Dr. Gustavo Baz Prada al Servicio Social, modalidad Investigación, UNAM (2025)" data-en="Dr. Gustavo Baz Prada Social Service Award, Research category, UNAM (2025)"></span></li>
       <li><span data-es="Publicaciones" data-en="Publications"></span><span class="v-val"><a href="https://orcid.org/0000-0002-1924-8781" target="_blank" rel="noopener">ORCID 0000-0002-1924-8781</a></span></li>
       <li><span data-es="Aviso de publicidad" data-en="Advertising notice"></span><span class="v-val">COFEPRIS 2515192002A00033</span></li>
       <li><span data-es="Idiomas" data-en="Languages"></span><span class="v-val" data-es="Español · Inglés" data-en="English · Spanish"></span></li>
     </ul>
   </div>
+  <div class="cv-grid">
+    <div class="cv-card reveal">
+      <h3 data-es="Formación" data-en="Education"></h3>
+      <ul>
+        <li data-es="<strong>Médico Cirujano</strong>, Facultad de Medicina, UNAM (2017–2025)." data-en="<strong>Physician (M.D.)</strong>, Faculty of Medicine, UNAM (2017–2025)."></li>
+        <li data-es="<strong>Homologación al título español de Grado en Medicina</strong>, Ministerio de Ciencia, Innovación y Universidades de España (2025)." data-en="<strong>Recognition of the degree as the Spanish Degree in Medicine</strong>, Spanish Ministry of Science, Innovation and Universities (2025)."></li>
+        <li data-es="Estancia de investigación en demencias de origen genético, Hospital Clínic de Barcelona – Universitat de Barcelona (2021–2022)." data-en="Research stay on genetically determined dementias, Hospital Clínic de Barcelona – University of Barcelona (2021–2022)."></li>
+      </ul>
+    </div>
+    <div class="cv-card reveal">
+      <h3 data-es="Investigación y práctica clínica" data-en="Clinical research and practice"></h3>
+      <ul>
+        <li data-es="Investigador principal de un estudio prospectivo de estimulación eléctrica focal transcraneal en epilepsia refractaria, en su servicio social en el Instituto Nacional de Neurología y Neurocirugía (2024–2025)." data-en="Principal investigator of a prospective study of transcranial focal electrical stimulation in drug-resistant epilepsy, during his social service at Mexico's National Institute of Neurology and Neurosurgery (2024–2025)."></li>
+        <li data-es="Asistente de investigación clínica en Cirugía Plástica y Reconstructiva, Hospital General Dr. Manuel Gea González (2025–2026)." data-en="Clinical research assistant in Plastic and Reconstructive Surgery, Hospital General Dr. Manuel Gea González (2025–2026)."></li>
+        <li data-es="Instructor de Anatomía, Facultad de Medicina, UNAM (2019–2022)." data-en="Anatomy instructor, Faculty of Medicine, UNAM (2019–2022)."></li>
+        <li data-es="Brigadas de vacunación contra COVID-19, UNAM (2021–2023)." data-en="COVID-19 vaccination brigades, UNAM (2021–2023)."></li>
+        <li data-es="Consulta de medicina general en la Ciudad de México desde 2025." data-en="General medicine practice in Mexico City since 2025."></li>
+        <li data-es="Actualmente colabora en algunos proyectos de investigación clínica en neurología." data-en="He currently collaborates on some clinical research projects in neurology."></li>
+      </ul>
+    </div>
+    <div class="cv-card reveal">
+      <h3 data-es="Publicaciones (selección)" data-en="Selected publications"></h3>
+      <ul>
+        <li data-es="García Gómez E, San-Juan D, Romero Valencia J, Ortega-Arenas CJ. Focal refractory epilepsy associated to 15q13.3 microduplication. <em>BMJ Case Reports</em>. 2025;18(3):e264671. <a href='https://doi.org/10.1136/bcr-2024-264671' target='_blank' rel='noopener'>doi</a>" data-en="García Gómez E, San-Juan D, Romero Valencia J, Ortega-Arenas CJ. Focal refractory epilepsy associated to 15q13.3 microduplication. <em>BMJ Case Reports</em>. 2025;18(3):e264671. <a href='https://doi.org/10.1136/bcr-2024-264671' target='_blank' rel='noopener'>doi</a>"></li>
+        <li data-es="García Gómez E, Pimentel Saona DC, Romero Valencia J, Sandoval Luna L, Ortega-Arenas CJ, San-Juan D. Epilepsy secondary to a giant AVM: a case report. <em>Case Reports in Vascular Medicine</em>. 2025. <a href='https://doi.org/10.1155/crvm/5668999' target='_blank' rel='noopener'>doi</a>" data-en="García Gómez E, Pimentel Saona DC, Romero Valencia J, Sandoval Luna L, Ortega-Arenas CJ, San-Juan D. Epilepsy secondary to a giant AVM: a case report. <em>Case Reports in Vascular Medicine</em>. 2025. <a href='https://doi.org/10.1155/crvm/5668999' target='_blank' rel='noopener'>doi</a>"></li>
+        <li data-es="Coautor de dos artículos en <em>International Surgery Journal</em> (2026): lesiones autoinfligidas de muñeca en zona V y colecistectomía laparoscópica en situs inversus totalis. <a href='https://doi.org/10.18203/2349-2902.isj20262492' target='_blank' rel='noopener'>doi</a> · <a href='https://doi.org/10.18203/2349-2902.isj20262467' target='_blank' rel='noopener'>doi</a>" data-en="Co-author of two articles in <em>International Surgery Journal</em> (2026): self-inflicted zone V wrist injuries and laparoscopic cholecystectomy in situs inversus totalis. <a href='https://doi.org/10.18203/2349-2902.isj20262492' target='_blank' rel='noopener'>doi</a> · <a href='https://doi.org/10.18203/2349-2902.isj20262467' target='_blank' rel='noopener'>doi</a>"></li>
+        <li data-es="Más publicaciones en <a href='https://orcid.org/0000-0002-1924-8781' target='_blank' rel='noopener'>ORCID</a>." data-en="More publications on <a href='https://orcid.org/0000-0002-1924-8781' target='_blank' rel='noopener'>ORCID</a>."></li>
+      </ul>
+    </div>
+    <div class="cv-card reveal">
+      <h3 data-es="Congresos y reconocimientos" data-en="Meetings and recognition"></h3>
+      <ul>
+        <li data-es="Pósteres en el American Epilepsy Society Annual Meeting (Los Ángeles, 2024) y el Congress of Neurological Surgeons Annual Meeting (Houston, 2024)." data-en="Posters at the American Epilepsy Society Annual Meeting (Los Angeles, 2024) and the Congress of Neurological Surgeons Annual Meeting (Houston, 2024)."></li>
+        <li data-es="Dos resúmenes en el MDS Virtual Congress 2021, publicados en <em>Movement Disorders</em>." data-en="Two abstracts at the MDS Virtual Congress 2021, published in <em>Movement Disorders</em>."></li>
+        <li data-es="Premio Dr. Gustavo Baz Prada al Servicio Social 2025, modalidad Investigación, UNAM." data-en="Dr. Gustavo Baz Prada Social Service Award 2025, Research category, UNAM."></li>
+      </ul>
+    </div>
+  </div>
+  <p class="cv-note reveal" data-es="Ejerce como médico general. Su experiencia en investigación no corresponde a una especialidad médica." data-en="He practices as a general physician. His research experience does not represent a medical specialty."></p>
 </section>
 
 <!-- ══ SEGURO Y DOCUMENTOS ══════════════════ -->
@@ -646,7 +697,6 @@
   </div>
   <div class="doc-cards">
     <div class="doc-card reveal"><h3 data-es="Receta" data-en="Prescription"></h3><p data-es="Por escrito, física o digital, cuando hay tratamiento indicado." data-en="Written, printed or digital, when treatment is indicated."></p></div>
-    <div class="doc-card reveal"><h3 data-es="Factura (CFDI)" data-en="Invoice (CFDI)"></h3><p data-es="O comprobante para reembolso. Solo con pago con tarjeta." data-en="Or a receipt for reimbursement. Card payments only."></p></div>
     <div class="doc-card reveal"><h3 data-es="Resumen Clínico del Viajero" data-en="Travel Clinical Summary"></h3><p data-es="En inglés: $500 digital o $800 impreso (+ consulta)." data-en="In English: $500 digital or $800 printed (+ visit)."></p></div>
     <div class="doc-card reveal"><h3 data-es="Certificado médico" data-en="Medical certificate"></h3><p data-es="$500 digital (por videollamada) o $800 presencial (+ consulta)." data-en="$500 digital (by video call) or $800 in person (+ visit)."></p></div>
   </div>
@@ -666,7 +716,7 @@
     <!-- I -->
     <div class="service-card reveal" data-tarifas-hotel>
       <h3 class="service-name" data-es="Atención en Hoteles<br>&amp; para Viajeros" data-en="Hotel &amp; Traveler<br>Medical Care">Atención en Hoteles<br>&amp; para Viajeros</h3>
-      <p class="service-desc" data-es="Atención médica bilingüe en su habitación, las 24 horas según disponibilidad, para visitantes y turistas internacionales. Llegada aproximada de 30 a 45 minutos, según el tráfico. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias." data-en="Bilingual medical care in your hotel room, 24 hours a day subject to availability, for visitors and international travelers. Estimated arrival 30–45 minutes, depending on traffic. Not an emergency service: in an emergency, call 911 or go to a hospital ER.">Atención médica bilingüe en su habitación para visitantes y turistas internacionales. Llegada aproximada de 30 a 45 minutos, según el tráfico. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias.</p>
+      <p class="service-desc" data-es="Atención médica bilingüe en su habitación, las 24 horas según disponibilidad, para visitantes y turistas internacionales. Llegada estimada: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias." data-en="Bilingual medical care in your hotel room, 24 hours a day subject to availability, for visitors and international travelers. Estimated arrival: about 45 minutes to Del Valle, Roma and Condesa; 60–90 minutes to Polanco; about 1 hour 50 minutes to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit. Not an emergency service: in an emergency, call 911 or go to a hospital ER.">Atención médica bilingüe en su habitación para visitantes y turistas internacionales. Llegada estimada: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. No es un servicio de urgencias: ante una emergencia, llame al 911 o acuda a urgencias hospitalarias.</p>
       <table class="price-table">
         <thead><tr>
           <th data-es="Horario" data-en="Schedule">Horario</th>
@@ -760,6 +810,7 @@
         </tbody>
       </table>
       <p class="price-note" data-es="*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario." data-en="*$900 MXN rate applies only to follow-up visits in the Local Zone during standard hours.">*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario.</p>
+      <p class="price-note" data-es="<strong>Anticipo por zona</strong> (50 % de la tarifa ordinaria, por transferencia; se solicita por WhatsApp): Del Valle y Texcoco (<span data-tarifa='anticipo-domicilio:Del Valle'></span>) · Pedregal, Coyoacán, Roma y Condesa (<span data-tarifa='anticipo-domicilio:Condesa'></span>) · Reforma y Polanco (<span data-tarifa='anticipo-domicilio:Polanco'></span>) · Santa Fe (<span data-tarifa='anticipo-domicilio:Santa Fe'></span>). El resto, y en horario especial o festivo la diferencia, se paga al médico en la visita." data-en="<strong>Deposit by zone</strong> (50% of the standard fee, by bank transfer; request via WhatsApp): Del Valle &amp; Texcoco (<span data-tarifa='anticipo-domicilio:Del Valle'></span>) · Pedregal, Coyoacán, Roma &amp; Condesa (<span data-tarifa='anticipo-domicilio:Condesa'></span>) · Reforma &amp; Polanco (<span data-tarifa='anticipo-domicilio:Polanco'></span>) · Santa Fe (<span data-tarifa='anticipo-domicilio:Santa Fe'></span>). The rest, and the difference for after-hours or holiday visits, is paid to the doctor at the visit."></p>
     </div>
   </div>
   <details class="more reveal">
@@ -815,10 +866,10 @@
         <span class="payment-tag" data-es="Efectivo MXN" data-en="Cash MXN">Efectivo MXN</span>
       </div>
       <p style="margin-top:18px"
-        data-es="<strong>Tarjetas</strong> vía terminal portátil: único método elegible para factura fiscal (CFDI) o comprobante para reembolso de seguro.<br><br><strong>Transferencia y efectivo:</strong> aceptados; no se emiten facturas ni comprobantes fiscales.<br><br><strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras."
-        data-en="<strong>Credit &amp; Debit Cards</strong> via portable terminal: the only payment method eligible for official tax invoices (CFDI) or insurance reimbursement documentation.<br><br><strong>Transfers &amp; Cash:</strong> accepted for payment; however, no invoices or tax receipts are issued.<br><br><strong>Cash in Mexican Pesos (MXN) only</strong> — foreign currency is not accepted.">
-        <strong>Tarjetas</strong> vía terminal portátil: único método elegible para factura fiscal (CFDI) o comprobante para reembolso de seguro.<br><br>
-        <strong>Transferencia y efectivo:</strong> aceptados; no se emiten facturas ni comprobantes fiscales.<br><br>
+        data-es="<strong>Tarjetas</strong> vía terminal portátil.<br><br><strong>Transferencia y efectivo:</strong> aceptados.<br><br><strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras."
+        data-en="<strong>Credit &amp; Debit Cards</strong> via portable terminal.<br><br><strong>Transfers &amp; Cash:</strong> accepted.<br><br><strong>Cash in Mexican Pesos (MXN) only</strong> — foreign currency is not accepted.">
+        <strong>Tarjetas</strong> vía terminal portátil.<br><br>
+        <strong>Transferencia y efectivo:</strong> aceptados.<br><br>
         <strong>Efectivo exclusivamente en MXN</strong> — no se aceptan divisas extranjeras.
       </p>
     </div>
@@ -1013,11 +1064,11 @@
     </div>
     <div class="payment-card reveal faq-item">
       <h3 data-es="¿Cuánto tarda en llegar a mi hotel?" data-en="How long does it take to reach my hotel?">¿Cuánto tarda en llegar a mi hotel?</h3>
-      <p data-es="Aproximadamente de 30 a 45 minutos, según la zona y el tráfico. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar." data-en="Approximately 30–45 minutes, depending on the area and traffic. After booking, send a WhatsApp to +52 595 109 3969 to confirm.">Aproximadamente de 30 a 45 minutos, según la zona y el tráfico. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
+      <p data-es="Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar." data-en="It depends on the area: about 45 minutes to Del Valle, Roma and Condesa; 60–90 minutes to Polanco; about 1 hour 50 minutes to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit. After booking, send a WhatsApp to +52 595 109 3969 to confirm.">Depende de la zona: unos 45 minutos a Del Valle, Roma y Condesa; 60 a 90 minutos a Polanco; alrededor de 1 hora 50 minutos a Santa Fe, por la distancia y el tráfico. Puede ser menos. Otras zonas: se confirma al solicitar la visita. Al reservar, envíe un WhatsApp al +52 595 109 3969 para confirmar.</p>
     </div>
     <div class="payment-card reveal faq-item">
       <h3 data-es="¿Me dan documentos para mi seguro de viaje?" data-en="Will I get documents for my travel insurance?">¿Me dan documentos para mi seguro de viaje?</h3>
-      <p data-es="Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. Con pago con tarjeta puede solicitar factura (CFDI) o comprobante para reembolso. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)." data-en="When treatment is indicated, a written prescription is provided for your claim; acceptance depends on your policy. If you pay by card, you can request an official invoice (CFDI) or a receipt for reimbursement. The English-language Travel Clinical Summary has an additional fee ($500 digital, $800 printed).">Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. Con pago con tarjeta puede solicitar factura (CFDI) o comprobante para reembolso. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
+      <p data-es="Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico)." data-en="When treatment is indicated, a written prescription is provided for your claim; acceptance depends on your policy. The English-language Travel Clinical Summary has an additional fee ($500 digital, $800 printed).">Cuando hay tratamiento indicado, se entrega receta por escrito, útil para su reclamo; la aceptación depende de su póliza. El Resumen Clínico del Viajero en inglés tiene costo adicional ($500 digital, $800 físico).</p>
     </div>
     <div class="payment-card reveal faq-item">
       <h3 data-es="¿Cuál es el horario del consultorio?" data-en="What are the clinic hours?">¿Cuál es el horario del consultorio?</h3>

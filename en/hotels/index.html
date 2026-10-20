@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Hotel Doctor in Mexico City: Information for Hotels &amp; Concierges</title>
-<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival in 30–45 minutes, fees by zone and time of day, and documents for travel insurance." name="description"/>
+<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival by area, fees by zone and time of day, and documents for travel insurance." name="description"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" name="author"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://drcjortegaarenas.com/en/hotels/" rel="canonical"/>
@@ -18,7 +18,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" property="og:site_name"/>
 <meta content="For hotels &amp; concierges — Dr. Cristóbal J. Ortega-Arenas" property="og:title"/>
-<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival in 30–45 minutes, fees by zone and time of day, and documents for travel insurance." property="og:description"/>
+<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival by area, fees by zone and time of day, and documents for travel insurance." property="og:description"/>
 <meta content="https://drcjortegaarenas.com/en/hotels/" property="og:url"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -27,7 +27,7 @@
 <meta content="es_MX" property="og:locale:alternate"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="For hotels &amp; concierges — Dr. Cristóbal J. Ortega-Arenas" name="twitter:title"/>
-<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival in 30–45 minutes, fees by zone and time of day, and documents for travel insurance." name="twitter:description"/>
+<meta content="How to request a bilingual medical visit for a hotel guest in Mexico City: WhatsApp or online booking, estimated arrival by area, fees by zone and time of day, and documents for travel insurance." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -160,6 +160,8 @@
   .zone-badge { font-size:0.56rem; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border:1px solid var(--border); color:var(--muted); }
   .zone-badge strong { color:var(--silver); margin-right:4px; }
   .price-note { margin-top:12px; font-size:0.65rem; color:var(--muted); line-height:1.7; font-style:italic; }
+  .price-note a { color:var(--silver); text-underline-offset:2px; }
+  .price-note strong { color:var(--silver); font-weight:500; }
   .important-note { background:rgba(255,255,255,0.025); border-left:2px solid var(--border-hi); padding:14px 18px; margin-top:18px; font-size:0.68rem; color:var(--muted); line-height:1.7; }
   .important-note strong { color:var(--silver); }
 
@@ -439,7 +441,16 @@
   .verify-list li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); font-size:0.9rem; color:var(--muted); }
   .verify-list .v-val { color:var(--offwhite); text-align:right; font-family:'Bodoni Moda',serif; font-size:1rem; }
   .verify-list a { color:var(--offwhite); font-family:'DM Sans',sans-serif; font-size:0.8rem; text-underline-offset:3px; margin-left:6px; }
-  .doc-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .doc-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .cv-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; margin-top:56px; }
+  .cv-card { background:var(--card); border:1px solid var(--border); padding:30px 32px; }
+  .cv-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.25rem; color:var(--white); margin-bottom:16px; }
+  .cv-card ul { list-style:none; }
+  .cv-card li { font-size:0.88rem; color:var(--silver); line-height:1.7; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .cv-card li:last-child { border-bottom:none; }
+  .cv-card strong { color:var(--offwhite); font-weight:500; }
+  .cv-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .cv-note { margin-top:16px; font-size:0.78rem; color:var(--muted); font-style:italic; }
   .doc-card { background:var(--card); border:1px solid var(--border); padding:26px 24px; }
   .doc-card h3 { font-family:'Bodoni Moda',serif; font-weight:400; font-size:1.15rem; color:var(--white); margin-bottom:8px; }
   .doc-card p { font-size:0.9rem; color:var(--silver); line-height:1.65; }
@@ -460,7 +471,8 @@
     .hero2 .hero-ctas { flex-direction:column; align-items:stretch; }
     .hero2-photo { max-width:420px; }
     .creds-band { padding:0 20px 16px; }
-    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band { grid-template-columns:1fr; }
+    .svc-grid, .svc-grid.g2, .steps, .doc-cards, .verify-grid, .offer-band, .cv-grid { grid-template-columns:1fr; }
+    .cv-card { padding:24px 20px; }
     .band { padding:0 20px; }
     .offer-band { padding:30px 24px; gap:24px; }
     .verify-grid { gap:28px; }
@@ -881,7 +893,7 @@
 <div class="payment-card reveal">
 <p class="service-num">03</p>
 <h3>Confirmation and arrival</h3>
-<p>Availability and the applicable fee (by zone, time and day) are confirmed. Estimated arrival time: <strong>30–45 minutes</strong>, depending on traffic.</p>
+<p>Availability and the applicable fee (by zone, time and day) are confirmed. Estimated arrival time: <strong>about 45 minutes</strong> to Del Valle, Roma and Condesa; <strong>60–90 minutes</strong> to Polanco; <strong>about 1 hour 50 minutes</strong> to Santa Fe, due to distance and traffic. It may be shorter. Other areas: confirmed when you request the visit.</p>
 </div>
 <div class="payment-card reveal">
 <p class="service-num">04</p>
@@ -938,7 +950,6 @@
 <div class="payment-card reveal">
 <ul class="doc-list">
 <li><span><strong>Written prescription</strong>, when treatment is indicated.</span></li>
-<li><span><strong>Official tax invoice (CFDI) or insurance reimbursement receipt</strong>, only for card payments. No tax receipts are issued for bank transfers or cash.</span></li>
 <li><span><strong>English-language Travel Clinical Summary</strong>, on request for an additional fee: $500 digital (PDF by email) or $800 printed (delivered after the visit).</span></li>
 </ul>
 </div>
