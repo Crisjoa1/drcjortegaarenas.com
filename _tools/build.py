@@ -421,6 +421,10 @@ def render(page, lang):
         del el['data-es']
         if el.has_attr('data-en'):
             del el['data-en']
+    for el in soup.select('[data-aria-en]'):
+        if lang == 'en':
+            el['aria-label'] = el['data-aria-en']
+        del el['data-aria-en']
     for el in soup.select('[data-alt-en]'):
         if lang == 'en':
             el['alt'] = el['data-alt-en']
