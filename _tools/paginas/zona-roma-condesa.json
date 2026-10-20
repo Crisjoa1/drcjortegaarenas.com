@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Viajeros y residentes en las colonias Roma y Condesa",
-    "en": "Travelers and residents in the Roma and Condesa neighborhoods"
+    "en": "Travelers and residents in the Roma and Condesa neighborhoods",
+    "fr": "Voyageurs et résidents des quartiers de Roma et de Condesa"
   },
   "es": {
     "path": "/zonas/roma-condesa/",
@@ -17,6 +18,12 @@
     "title": "English-Speaking Doctor in Roma & Condesa, Mexico City",
     "description": "Bilingual general physician in Roma and Condesa: hotel visits (Zone A), house calls including short-term rentals, and a clinic in Roma. Published fees in MXN.",
     "crumb": "Doctor in Roma & Condesa"
+  },
+  "fr": {
+    "path": "/fr/medecin-roma-condesa/",
+    "title": "Médecin à Roma et Condesa, Mexico | Dr Ortega-Arenas",
+    "description": "Médecin généraliste bilingue (espagnol/anglais) à Roma et Condesa : hôtel (zone A), domicile ou location de courte durée, et cabinet à Roma. Tarifs en MXN.",
+    "crumb": "Médecin à Roma et Condesa"
   },
   "sede": "Roma"
 }

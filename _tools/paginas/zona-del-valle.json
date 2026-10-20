@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Residentes y visitantes en la colonia Del Valle",
-    "en": "Residents and visitors in the Del Valle neighborhood"
+    "en": "Residents and visitors in the Del Valle neighborhood",
+    "fr": "Résidents et visiteurs du quartier de Del Valle"
   },
   "es": {
     "path": "/zonas/del-valle/",
@@ -17,6 +18,12 @@
     "title": "English-Speaking Doctor in Del Valle, Mexico City",
     "description": "Bilingual general physician in Del Valle, Mexico City: clinic by appointment, follow-up visits, house calls, hotel visits (Zone A) and Traveler Package. Fees in MXN.",
     "crumb": "Doctor in Del Valle"
+  },
+  "fr": {
+    "path": "/fr/medecin-del-valle/",
+    "title": "Médecin à Del Valle, Mexico | Dr Ortega-Arenas",
+    "description": "Médecin généraliste bilingue (espagnol/anglais) à Del Valle : cabinet sur rendez-vous, suivi, domicile, hôtel (zone A) et Forfait Voyageur. Tarifs en MXN.",
+    "crumb": "Médecin à Del Valle"
   },
   "sede": "Del Valle"
 }

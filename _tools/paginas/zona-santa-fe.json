@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Personas que trabajan, viven o se hospedan en Santa Fe",
-    "en": "People who work, live or stay in Santa Fe"
+    "en": "People who work, live or stay in Santa Fe",
+    "fr": "Personnes qui travaillent, vivent ou séjournent à Santa Fe"
   },
   "es": {
     "path": "/zonas/santa-fe/",
@@ -17,6 +18,12 @@
     "title": "English-Speaking Doctor in Santa Fe, Mexico City",
     "description": "Bilingual general physician in Santa Fe, Mexico City: evening and Saturday clinic by appointment, hotel visits (Zone B) and house calls. Published fees in MXN.",
     "crumb": "Doctor in Santa Fe"
+  },
+  "fr": {
+    "path": "/fr/medecin-santa-fe/",
+    "title": "Médecin à Santa Fe, Mexico | Dr Ortega-Arenas",
+    "description": "Médecin généraliste bilingue (espagnol/anglais) à Santa Fe : cabinet sur rendez-vous en soirée et le samedi, hôtel (zone B) et domicile. Tarifs en MXN.",
+    "crumb": "Médecin à Santa Fe"
   },
   "sede": "Santa Fe"
 }

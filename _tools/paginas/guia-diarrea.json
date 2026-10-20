@@ -2,7 +2,7 @@
   "plantilla": "plantilla-guia-diarrea.html",
   "tipo": "guia",
   "revisado": "2026-10-19",
-  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City"},
+  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City", "fr": "Voyageurs adultes à Mexico"},
   "citas": [
     {"nombre": "Connor BA, Leung DT. Travelers' Diarrhea. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travelers-diarrhea.html"},
     {"nombre": "Chard AN, Hill V. Food and Water Precautions for Travelers. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html"},
@@ -20,5 +20,11 @@
     "title": "Traveler's Diarrhea in Mexico City: Prevention & Care",
     "description": "What traveler's diarrhea is, how to prevent it with hygiene and safe food and water, how to rehydrate with oral solution, and when to see a doctor.",
     "crumb": "Traveler's diarrhea"
+  },
+  "fr": {
+    "path": "/fr/guides/diarrhee-du-voyageur-mexico/",
+    "title": "Diarrhée du voyageur à Mexico : prévention et soins",
+    "description": "La diarrhée du voyageur : la prévenir par l’hygiène, une eau et des aliments sûrs, se réhydrater avec un soluté oral et savoir quand consulter.",
+    "crumb": "Diarrhée du voyageur"
   }
 }

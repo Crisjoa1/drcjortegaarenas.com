@@ -2,7 +2,7 @@
   "plantilla": "plantilla-guia-altitud.html",
   "tipo": "guia",
   "revisado": "2026-10-19",
-  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City"},
+  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City", "fr": "Voyageurs adultes à Mexico"},
   "citas": [
     {"nombre": "Hackett PH, Shlim DR. High-Altitude Travel and Altitude Illness. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"},
     {"nombre": "Luks AM, et al. Wilderness Medical Society Clinical Practice Guidelines for the Prevention, Diagnosis, and Treatment of Acute Altitude Illness: 2024 Update. Wilderness Environ Med. 2024;35(1_suppl):2S-19S", "url": "https://doi.org/10.1016/j.wem.2023.05.013"},
@@ -21,5 +21,11 @@
     "title": "Mexico City Altitude: Symptoms and Tips for Travelers",
     "description": "Mexico City sits at about 2,240 m (7,350 ft). What you may notice, how to acclimatize, warning signs, who should see a doctor, and air quality.",
     "crumb": "Mexico City altitude"
+  },
+  "fr": {
+    "path": "/fr/guides/altitude-mexico/",
+    "title": "L’altitude à Mexico : symptômes et conseils aux voyageurs",
+    "description": "Mexico est à environ 2 240 m. Ce que vous pouvez ressentir, comment vous acclimater, signes d’alerte, qui doit consulter et qualité de l’air.",
+    "crumb": "L’altitude à Mexico"
   }
 }

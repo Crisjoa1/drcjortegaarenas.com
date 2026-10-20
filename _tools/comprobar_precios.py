@@ -16,10 +16,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 # zona: (archivos ES/EN, nombre en la tabla de hotel, sede de consultorio, fila de domicilio)
 ZONAS = {
-    'Polanco': (('zonas/polanco', 'en/doctor-polanco'), 'Polanco', 'Polanco', 'Polanco'),
-    'Roma-Condesa': (('zonas/roma-condesa', 'en/doctor-roma-condesa'), 'Roma', 'Roma', 'Condesa'),
-    'Santa Fe': (('zonas/santa-fe', 'en/doctor-santa-fe'), 'Santa Fe', 'Santa Fe', 'Santa Fe'),
-    'Del Valle': (('zonas/del-valle', 'en/doctor-del-valle'), 'Del Valle', 'Del Valle', 'Del Valle'),
+    'Polanco': (('zonas/polanco', 'en/doctor-polanco', 'fr/medecin-polanco'), 'Polanco', 'Polanco', 'Polanco'),
+    'Roma-Condesa': (('zonas/roma-condesa', 'en/doctor-roma-condesa', 'fr/medecin-roma-condesa'), 'Roma', 'Roma', 'Condesa'),
+    'Santa Fe': (('zonas/santa-fe', 'en/doctor-santa-fe', 'fr/medecin-santa-fe'), 'Santa Fe', 'Santa Fe', 'Santa Fe'),
+    'Del Valle': (('zonas/del-valle', 'en/doctor-del-valle', 'fr/medecin-del-valle'), 'Del Valle', 'Del Valle', 'Del Valle'),
 }
 MONTO = re.compile(r'\$\s?\d{1,3}(?:,\d{3})+|MXN\s\d{1,3}(?:,\d{3})+')
 
@@ -68,12 +68,16 @@ def publicados():
     for txt in soup.select('.offer-text'):  # '($1,800 en Del Valle; …)' si no procede el certificado
         for area in list(extras):
             extras[area].update(re.findall(r'(\$[\d,]+) en ' + area, txt.get_text(' ')))
+    for row in soup.select('.proc-row'):  # asistente de traducción al francés: válida en todas las zonas
+        if 'Francés' in row.get_text(' '):
+            for area in list(extras):
+                extras[area].add(row.select_one('.proc-price').get_text(strip=True))
     return hotel, zona_de, consultorio, domicilio, extras
 
 
 def main():
     hotel, zona_de, consultorio, domicilio, extras = publicados()
-    errores, revisadas = [], 0
+    errores, revisadas, paginas = [], 0, 0
     for zona, (rutas, h, c, d) in ZONAS.items():
         filas = {
             'hotel': [row[zona_de[h]] for row in hotel],
@@ -83,12 +87,15 @@ def main():
         validos = {m for fila in filas.values() for m in fila if m != '—'}
         validos |= extras.get(c, set()) | extras.get(d, set())  # subsecuente, seguimiento, paquete
         for ruta in rutas:
+            if not (ROOT / ruta / 'index.html').exists():  # versión en francés aún no generada
+                continue
+            paginas += 1
             soup = BeautifulSoup((ROOT / ruta / 'index.html').read_text(encoding='utf-8'), 'html.parser')
             prose = soup.select_one('main.page-body')
             for tr in prose.select('table tbody tr'):
                 etiqueta = tr.find('td').get_text(strip=True).lower()
-                tipo = ('consultorio' if ('consultorio' in etiqueta or 'clinic' in etiqueta)
-                        else 'hotel' if 'hotel' in etiqueta else 'domicilio')
+                tipo = ('consultorio' if any(w in etiqueta for w in ('consultorio', 'clinic', 'cabinet'))
+                        else 'hotel' if ('hotel' in etiqueta or 'hôtel' in etiqueta) else 'domicilio')
                 celdas = [td.get_text(strip=True) for td in tr.find_all('td')[1:]]
                 revisadas += len(celdas)
                 if celdas != filas[tipo]:
@@ -99,12 +106,12 @@ def main():
                 if norm(m) not in validos:
                     errores.append(f'{ruta}: el monto {m} no es una tarifa publicada de {zona}')
             letra = 'AB'[zona_de[h]]
-            for txt in re.findall(r'(?:Zona|Zone) ([AB])\b', texto):
+            for txt in re.findall(r'(?i:Zona|Zone) ([AB])\b', texto):
                 if txt != letra:
                     errores.append(f'{ruta}: dice Zona {txt}, pero {h} está en la Zona {letra}')
     if errores:
         raise SystemExit('Precios que NO coinciden:\n' + '\n'.join(errores))
-    print(f'OK: {revisadas} precios revisados en {2 * len(ZONAS)} páginas; todos coinciden con index.html.')
+    print(f'OK: {revisadas} precios revisados en {paginas} páginas; todos coinciden con index.html.')
 
 
 if __name__ == '__main__':

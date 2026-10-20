@@ -1,0 +1,23 @@
+{
+  "plantilla": "plantilla-indice-guias.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-20",
+  "es": {
+    "path": "/guias/",
+    "title": "Guías de salud para viajeros en la CDMX",
+    "description": "Guías con fuentes para viajeros en la Ciudad de México: cuándo ir a urgencias, altitud, diarrea del viajero y farmacias.",
+    "crumb": "Guías"
+  },
+  "en": {
+    "path": "/en/guides/",
+    "title": "Health Guides for Travelers in Mexico City",
+    "description": "Sourced guides for visitors to Mexico City: when to go to the ER, altitude, traveler’s diarrhea and pharmacies.",
+    "crumb": "Guides"
+  },
+  "fr": {
+    "path": "/fr/guides/",
+    "title": "Guides santé pour voyageurs à Mexico",
+    "description": "Guides sourcés pour les visiteurs de Mexico : urgences, altitude, diarrhée du voyageur et pharmacies.",
+    "crumb": "Guides"
+  }
+}

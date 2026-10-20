@@ -15,6 +15,7 @@
 <link href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/" rel="canonical"/>
 <link href="https://drcjortegaarenas.com/guias/diarrea-del-viajero/" hreflang="es" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/" hreflang="en" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/fr/guides/diarrhee-du-voyageur-mexico/" hreflang="fr" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/" hreflang="x-default" rel="alternate"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
@@ -33,10 +34,90 @@
 <meta content="Traveler's Diarrhea in Mexico City: Prevention &amp; Care" name="twitter:title"/>
 <meta content="What traveler's diarrhea is, how to prevent it with hygiene and safe food and water, how to rehydrate with oral solution, and when to see a doctor." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <style>
+/* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root {
     --black:   #0a0a0a;
     --charcoal:#141414;
@@ -671,7 +752,7 @@
 <a href="/en/#servicios">Services</a>
 <a href="/en/iv-hydration-mexico-city/">IV therapy</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
-<a href="/en/#guias">Guides</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
 <a href="/en/#contacto">Contact</a>
 </div>
@@ -679,6 +760,7 @@
 <div class="lang-toggle">
 <a class="lang-btn" data-lang="es" href="/guias/diarrea-del-viajero/" hreflang="es" lang="es">ES</a>
 <a class="lang-btn" data-lang="en" href="/en/guides/travelers-diarrhea-mexico-city/" hreflang="en" lang="en">EN</a>
+<a class="lang-btn" data-lang="fr" href="/fr/guides/diarrhee-du-voyageur-mexico/" hreflang="fr" lang="fr">FR</a>
 </div>
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Menu" class="nav-menu-btn" type="button">☰</button>
 </div>
@@ -737,6 +819,7 @@
 <p>If there is blood in the stool, high fever, signs of dehydration or vomiting that keeps you from drinking, if it does not improve after 3 days, or if you are pregnant, older or have a chronic condition.</p>
 </div>
 <div class="emergency-note"><strong>In an emergency, call 911</strong> or go to a hospital emergency room. See also <a href="/en/guides/emergency-care-mexico-city/">when to go to the ER in Mexico City</a>.</div>
+
 <h2>Sources</h2>
 <ol class="ref-list">
 <li>Connor BA, Leung DT. Travelers' Diarrhea. In: CDC Yellow Book 2026: Health Information for International Travel. Centers for Disease Control and Prevention; 2025. <a href="https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travelers-diarrhea.html" rel="noopener" target="_blank">cdc.gov</a></li>
@@ -749,7 +832,7 @@
 <aside class="side-card">
 <p><strong>If you have a warning sign, call 911.</strong> This is not an emergency service.</p>
 <h3>Need a medical visit?</h3>
-<p>General medicine at your hotel, from $2,500 MXN depending on zone and time; also house calls, clinic visits and telemedicine.</p>
+<p>General medicine at your hotel, from <span>$2,500</span> MXN depending on zone and time; also house calls, clinic visits and telemedicine.</p>
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." rel="noopener" target="_blank">Message on WhatsApp</a>
 </aside>
 </main>
@@ -771,10 +854,12 @@
 <a href="/aviso-de-privacidad/">Privacy Notice</a>
 </p>
 <p class="footer-links">
+<a href="/en/areas/">Areas</a>
 <a href="/en/doctor-del-valle/">Del Valle</a>
 <a href="/en/doctor-polanco/">Polanco</a>
 <a href="/en/doctor-roma-condesa/">Roma &amp; Condesa</a>
 <a href="/en/doctor-santa-fe/">Santa Fe</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/guides/mexico-city-altitude/">Altitude</a>
 <a href="/en/guides/travelers-diarrhea-mexico-city/">Traveler's diarrhea</a>
 <a href="/en/guides/pharmacies-mexico-city/">Pharmacies</a>
@@ -796,7 +881,8 @@
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
-  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  const htmlLang = document.documentElement.lang;
+  const lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('fr') ? 'fr' : 'es';
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
     b.addEventListener('click', () => { try { localStorage.setItem('lang', b.dataset.lang); } catch { /* sin almacenamiento */ } });
@@ -813,6 +899,7 @@
   };
   if (!saved && lang === 'es' && nav.startsWith('en')) show('/en/guides/travelers-diarrhea-mexico-city/', 'View this page in English →');
   if (!saved && lang === 'en' && nav.startsWith('es')) show('/guias/diarrea-del-viajero/', 'Ver esta página en español →');
+  if (!saved && lang !== 'fr' && nav.startsWith('fr')) show('/fr/guides/diarrhee-du-voyageur-mexico/', 'Voir cette page en français →');
   document.getElementById('lang-hint-x').addEventListener('click', () => {
     hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
   });

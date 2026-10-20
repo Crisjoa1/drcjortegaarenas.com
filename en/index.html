@@ -4,13 +4,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>English-Speaking Doctor in Mexico City | Hotel &amp; House Calls</title>
+<title>English-Speaking Doctor in Mexico City | Hotel, Home &amp; Clinic</title>
 <meta content="English-speaking doctor in Mexico City: hotel visits, house calls, clinics in Polanco, Roma, Del Valle and Santa Fe, and telemedicine. Fees published in MXN." name="description"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" name="author"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://drcjortegaarenas.com/en/" rel="canonical"/>
 <link href="https://drcjortegaarenas.com/" hreflang="es" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/" hreflang="en" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/fr/" hreflang="fr" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/" hreflang="x-default" rel="alternate"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
@@ -29,10 +30,90 @@
 <meta content="Dr. Cristóbal J. Ortega-Arenas — English-speaking doctor in Mexico City" name="twitter:title"/>
 <meta content="English-speaking doctor in Mexico City: hotel visits, house calls, clinics in Polanco, Roma, Del Valle and Santa Fe, and telemedicine. Fees published in MXN." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <style>
+/* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root {
     --black:   #0a0a0a;
     --charcoal:#141414;
@@ -918,7 +999,7 @@
 <a href="/en/#servicios">Services</a>
 <a href="/en/iv-hydration-mexico-city/">IV therapy</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
-<a href="/en/#guias">Guides</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
 <a href="/en/#contacto">Contact</a>
 </div>
@@ -926,6 +1007,7 @@
 <div class="lang-toggle">
 <a class="lang-btn" data-lang="es" href="/" hreflang="es" lang="es">ES</a>
 <a class="lang-btn" data-lang="en" href="/en/" hreflang="en" lang="en">EN</a>
+<a class="lang-btn" data-lang="fr" href="/fr/" hreflang="fr" lang="fr">FR</a>
 </div>
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Menu" class="nav-menu-btn" type="button">☰</button>
 </div>
@@ -933,9 +1015,9 @@
 <!-- ══ HERO ══════════════════════════════════ -->
 <section class="hero2" id="inicio">
 <div class="hero2-text">
-<p class="hero2-badge">General physician · Mexico City · English / Español</p>
-<h1 class="hero2-h1">An English-speaking doctor who comes to your <em>hotel</em> in Mexico City</h1>
-<p class="hero2-lead">With a verifiable professional license and fees you see before you call. House calls, clinic visits and telemedicine are also available.</p>
+<p class="hero2-badge">General physician · Mexico City · English / Español · French-speaking assistant</p>
+<h1 class="hero2-h1"><em>English-speaking</em> medical care in Mexico City</h1>
+<p class="hero2-lead">General medicine in English or Spanish: at your hotel, at home, at a clinic (Del Valle, Roma, Polanco and Santa Fe) or by video call. A verifiable professional license and fees you see before you call.</p>
 <ul class="hero2-facts">
 <li><strong>MXN 2,500</strong>from, hotel visit</li>
 <li><strong>From 45 min</strong>estimated arrival, by area</li>
@@ -947,6 +1029,7 @@
 </div>
 <p class="hero2-note">Outpatient general medicine. Not an emergency service: in an emergency, call 911.</p>
 <p class="hero2-note">Professional license (Cédula) 14848636 · <a class="cred-verify" href="https://www.cedulaprofesional.sep.gob.mx/" rel="noopener" target="_blank">verify (SEP)</a></p>
+<p class="hero2-note">Optional French-speaking assistant: <span>$1,000</span> MXN, subject to availability. <span lang="fr">Vous parlez français ? Une assistante francophone peut traduire pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; demandez-la lors de la réservation.</span></p>
 </div>
 <figure class="hero2-photo">
 <img alt="Dr. Cristóbal J. Ortega-Arenas wearing a UNAM Faculty of Medicine white coat" decoding="async" fetchpriority="high" height="1016" sizes="(max-width:900px) 92vw, 460px" src="/assets/foto-perfil-color-813.webp" srcset="/assets/foto-perfil-color-600.webp 600w, /assets/foto-perfil-color-813.webp 813w" width="813"/>
@@ -1154,6 +1237,10 @@
 <p>Yes. Bilingual care in Spanish and English for local and international patients.</p>
 </div>
 <div class="payment-card reveal faq-item">
+<h3>Do you see French-speaking patients?</h3>
+<p>Yes, with a French-speaking assistant who translates during the visit; the doctor consults in English or Spanish. It costs an additional <span>$1,000</span> MXN per visit, which covers the translation fee. Subject to availability; please request it when booking, online or via WhatsApp at +52 595 109 3969.</p>
+</div>
+<div class="payment-card reveal faq-item">
 <h3>Where are the clinics?</h3>
 <p>At Briyam Coworking Médico, by appointment, in four locations: Del Valle, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+R%C3%ADo+Mixcoac+25%2C+Benito+Ju%C3%A1rez%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Río Mixcoac 25, piso 8, Benito Juárez, CDMX</a></span>; Roma, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Monterrey+243%2C+Roma+Sur%2C+Cuauht%C3%A9moc%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Monterrey 243, piso 5, Roma Sur, Cuauhtémoc, CDMX</a></span>; Polanco, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span>; and Santa Fe, <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span>.</p>
 </div>
@@ -1198,6 +1285,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. Bilingual care in Spanish and English for local and international patients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you see French-speaking patients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a French-speaking assistant who translates during the visit; the doctor consults in English or Spanish. It costs an additional $1,000 MXN per visit, which covers the translation fee. Subject to availability; please request it when booking, online or via WhatsApp at +52 595 109 3969."
       }
     },
     {
@@ -1414,7 +1509,7 @@
 </div>
 <div class="payment-card reveal">
 <h3>Cancellation &amp; Refund</h3>
-<p><strong>Clinic:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable.<br/><br/><strong>Telemedicine:</strong> if you cancel at least 3 hours in advance, your payment is refunded. With less than 3 hours' notice, or if you do not join the call, the payment is non-refundable.<br/><br/><strong>House calls:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you are not at the address at the agreed time, the deposit is non-refundable.<br/><br/><strong>Hotel visits:</strong> no deposit and no cancellation fee. If you need to cancel or change the time, let us know on WhatsApp as soon as possible.<br/><br/><strong>Travel Clinical Summary</strong> in English, on request for an additional fee.</p>
+<p><strong>Clinic:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you do not attend, the deposit is non-refundable.<br/><br/><strong>Telemedicine:</strong> if you cancel at least 3 hours in advance, your payment is refunded. With less than 3 hours' notice, or if you do not join the call, the payment is non-refundable.<br/><br/><strong>House calls:</strong> if you cancel at least 3 hours in advance, your deposit is refunded. With less than 3 hours' notice, or if you are not at the address at the agreed time, the deposit is non-refundable.<br/><br/><strong>Hotel visits:</strong> no deposit and no cancellation fee. If you need to cancel or change the time, let us know on WhatsApp as soon as possible.<br/><br/><strong>French-speaking assistant:</strong> paid together with the visit; if she is not available, there is no charge.<br/><br/><strong>Travel Clinical Summary</strong> in English, on request for an additional fee.</p>
 </div>
 </div>
 <div class="important-note reveal" style="margin-top:6px"><strong>Privacy (LFPDPPP):</strong> Your personal and clinical information is strictly confidential. See our <a href="/aviso-de-privacidad/" style="color:inherit;text-decoration:underline">Privacy Notice</a>. · <strong>Prescriptions:</strong> when treatment is indicated, a written prescription is provided (printed or digital, as applicable). Acceptance by your insurer depends on your policy. · <strong>Scope:</strong> Strictly outpatient general medicine services.</div>
@@ -1435,6 +1530,7 @@
 <div class="proc-row"><div><p class="proc-name">In-person Medical Certificate</p><p class="proc-note">+ Clinic Consultation or Home Visit fee</p></div><div class="proc-price">$800</div></div>
 <div class="proc-row"><div><p class="proc-name">Physical Travel Summary</p><p class="proc-note">Detailed clinical report in English for immigration/airlines. Delivered post-consultation. + Clinic Consultation or Home Visit fee</p></div><div class="proc-price">$800</div></div>
 <div class="proc-row"><div><p class="proc-name">Digital Travel Summary</p><p class="proc-note">Detailed clinical report in English. Issued via email/PDF</p></div><div class="proc-price">$500</div></div>
+<div class="proc-row"><div><p class="proc-name">French Translation Assistant</p><p class="proc-note">Fee for a French-speaking assistant who translates during the visit. Subject to availability; please request it when booking. + Visit fee (clinic, home or hotel)</p></div><div class="proc-price">$1,000</div></div>
 </div>
 </div>
 <!-- Diagnostics -->
@@ -1624,10 +1720,12 @@
 <a href="/aviso-de-privacidad/">Privacy Notice</a>
 </p>
 <p class="footer-links">
+<a href="/en/areas/">Areas</a>
 <a href="/en/doctor-del-valle/">Del Valle</a>
 <a href="/en/doctor-polanco/">Polanco</a>
 <a href="/en/doctor-roma-condesa/">Roma &amp; Condesa</a>
 <a href="/en/doctor-santa-fe/">Santa Fe</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/guides/mexico-city-altitude/">Altitude</a>
 <a href="/en/guides/travelers-diarrhea-mexico-city/">Traveler's diarrhea</a>
 <a href="/en/guides/pharmacies-mexico-city/">Pharmacies</a>
@@ -1649,7 +1747,8 @@
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
-  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  const htmlLang = document.documentElement.lang;
+  const lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('fr') ? 'fr' : 'es';
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
     b.addEventListener('click', () => { try { localStorage.setItem('lang', b.dataset.lang); } catch { /* sin almacenamiento */ } });
@@ -1666,6 +1765,7 @@
   };
   if (!saved && lang === 'es' && nav.startsWith('en')) show('/en/', 'View this page in English →');
   if (!saved && lang === 'en' && nav.startsWith('es')) show('/', 'Ver esta página en español →');
+  if (!saved && lang !== 'fr' && nav.startsWith('fr')) show('/fr/', 'Voir cette page en français →');
   document.getElementById('lang-hint-x').addEventListener('click', () => {
     hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
   });

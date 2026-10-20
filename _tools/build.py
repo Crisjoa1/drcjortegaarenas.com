@@ -34,12 +34,14 @@ from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = 'https://drcjortegaarenas.com'
+LANGS = ('es', 'en', 'fr')  # el francés se genera solo en las plantillas que ya traen data-fr
+LOCALE = {'es': ('es-MX', 'es_MX'), 'en': ('en', 'en_US'), 'fr': ('fr', 'fr_FR')}
 
 META = {
     'es': {
         'path': '/',
         'html_lang': 'es-MX',
-        'title': 'Médico a domicilio y hotel en CDMX | Dr. Ortega-Arenas',
+        'title': 'Médico general bilingüe en CDMX | Dr. Ortega-Arenas',
         'description': 'Médico general bilingüe en CDMX: visita a su hotel, a domicilio, en consultorio '
                        '(Del Valle, Roma, Polanco, Santa Fe) y teleconsulta. Honorarios publicados en MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en CDMX',
@@ -51,7 +53,7 @@ META = {
     'en': {
         'path': '/en/',
         'html_lang': 'en',
-        'title': 'English-Speaking Doctor in Mexico City | Hotel & House Calls',
+        'title': 'English-Speaking Doctor in Mexico City | Hotel, Home & Clinic',
         'description': 'English-speaking doctor in Mexico City: hotel visits, house calls, clinics in Polanco, '
                        'Roma, Del Valle and Santa Fe, and telemedicine. Fees published in MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — English-speaking doctor in Mexico City',
@@ -59,6 +61,18 @@ META = {
         'crumb_home': 'Home',
         'phys_desc': 'Bilingual (English/Spanish) general physician in Mexico City: clinic visits, '
                      'telemedicine, house calls, hotel visits and IV hydration therapy.',
+    },
+    'fr': {
+        'path': '/fr/',
+        'html_lang': 'fr',
+        'title': 'Médecin à Mexico : hôtel, domicile, cabinet | Dr Ortega-Arenas',
+        'description': 'Médecin généraliste à Mexico, consultation en espagnol ou en anglais : hôtel, domicile, cabinet '
+                       'et téléconsultation. Assistante francophone en option, sous réserve de disponibilité.',
+        'og_title': 'Dr Cristóbal J. Ortega-Arenas — Médecin généraliste à Mexico',
+        'og_locale': 'fr_FR', 'og_alt': 'es_MX',
+        'crumb_home': 'Accueil',
+        'phys_desc': 'Médecin généraliste à Mexico (consultation en espagnol ou en anglais, assistante francophone '
+                     'en option) : cabinet, téléconsultation, visites à domicile et à l’hôtel.',
     },
 }
 
@@ -83,13 +97,23 @@ META_HOTELES = {
         'og_locale': 'en_US', 'og_alt': 'es_MX',
         'crumb': 'For hotels & concierges', 'home': 'Home',
     },
+    'fr': {
+        'path': '/fr/hotels/',
+        'html_lang': 'fr',
+        'title': 'Médecin à l’hôtel à Mexico : infos pour hôtels et concierges',
+        'description': 'Visite médicale pour vos clients à Mexico : demande par WhatsApp ou en ligne, arrivée '
+                       'estimée selon le quartier, tarifs et documents pour l’assurance.',
+        'og_title': 'Pour hôtels et concierges — Dr Cristóbal J. Ortega-Arenas',
+        'og_locale': 'fr_FR', 'og_alt': 'es_MX',
+        'crumb': 'Pour hôtels et concierges', 'home': 'Accueil',
+    },
 }
 
 PAGES = [
     {'template': 'plantilla.html', 'meta': META,
-     'out': {'es': 'index.html', 'en': 'en/index.html'}},
+     'out': {'es': 'index.html', 'en': 'en/index.html', 'fr': 'fr/index.html'}},
     {'template': 'plantilla-hoteles.html', 'meta': META_HOTELES,
-     'out': {'es': 'hoteles/index.html', 'en': 'en/hotels/index.html'}},
+     'out': {'es': 'hoteles/index.html', 'en': 'en/hotels/index.html', 'fr': 'fr/hotels/index.html'}},
 ]
 
 
@@ -98,10 +122,10 @@ def load_pages():
     pages = []
     for f in sorted((ROOT / '_tools' / 'paginas').glob('*.json')):
         cfg = json.loads(f.read_text(encoding='utf-8'))
-        meta = {lang: dict(cfg[lang], home=META[lang]['crumb_home']) for lang in ('es', 'en') if lang in cfg}
+        meta = {lang: dict(cfg[lang], home=META[lang]['crumb_home']) for lang in LANGS if lang in cfg}
         for lang in meta:
-            meta[lang].setdefault('html_lang', 'es-MX' if lang == 'es' else 'en')
-            meta[lang].setdefault('og_locale', 'es_MX' if lang == 'es' else 'en_US')
+            meta[lang].setdefault('html_lang', LOCALE[lang][0])
+            meta[lang].setdefault('og_locale', LOCALE[lang][1])
             meta[lang].setdefault('og_alt', 'en_US' if lang == 'es' else 'es_MX')
             meta[lang].setdefault('og_title', meta[lang]['title'])
         out = {lang: meta[lang]['path'].strip('/') + '/index.html' for lang in meta}
@@ -110,6 +134,18 @@ def load_pages():
 
 
 PAGES += load_pages()
+
+
+def con_frances(page):
+    """El francés solo se publica si la plantilla ya trae los textos (data-fr)."""
+    src = (ROOT / '_tools' / page['template']).read_text(encoding='utf-8')
+    if 'fr' in page['meta'] and 'data-fr=' not in src:
+        page['meta'] = {k: v for k, v in page['meta'].items() if k != 'fr'}
+        page['out'] = {k: v for k, v in page['out'].items() if k != 'fr'}
+
+
+for _p in PAGES:
+    con_frances(_p)
 
 PDF_OUT = ROOT / 'assets' / 'hoja-recepcion-hoteles.pdf'
 PDF_HASH = ROOT / '_tools' / '.hoja-recepcion.sha256'
@@ -169,6 +205,7 @@ def head_meta(meta, lang):
     url = SITE + m['path']
     es_url = SITE + meta['es']['path']
     en_url = SITE + meta['en']['path'] if 'en' in meta else None
+    fr_url = SITE + meta['fr']['path'] if 'fr' in meta else None
     esc = lambda t: t.replace('&', '&amp;').replace('"', '&quot;')
     lines = [
         f'<title>{esc(m["title"])}</title>',
@@ -178,6 +215,7 @@ def head_meta(meta, lang):
         f'<link rel="canonical" href="{url}">',
         f'<link rel="alternate" hreflang="es" href="{es_url}">',
         *([f'<link rel="alternate" hreflang="en" href="{en_url}">'] if en_url else []),
+        *([f'<link rel="alternate" hreflang="fr" href="{fr_url}">'] if fr_url else []),
         f'<link rel="alternate" hreflang="x-default" href="{en_url or es_url}">',
         '<meta name="theme-color" content="#0a0a0a">',
         '<link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">',
@@ -256,11 +294,17 @@ OFFERS = [  # (es, en, precio "desde" en MXN) — deben coincidir con las tarifa
 ]
 
 
+OFFERS_FR = ['Visite médicale à l’hôtel', 'Visite à domicile', 'Consultation au cabinet', 'Téléconsultation',
+             'Forfait Voyageur', 'Hydratation intraveineuse (tarif du niveau, visite non incluse)',
+             'Certificat médical numérique']
+
+
 def offers(lang):
     i = 0 if lang == 'es' else 1
-    return [{'@type': 'Offer', 'name': o[i], 'priceCurrency': 'MXN',
+    nombre = (lambda n, o: OFFERS_FR[n]) if lang == 'fr' else (lambda n, o: o[i])
+    return [{'@type': 'Offer', 'name': nombre(n, o), 'priceCurrency': 'MXN',
              'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': o[2], 'priceCurrency': 'MXN'}}
-            for o in OFFERS]
+            for n, o in enumerate(OFFERS)]
 
 
 def medical_page(page, lang):
@@ -293,7 +337,8 @@ def faq(soup):
     items = []
     for card in soup.select('.faq-item'):
         q = card.find('h3').get_text(' ', strip=True)
-        a = re.sub(r'\s+([;,.])', r'\1', card.find('p').get_text(' ', strip=True))  # 'CDMX ;' → 'CDMX;'
+        fr = (soup.html.get('lang') or '').startswith('fr')
+        a = re.sub(r'\s+([,.])' if fr else r'\s+([;,.])', r'\1', card.find('p').get_text(' ', strip=True))  # 'CDMX ;' → 'CDMX;'
         items.append({'@type': 'Question', 'name': q,
                       'acceptedAnswer': {'@type': 'Answer', 'text': a}})
     return jsonld({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': items})
@@ -342,7 +387,8 @@ def tarifas():
       consultorio:Polanco   → consulta en la sede de ese nombre
       domicilio:Polanco:0..2 → consulta a domicilio en la fila que menciona ese nombre
       anticipo:Polanco       → 50 % de la consulta en esa sede (lo que se paga al reservar en Cal.com)
-      anticipo-domicilio:Polanco → 50 % de la tarifa ordinaria a domicilio (anticipo en Cal.com)
+      anticipo-domicilio:Polanco → 50 % de la tarifa ordinaria a domicilio (anticipo por transferencia)
+      asistente-frances      → asistente de traducción al francés (tabla de procedimientos)
       subsecuente:Del Valle  → segundo precio de la celda del consultorio (consulta subsecuente)
       seguimiento:Del Valle  → segundo precio de la celda de domicilio ordinario (seguimiento*)
       paquete:Del Valle      → Paquete Viajero cuya etiqueta menciona ese nombre
@@ -384,6 +430,8 @@ def tarifas():
             m = re.search(r'(\$[\d,]+) en ' + area, txt['data-es'])
             if m:
                 t[f'paquete-sin-certificado:{area}'] = m.group(1)
+    for row in soup.select('[data-tarifa-frances]'):  # asistente de traducción al francés
+        t['asistente-frances'] = row.select_one('.proc-price').get_text(strip=True)
     for div in soup.select('.offer-price[data-es]'):
         oferta = BeautifulSoup(div['data-es'], 'html.parser')
         for area in ('Del Valle',):
@@ -397,7 +445,8 @@ def render(page, lang):
     src = (ROOT / '_tools' / page['template']).read_text(encoding='utf-8')
     for mark, part in (('<!--NAV-->', 'nav.html'), ('<!--PIE-->', 'pie.html')):
         src = src.replace(mark, (ROOT / '_tools' / 'parciales' / part).read_text(encoding='utf-8'))
-    src = src.replace('{{URL_ES}}', meta['es']['path']).replace('{{URL_EN}}', meta['en']['path'] if 'en' in meta else '/en/')
+    src = (src.replace('{{URL_ES}}', meta['es']['path']).replace('{{URL_EN}}', meta['en']['path'] if 'en' in meta else '/en/')
+              .replace('{{URL_FR}}', meta['fr']['path'] if 'fr' in meta else '/fr/'))
     fills = {
         '<!--PAGE_JSONLD-->\n': lambda: medical_page(page, lang) + breadcrumb(meta, lang),
         '<!--HEAD_META-->\n': lambda: head_meta(meta, lang),
@@ -424,22 +473,21 @@ def render(page, lang):
             continue
         el.clear()
         el.append(BeautifulSoup(text, 'html.parser'))
-        del el['data-es']
-        if el.has_attr('data-en'):
-            del el['data-en']
-    for el in soup.select('[data-aria-en]'):
-        if lang == 'en':
-            el['aria-label'] = el['data-aria-en']
-        del el['data-aria-en']
-    for el in soup.select('[data-alt-en]'):
-        if lang == 'en':
-            el['alt'] = el['data-alt-en']
-        del el['data-alt-en']
-    for el in soup.select('[data-href-en]'):
-        if lang == 'en':
-            el['href'] = el['data-href-en']
-        del el['data-href-en']
-    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio'):
+        for l in LANGS:
+            if el.has_attr('data-' + l):
+                del el['data-' + l]
+    # alt, aria-label y href por idioma; en francés, si falta, se usa el de inglés
+    for kind, target in (('alt', 'alt'), ('aria', 'aria-label'), ('href', 'href')):
+        for el in soup.select(f'[data-{kind}-en], [data-{kind}-fr]'):
+            value = el.get(f'data-{kind}-{lang}') if lang != 'es' else None
+            if value is None and lang == 'fr':
+                value = el.get(f'data-{kind}-en')
+            if value is not None:
+                el[target] = value
+            for l in ('en', 'fr'):
+                if el.has_attr(f'data-{kind}-{l}'):
+                    del el[f'data-{kind}-{l}']
+    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio', 'data-tarifa-frances'):
         for el in soup.select(f'[{attr}]'):
             del el[attr]
     for el in soup.select('[data-sede]'):
@@ -541,9 +589,9 @@ def build_sitemap():
     for page in PAGES:
         meta = page['meta']
         alts = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{meta[l]["path"]}"/>'
-                       for l in ('es', 'en') if l in meta)
+                       for l in LANGS if l in meta)
         alts += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{meta["en" if "en" in meta else "es"]["path"]}"/>'
-        for l in ('es', 'en'):
+        for l in LANGS:
             if l in meta:
                 urls.append(f'  <url>\n    <loc>{SITE}{meta[l]["path"]}</loc>\n    <lastmod>{fecha(page, today)}</lastmod>{alts}\n  </url>')
     for extra in ('/formularios/', '/aviso-de-privacidad/'):
@@ -566,7 +614,7 @@ def build_llms():
              *[f'- {sede}: {sede_texto(sede)}' for sede in SEDES], '',
              '## Páginas / Pages', '']
     for page in PAGES:
-        for l in ('es', 'en'):
+        for l in LANGS:
             if l in page['meta']:
                 m = page['meta'][l]
                 lines.append(f'- [{m["title"]}]({SITE}{m["path"]}): {m["description"]}')
@@ -576,7 +624,7 @@ def build_llms():
 
 if __name__ == '__main__':
     for page in PAGES:
-        for lang in ('es', 'en'):
+        for lang in LANGS:
             if lang in page['meta']:
                 render(page, lang)
     build_pdf()

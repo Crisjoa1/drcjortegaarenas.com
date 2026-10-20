@@ -1,0 +1,23 @@
+{
+  "plantilla": "plantilla-indice-zonas.html",
+  "tipo": "servicio",
+  "revisado": "2026-10-20",
+  "es": {
+    "path": "/zonas/",
+    "title": "Médico por zona en CDMX: Del Valle, Roma, Polanco, Santa Fe",
+    "description": "Consultorios y visitas a hotel o domicilio por zona en la Ciudad de México: dirección, tarifas publicadas en MXN y tiempo estimado de llegada.",
+    "crumb": "Zonas"
+  },
+  "en": {
+    "path": "/en/areas/",
+    "title": "English-Speaking Doctor by Area in Mexico City",
+    "description": "Clinics, hotel visits and house calls by area in Mexico City: addresses, published fees in MXN and estimated arrival times.",
+    "crumb": "Areas"
+  },
+  "fr": {
+    "path": "/fr/zones/",
+    "title": "Médecin par quartier à Mexico",
+    "description": "Cabinets, visites à l’hôtel et à domicile par quartier à Mexico : adresses, tarifs publiés en MXN et délais d’arrivée estimés.",
+    "crumb": "Quartiers"
+  }
+}

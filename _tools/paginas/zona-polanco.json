@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Huéspedes de hotel, residentes y personas que trabajan en Polanco",
-    "en": "Hotel guests, residents and people working in Polanco"
+    "en": "Hotel guests, residents and people working in Polanco",
+    "fr": "Clients d’hôtel, résidents et personnes qui travaillent à Polanco"
   },
   "es": {
     "path": "/zonas/polanco/",
@@ -17,6 +18,12 @@
     "title": "English-Speaking Hotel Doctor in Polanco, Mexico City",
     "description": "Bilingual general physician in Polanco, Mexico City: hotel visits (Zone B), clinic by appointment and house calls. Published fees in MXN and estimated arrival.",
     "crumb": "Doctor in Polanco"
+  },
+  "fr": {
+    "path": "/fr/medecin-polanco/",
+    "title": "Médecin à Polanco, Mexico | Dr Ortega-Arenas",
+    "description": "Médecin généraliste bilingue (espagnol/anglais) à Polanco : hôtel (zone B), cabinet sur rendez-vous et domicile. Tarifs en MXN et arrivée estimée.",
+    "crumb": "Médecin à Polanco"
   },
   "sede": "Polanco"
 }

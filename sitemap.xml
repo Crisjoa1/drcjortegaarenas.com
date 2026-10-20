@@ -2,30 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://drcjortegaarenas.com/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/"/>
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/en/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/"/>
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/hoteles/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/hotels/"/>
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/en/hotels/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/hotels/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/hotels/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/hotels/"/>
   </url>
   <url>
@@ -39,6 +59,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/altitud-cdmx/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/altitude-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
   </url>
   <url>
@@ -46,6 +67,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/altitud-cdmx/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/altitude-mexico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/guides/altitude-mexico/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/altitud-cdmx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/altitude-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/mexico-city-altitude/"/>
   </url>
   <url>
@@ -53,6 +83,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/diarrea-del-viajero/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/diarrhee-du-voyageur-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
   </url>
   <url>
@@ -60,6 +91,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/diarrea-del-viajero/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/diarrhee-du-voyageur-mexico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/guides/diarrhee-du-voyageur-mexico/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/diarrea-del-viajero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/diarrhee-du-voyageur-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/travelers-diarrhea-mexico-city/"/>
   </url>
   <url>
@@ -67,6 +107,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/farmacias-cdmx/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/pharmacies-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
   </url>
   <url>
@@ -74,6 +115,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/farmacias-cdmx/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/pharmacies-mexico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/guides/pharmacies-mexico/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/farmacias-cdmx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/pharmacies-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/pharmacies-mexico-city/"/>
   </url>
   <url>
@@ -81,6 +131,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/cuando-ir-a-urgencias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/urgences-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
   </url>
   <url>
@@ -88,7 +139,64 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/cuando-ir-a-urgencias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/urgences-mexico/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/guides/urgences-mexico/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/cuando-ir-a-urgencias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/urgences-mexico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/guias/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/en/guides/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/guides/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/guias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/guides/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/guides/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/guides/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/zonas/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/areas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/zones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/areas/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/en/areas/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/areas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/zones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/areas/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/zones/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/areas/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/zones/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/areas/"/>
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/hidratacion-intravenosa/</loc>
@@ -123,6 +231,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/del-valle/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-del-valle/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
   </url>
   <url>
@@ -130,6 +239,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/del-valle/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-del-valle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/medecin-del-valle/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/del-valle/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-del-valle/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-del-valle/"/>
   </url>
   <url>
@@ -137,6 +255,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/polanco/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-polanco/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
   </url>
   <url>
@@ -144,6 +263,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/polanco/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-polanco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/medecin-polanco/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/polanco/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-polanco/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-polanco/"/>
   </url>
   <url>
@@ -151,6 +279,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
   </url>
   <url>
@@ -158,6 +287,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-roma-condesa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/medecin-roma-condesa/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/roma-condesa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
   </url>
   <url>
@@ -165,6 +303,7 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
   </url>
   <url>
@@ -172,6 +311,15 @@
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
+  </url>
+  <url>
+    <loc>https://drcjortegaarenas.com/fr/medecin-santa-fe/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
   </url>
   <url>

@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Viajeros adultos en la Ciudad de México",
-    "en": "Adult travelers in Mexico City"
+    "en": "Adult travelers in Mexico City",
+    "fr": "Voyageurs adultes à Mexico"
   },
   "citas": [
     {
@@ -55,5 +56,11 @@
     "title": "Pharmacies in Mexico City: Prescriptions, Antibiotics, 24 h",
     "description": "Which medicines need a prescription in Mexico, why antibiotics require one, whether a foreign prescription works, and 24-hour pharmacies in Mexico City.",
     "crumb": "Pharmacies in Mexico City"
+  },
+  "fr": {
+    "path": "/fr/guides/pharmacies-mexico/",
+    "title": "Pharmacies à Mexico : ordonnances, antibiotiques, 24 h/24",
+    "description": "Médicaments sur ordonnance au Mexique, pourquoi les antibiotiques en exigent une, valeur d’une ordonnance étrangère et pharmacies 24 h/24 à Mexico.",
+    "crumb": "Pharmacies à Mexico"
   }
 }

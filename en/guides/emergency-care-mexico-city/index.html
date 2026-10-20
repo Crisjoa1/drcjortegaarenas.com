@@ -15,6 +15,7 @@
 <link href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/" rel="canonical"/>
 <link href="https://drcjortegaarenas.com/guias/cuando-ir-a-urgencias/" hreflang="es" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/" hreflang="en" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/fr/guides/urgences-mexico/" hreflang="fr" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/guides/emergency-care-mexico-city/" hreflang="x-default" rel="alternate"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
@@ -33,10 +34,90 @@
 <meta content="When to Go to the ER in Mexico City: Warning Signs" name="twitter:title"/>
 <meta content="Warning signs to call 911 or go to the ER in Mexico City, what to bring, how payment works, and what a hotel doctor can treat." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <style>
+/* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root {
     --black:   #0a0a0a;
     --charcoal:#141414;
@@ -691,7 +772,7 @@
 <a href="/en/#servicios">Services</a>
 <a href="/en/iv-hydration-mexico-city/">IV therapy</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
-<a href="/en/#guias">Guides</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
 <a href="/en/#contacto">Contact</a>
 </div>
@@ -699,6 +780,7 @@
 <div class="lang-toggle">
 <a class="lang-btn" data-lang="es" href="/guias/cuando-ir-a-urgencias/" hreflang="es" lang="es">ES</a>
 <a class="lang-btn" data-lang="en" href="/en/guides/emergency-care-mexico-city/" hreflang="en" lang="en">EN</a>
+<a class="lang-btn" data-lang="fr" href="/fr/guides/urgences-mexico/" hreflang="fr" lang="fr">FR</a>
 </div>
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Menu" class="nav-menu-btn" type="button">☰</button>
 </div>
@@ -781,6 +863,7 @@
 <p>No. A hotel doctor can treat mild conditions, such as a mild respiratory infection, gastroenteritis without warning signs or a minor cut. For chest pain, trouble breathing, signs of a stroke or any other warning sign, call 911.</p>
 </div>
 <div class="emergency-note"><strong>In an emergency, call 911</strong> or go to a hospital emergency room. This guide and the hotel medical visit are not an emergency service.</div>
+
 <h2>Sources</h2>
 <ol class="ref-list">
 <li>C5 de la Ciudad de México. Emergencias 9-1-1 [Spanish]. Mexico City Government. Accessed October 19, 2026. <a href="https://www.c5.cdmx.gob.mx/canales-de-atencion-emergencias/emergencias-9-1-1" rel="noopener" target="_blank">c5.cdmx.gob.mx</a></li>
@@ -818,10 +901,12 @@
 <a href="/aviso-de-privacidad/">Privacy Notice</a>
 </p>
 <p class="footer-links">
+<a href="/en/areas/">Areas</a>
 <a href="/en/doctor-del-valle/">Del Valle</a>
 <a href="/en/doctor-polanco/">Polanco</a>
 <a href="/en/doctor-roma-condesa/">Roma &amp; Condesa</a>
 <a href="/en/doctor-santa-fe/">Santa Fe</a>
+<a href="/en/guides/">Guides</a>
 <a href="/en/guides/mexico-city-altitude/">Altitude</a>
 <a href="/en/guides/travelers-diarrhea-mexico-city/">Traveler's diarrhea</a>
 <a href="/en/guides/pharmacies-mexico-city/">Pharmacies</a>
@@ -843,7 +928,8 @@
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
-  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  const htmlLang = document.documentElement.lang;
+  const lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('fr') ? 'fr' : 'es';
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
     b.addEventListener('click', () => { try { localStorage.setItem('lang', b.dataset.lang); } catch { /* sin almacenamiento */ } });
@@ -860,6 +946,7 @@
   };
   if (!saved && lang === 'es' && nav.startsWith('en')) show('/en/guides/emergency-care-mexico-city/', 'View this page in English →');
   if (!saved && lang === 'en' && nav.startsWith('es')) show('/guias/cuando-ir-a-urgencias/', 'Ver esta página en español →');
+  if (!saved && lang !== 'fr' && nav.startsWith('fr')) show('/fr/guides/urgences-mexico/', 'Voir cette page en français →');
   document.getElementById('lang-hint-x').addEventListener('click', () => {
     hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
   });

@@ -17,6 +17,7 @@
 <link href="https://drcjortegaarenas.com/zonas/santa-fe/" rel="canonical"/>
 <link href="https://drcjortegaarenas.com/zonas/santa-fe/" hreflang="es" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/doctor-santa-fe/" hreflang="en" rel="alternate"/>
+<link href="https://drcjortegaarenas.com/fr/medecin-santa-fe/" hreflang="fr" rel="alternate"/>
 <link href="https://drcjortegaarenas.com/en/doctor-santa-fe/" hreflang="x-default" rel="alternate"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <link href="/assets/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
@@ -35,10 +36,90 @@
 <meta content="Médico en Santa Fe, CDMX | Dr. Ortega-Arenas" name="twitter:title"/>
 <meta content="Médico general bilingüe en Santa Fe, CDMX: consultorio con cita por las tardes y sábados, visita en hotel (Zona B) y a domicilio. Tarifas publicadas en MXN." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <style>
+/* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/assets/fonts/dm-sans-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root {
     --black:   #0a0a0a;
     --charcoal:#141414;
@@ -644,6 +725,38 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo ir al consultorio de Santa Fe al salir de la oficina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El consultorio atiende con cita de lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. Está en Briyam Coworking Médico, sede Santa Fe: Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX. Reserve en línea en cal.com/drcjortegaarenas: la consulta cuesta $1,800 MXN y la cita queda confirmada al pagar con tarjeta el anticipo de $900 MXN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué tarda más en llegar a Santa Fe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por la distancia y el tráfico, el tiempo estimado de llegada a Santa Fe es de alrededor de 1 hora 50 minutos; puede ser menos. Al reservar, envíe un WhatsApp al +52 595 109 3969 y se le confirmará una hora estimada. Si el motivo no requiere exploración física, por ejemplo un seguimiento o una duda sobre un tratamiento, también puede elegir la teleconsulta por videollamada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo pido una visita en mi hotel o en mi casa en Santa Fe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escriba por WhatsApp al +52 595 109 3969. La visita en hotel cuesta desde $3,000 MXN en horario ordinario y se paga al médico, sin anticipo. La consulta a domicilio cuesta desde $2,100 MXN y se confirma con una transferencia de $1,050 MXN, el 50 % de la tarifa ordinaria; si cancela con al menos 3 horas de anticipación, se reembolsa. Si está en un edificio con control de acceso, avise en recepción que espera al médico."
+      }
+    }
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN7Z5TM576"></script>
 <script>
@@ -665,7 +778,7 @@
 <a href="/#servicios">Servicios</a>
 <a href="/hidratacion-intravenosa/">Terapia IV</a>
 <a href="/certificados-y-viajeros/">Viajeros</a>
-<a href="/#guias">Guías</a>
+<a href="/guias/">Guías</a>
 <a href="/#tarifas">Tarifas</a>
 <a href="/#contacto">Contacto</a>
 </div>
@@ -673,6 +786,7 @@
 <div class="lang-toggle">
 <a class="lang-btn" data-lang="es" href="/zonas/santa-fe/" hreflang="es" lang="es">ES</a>
 <a class="lang-btn" data-lang="en" href="/en/doctor-santa-fe/" hreflang="en" lang="en">EN</a>
+<a class="lang-btn" data-lang="fr" href="/fr/medecin-santa-fe/" hreflang="fr" lang="fr">FR</a>
 </div>
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Menú" class="nav-menu-btn" type="button">☰</button>
 </div>
@@ -686,6 +800,7 @@
 <a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Reservar en línea</a>
 </div>
 <div class="emergency-note"><strong>No es un servicio de urgencias.</strong> Ante dolor en el pecho, dificultad para respirar, pérdida del conocimiento, sangrado abundante o cualquier otra emergencia, llame al <strong>911</strong> o acuda a urgencias hospitalarias. No espere al médico.</div>
+
 </header>
 <div class="sep"></div>
 <main class="page-body">
@@ -715,6 +830,19 @@
 <p>Si está en un hotel o en un edificio con control de acceso, avise en recepción que espera al médico.</p>
 <h2>Qué puede atender el médico</h2>
 <p>Medicina general ambulatoria para padecimientos leves, como infecciones respiratorias sin dificultad para respirar, gastroenteritis sin signos de alarma o heridas menores. Cuando hay tratamiento indicado, recibe receta por escrito; vea la <a href="/guias/farmacias-cdmx/">guía de farmacias en la CDMX</a>. No sustituye a un hospital: vea <a href="/guias/cuando-ir-a-urgencias/">cuándo ir a urgencias</a>.</p>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-item">
+<h3>¿Puedo ir al consultorio de Santa Fe al salir de la oficina?</h3>
+<p>Sí. El consultorio atiende con cita de lunes a viernes de 17:00 a 20:00 (la cita de las 20:00 es solo para subsecuentes) y sábados de 11:00 a 15:00. Está en Briyam Coworking Médico, sede Santa Fe: <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Vasco+de+Quiroga+3900%2C+Santa+Fe%2C+Cuajimalpa+de+Morelos%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Vasco de Quiroga 3900, Torre B, piso 5, Santa Fe, Cuajimalpa, CDMX</a></span>. Reserve en línea en cal.com/drcjortegaarenas: la consulta cuesta <span>$1,800</span> MXN y la cita queda confirmada al pagar con tarjeta el anticipo de <span>$900</span> MXN.</p>
+</div>
+<div class="faq-item">
+<h3>¿Por qué tarda más en llegar a Santa Fe?</h3>
+<p>Por la distancia y el tráfico, el tiempo estimado de llegada a Santa Fe es de alrededor de 1 hora 50 minutos; puede ser menos. Al reservar, envíe un WhatsApp al +52 595 109 3969 y se le confirmará una hora estimada. Si el motivo no requiere exploración física, por ejemplo un seguimiento o una duda sobre un tratamiento, también puede elegir la teleconsulta por videollamada.</p>
+</div>
+<div class="faq-item">
+<h3>¿Cómo pido una visita en mi hotel o en mi casa en Santa Fe?</h3>
+<p>Escriba por WhatsApp al +52 595 109 3969. La visita en hotel cuesta desde <span>$3,000</span> MXN en horario ordinario y se paga al médico, sin anticipo. La consulta a domicilio cuesta desde <span>$2,100</span> MXN y se confirma con una transferencia de <span>$1,050</span> MXN, el 50 % de la tarifa ordinaria; si cancela con al menos 3 horas de anticipación, se reembolsa. Si está en un edificio con control de acceso, avise en recepción que espera al médico.</p>
+</div>
 <p class="review-meta">Dr. Cristóbal J. Ortega-Arenas, Médico Cirujano (UNAM), cédula profesional 14848636. Información revisada el 19 de octubre de 2026. Otras zonas: <a href="/zonas/del-valle/">Del Valle</a> · <a href="/zonas/polanco/">Polanco</a> · <a href="/zonas/roma-condesa/">Roma-Condesa</a> · <a href="/hoteles/">información para hoteles</a>.</p>
 </article>
 <aside class="side-card">
@@ -742,10 +870,12 @@
 <a href="/aviso-de-privacidad/">Aviso de Privacidad</a>
 </p>
 <p class="footer-links">
+<a href="/zonas/">Zonas</a>
 <a href="/zonas/del-valle/">Del Valle</a>
 <a href="/zonas/polanco/">Polanco</a>
 <a href="/zonas/roma-condesa/">Roma y Condesa</a>
 <a href="/zonas/santa-fe/">Santa Fe</a>
+<a href="/guias/">Guías</a>
 <a href="/guias/altitud-cdmx/">Altitud</a>
 <a href="/guias/diarrea-del-viajero/">Diarrea del viajero</a>
 <a href="/guias/farmacias-cdmx/">Farmacias</a>
@@ -767,7 +897,8 @@
 <script>
 /* ── IDIOMA: cada idioma tiene su propia URL (/ y /en/) ── */
 (function(){
-  const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+  const htmlLang = document.documentElement.lang;
+  const lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('fr') ? 'fr' : 'es';
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
     b.addEventListener('click', () => { try { localStorage.setItem('lang', b.dataset.lang); } catch { /* sin almacenamiento */ } });
@@ -784,6 +915,7 @@
   };
   if (!saved && lang === 'es' && nav.startsWith('en')) show('/en/doctor-santa-fe/', 'View this page in English →');
   if (!saved && lang === 'en' && nav.startsWith('es')) show('/zonas/santa-fe/', 'Ver esta página en español →');
+  if (!saved && lang !== 'fr' && nav.startsWith('fr')) show('/fr/medecin-santa-fe/', 'Voir cette page en français →');
   document.getElementById('lang-hint-x').addEventListener('click', () => {
     hint.hidden = true; try { localStorage.setItem('lang', lang); } catch { /* sin almacenamiento */ }
   });
