@@ -289,13 +289,13 @@ OFFERS = [  # (es, en, precio "desde" en MXN) — deben coincidir con las tarifa
     ('Consulta en consultorio', 'Clinic visit', 1000),
     ('Teleconsulta', 'Telemedicine consultation', 700),
     ('Paquete Viajero', 'Traveler Package', 2200),
-    ('Hidratación intravenosa (cargo del nivel, sin visita)', 'IV hydration (level fee, visit not included)', 1800),
+    ('Hidratación intravenosa (sin visita ni enfermería)', 'IV hydration (visit and nursing not included)', 1800),
     ('Certificado médico digital', 'Digital medical certificate', 500),
 ]
 
 
 OFFERS_FR = ['Visite médicale à l’hôtel', 'Visite à domicile', 'Consultation au cabinet', 'Téléconsultation',
-             'Forfait Voyageur', 'Hydratation intraveineuse (tarif du niveau, visite non incluse)',
+             'Forfait Voyageur', 'Hydratation intraveineuse (visite et soins infirmiers non inclus)',
              'Certificat médical numérique']
 
 

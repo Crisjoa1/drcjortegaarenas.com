@@ -1,12 +1,26 @@
 {
   "plantilla": "plantilla-viajeros.html",
   "tipo": "servicio",
-  "revisado": "2026-10-19",
+  "revisado": "2026-10-20",
   "audiencia": {
     "es": "Viajeros en la Ciudad de México",
     "en": "Travelers in Mexico City",
     "fr": "Voyageurs à Mexico"
   },
+  "citas": [
+    {
+      "nombre": "UK Civil Aviation Authority. Assessing fitness to fly",
+      "url": "https://www.caa.co.uk/air-passengers/about-your-trip/health-and-medical/guidance-for-health-professionals/assessing-fitness-to-fly/"
+    },
+    {
+      "nombre": "NOM-004-SSA3-2012, Del expediente clínico (DOF 15/10/2012)",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5272787&fecha=15/10/2012"
+    },
+    {
+      "nombre": "CDC. Rapid Influenza Diagnostic Tests",
+      "url": "https://www.cdc.gov/flu/hcp/testing-methods/clinician_guidance_ridt.html"
+    }
+  ],
   "es": {
     "path": "/certificados-y-viajeros/",
     "title": "Certificado médico CDMX y viajeros | Dr. Ortega-Arenas",

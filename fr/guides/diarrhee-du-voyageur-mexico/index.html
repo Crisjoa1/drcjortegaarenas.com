@@ -255,6 +255,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -581,6 +582,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -651,7 +653,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/fr/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -682,6 +684,11 @@
       "@type": "CreativeWork",
       "name": "CDC. Preventing Shigella Infection While Traveling (2024)",
       "url": "https://www.cdc.gov/shigella/prevention/preventing-shigella-infection-while-traveling.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Galang RR, Roy SC. Pregnant Travelers. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/family-travel/pregnant-travelers.html"
     }
   ]
 }
@@ -757,7 +764,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/fr/hotels/">Hôtel</a>
 <a href="/fr/#servicios">Services</a>
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Voyageurs</a>
 <a href="/fr/guides/">Guides</a>
 <a href="/fr/#tarifas">Tarifs</a>
@@ -833,8 +840,9 @@
 <li>Chard AN, Hill V. Food and Water Precautions for Travelers (en anglais). Dans : CDC Yellow Book 2026: Health Information for International Travel. Centers for Disease Control and Prevention; 2025. <a href="https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html" rel="noopener" target="_blank">cdc.gov</a></li>
 <li>Organisation mondiale de la Santé (OMS). Diarrhoeal disease (en anglais). Aide-mémoire, 7 mars 2024. <a href="https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease" rel="noopener" target="_blank">who.int</a></li>
 <li>Centers for Disease Control and Prevention (CDC). Preventing Shigella Infection While Traveling (en anglais). 2024. Consulté le 19 octobre 2026. <a href="https://www.cdc.gov/shigella/prevention/preventing-shigella-infection-while-traveling.html" rel="noopener" target="_blank">cdc.gov</a></li>
+<li>Galang RR, Roy SC. Pregnant Travelers (en anglais). Dans : CDC Yellow Book 2026: Health Information for International Travel. Centers for Disease Control and Prevention; 2025. <a href="https://www.cdc.gov/yellow-book/hcp/family-travel/pregnant-travelers.html" rel="noopener" target="_blank">cdc.gov</a></li>
 </ol>
-<p class="review-meta">Rédigé et relu par le Dr Cristóbal J. Ortega-Arenas, médecin (Médico Cirujano, UNAM), licence professionnelle (Cédula) 14848636. Dernière révision : 19 octobre 2026. Informations générales pour les voyageurs adultes ; elles ne remplacent pas une consultation médicale.</p>
+<p class="review-meta">Rédigé et relu par le Dr Cristóbal J. Ortega-Arenas, médecin (Médico Cirujano, UNAM), licence professionnelle (Cédula) 14848636. Dernière révision : 20 octobre 2026. Informations générales pour les voyageurs adultes ; elles ne remplacent pas une consultation médicale.</p>
 </article>
 <aside class="side-card">
 <p><strong>En cas de signe d’alerte, appelez le 911.</strong> Ce n’est pas un service d’urgences.</p>
@@ -853,7 +861,7 @@
 </div>
 <p>Licence professionnelle (Cédula) 14848636 · DGP 411305 · Reconnaissance du diplôme en Espagne : Cred. n° 2025-17271</p>
 <p class="footer-links">
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Certificats de voyage</a>
 <a href="/fr/hotels/">Pour les hôtels</a>
 <a href="/fr/guides/urgences-mexico/">Quand aller aux urgences</a>

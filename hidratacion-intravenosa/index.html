@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Hidratación intravenosa en CDMX | Dr. Ortega-Arenas</title>
-<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente." name="description"/>
+<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, solo con valoración médica previa y si está indicada. $1,800 MXN más visita y enfermería." name="description"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" name="author"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://drcjortegaarenas.com/hidratacion-intravenosa/" rel="canonical"/>
@@ -19,7 +19,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" property="og:site_name"/>
 <meta content="Hidratación intravenosa en CDMX | Dr. Ortega-Arenas" property="og:title"/>
-<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente." property="og:description"/>
+<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, solo con valoración médica previa y si está indicada. $1,800 MXN más visita y enfermería." property="og:description"/>
 <meta content="https://drcjortegaarenas.com/hidratacion-intravenosa/" property="og:url"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -28,7 +28,7 @@
 <meta content="en_US" property="og:locale:alternate"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Hidratación intravenosa en CDMX | Dr. Ortega-Arenas" name="twitter:title"/>
-<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente." name="twitter:description"/>
+<meta content="Hidratación intravenosa en su hotel o domicilio en CDMX, solo con valoración médica previa y si está indicada. $1,800 MXN más visita y enfermería." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -632,7 +634,7 @@
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   "name": "Hidratación intravenosa en CDMX | Dr. Ortega-Arenas",
-  "description": "Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente.",
+  "description": "Hidratación intravenosa en su hotel o domicilio en CDMX, solo con valoración médica previa y si está indicada. $1,800 MXN más visita y enfermería.",
   "url": "https://drcjortegaarenas.com/hidratacion-intravenosa/",
   "inLanguage": "es-MX",
   "author": {
@@ -647,7 +649,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -657,7 +659,54 @@
   "audience": {
     "@type": "PeopleAudience",
     "audienceType": "Viajeros y residentes en CDMX"
-  }
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Shane AL et al. 2017 IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea. Clin Infect Dis 2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5850553/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "NOM-022-SSA3-2012, terapia de infusión (DOF 18/09/2012)",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5268977&fecha=18/09/2012"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Marsh N et al. Peripheral intravenous catheter non-infectious complications in adults. J Adv Nurs 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33016412/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Furyk JS et al. Drugs for nausea and vomiting in adults in the emergency department. Cochrane 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26411330/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Intravenous vitamin injections: where is the evidence? Drug Ther Bull 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37640530/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Hospira, Inc. 0.9% Sodium Chloride Injection, USP (VisIV container) prescribing information",
+      "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4612"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "MedlinePlus. Reconocimiento de emergencias médicas",
+      "url": "https://medlineplus.gov/spanish/ency/article/001927.htm"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "World Health Organization. Diarrhoeal disease (fact sheet, 2024)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "MedlinePlus. Deshidratación",
+      "url": "https://medlineplus.gov/spanish/ency/article/000982.htm"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -699,7 +748,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/hoteles/">Hotel</a>
 <a href="/#servicios">Servicios</a>
-<a href="/hidratacion-intravenosa/">Terapia IV</a>
+<a href="/hidratacion-intravenosa/">Hidratación IV</a>
 <a href="/certificados-y-viajeros/">Viajeros</a>
 <a href="/guias/">Guías</a>
 <a href="/#tarifas">Tarifas</a>
@@ -717,10 +766,9 @@
 <header class="page-hero">
 <p class="breadcrumb"><a href="/">Inicio</a> · <span>Hidratación intravenosa</span></p>
 <h1 class="page-h1">Hidratación <em>intravenosa</em> en su hotel o domicilio en CDMX</h1>
-<p class="page-lead">La hidratación intravenosa es la administración de soluciones por vena que el Dr. Ortega-Arenas ofrece en su hotel o domicilio en la Ciudad de México, con un cargo del nivel desde $1,800 MXN (la visita y el asistente se cobran aparte) y siempre con valoración médica previa obligatoria. Hay tres niveles; los componentes se ajustan a cada paciente y la terapia solo se aplica si la valoración la justifica.</p>
+<p class="page-lead">La hidratación intravenosa es la administración de solución por vena. El Dr. Ortega-Arenas la ofrece en su hotel o domicilio en la Ciudad de México solo cuando la valoración médica previa la justifica, porque la rehidratación oral es el tratamiento de primera elección. Cargo: $1,800 MXN, más la visita y el honorario de enfermería.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." rel="noopener" target="_blank">Escribir por WhatsApp</a>
-<a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Reservar en línea</a>
 </div>
 
 </header>
@@ -730,38 +778,21 @@
 <h2>Cómo se realiza</h2>
 <ol>
 <li><strong>Valoración médica previa obligatoria</strong> por el Dr. Ortega-Arenas, en su hotel o domicilio.</li>
-<li>Si la terapia no está clínicamente indicada, no se aplica. En ese caso solo se cobran la visita y los materiales de la valoración.</li>
-<li>Si está indicada, usted firma el consentimiento informado.</li>
-<li>Personal asistente calificado coloca la vía intravenosa bajo supervisión directa del médico.</li>
+<li>Si la hidratación intravenosa no está clínicamente indicada, no se aplica. En ese caso solo se cobran la visita y los materiales de la valoración.</li>
+<li>Si está indicada, el médico la prescribe por escrito<sup>2</sup> y usted firma el consentimiento informado.</li>
+<li>Personal de enfermería con cédula profesional coloca la vía intravenosa bajo supervisión del médico. La NOM-022-SSA3-2012 indica que la terapia de infusión la aplique preferentemente personal profesional de salud.<sup>2</sup></li>
 </ol>
 <h2>Cuándo puede estar indicada</h2>
-<p>En deshidratación leve a moderada cuando la vía oral no es posible o no basta (por ejemplo, por vómito), según la valoración médica. No se ofrece para bienestar, resaca, energía ni rendimiento.</p>
-<h2>Los tres niveles</h2>
-<p>El cargo del nivel no incluye la visita ni el honorario del asistente. Los componentes se ajustan a cada paciente.</p>
-<h3>Nivel I · Essential Hydration · $1,800 MXN</h3>
-<p>Rehidratación intravenosa básica cuando la valoración clínica la indica. Incluye:</p>
+<p>La rehidratación oral es el tratamiento de primera elección en la deshidratación leve a moderada, incluso cuando hay vómito.<sup>1</sup> La vía intravenosa puede considerarse cuando un intento adecuado de rehidratación oral fracasa, según la valoración médica.<sup>1</sup> No se ofrece para bienestar, resaca, energía ni rendimiento.</p>
+<h2>Qué incluye · $1,800 MXN</h2>
 <ul>
-<li>Solución fisiológica (IV)</li>
-<li>Vitamina C (oral)</li>
+<li>Solución fisiológica (cloruro de sodio al 0.9 %) por vía intravenosa.<sup>1</sup></li>
+<li>Si la valoración lo indica, puede administrarse un antiemético o un analgésico. Antes de aplicarlo, el médico le explica cuál, para qué y sus posibles efectos adversos. La evidencia sobre el beneficio de los antieméticos en adultos es limitada, por eso se decide caso por caso.<sup>4</sup></li>
+<li>No se añaden vitaminas, minerales ni otros complementos: no hay evidencia de calidad de que las infusiones de vitaminas aporten beneficio a personas sin una deficiencia o enfermedad específica.<sup>5</sup></li>
 </ul>
-<h3>Nivel II · Vitamin Hydration · $2,800 MXN</h3>
-<p>Rehidratación con complejo B y magnesio. Incluye:</p>
-<ul>
-<li>Todo lo del Nivel I</li>
-<li>Complejo B (IM)</li>
-<li>Magnesio (IV)</li>
-</ul>
-<h3>Nivel III · Hydration &amp; Symptom Care · $3,900 MXN</h3>
-<p>Rehidratación con manejo del dolor y la náusea. Incluye:</p>
-<ul>
-<li>Todo lo del Nivel II</li>
-<li>Glutamina (oral)</li>
-<li>Analgésico y/o antiemético IV, solo si están clínicamente indicados</li>
-</ul>
-<p>Sobre los complementos orales (vitamina C y glutamina): no hay evidencia de que mejoren la rehidratación; se entregan solo si el médico lo considera adecuado.</p>
 <h2>Cuánto cuesta en total</h2>
 <div class="callout">
-<p><strong>Total = cargo del nivel indicado en la valoración + honorario de visita + honorario de asistente</strong></p>
+<p><strong>Total = $1,800 + honorario de visita + honorario de enfermería</strong></p>
 </div>
 <h3>Honorario de visita</h3>
 <p>La visita se cobra según la tarifa de hotel o de domicilio, por zona y horario.</p>
@@ -773,12 +804,13 @@
 </tr></thead>
 <tbody>
 <tr><td>Horario ordinario</td><td class="price-col">$2,500</td><td class="price-col">$3,000</td></tr>
-<tr><td>Horario especial</td><td class="price-col">$4,000</td><td class="price-col">$4,500</td></tr>
-<tr><td>Festivo</td><td class="price-col">$5,500</td><td class="price-col">$6,000</td></tr>
+<tr><td>Especial: noches 20:01–08:59, sábado desde 15:01 y domingo</td><td class="price-col">$4,000</td><td class="price-col">$4,500</td></tr>
+<tr><td>Festivo (oficial o tradicional)</td><td class="price-col">$5,500</td><td class="price-col">$6,000</td></tr>
 </tbody>
 </table>
 <p>Visita a domicilio: desde $1,000 MXN. Los horarios y las zonas se detallan en las <a href="/#tarifas">tarifas</a> y en la <a href="/hoteles/">información para hoteles</a>.</p>
-<h3>Honorario de asistente</h3>
+<p><strong>Anticipo:</strong> la visita a domicilio se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona. La visita a hotel no requiere anticipo.</p>
+<h3>Honorario de enfermería</h3>
 <table>
 <thead><tr>
 <th>Horario</th>
@@ -792,16 +824,16 @@
 </table>
 <h3>Ejemplo de cálculo</h3>
 <div class="callout">
-<p>Nivel I + visita a hotel en Zona A en horario ordinario + asistente en horario ordinario: $1,800 + $2,500 + $1,500 = <strong>$5,800 MXN</strong>.</p>
+<p>Hidratación intravenosa + visita a hotel en Zona A en horario ordinario + enfermería en horario ordinario: $1,800 + $2,500 + $1,500 = <strong>$5,800 MXN</strong>.</p>
 </div>
 <h2>Riesgos y límites</h2>
-<p>La hidratación intravenosa no sustituye a la vía oral cuando esta es posible. Conlleva riesgos, como flebitis, infiltración y reacciones adversas, y solo se aplica si la valoración médica la justifica. Los componentes se ajustan a cada paciente.</p>
+<p>La hidratación intravenosa no sustituye a la vía oral cuando esta es posible.<sup>1</sup> Conlleva riesgos, como flebitis, infiltración o extravasación, infección del sitio de punción y sobrecarga de líquidos.<sup>2,3,6</sup> Por eso solo se aplica si la valoración médica la justifica.</p>
 <h2>Cuándo NO solicitar este servicio</h2>
-<div class="emergency-note">Si presenta alguno de estos signos, <strong>no solicite este servicio: llame al 911</strong> o acuda a urgencias hospitalarias: alteración del estado de conciencia (somnolencia, confusión, desmayo), dolor en el pecho, dificultad para respirar, o deshidratación grave (no poder beber ni retener líquidos, casi no orinar, signos de choque).</div>
+<div class="emergency-note">Si presenta alguno de estos signos, <strong>no solicite este servicio: llame al 911</strong> o acuda a urgencias hospitalarias: alteración del estado de conciencia (somnolencia, confusión, desmayo), dolor en el pecho, dificultad para respirar, o deshidratación grave (no poder beber ni retener líquidos, casi no orinar, signos de choque).<sup>1,7,8,9</sup></div>
 <h3>Requieren valoración previa y pueden contraindicar la terapia</h3>
 <ul>
-<li>Embarazo de riesgo</li>
-<li>Insuficiencia cardiaca o renal conocida</li>
+<li>Embarazo: avíselo antes de la visita.</li>
+<li>Insuficiencia cardiaca o renal conocida, por el riesgo de sobrecarga de líquidos.<sup>6</sup></li>
 </ul>
 <div class="emergency-note"><strong>No es un servicio de urgencias.</strong> Ante una emergencia, llame al <strong>911</strong> o acuda a urgencias hospitalarias.</div>
 <h2>Dónde y cómo reservar</h2>
@@ -811,25 +843,42 @@
 <h2>Preguntas frecuentes</h2>
 <div class="faq-item">
 <h3>¿Necesito receta?</h3>
-<p>No necesita traer una receta. La indicación la define el Dr. Ortega-Arenas en la valoración médica previa, que es obligatoria; sin ella, la terapia no se aplica.</p>
+<p>No necesita traer una receta. La indicación la define el Dr. Ortega-Arenas en la valoración médica previa, que es obligatoria; sin ella, la hidratación intravenosa no se aplica.</p>
+</div>
+<div class="faq-item">
+<h3>¿Por qué no incluye vitaminas?</h3>
+<p>Porque no hay evidencia de calidad de que las infusiones de vitaminas aporten beneficio a personas sin una deficiencia o enfermedad específica, y las dosis altas pueden causar daño.<sup>5</sup> Por eso no se incluyen.</p>
 </div>
 <div class="faq-item">
 <h3>¿Cuánto dura?</h3>
-<p>Depende del nivel y de los componentes que se ajusten a su caso. El médico le informa el tiempo estimado en la valoración, antes de que firme el consentimiento informado.</p>
+<p>Depende del volumen que se indique en la valoración. El médico le informa el tiempo estimado antes de que firme el consentimiento informado.</p>
 </div>
 <div class="faq-item">
 <h3>¿Qué pasa si no es para mí?</h3>
-<p>Si la valoración muestra que la terapia no está clínicamente indicada, no se aplica. Solo se cobran la visita y los materiales de la valoración.</p>
+<p>Si la valoración muestra que la hidratación intravenosa no está clínicamente indicada, no se aplica. Solo se cobran la visita y los materiales de la valoración.</p>
 </div>
 <div class="faq-item">
 <h3>¿Cuánto cuesta en total?</h3>
-<p>Cargo del nivel + honorario de visita + honorario de asistente. Por ejemplo, Nivel I con visita a hotel en Zona A y asistente en horario ordinario: $1,800 + $2,500 + $1,500 = $5,800 MXN.</p>
+<p>$1,800 + honorario de visita + honorario de enfermería. Por ejemplo, con visita a hotel en Zona A y enfermería en horario ordinario: $1,800 + $2,500 + $1,500 = $5,800 MXN.</p>
 </div>
+<h2>Fuentes</h2>
+<ol class="ref-list">
+<li>Shane AL, Mody RK, Crump JA, et al. 2017 Infectious Diseases Society of America Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea. Clin Infect Dis. 2017;65(12):e45-e80. PMID 29053792. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5850553/" rel="noopener" target="_blank">ncbi.nlm.nih.gov</a></li>
+<li>Secretaría de Salud. NOM-022-SSA3-2012, que instituye las condiciones para la administración de la terapia de infusión en los Estados Unidos Mexicanos. Diario Oficial de la Federación, 18/09/2012. <a href="https://dof.gob.mx/nota_detalle.php?codigo=5268977&amp;fecha=18/09/2012" rel="noopener" target="_blank">dof.gob.mx</a></li>
+<li>Marsh N, Webster J, Ullman AJ, et al. Peripheral intravenous catheter non-infectious complications in adults: a systematic review and meta-analysis. J Adv Nurs. 2020;76(12):3346-3362. PMID 33016412. <a href="https://pubmed.ncbi.nlm.nih.gov/33016412/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Furyk JS, Meek RA, Egerton-Warburton D. Drugs for the treatment of nausea and vomiting in adults in the emergency department setting. Cochrane Database Syst Rev. 2015;(9):CD010106. PMID 26411330. <a href="https://pubmed.ncbi.nlm.nih.gov/26411330/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Intravenous vitamin injections: where is the evidence? Drug Ther Bull. 2023;61(10):151-155. PMID 37640530. <a href="https://pubmed.ncbi.nlm.nih.gov/37640530/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Hospira, Inc. 0.9% Sodium Chloride Injection, USP (VisIV container): información para prescribir. <a href="https://labeling.pfizer.com/ShowLabeling.aspx?id=4612" rel="noopener" target="_blank">labeling.pfizer.com</a></li>
+<li>MedlinePlus (Biblioteca Nacional de Medicina de EE. UU.). Reconocimiento de emergencias médicas. <a href="https://medlineplus.gov/spanish/ency/article/001927.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+<li>Organización Mundial de la Salud (OMS). Diarrhoeal disease. Nota descriptiva, 2024. <a href="https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease" rel="noopener" target="_blank">who.int</a></li>
+<li>MedlinePlus (Biblioteca Nacional de Medicina de EE. UU.). Deshidratación. <a href="https://medlineplus.gov/spanish/ency/article/000982.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+</ol>
+<p class="review-meta">Escrito y revisado por el Dr. Cristóbal J. Ortega-Arenas, Médico Cirujano (UNAM), cédula profesional 14848636. Última revisión: 20 de octubre de 2026. Información general; no sustituye una consulta médica.</p>
 </article>
 <aside class="side-card">
 <h3>Resumen</h3>
-<div class="side-price"><small>Desde</small> $1,800 <small>MXN</small></div>
-<p>+ visita (hotel o domicilio) y honorario de asistente. Valoración médica previa obligatoria.</p>
+<div class="side-price">$1,800 <small>MXN</small></div>
+<p>+ visita (hotel o domicilio) y honorario de enfermería. Solo con valoración médica previa y si está clínicamente indicada.</p>
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." rel="noopener" target="_blank">Escribir por WhatsApp</a>
 </aside>
 </main>
@@ -843,7 +892,15 @@
       "name": "¿Necesito receta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No necesita traer una receta. La indicación la define el Dr. Ortega-Arenas en la valoración médica previa, que es obligatoria; sin ella, la terapia no se aplica."
+        "text": "No necesita traer una receta. La indicación la define el Dr. Ortega-Arenas en la valoración médica previa, que es obligatoria; sin ella, la hidratación intravenosa no se aplica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué no incluye vitaminas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque no hay evidencia de calidad de que las infusiones de vitaminas aporten beneficio a personas sin una deficiencia o enfermedad específica, y las dosis altas pueden causar daño. 5 Por eso no se incluyen."
       }
     },
     {
@@ -851,7 +908,7 @@
       "name": "¿Cuánto dura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende del nivel y de los componentes que se ajusten a su caso. El médico le informa el tiempo estimado en la valoración, antes de que firme el consentimiento informado."
+        "text": "Depende del volumen que se indique en la valoración. El médico le informa el tiempo estimado antes de que firme el consentimiento informado."
       }
     },
     {
@@ -859,7 +916,7 @@
       "name": "¿Qué pasa si no es para mí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si la valoración muestra que la terapia no está clínicamente indicada, no se aplica. Solo se cobran la visita y los materiales de la valoración."
+        "text": "Si la valoración muestra que la hidratación intravenosa no está clínicamente indicada, no se aplica. Solo se cobran la visita y los materiales de la valoración."
       }
     },
     {
@@ -867,7 +924,7 @@
       "name": "¿Cuánto cuesta en total?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cargo del nivel + honorario de visita + honorario de asistente. Por ejemplo, Nivel I con visita a hotel en Zona A y asistente en horario ordinario: $1,800 + $2,500 + $1,500 = $5,800 MXN."
+        "text": "$1,800 + honorario de visita + honorario de enfermería. Por ejemplo, con visita a hotel en Zona A y enfermería en horario ordinario: $1,800 + $2,500 + $1,500 = $5,800 MXN."
       }
     }
   ]
@@ -883,7 +940,7 @@
 </div>
 <p>Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271</p>
 <p class="footer-links">
-<a href="/hidratacion-intravenosa/">Terapia IV</a>
+<a href="/hidratacion-intravenosa/">Hidratación IV</a>
 <a href="/certificados-y-viajeros/">Certificados y viajeros</a>
 <a href="/hoteles/">Para hoteles</a>
 <a href="/guias/cuando-ir-a-urgencias/">Cuándo ir a urgencias</a>

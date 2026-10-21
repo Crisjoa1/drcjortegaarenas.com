@@ -255,6 +255,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -581,6 +582,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -651,7 +653,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/fr/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -702,6 +704,11 @@
       "@type": "CreativeWork",
       "name": "MedlinePlus. Recognizing medical emergencies",
       "url": "https://medlineplus.gov/ency/article/001927.htm"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "CDC. First Aid for Seizures",
+      "url": "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     }
   ]
 }
@@ -777,7 +784,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/fr/hotels/">Hôtel</a>
 <a href="/fr/#servicios">Services</a>
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Voyageurs</a>
 <a href="/fr/guides/">Guides</a>
 <a href="/fr/#tarifas">Tarifs</a>
@@ -807,7 +814,7 @@
 <li><strong>Difficulté à respirer</strong> qui apparaît brusquement ou s’aggrave, ou essoufflement au repos.</li>
 <li><strong>Signes d’AVC</strong> : voir la règle BE-FAST ci-dessous.</li>
 <li><strong>Perte de connaissance</strong>, évanouissement, confusion soudaine ou difficulté à réveiller la personne.</li>
-<li><strong>Crise convulsive</strong>.</li>
+<li><strong>Crise convulsive</strong> qui dure plus de 5 minutes, qui est la première, qui se répète peu après, qui survient dans l’eau, pendant la grossesse ou chez une personne diabétique qui perd connaissance, ou qui s’accompagne d’une blessure ou d’une difficulté à respirer ou à se réveiller.</li>
 <li><strong>Saignement abondant</strong> qui ne s’arrête pas par une pression directe, ou vomissements ou selles contenant beaucoup de sang.</li>
 <li><strong>Réaction allergique grave</strong> : gonflement des lèvres, de la langue ou de la gorge, difficulté à respirer ou à avaler, ou urticaire étendue avec étourdissements.</li>
 <li><strong>Douleur abdominale intense</strong> ou qui ne cède pas, surtout si le ventre est dur.</li>
@@ -880,8 +887,9 @@
 <li>Organisation mondiale de la Santé (OMS). Meningitis (en anglais). Aide-mémoire. Consulté le 19 octobre 2026. <a href="https://www.who.int/news-room/fact-sheets/detail/meningitis" rel="noopener" target="_blank">who.int</a></li>
 <li>Foreign, Commonwealth &amp; Development Office (FCDO), Gouvernement du Royaume-Uni. Mexico travel advice: Health (en anglais). GOV.UK. Consulté le 19 octobre 2026. <a href="https://www.gov.uk/foreign-travel-advice/mexico/health" rel="noopener" target="_blank">gov.uk</a></li>
 <li>MedlinePlus. Recognizing medical emergencies (en anglais). Bibliothèque nationale de médecine des États-Unis. Consulté le 19 octobre 2026. <a href="https://medlineplus.gov/ency/article/001927.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+<li>Centers for Disease Control and Prevention (CDC). First Aid for Seizures (en anglais). Consulté le 20 octobre 2026. <a href="https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html" rel="noopener" target="_blank">cdc.gov</a></li>
 </ol>
-<p class="review-meta">Rédigé et relu par le Dr Cristóbal J. Ortega-Arenas, médecin (Médico Cirujano, UNAM), licence professionnelle (Cédula) 14848636. Dernière révision : 19 octobre 2026. Informations générales pour les voyageurs adultes ; elles ne remplacent pas une consultation médicale.</p>
+<p class="review-meta">Rédigé et relu par le Dr Cristóbal J. Ortega-Arenas, médecin (Médico Cirujano, UNAM), licence professionnelle (Cédula) 14848636. Dernière révision : 20 octobre 2026. Informations générales pour les voyageurs adultes ; elles ne remplacent pas une consultation médicale.</p>
 </article>
 <aside class="side-card">
 <h3>En cas de signe d’alerte</h3>
@@ -900,7 +908,7 @@
 </div>
 <p>Licence professionnelle (Cédula) 14848636 · DGP 411305 · Reconnaissance du diplôme en Espagne : Cred. n° 2025-17271</p>
 <p class="footer-links">
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Certificats de voyage</a>
 <a href="/fr/hotels/">Pour les hôtels</a>
 <a href="/fr/guides/urgences-mexico/">Quand aller aux urgences</a>

@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -647,7 +649,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -657,7 +659,24 @@
   "audience": {
     "@type": "PeopleAudience",
     "audienceType": "Viajeros en la Ciudad de México"
-  }
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "UK Civil Aviation Authority. Assessing fitness to fly",
+      "url": "https://www.caa.co.uk/air-passengers/about-your-trip/health-and-medical/guidance-for-health-professionals/assessing-fitness-to-fly/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "NOM-004-SSA3-2012, Del expediente clínico (DOF 15/10/2012)",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5272787&fecha=15/10/2012"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "CDC. Rapid Influenza Diagnostic Tests",
+      "url": "https://www.cdc.gov/flu/hcp/testing-methods/clinician_guidance_ridt.html"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -699,7 +718,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/hoteles/">Hotel</a>
 <a href="/#servicios">Servicios</a>
-<a href="/hidratacion-intravenosa/">Terapia IV</a>
+<a href="/hidratacion-intravenosa/">Hidratación IV</a>
 <a href="/certificados-y-viajeros/">Viajeros</a>
 <a href="/guias/">Guías</a>
 <a href="/#tarifas">Tarifas</a>
@@ -777,10 +796,10 @@
 </tbody>
 </table>
 <div class="callout">
-<p>El certificado de aptitud para viajar es un certificado médico. Se emite solo si la valoración clínica lo sustenta.</p>
+<p>El certificado de aptitud para viajar es un certificado médico. Se emite solo si la valoración clínica lo sustenta. La decisión final de transportar al pasajero corresponde a la aerolínea, que puede pedir su propio formulario médico (MEDIF).<sup>1</sup></p>
 </div>
 <h2>Resumen Clínico del Viajero (en inglés)</h2>
-<p>Reporte en inglés técnico con antecedentes, diagnóstico (por ejemplo, el resultado de una prueba rápida) y plan de tratamiento. Sirve para trámites con migración o con aerolíneas.</p>
+<p>Reporte en inglés técnico con padecimiento actual, diagnósticos, tratamiento, evolución, pronóstico y resultados de estudios (incluidas pruebas rápidas), el contenido que la NOM-004-SSA3-2012 pide para un resumen clínico.<sup>2</sup> Una prueba rápida negativa no siempre descarta la infección; por ejemplo, las de influenza tienen sensibilidad limitada.<sup>3</sup> Puede presentarse ante migración, aerolíneas o aseguradoras; su aceptación depende de cada aerolínea o autoridad.</p>
 <table>
 <thead><tr>
 <th>Formato</th>
@@ -867,6 +886,13 @@
 <h3>¿Cuándo recibo el Resumen Clínico del Viajero?</h3>
 <p>La versión digital se envía por correo electrónico o en PDF. La versión física se entrega después de la consulta, porque requiere impresión.</p>
 </div>
+<h2>Fuentes</h2>
+<ol class="ref-list">
+<li>Referencia internacional (Reino Unido): UK Civil Aviation Authority. Assessing fitness to fly: guidance for health professionals. Consultado el 20 de octubre de 2026. <a href="https://www.caa.co.uk/air-passengers/about-your-trip/health-and-medical/guidance-for-health-professionals/assessing-fitness-to-fly/" rel="noopener" target="_blank">caa.co.uk</a></li>
+<li>Secretaría de Salud. NOM-004-SSA3-2012, Del expediente clínico, numeral 4.10. Diario Oficial de la Federación, 15/10/2012. <a href="https://dof.gob.mx/nota_detalle.php?codigo=5272787&amp;fecha=15/10/2012" rel="noopener" target="_blank">dof.gob.mx</a></li>
+<li>Centers for Disease Control and Prevention (CDC). Rapid Influenza Diagnostic Tests. Consultado el 20 de octubre de 2026. <a href="https://www.cdc.gov/flu/hcp/testing-methods/clinician_guidance_ridt.html" rel="noopener" target="_blank">cdc.gov</a></li>
+</ol>
+<p class="review-meta">Escrito y revisado por el Dr. Cristóbal J. Ortega-Arenas, Médico Cirujano (UNAM), cédula profesional 14848636. Última revisión: 20 de octubre de 2026.</p>
 </article>
 <aside class="side-card">
 <h3>Paquete Viajero</h3>
@@ -933,7 +959,7 @@
 </div>
 <p>Cédula Prof. 14848636 · DGP 411305 · Homologación España: Cred. No. 2025-17271</p>
 <p class="footer-links">
-<a href="/hidratacion-intravenosa/">Terapia IV</a>
+<a href="/hidratacion-intravenosa/">Hidratación IV</a>
 <a href="/certificados-y-viajeros/">Certificados y viajeros</a>
 <a href="/hoteles/">Para hoteles</a>
 <a href="/guias/cuando-ir-a-urgencias/">Cuándo ir a urgencias</a>

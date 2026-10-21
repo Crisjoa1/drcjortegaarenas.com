@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -732,7 +734,7 @@
     },
     {
       "@type": "Offer",
-      "name": "Hydratation intraveineuse (tarif du niveau, visite non incluse)",
+      "name": "Hydratation intraveineuse (visite et soins infirmiers non inclus)",
       "priceCurrency": "MXN",
       "priceSpecification": {
         "@type": "PriceSpecification",
@@ -1044,7 +1046,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/fr/hotels/">Hôtel</a>
 <a href="/fr/#servicios">Services</a>
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Voyageurs</a>
 <a href="/fr/guides/">Guides</a>
 <a href="/fr/#tarifas">Tarifs</a>
@@ -1069,7 +1071,7 @@
 <a class="hero-cta" href="https://wa.me/525951093969?text=Bonjour%20Dr%20Ortega-Arenas%2C%20je%20souhaite%20prendre%20rendez-vous." rel="noopener" target="_blank">WhatsApp +52 595 109 3969</a>
 </div>
 <div class="emergency-note"><strong>Ce n’est pas un service d’urgences.</strong> Si le client présente une douleur thoracique, une difficulté à respirer, une perte de connaissance, un saignement abondant, des signes d’accident vasculaire cérébral ou toute autre urgence, appelez le <strong>911</strong> ou conduisez-le aux urgences d’un hôpital.</div>
-<div class="callout"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément ; <span>$2,000</span> MXN pour une visite à l’hôtel en horaires spéciaux ou un jour férié), sous réserve de disponibilité ; prévenez-nous par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</div>
+<div class="callout"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément ; <span>$2,000</span> MXN pour une visite à l’hôtel en horaires spéciaux ou un jour férié), sous réserve de disponibilité ; prévenez-nous par WhatsApp au +52 595 109 3969. Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</div>
 </header>
 <div class="sep"></div>
 <!-- ══ CÓMO SOLICITAR ════════════════════════ -->
@@ -1175,7 +1177,7 @@
 </div>
 <p>Licence professionnelle (Cédula) 14848636 · DGP 411305 · Reconnaissance du diplôme en Espagne : Cred. n° 2025-17271</p>
 <p class="footer-links">
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Certificats de voyage</a>
 <a href="/fr/hotels/">Pour les hôtels</a>
 <a href="/fr/guides/urgences-mexico/">Quand aller aux urgences</a>

@@ -1,28 +1,66 @@
 {
   "plantilla": "plantilla-iv.html",
   "tipo": "servicio",
-  "revisado": "2026-10-19",
+  "revisado": "2026-10-20",
   "audiencia": {
     "es": "Viajeros y residentes en CDMX",
     "en": "Travelers and residents in Mexico City",
     "fr": "Voyageurs et résidents à Mexico"
   },
+  "citas": [
+    {
+      "nombre": "Shane AL et al. 2017 IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea. Clin Infect Dis 2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5850553/"
+    },
+    {
+      "nombre": "NOM-022-SSA3-2012, terapia de infusión (DOF 18/09/2012)",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5268977&fecha=18/09/2012"
+    },
+    {
+      "nombre": "Marsh N et al. Peripheral intravenous catheter non-infectious complications in adults. J Adv Nurs 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33016412/"
+    },
+    {
+      "nombre": "Furyk JS et al. Drugs for nausea and vomiting in adults in the emergency department. Cochrane 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26411330/"
+    },
+    {
+      "nombre": "Intravenous vitamin injections: where is the evidence? Drug Ther Bull 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37640530/"
+    },
+    {
+      "nombre": "Hospira, Inc. 0.9% Sodium Chloride Injection, USP (VisIV container) prescribing information",
+      "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4612"
+    },
+    {
+      "nombre": "MedlinePlus. Reconocimiento de emergencias médicas",
+      "url": "https://medlineplus.gov/spanish/ency/article/001927.htm"
+    },
+    {
+      "nombre": "World Health Organization. Diarrhoeal disease (fact sheet, 2024)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    {
+      "nombre": "MedlinePlus. Deshidratación",
+      "url": "https://medlineplus.gov/spanish/ency/article/000982.htm"
+    }
+  ],
   "es": {
     "path": "/hidratacion-intravenosa/",
     "title": "Hidratación intravenosa en CDMX | Dr. Ortega-Arenas",
-    "description": "Hidratación intravenosa en su hotel o domicilio en CDMX, con valoración médica previa obligatoria. Tres niveles desde $1,800 MXN, más visita y asistente.",
+    "description": "Hidratación intravenosa en su hotel o domicilio en CDMX, solo con valoración médica previa y si está indicada. $1,800 MXN más visita y enfermería.",
     "crumb": "Hidratación intravenosa"
   },
   "en": {
     "path": "/en/iv-hydration-mexico-city/",
     "title": "IV Hydration in Mexico City | Dr. Ortega-Arenas",
-    "description": "IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees.",
+    "description": "IV hydration at your hotel or home in Mexico City, only after a medical assessment and if indicated. $1,800 MXN plus visit and nursing fees.",
     "crumb": "IV hydration"
   },
   "fr": {
     "path": "/fr/hydratation-intraveineuse/",
     "title": "Hydratation intraveineuse à Mexico | Dr Ortega-Arenas",
-    "description": "Hydratation IV à l’hôtel ou à domicile à Mexico, après évaluation médicale obligatoire. 3 niveaux dès $1,800 MXN, plus visite et assistant(e) de perfusion.",
+    "description": "Hydratation IV à l’hôtel ou à domicile à Mexico, après évaluation médicale et seulement si indiquée. $1,800 MXN plus visite et honoraires infirmiers.",
     "crumb": "Hydratation intraveineuse"
   }
 }

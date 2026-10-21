@@ -1,13 +1,33 @@
 {
   "plantilla": "plantilla-guia-diarrea.html",
   "tipo": "guia",
-  "revisado": "2026-10-19",
-  "audiencia": {"es": "Viajeros adultos en la Ciudad de México", "en": "Adult travelers in Mexico City", "fr": "Voyageurs adultes à Mexico"},
+  "revisado": "2026-10-20",
+  "audiencia": {
+    "es": "Viajeros adultos en la Ciudad de México",
+    "en": "Adult travelers in Mexico City",
+    "fr": "Voyageurs adultes à Mexico"
+  },
   "citas": [
-    {"nombre": "Connor BA, Leung DT. Travelers' Diarrhea. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travelers-diarrhea.html"},
-    {"nombre": "Chard AN, Hill V. Food and Water Precautions for Travelers. CDC Yellow Book 2026", "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html"},
-    {"nombre": "World Health Organization. Diarrhoeal disease (fact sheet, 2024)", "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"},
-    {"nombre": "CDC. Preventing Shigella Infection While Traveling (2024)", "url": "https://www.cdc.gov/shigella/prevention/preventing-shigella-infection-while-traveling.html"}
+    {
+      "nombre": "Connor BA, Leung DT. Travelers' Diarrhea. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travelers-diarrhea.html"
+    },
+    {
+      "nombre": "Chard AN, Hill V. Food and Water Precautions for Travelers. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html"
+    },
+    {
+      "nombre": "World Health Organization. Diarrhoeal disease (fact sheet, 2024)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    {
+      "nombre": "CDC. Preventing Shigella Infection While Traveling (2024)",
+      "url": "https://www.cdc.gov/shigella/prevention/preventing-shigella-infection-while-traveling.html"
+    },
+    {
+      "nombre": "Galang RR, Roy SC. Pregnant Travelers. CDC Yellow Book 2026",
+      "url": "https://www.cdc.gov/yellow-book/hcp/family-travel/pregnant-travelers.html"
+    }
   ],
   "es": {
     "path": "/guias/diarrea-del-viajero/",

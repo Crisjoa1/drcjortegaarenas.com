@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>IV Hydration in Mexico City | Dr. Ortega-Arenas</title>
-<meta content="IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees." name="description"/>
+<meta content="IV hydration at your hotel or home in Mexico City, only after a medical assessment and if indicated. $1,800 MXN plus visit and nursing fees." name="description"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" name="author"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://drcjortegaarenas.com/en/iv-hydration-mexico-city/" rel="canonical"/>
@@ -19,7 +19,7 @@
 <meta content="website" property="og:type"/>
 <meta content="Dr. Cristóbal J. Ortega-Arenas" property="og:site_name"/>
 <meta content="IV Hydration in Mexico City | Dr. Ortega-Arenas" property="og:title"/>
-<meta content="IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees." property="og:description"/>
+<meta content="IV hydration at your hotel or home in Mexico City, only after a medical assessment and if indicated. $1,800 MXN plus visit and nursing fees." property="og:description"/>
 <meta content="https://drcjortegaarenas.com/en/iv-hydration-mexico-city/" property="og:url"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
@@ -28,7 +28,7 @@
 <meta content="es_MX" property="og:locale:alternate"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="IV Hydration in Mexico City | Dr. Ortega-Arenas" name="twitter:title"/>
-<meta content="IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees." name="twitter:description"/>
+<meta content="IV hydration at your hotel or home in Mexico City, only after a medical assessment and if indicated. $1,800 MXN plus visit and nursing fees." name="twitter:description"/>
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -632,7 +634,7 @@
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
   "name": "IV Hydration in Mexico City | Dr. Ortega-Arenas",
-  "description": "IV hydration at your hotel or home in Mexico City, after a mandatory medical assessment. Three levels from $1,800 MXN, plus visit and assistant fees.",
+  "description": "IV hydration at your hotel or home in Mexico City, only after a medical assessment and if indicated. $1,800 MXN plus visit and nursing fees.",
   "url": "https://drcjortegaarenas.com/en/iv-hydration-mexico-city/",
   "inLanguage": "en",
   "author": {
@@ -647,7 +649,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/en/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -657,7 +659,54 @@
   "audience": {
     "@type": "PeopleAudience",
     "audienceType": "Travelers and residents in Mexico City"
-  }
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Shane AL et al. 2017 IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea. Clin Infect Dis 2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5850553/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "NOM-022-SSA3-2012, terapia de infusión (DOF 18/09/2012)",
+      "url": "https://dof.gob.mx/nota_detalle.php?codigo=5268977&fecha=18/09/2012"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Marsh N et al. Peripheral intravenous catheter non-infectious complications in adults. J Adv Nurs 2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33016412/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Furyk JS et al. Drugs for nausea and vomiting in adults in the emergency department. Cochrane 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26411330/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Intravenous vitamin injections: where is the evidence? Drug Ther Bull 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37640530/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Hospira, Inc. 0.9% Sodium Chloride Injection, USP (VisIV container) prescribing information",
+      "url": "https://labeling.pfizer.com/ShowLabeling.aspx?id=4612"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "MedlinePlus. Reconocimiento de emergencias médicas",
+      "url": "https://medlineplus.gov/spanish/ency/article/001927.htm"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "World Health Organization. Diarrhoeal disease (fact sheet, 2024)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "MedlinePlus. Deshidratación",
+      "url": "https://medlineplus.gov/spanish/ency/article/000982.htm"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -699,7 +748,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/en/hotels/">Hotel visits</a>
 <a href="/en/#servicios">Services</a>
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
 <a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
@@ -717,10 +766,9 @@
 <header class="page-hero">
 <p class="breadcrumb"><a href="/en/">Home</a> · <span>IV hydration</span></p>
 <h1 class="page-h1"><em>IV hydration</em> at your hotel or home in Mexico City</h1>
-<p class="page-lead">IV hydration is the delivery of fluids through a vein, offered by Dr. Ortega-Arenas at your hotel or home in Mexico City, with a level fee starting at $1,800 MXN (visit and assistant fees are charged separately) and always after a mandatory prior medical assessment. There are three levels; components are tailored to each patient, and therapy is given only if the assessment justifies it.</p>
+<p class="page-lead">IV hydration is the delivery of fluids through a vein. Dr. Ortega-Arenas offers it at your hotel or home in Mexico City only when the prior medical assessment justifies it, because oral rehydration is the first-choice treatment. Fee: $1,800 MXN, plus the visit and the nursing fee.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." rel="noopener" target="_blank">Message on WhatsApp</a>
-<a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Book online</a>
 </div>
 
 </header>
@@ -730,38 +778,21 @@
 <h2>How it works</h2>
 <ol>
 <li><strong>Mandatory prior medical assessment</strong> by Dr. Ortega-Arenas at your hotel or home.</li>
-<li>If the therapy is not clinically indicated, it is not given. In that case, only the visit and the materials used in the assessment are charged.</li>
-<li>If it is indicated, you sign the informed consent form.</li>
-<li>Qualified assistant staff place the IV line under the physician's direct supervision.</li>
+<li>If IV hydration is not clinically indicated, it is not given. In that case, only the visit and the materials used in the assessment are charged.</li>
+<li>If it is indicated, the physician prescribes it in writing<sup>2</sup> and you sign the informed consent form.</li>
+<li>A licensed nurse places the IV line under the physician’s supervision. The Mexican standard NOM-022-SSA3-2012 states that infusion therapy should preferably be given by licensed health professionals.<sup>2</sup></li>
 </ol>
 <h2>When it may be indicated</h2>
-<p>For mild to moderate dehydration when drinking fluids is not possible or not enough (for example, because of vomiting), as judged at the medical assessment. It is not offered for wellness, hangover, energy or performance.</p>
-<h2>The three levels</h2>
-<p>The level fee does not include the visit or the assistant fee. Components are tailored to each patient.</p>
-<h3>Level I · Essential Hydration · $1,800 MXN</h3>
-<p>Basic intravenous rehydration when indicated by clinical assessment. Includes:</p>
+<p>Oral rehydration is the first-choice treatment for mild to moderate dehydration, even when there is vomiting.<sup>1</sup> The IV route may be considered when an adequate attempt at oral rehydration fails, as judged at the medical assessment.<sup>1</sup> It is not offered for wellness, hangover, energy or performance.</p>
+<h2>What is included · $1,800 MXN</h2>
 <ul>
-<li>Saline solution (IV)</li>
-<li>Vitamin C (oral)</li>
+<li>Normal saline (0.9% sodium chloride) given intravenously.<sup>1</sup></li>
+<li>If the assessment indicates it, an antiemetic or a pain reliever may be given. Before giving it, the physician explains which one, why, and its possible side effects. Evidence on the benefit of antiemetics in adults is limited, so this is decided case by case.<sup>4</sup></li>
+<li>No vitamins, minerals or other supplements are added: there is no high-quality evidence that vitamin infusions benefit people without a specific deficiency or medical condition.<sup>5</sup></li>
 </ul>
-<h3>Level II · Vitamin Hydration · $2,800 MXN</h3>
-<p>Rehydration with B-complex and magnesium. Includes:</p>
-<ul>
-<li>Everything in Level I</li>
-<li>B-complex (IM)</li>
-<li>Magnesium (IV)</li>
-</ul>
-<h3>Level III · Hydration &amp; Symptom Care · $3,900 MXN</h3>
-<p>Rehydration with pain and nausea management. Includes:</p>
-<ul>
-<li>Everything in Level II</li>
-<li>Glutamine (oral)</li>
-<li>IV analgesic and/or antiemetic, only if clinically indicated</li>
-</ul>
-<p>About the oral supplements (vitamin C and glutamine): there is no evidence that they improve rehydration; they are given only if the physician considers it appropriate.</p>
 <h2>Total cost</h2>
 <div class="callout">
-<p><strong>Total = fee of the level indicated at assessment + visit fee + assistant fee</strong></p>
+<p><strong>Total = $1,800 + visit fee + nursing fee</strong></p>
 </div>
 <h3>Visit fee</h3>
 <p>The visit is charged at the hotel or house-call rate, by zone and time of day.</p>
@@ -773,12 +804,13 @@
 </tr></thead>
 <tbody>
 <tr><td>Standard hours</td><td class="price-col">$2,500</td><td class="price-col">$3,000</td></tr>
-<tr><td>Special hours</td><td class="price-col">$4,000</td><td class="price-col">$4,500</td></tr>
-<tr><td>Holiday</td><td class="price-col">$5,500</td><td class="price-col">$6,000</td></tr>
+<tr><td>Special: nights 8:01 pm–8:59 am, Saturdays from 3:01 pm and Sundays</td><td class="price-col">$4,000</td><td class="price-col">$4,500</td></tr>
+<tr><td>Holiday (official or traditional)</td><td class="price-col">$5,500</td><td class="price-col">$6,000</td></tr>
 </tbody>
 </table>
 <p>House call: from $1,000 MXN. Hours and zones are detailed in the <a href="/en/#tarifas">fees</a> section and on the <a href="/en/hotels/">hotel information</a> page.</p>
-<h3>Assistant fee</h3>
+<p><strong>Deposit:</strong> house calls are confirmed with a bank transfer of 50% of your zone’s standard fee. Hotel visits require no deposit.</p>
+<h3>Nursing fee</h3>
 <table>
 <thead><tr>
 <th>Schedule</th>
@@ -792,16 +824,16 @@
 </table>
 <h3>Example</h3>
 <div class="callout">
-<p>Level I + hotel visit in Zone A during standard hours + assistant during standard hours: $1,800 + $2,500 + $1,500 = <strong>$5,800 MXN</strong>.</p>
+<p>IV hydration + hotel visit in Zone A during standard hours + nursing during standard hours: $1,800 + $2,500 + $1,500 = <strong>$5,800 MXN</strong>.</p>
 </div>
 <h2>Risks and limits</h2>
-<p>IV hydration does not replace drinking fluids when that is possible. It carries risks, such as phlebitis, infiltration and adverse reactions, and is given only if the medical assessment justifies it. Components are tailored to each patient.</p>
+<p>IV hydration does not replace drinking fluids when that is possible.<sup>1</sup> It carries risks, such as phlebitis, infiltration or extravasation, infection at the insertion site and fluid overload.<sup>2,3,6</sup> That is why it is given only if the medical assessment justifies it.</p>
 <h2>When NOT to book this service</h2>
-<div class="emergency-note">If you have any of these signs, <strong>do not book this service: call 911</strong> or go to a hospital emergency room: altered consciousness (drowsiness, confusion, fainting), chest pain, trouble breathing, or severe dehydration (cannot drink or keep fluids down, passing almost no urine, signs of shock).</div>
+<div class="emergency-note">If you have any of these signs, <strong>do not book this service: call 911</strong> or go to a hospital emergency room: altered consciousness (drowsiness, confusion, fainting), chest pain, trouble breathing, or severe dehydration (cannot drink or keep fluids down, passing almost no urine, signs of shock).<sup>1,7,8,9</sup></div>
 <h3>Require prior assessment and may rule out the therapy</h3>
 <ul>
-<li>High-risk pregnancy</li>
-<li>Known heart or kidney failure</li>
+<li>Pregnancy: tell us before the visit.</li>
+<li>Known heart or kidney failure, because of the risk of fluid overload.<sup>6</sup></li>
 </ul>
 <div class="emergency-note"><strong>This is not an emergency service.</strong> In an emergency, call <strong>911</strong> or go to a hospital emergency room.</div>
 <h2>Where and how to book</h2>
@@ -811,25 +843,42 @@
 <h2>Frequently asked questions</h2>
 <div class="faq-item">
 <h3>Do I need a prescription?</h3>
-<p>You do not need to bring a prescription. Dr. Ortega-Arenas decides whether it is indicated during the mandatory prior medical assessment; without it, the therapy is not given.</p>
+<p>You do not need to bring a prescription. Dr. Ortega-Arenas decides whether it is indicated during the mandatory prior medical assessment; without it, IV hydration is not given.</p>
+</div>
+<div class="faq-item">
+<h3>Why are no vitamins included?</h3>
+<p>Because there is no high-quality evidence that vitamin infusions benefit people without a specific deficiency or medical condition, and high doses may cause harm.<sup>5</sup> That is why they are not included.</p>
 </div>
 <div class="faq-item">
 <h3>How long does it take?</h3>
-<p>It depends on the level and on the components tailored to your case. The physician tells you the estimated time during the assessment, before you sign the informed consent form.</p>
+<p>It depends on the volume indicated at the assessment. The physician tells you the estimated time before you sign the informed consent form.</p>
 </div>
 <div class="faq-item">
 <h3>What if it is not right for me?</h3>
-<p>If the assessment shows that the therapy is not clinically indicated, it is not given. Only the visit and the materials used in the assessment are charged.</p>
+<p>If the assessment shows that IV hydration is not clinically indicated, it is not given. Only the visit and the materials used in the assessment are charged.</p>
 </div>
 <div class="faq-item">
 <h3>What is the total cost?</h3>
-<p>Level fee + visit fee + assistant fee. For example, Level I with a hotel visit in Zone A and an assistant during standard hours: $1,800 + $2,500 + $1,500 = $5,800 MXN.</p>
+<p>$1,800 + visit fee + nursing fee. For example, with a hotel visit in Zone A and nursing during standard hours: $1,800 + $2,500 + $1,500 = $5,800 MXN.</p>
 </div>
+<h2>Sources</h2>
+<ol class="ref-list">
+<li>Shane AL, Mody RK, Crump JA, et al. 2017 Infectious Diseases Society of America Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea. Clin Infect Dis. 2017;65(12):e45-e80. PMID 29053792. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5850553/" rel="noopener" target="_blank">ncbi.nlm.nih.gov</a></li>
+<li>Mexican Ministry of Health (Secretaría de Salud). NOM-022-SSA3-2012, que instituye las condiciones para la administración de la terapia de infusión en los Estados Unidos Mexicanos. Official Gazette (Diario Oficial de la Federación), 18/09/2012. <a href="https://dof.gob.mx/nota_detalle.php?codigo=5268977&amp;fecha=18/09/2012" rel="noopener" target="_blank">dof.gob.mx</a></li>
+<li>Marsh N, Webster J, Ullman AJ, et al. Peripheral intravenous catheter non-infectious complications in adults: a systematic review and meta-analysis. J Adv Nurs. 2020;76(12):3346-3362. PMID 33016412. <a href="https://pubmed.ncbi.nlm.nih.gov/33016412/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Furyk JS, Meek RA, Egerton-Warburton D. Drugs for the treatment of nausea and vomiting in adults in the emergency department setting. Cochrane Database Syst Rev. 2015;(9):CD010106. PMID 26411330. <a href="https://pubmed.ncbi.nlm.nih.gov/26411330/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Intravenous vitamin injections: where is the evidence? Drug Ther Bull. 2023;61(10):151-155. PMID 37640530. <a href="https://pubmed.ncbi.nlm.nih.gov/37640530/" rel="noopener" target="_blank">pubmed.ncbi.nlm.nih.gov</a></li>
+<li>Hospira, Inc. 0.9% Sodium Chloride Injection, USP (VisIV container): prescribing information. <a href="https://labeling.pfizer.com/ShowLabeling.aspx?id=4612" rel="noopener" target="_blank">labeling.pfizer.com</a></li>
+<li>MedlinePlus (US National Library of Medicine). Recognizing medical emergencies. <a href="https://medlineplus.gov/ency/article/001927.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+<li>World Health Organization (WHO). Diarrhoeal disease. Fact sheet, 2024. <a href="https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease" rel="noopener" target="_blank">who.int</a></li>
+<li>MedlinePlus (US National Library of Medicine). Dehydration. <a href="https://medlineplus.gov/ency/article/000982.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+</ol>
+<p class="review-meta">Written and reviewed by Dr. Cristóbal J. Ortega-Arenas, physician (UNAM), professional license 14848636. Last reviewed: October 20, 2026. General information; it does not replace a medical consultation.</p>
 </article>
 <aside class="side-card">
 <h3>At a glance</h3>
-<div class="side-price"><small>From</small> $1,800 <small>MXN</small></div>
-<p>+ visit (hotel or home) and assistant fee. Mandatory prior medical assessment.</p>
+<div class="side-price">$1,800 <small>MXN</small></div>
+<p>+ visit (hotel or home) and nursing fee. Only after a medical assessment and if clinically indicated.</p>
 <a class="hero-cta" href="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." rel="noopener" target="_blank">Message on WhatsApp</a>
 </aside>
 </main>
@@ -843,7 +892,15 @@
       "name": "Do I need a prescription?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You do not need to bring a prescription. Dr. Ortega-Arenas decides whether it is indicated during the mandatory prior medical assessment; without it, the therapy is not given."
+        "text": "You do not need to bring a prescription. Dr. Ortega-Arenas decides whether it is indicated during the mandatory prior medical assessment; without it, IV hydration is not given."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are no vitamins included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because there is no high-quality evidence that vitamin infusions benefit people without a specific deficiency or medical condition, and high doses may cause harm. 5 That is why they are not included."
       }
     },
     {
@@ -851,7 +908,7 @@
       "name": "How long does it take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on the level and on the components tailored to your case. The physician tells you the estimated time during the assessment, before you sign the informed consent form."
+        "text": "It depends on the volume indicated at the assessment. The physician tells you the estimated time before you sign the informed consent form."
       }
     },
     {
@@ -859,7 +916,7 @@
       "name": "What if it is not right for me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If the assessment shows that the therapy is not clinically indicated, it is not given. Only the visit and the materials used in the assessment are charged."
+        "text": "If the assessment shows that IV hydration is not clinically indicated, it is not given. Only the visit and the materials used in the assessment are charged."
       }
     },
     {
@@ -867,7 +924,7 @@
       "name": "What is the total cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Level fee + visit fee + assistant fee. For example, Level I with a hotel visit in Zone A and an assistant during standard hours: $1,800 + $2,500 + $1,500 = $5,800 MXN."
+        "text": "$1,800 + visit fee + nursing fee. For example, with a hotel visit in Zone A and nursing during standard hours: $1,800 + $2,500 + $1,500 = $5,800 MXN."
       }
     }
   ]
@@ -883,7 +940,7 @@
 </div>
 <p>Professional License (Cédula) 14848636 · DGP 411305 · Degree recognition in Spain: Cred. No. 2025-17271</p>
 <p class="footer-links">
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travel certificates</a>
 <a href="/en/hotels/">For hotels</a>
 <a href="/en/guides/emergency-care-mexico-city/">When to go to the ER</a>

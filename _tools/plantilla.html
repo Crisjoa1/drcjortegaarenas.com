@@ -225,6 +225,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -551,6 +552,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -696,7 +698,7 @@
     <a class="svc-card reveal" href="/hidratacion-intravenosa/" data-href-en="/en/iv-hydration-mexico-city/" data-href-fr="/fr/hydratation-intraveineuse/">
       <h3 data-es="Hidratación intravenosa" data-en="IV hydration" data-fr="Hydratation intraveineuse"></h3>
       <p data-es="Solo con valoración médica previa y cuando está clínicamente indicada. En hotel o domicilio." data-en="Only after a medical assessment and when clinically indicated. At your hotel or home." data-fr="Uniquement après une évaluation médicale et lorsqu’elle est cliniquement indiquée. À votre hôtel ou à domicile."></p>
-      <div class="svc-price" data-es="$1,800 <small>desde, + visita</small>" data-en="$1,800 <small>from, + visit</small>" data-fr="$1,800 <small>à partir de, + visite</small>"></div>
+      <div class="svc-price" data-es="$1,800 <small>+ visita y enfermería</small>" data-en="$1,800 <small>+ visit and nursing</small>" data-fr="$1,800 <small>+ visite et soins infirmiers</small>"></div>
       <span class="svc-link" data-es="Indicaciones y riesgos →" data-en="Indications and risks →" data-fr="Indications et risques →"></span>
     </a>
     <a class="svc-card reveal" href="/certificados-y-viajeros/" data-href-en="/en/travel-medical-certificates/" data-href-fr="/fr/certificats-voyageurs/">
@@ -1159,57 +1161,39 @@
 <section class="section-full iv-section" id="iv">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-tag" data-es="Terapia IV" data-en="IV therapy" data-fr="Thérapie IV"></p>
-      <h2 class="section-title" data-es="Protocolos de <em>IV Therapy</em><br>&amp; Rehidratación" data-en="<em>IV Therapy</em> &amp;<br>Rehydration Protocols" data-fr="<em>Thérapie IV</em> et<br>protocoles de réhydratation">Protocolos de <em>IV Therapy</em><br>&amp; Rehidratación</h2>
-      <p class="section-subtitle" data-es="Protocolos de hidratación intravenosa administrados bajo supervisión médica, siempre con valoración clínica previa." data-en="Intravenous hydration protocols administered under medical supervision, always after a prior clinical assessment." data-fr="Protocoles d’hydratation intraveineuse administrés sous supervision médicale, toujours après une évaluation clinique préalable.">Protocolos de hidratación intravenosa administrados bajo supervisión médica, siempre con valoración clínica previa.</p>
+      <p class="section-tag" data-es="Hidratación IV" data-en="IV hydration" data-fr="Hydratation IV"></p>
+      <h2 class="section-title" data-es="Hidratación &lt;em&gt;intravenosa&lt;/em&gt;&lt;br&gt;con valoración médica previa" data-en="&lt;em&gt;IV hydration&lt;/em&gt;&lt;br&gt;after a medical assessment" data-fr="&lt;em&gt;Hydratation intraveineuse&lt;/em&gt;&lt;br&gt;après évaluation médicale"></h2>
+      <p class="section-subtitle" data-es="La rehidratación oral es la primera elección, incluso cuando hay vómito. La vía intravenosa se considera cuando un intento adecuado de rehidratación oral fracasa, según la valoración médica (guía IDSA 2017)." data-en="Oral rehydration is the first choice, even when there is vomiting. The IV route is considered when an adequate attempt at oral rehydration fails, as judged at the medical assessment (IDSA 2017 guideline)." data-fr="La réhydratation orale est le premier choix, même en cas de vomissements. La voie intraveineuse est envisagée lorsqu’une tentative adéquate de réhydratation orale échoue, selon l’évaluation médicale (recommandations IDSA 2017)."></p>
     </div>
-    <div class="iv-cards">
+    <div class="iv-cards iv-single">
       <div class="iv-card reveal">
-        <p class="iv-level" data-es="Nivel I" data-en="Level I" data-fr="Niveau I">Nivel I</p>
-        <div class="iv-name">Essential<br>Hydration</div>
+        <p class="iv-level" data-es="Un solo servicio" data-en="Single service" data-fr="Service unique"></p>
+        <div class="iv-name" data-es="Hidratación&lt;br&gt;intravenosa" data-en="IV&lt;br&gt;hydration" data-fr="Hydratation&lt;br&gt;intraveineuse"></div>
         <div class="iv-price">$1,800</div>
-        <p class="iv-price-label" data-es="cargo del nivel, MXN" data-en="level fee, MXN" data-fr="honoraires du niveau, MXN">cargo del nivel, MXN</p>
-        <p class="iv-goal" data-es="Rehidratación intravenosa básica, cuando la valoración clínica la indica." data-en="Basic intravenous rehydration, when indicated by clinical assessment." data-fr="Réhydratation intraveineuse de base, lorsque l’évaluation clinique l’indique.">Rehidratación intravenosa básica, cuando la valoración clínica la indica.</p>
-        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes" data-fr="Comprend">Incluye</h4><ul>
-          <li data-es="Solución Fisiológica (IV)" data-en="Physiological Solution (IV)" data-fr="Solution physiologique (IV)">Solución Fisiológica (IV)</li>
-          <li data-es="Vitamina C (Oral)" data-en="Vitamin C (Oral)" data-fr="Vitamine C (voie orale)">Vitamina C (Oral)</li>
+        <p class="iv-price-label" data-es="MXN, + visita y enfermería" data-en="MXN, + visit and nursing" data-fr="MXN, + visite et soins infirmiers"></p>
+        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes" data-fr="Comprend"></h4><ul>
+          <li data-es="Solución fisiológica (cloruro de sodio al 0.9 %) por vía intravenosa" data-en="Normal saline (0.9% sodium chloride) given intravenously" data-fr="Sérum physiologique (chlorure de sodium à 0,9 %) par voie intraveineuse"></li>
+          <li data-es="Antiemético o analgésico, solo si la valoración lo indica" data-en="Antiemetic or pain reliever, only if the assessment indicates it" data-fr="Antiémétique ou antalgique, uniquement si l’évaluation l’indique"></li>
+          <li data-es="Sin vitaminas ni complementos: no hay evidencia de calidad de beneficio sin una deficiencia" data-en="No vitamins or supplements: no high-quality evidence of benefit without a deficiency" data-fr="Sans vitamines ni compléments : aucune donnée de qualité d’un bénéfice en l’absence de carence"></li>
         </ul></div>
       </div>
       <div class="iv-card reveal">
-        <p class="iv-level" data-es="Nivel II" data-en="Level II" data-fr="Niveau II">Nivel II</p>
-        <div class="iv-name">Vitamin<br>Hydration</div>
-        <div class="iv-price">$2,800</div>
-        <p class="iv-price-label" data-es="cargo del nivel, MXN" data-en="level fee, MXN" data-fr="honoraires du niveau, MXN">cargo del nivel, MXN</p>
-        <p class="iv-goal" data-es="Rehidratación con complejo B y magnesio." data-en="Rehydration with B-complex and magnesium." data-fr="Réhydratation avec complexe B et magnésium.">Rehidratación con complejo B y magnesio.</p>
-        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes" data-fr="Comprend">Incluye</h4><ul>
-          <li data-es="Todo lo del Nivel I" data-en="Everything in Level I" data-fr="Tout le contenu du Niveau I">Todo lo del Nivel I</li>
-          <li data-es="Complejo B (IM)" data-en="B-complex (IM)" data-fr="Complexe B (IM)">Complejo B (IM)</li>
-          <li data-es="Magnesio (IV)" data-en="Magnesium (IV)" data-fr="Magnésium (IV)">Magnesio (IV)</li>
-        </ul></div>
-      </div>
-      <div class="iv-card reveal">
-        <p class="iv-level" data-es="Nivel III" data-en="Level III" data-fr="Niveau III">Nivel III</p>
-        <div class="iv-name">Hydration &amp;<br>Symptom Care</div>
-        <div class="iv-price">$3,900</div>
-        <p class="iv-price-label" data-es="cargo del nivel, MXN" data-en="level fee, MXN" data-fr="honoraires du niveau, MXN">cargo del nivel, MXN</p>
-        <p class="iv-goal" data-es="Rehidratación con manejo del dolor y la náusea." data-en="Rehydration with pain and nausea management." data-fr="Réhydratation avec prise en charge de la douleur et des nausées.">Rehidratación con manejo del dolor y la náusea.</p>
-        <div class="iv-includes"><h4 data-es="Incluye" data-en="Includes" data-fr="Comprend">Incluye</h4><ul>
-          <li data-es="Todo lo del Nivel II" data-en="Everything in Level II" data-fr="Tout le contenu du Niveau II">Todo lo del Nivel II</li>
-          <li data-es="Glutamina (oral)" data-en="Glutamine (oral)" data-fr="Glutamine (voie orale)">Glutamina (oral)</li>
-          <li data-es="Analgésico y/o antiemético IV, solo si están clínicamente indicados" data-en="IV analgesic and/or antiemetic, only if clinically indicated" data-fr="Analgésique et/ou antiémétique IV, uniquement si cliniquement indiqué">Analgésico y/o antiemético IV, solo si están clínicamente indicados</li>
-        </ul></div>
+        <p class="iv-level" data-es="Antes de solicitarla" data-en="Before you book" data-fr="Avant de la demander"></p>
+        <div class="iv-name" data-es="Riesgos&lt;br&gt;y límites" data-en="Risks&lt;br&gt;and limits" data-fr="Risques&lt;br&gt;et limites"></div>
+        <p class="iv-goal" style="margin-top:18px" data-es="Conlleva riesgos, como flebitis, infiltración o extravasación, infección del sitio de punción y sobrecarga de líquidos. Personal de enfermería con cédula profesional coloca la vía bajo supervisión del médico. No se ofrece para bienestar, resaca, energía ni rendimiento." data-en="It carries risks, such as phlebitis, infiltration or extravasation, infection at the insertion site and fluid overload. A licensed nurse places the line under the physician’s supervision. It is not offered for wellness, hangover, energy or performance." data-fr="Elle comporte des risques, comme la phlébite, l’infiltration ou l’extravasation, l’infection au point de ponction et la surcharge liquidienne. Un(e) infirmier(ère) titulaire d’une licence professionnelle mexicaine (cédula) pose la voie sous la supervision du médecin. Elle n’est pas proposée pour le bien-être, la gueule de bois, l’énergie ou la performance."></p>
+        <p class="iv-goal" data-es="&lt;strong&gt;Llame al 911&lt;/strong&gt; si hay alteración de la conciencia, dolor en el pecho, dificultad para respirar o deshidratación grave: no es un servicio de urgencias." data-en="&lt;strong&gt;Call 911&lt;/strong&gt; for altered consciousness, chest pain, trouble breathing or severe dehydration: this is not an emergency service." data-fr="&lt;strong&gt;Appelez le 911&lt;/strong&gt; en cas d’altération de la conscience, de douleur thoracique, de difficulté à respirer ou de déshydratation grave : ce n’est pas un service d’urgences."></p>
       </div>
     </div>
-    <p class="reveal" style="margin:0 0 26px"><a href="/hidratacion-intravenosa/" data-href-en="/en/iv-hydration-mexico-city/" data-href-fr="/fr/hydratation-intraveineuse/" class="text-link" data-es="Ver indicaciones, riesgos y protocolo completo →" data-en="See indications, risks and the full protocol →" data-fr="Voir les indications, les risques et le protocole complet →"></a></p>
+    <p class="reveal" style="margin:0 0 26px"><a href="/hidratacion-intravenosa/" data-href-en="/en/iv-hydration-mexico-city/" data-href-fr="/fr/hydratation-intraveineuse/" class="text-link" data-es="Ver indicaciones, riesgos y fuentes →" data-en="See indications, risks and sources →" data-fr="Voir les indications, les risques et les sources →"></a></p>
     <div class="iv-formula reveal">
-      <h3 data-es="Cálculo del Costo Total" data-en="Total Fee Calculation" data-fr="Calcul des honoraires totaux">Cálculo del Costo Total</h3>
-      <p class="iv-formula-eq" data-es="Total = nivel indicado en la valoración + honorario de visita (zona y hora) + honorario de asistente" data-en="Total = level indicated at assessment + visit fee (zone &amp; time) + assistant fee" data-fr="Total = niveau indiqué lors de l’évaluation + honoraires de visite (zone et horaire) + honoraires de l’assistant de perfusion"></p>
+      <h3 data-es="Cálculo del Costo Total" data-en="Total Fee Calculation" data-fr="Calcul des honoraires totaux"></h3>
+      <p class="iv-formula-eq" data-es="Total = $1,800 + honorario de visita (zona y hora) + honorario de enfermería" data-en="Total = $1,800 + visit fee (zone &amp; time) + nursing fee" data-fr="Total = $1,800 + honoraires de visite (zone et horaire) + honoraires infirmiers"></p>
       <div class="iv-assist-grid">
-        <div class="iv-assist-item"><p class="sched" data-es="Horario Ordinario" data-en="Standard Schedule" data-fr="Horaires standard">Horario Ordinario</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee" data-fr="Honoraires de l’assistant (perfusion)">Honorario Asistente</p></div>
-        <div class="iv-assist-item"><p class="sched" data-es="Especial · Noches · Tradicionales · Dom · Sáb 15:01+" data-en="Special · Nights · Traditional · Sun · Sat 15:01+" data-fr="Spécial · Nuits · Traditionnels · Dim · Sam 15:01+">Especial · Noches · Tradicionales · Dom · Sáb 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee" data-fr="Honoraires de l’assistant (perfusion)">Honorario Asistente</p></div>
-        <div class="iv-assist-item"><p class="sched" data-es="Días Festivos Oficiales (24 horas)" data-en="Official Public Holidays (24 Hours)" data-fr="Jours fériés officiels (24 heures)">Días Festivos Oficiales (24 horas)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Asistente" data-en="Assistant Fee" data-fr="Honoraires de l’assistant (perfusion)">Honorario Asistente</p></div>
+        <div class="iv-assist-item"><p class="sched" data-es="Horario Ordinario" data-en="Standard Schedule" data-fr="Horaires standard">Horario Ordinario</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Enfermería" data-en="Nursing Fee" data-fr="Honoraires infirmiers">Honorario Enfermería</p></div>
+        <div class="iv-assist-item"><p class="sched" data-es="Especial · Noches · Tradicionales · Dom · Sáb 15:01+" data-en="Special · Nights · Traditional · Sun · Sat 15:01+" data-fr="Spécial · Nuits · Traditionnels · Dim · Sam 15:01+">Especial · Noches · Tradicionales · Dom · Sáb 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Enfermería" data-en="Nursing Fee" data-fr="Honoraires infirmiers">Honorario Enfermería</p></div>
+        <div class="iv-assist-item"><p class="sched" data-es="Días Festivos Oficiales (24 horas)" data-en="Official Public Holidays (24 Hours)" data-fr="Jours fériés officiels (24 heures)">Días Festivos Oficiales (24 horas)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px" data-es="Honorario Enfermería" data-en="Nursing Fee" data-fr="Honoraires infirmiers">Honorario Enfermería</p></div>
       </div>
-      <p class="price-note" style="margin-top:14px" data-es="El Honorario de Visita Médica se rige por la Sección I (Hoteles) o Sección III (Domicilio). Toda terapia IV requiere valoración médica previa obligatoria y Consentimiento Informado firmado. La hidratación IV no sustituye a la vía oral cuando esta es posible; conlleva riesgos (flebitis, infiltración, reacciones adversas) y solo se aplica si la valoración médica la justifica. Los componentes se ajustan a cada paciente. Complementos orales (vitamina C y glutamina): no hay evidencia de que mejoren la rehidratación; solo si el médico lo considera adecuado." data-en="The Medical Visit Fee is determined by Section I (Hotels) or Section III (Home Visits). All IV therapy requires a mandatory prior medical assessment and signed Informed Consent. IV hydration does not replace oral hydration when that is possible; it carries risks (phlebitis, infiltration, adverse reactions) and is given only when justified by medical assessment. Components are tailored to each patient. Oral supplements (vitamin C and glutamine): there is no evidence they improve rehydration; given only if the physician considers it appropriate." data-fr="Les honoraires de la visite médicale sont déterminés par la Section I (hôtels) ou la Section III (visites à domicile). Toute thérapie IV nécessite une évaluation médicale préalable obligatoire et un consentement éclairé signé. L’hydratation intraveineuse ne remplace pas l’hydratation orale lorsque celle-ci est possible ; elle comporte des risques (phlébite, infiltration, réactions indésirables) et n’est administrée que lorsqu’elle est justifiée par l’évaluation médicale. Les composants sont adaptés à chaque patient. Suppléments oraux (vitamine C et glutamine) : aucune donnée ne montre qu’ils améliorent la réhydratation ; ils ne sont administrés que si le médecin le juge approprié.">El Honorario de Visita Médica se rige por la Sección I (Hoteles) o Sección III (Domicilio). Toda terapia IV requiere valoración médica previa obligatoria y Consentimiento Informado firmado. La hidratación IV no sustituye a la vía oral cuando esta es posible; conlleva riesgos (flebitis, infiltración, reacciones adversas) y solo se aplica si la valoración médica la justifica. Los componentes se ajustan a cada paciente. Complementos orales (vitamina C y glutamina): no hay evidencia de que mejoren la rehidratación; solo si el médico lo considera adecuado.</p>
+      <p class="price-note" style="margin-top:14px" data-es="La visita se cobra según la tarifa de hotel o de domicilio (ver Tarifas). Requiere valoración médica previa obligatoria, prescripción por escrito y Consentimiento Informado firmado. Si la valoración muestra que no está indicada, no se aplica y solo se cobran la visita y los materiales de la valoración." data-en="The visit is charged at the hotel or house-call rate (see Fees). It requires a mandatory prior medical assessment, a written prescription and signed Informed Consent. If the assessment shows it is not indicated, it is not given and only the visit and the materials used in the assessment are charged." data-fr="La visite est facturée au tarif hôtel ou domicile (voir Tarifs). Elle nécessite une évaluation médicale préalable obligatoire, une prescription écrite et un consentement éclairé signé. Si l’évaluation montre qu’elle n’est pas indiquée, elle n’est pas administrée et seuls la visite et le matériel utilisé pour l’évaluation sont facturés."></p>
     </div>
   </div>
 </section>

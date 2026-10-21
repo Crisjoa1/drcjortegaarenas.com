@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -712,7 +714,7 @@
     },
     {
       "@type": "Offer",
-      "name": "IV hydration (level fee, visit not included)",
+      "name": "IV hydration (visit and nursing not included)",
       "priceCurrency": "MXN",
       "priceSpecification": {
         "@type": "PriceSpecification",
@@ -1004,7 +1006,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/en/hotels/">Hotel visits</a>
 <a href="/en/#servicios">Services</a>
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
 <a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
@@ -1098,7 +1100,7 @@
 <a class="svc-card reveal" href="/en/iv-hydration-mexico-city/">
 <h3>IV hydration</h3>
 <p>Only after a medical assessment and when clinically indicated. At your hotel or home.</p>
-<div class="svc-price">$1,800 <small>from, + visit</small></div>
+<div class="svc-price">$1,800 <small>+ visit and nursing</small></div>
 <span class="svc-link">Indications and risks →</span>
 </a>
 <a class="svc-card reveal" href="/en/travel-medical-certificates/">
@@ -1591,57 +1593,39 @@
 <section class="section-full iv-section" id="iv">
 <div class="section-inner">
 <div class="section-header reveal">
-<p class="section-tag">IV therapy</p>
-<h2 class="section-title"><em>IV Therapy</em> &amp;<br/>Rehydration Protocols</h2>
-<p class="section-subtitle">Intravenous hydration protocols administered under medical supervision, always after a prior clinical assessment.</p>
+<p class="section-tag">IV hydration</p>
+<h2 class="section-title"><em>IV hydration</em><br/>after a medical assessment</h2>
+<p class="section-subtitle">Oral rehydration is the first choice, even when there is vomiting. The IV route is considered when an adequate attempt at oral rehydration fails, as judged at the medical assessment (IDSA 2017 guideline).</p>
 </div>
-<div class="iv-cards">
+<div class="iv-cards iv-single">
 <div class="iv-card reveal">
-<p class="iv-level">Level I</p>
-<div class="iv-name">Essential<br/>Hydration</div>
+<p class="iv-level">Single service</p>
+<div class="iv-name">IV<br/>hydration</div>
 <div class="iv-price">$1,800</div>
-<p class="iv-price-label">level fee, MXN</p>
-<p class="iv-goal">Basic intravenous rehydration, when indicated by clinical assessment.</p>
+<p class="iv-price-label">MXN, + visit and nursing</p>
 <div class="iv-includes"><h4>Includes</h4><ul>
-<li>Physiological Solution (IV)</li>
-<li>Vitamin C (Oral)</li>
+<li>Normal saline (0.9% sodium chloride) given intravenously</li>
+<li>Antiemetic or pain reliever, only if the assessment indicates it</li>
+<li>No vitamins or supplements: no high-quality evidence of benefit without a deficiency</li>
 </ul></div>
 </div>
 <div class="iv-card reveal">
-<p class="iv-level">Level II</p>
-<div class="iv-name">Vitamin<br/>Hydration</div>
-<div class="iv-price">$2,800</div>
-<p class="iv-price-label">level fee, MXN</p>
-<p class="iv-goal">Rehydration with B-complex and magnesium.</p>
-<div class="iv-includes"><h4>Includes</h4><ul>
-<li>Everything in Level I</li>
-<li>B-complex (IM)</li>
-<li>Magnesium (IV)</li>
-</ul></div>
-</div>
-<div class="iv-card reveal">
-<p class="iv-level">Level III</p>
-<div class="iv-name">Hydration &amp;<br/>Symptom Care</div>
-<div class="iv-price">$3,900</div>
-<p class="iv-price-label">level fee, MXN</p>
-<p class="iv-goal">Rehydration with pain and nausea management.</p>
-<div class="iv-includes"><h4>Includes</h4><ul>
-<li>Everything in Level II</li>
-<li>Glutamine (oral)</li>
-<li>IV analgesic and/or antiemetic, only if clinically indicated</li>
-</ul></div>
+<p class="iv-level">Before you book</p>
+<div class="iv-name">Risks<br/>and limits</div>
+<p class="iv-goal" style="margin-top:18px">It carries risks, such as phlebitis, infiltration or extravasation, infection at the insertion site and fluid overload. A licensed nurse places the line under the physician’s supervision. It is not offered for wellness, hangover, energy or performance.</p>
+<p class="iv-goal"><strong>Call 911</strong> for altered consciousness, chest pain, trouble breathing or severe dehydration: this is not an emergency service.</p>
 </div>
 </div>
-<p class="reveal" style="margin:0 0 26px"><a class="text-link" href="/en/iv-hydration-mexico-city/">See indications, risks and the full protocol →</a></p>
+<p class="reveal" style="margin:0 0 26px"><a class="text-link" href="/en/iv-hydration-mexico-city/">See indications, risks and sources →</a></p>
 <div class="iv-formula reveal">
 <h3>Total Fee Calculation</h3>
-<p class="iv-formula-eq">Total = level indicated at assessment + visit fee (zone &amp; time) + assistant fee</p>
+<p class="iv-formula-eq">Total = $1,800 + visit fee (zone &amp; time) + nursing fee</p>
 <div class="iv-assist-grid">
-<div class="iv-assist-item"><p class="sched">Standard Schedule</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Assistant Fee</p></div>
-<div class="iv-assist-item"><p class="sched">Special · Nights · Traditional · Sun · Sat 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Assistant Fee</p></div>
-<div class="iv-assist-item"><p class="sched">Official Public Holidays (24 Hours)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Assistant Fee</p></div>
+<div class="iv-assist-item"><p class="sched">Standard Schedule</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Nursing Fee</p></div>
+<div class="iv-assist-item"><p class="sched">Special · Nights · Traditional · Sun · Sat 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Nursing Fee</p></div>
+<div class="iv-assist-item"><p class="sched">Official Public Holidays (24 Hours)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Nursing Fee</p></div>
 </div>
-<p class="price-note" style="margin-top:14px">The Medical Visit Fee is determined by Section I (Hotels) or Section III (Home Visits). All IV therapy requires a mandatory prior medical assessment and signed Informed Consent. IV hydration does not replace oral hydration when that is possible; it carries risks (phlebitis, infiltration, adverse reactions) and is given only when justified by medical assessment. Components are tailored to each patient. Oral supplements (vitamin C and glutamine): there is no evidence they improve rehydration; given only if the physician considers it appropriate.</p>
+<p class="price-note" style="margin-top:14px">The visit is charged at the hotel or house-call rate (see Fees). It requires a mandatory prior medical assessment, a written prescription and signed Informed Consent. If the assessment shows it is not indicated, it is not given and only the visit and the materials used in the assessment are charged.</p>
 </div>
 </div>
 </section>
@@ -1733,7 +1717,7 @@
 </div>
 <p>Professional License (Cédula) 14848636 · DGP 411305 · Degree recognition in Spain: Cred. No. 2025-17271</p>
 <p class="footer-links">
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travel certificates</a>
 <a href="/en/hotels/">For hotels</a>
 <a href="/en/guides/emergency-care-mexico-city/">When to go to the ER</a>

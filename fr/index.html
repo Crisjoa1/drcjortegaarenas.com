@@ -251,6 +251,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -577,6 +578,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -712,7 +714,7 @@
     },
     {
       "@type": "Offer",
-      "name": "Hydratation intraveineuse (tarif du niveau, visite non incluse)",
+      "name": "Hydratation intraveineuse (visite et soins infirmiers non inclus)",
       "priceCurrency": "MXN",
       "priceSpecification": {
         "@type": "PriceSpecification",
@@ -1004,7 +1006,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/fr/hotels/">Hôtel</a>
 <a href="/fr/#servicios">Services</a>
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Voyageurs</a>
 <a href="/fr/guides/">Guides</a>
 <a href="/fr/#tarifas">Tarifs</a>
@@ -1098,7 +1100,7 @@
 <a class="svc-card reveal" href="/fr/hydratation-intraveineuse/">
 <h3>Hydratation intraveineuse</h3>
 <p>Uniquement après une évaluation médicale et lorsqu’elle est cliniquement indiquée. À votre hôtel ou à domicile.</p>
-<div class="svc-price">$1,800 <small>à partir de, + visite</small></div>
+<div class="svc-price">$1,800 <small>+ visite et soins infirmiers</small></div>
 <span class="svc-link">Indications et risques →</span>
 </a>
 <a class="svc-card reveal" href="/fr/certificats-voyageurs/">
@@ -1602,57 +1604,39 @@
 <section class="section-full iv-section" id="iv">
 <div class="section-inner">
 <div class="section-header reveal">
-<p class="section-tag">Thérapie IV</p>
-<h2 class="section-title"><em>Thérapie IV</em> et<br/>protocoles de réhydratation</h2>
-<p class="section-subtitle">Protocoles d’hydratation intraveineuse administrés sous supervision médicale, toujours après une évaluation clinique préalable.</p>
+<p class="section-tag">Hydratation IV</p>
+<h2 class="section-title"><em>Hydratation intraveineuse</em><br/>après évaluation médicale</h2>
+<p class="section-subtitle">La réhydratation orale est le premier choix, même en cas de vomissements. La voie intraveineuse est envisagée lorsqu’une tentative adéquate de réhydratation orale échoue, selon l’évaluation médicale (recommandations IDSA 2017).</p>
 </div>
-<div class="iv-cards">
+<div class="iv-cards iv-single">
 <div class="iv-card reveal">
-<p class="iv-level">Niveau I</p>
-<div class="iv-name">Essential<br/>Hydration</div>
+<p class="iv-level">Service unique</p>
+<div class="iv-name">Hydratation<br/>intraveineuse</div>
 <div class="iv-price">$1,800</div>
-<p class="iv-price-label">honoraires du niveau, MXN</p>
-<p class="iv-goal">Réhydratation intraveineuse de base, lorsque l’évaluation clinique l’indique.</p>
+<p class="iv-price-label">MXN, + visite et soins infirmiers</p>
 <div class="iv-includes"><h4>Comprend</h4><ul>
-<li>Solution physiologique (IV)</li>
-<li>Vitamine C (voie orale)</li>
+<li>Sérum physiologique (chlorure de sodium à 0,9 %) par voie intraveineuse</li>
+<li>Antiémétique ou antalgique, uniquement si l’évaluation l’indique</li>
+<li>Sans vitamines ni compléments : aucune donnée de qualité d’un bénéfice en l’absence de carence</li>
 </ul></div>
 </div>
 <div class="iv-card reveal">
-<p class="iv-level">Niveau II</p>
-<div class="iv-name">Vitamin<br/>Hydration</div>
-<div class="iv-price">$2,800</div>
-<p class="iv-price-label">honoraires du niveau, MXN</p>
-<p class="iv-goal">Réhydratation avec complexe B et magnésium.</p>
-<div class="iv-includes"><h4>Comprend</h4><ul>
-<li>Tout le contenu du Niveau I</li>
-<li>Complexe B (IM)</li>
-<li>Magnésium (IV)</li>
-</ul></div>
-</div>
-<div class="iv-card reveal">
-<p class="iv-level">Niveau III</p>
-<div class="iv-name">Hydration &amp;<br/>Symptom Care</div>
-<div class="iv-price">$3,900</div>
-<p class="iv-price-label">honoraires du niveau, MXN</p>
-<p class="iv-goal">Réhydratation avec prise en charge de la douleur et des nausées.</p>
-<div class="iv-includes"><h4>Comprend</h4><ul>
-<li>Tout le contenu du Niveau II</li>
-<li>Glutamine (voie orale)</li>
-<li>Analgésique et/ou antiémétique IV, uniquement si cliniquement indiqué</li>
-</ul></div>
+<p class="iv-level">Avant de la demander</p>
+<div class="iv-name">Risques<br/>et limites</div>
+<p class="iv-goal" style="margin-top:18px">Elle comporte des risques, comme la phlébite, l’infiltration ou l’extravasation, l’infection au point de ponction et la surcharge liquidienne. Un(e) infirmier(ère) titulaire d’une licence professionnelle mexicaine (cédula) pose la voie sous la supervision du médecin. Elle n’est pas proposée pour le bien-être, la gueule de bois, l’énergie ou la performance.</p>
+<p class="iv-goal"><strong>Appelez le 911</strong> en cas d’altération de la conscience, de douleur thoracique, de difficulté à respirer ou de déshydratation grave : ce n’est pas un service d’urgences.</p>
 </div>
 </div>
-<p class="reveal" style="margin:0 0 26px"><a class="text-link" href="/fr/hydratation-intraveineuse/">Voir les indications, les risques et le protocole complet →</a></p>
+<p class="reveal" style="margin:0 0 26px"><a class="text-link" href="/fr/hydratation-intraveineuse/">Voir les indications, les risques et les sources →</a></p>
 <div class="iv-formula reveal">
 <h3>Calcul des honoraires totaux</h3>
-<p class="iv-formula-eq">Total = niveau indiqué lors de l’évaluation + honoraires de visite (zone et horaire) + honoraires de l’assistant de perfusion</p>
+<p class="iv-formula-eq">Total = $1,800 + honoraires de visite (zone et horaire) + honoraires infirmiers</p>
 <div class="iv-assist-grid">
-<div class="iv-assist-item"><p class="sched">Horaires standard</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires de l’assistant (perfusion)</p></div>
-<div class="iv-assist-item"><p class="sched">Spécial · Nuits · Traditionnels · Dim · Sam 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires de l’assistant (perfusion)</p></div>
-<div class="iv-assist-item"><p class="sched">Jours fériés officiels (24 heures)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires de l’assistant (perfusion)</p></div>
+<div class="iv-assist-item"><p class="sched">Horaires standard</p><div class="fee-val">$1,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires infirmiers</p></div>
+<div class="iv-assist-item"><p class="sched">Spécial · Nuits · Traditionnels · Dim · Sam 15:01+</p><div class="fee-val">$2,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires infirmiers</p></div>
+<div class="iv-assist-item"><p class="sched">Jours fériés officiels (24 heures)</p><div class="fee-val">$3,500 MXN</div><p style="font-size:0.6rem;color:var(--muted);margin-top:5px">Honoraires infirmiers</p></div>
 </div>
-<p class="price-note" style="margin-top:14px">Les honoraires de la visite médicale sont déterminés par la Section I (hôtels) ou la Section III (visites à domicile). Toute thérapie IV nécessite une évaluation médicale préalable obligatoire et un consentement éclairé signé. L’hydratation intraveineuse ne remplace pas l’hydratation orale lorsque celle-ci est possible ; elle comporte des risques (phlébite, infiltration, réactions indésirables) et n’est administrée que lorsqu’elle est justifiée par l’évaluation médicale. Les composants sont adaptés à chaque patient. Suppléments oraux (vitamine C et glutamine) : aucune donnée ne montre qu’ils améliorent la réhydratation ; ils ne sont administrés que si le médecin le juge approprié.</p>
+<p class="price-note" style="margin-top:14px">La visite est facturée au tarif hôtel ou domicile (voir Tarifs). Elle nécessite une évaluation médicale préalable obligatoire, une prescription écrite et un consentement éclairé signé. Si l’évaluation montre qu’elle n’est pas indiquée, elle n’est pas administrée et seuls la visite et le matériel utilisé pour l’évaluation sont facturés.</p>
 </div>
 </div>
 </section>
@@ -1744,7 +1728,7 @@
 </div>
 <p>Licence professionnelle (Cédula) 14848636 · DGP 411305 · Reconnaissance du diplôme en Espagne : Cred. n° 2025-17271</p>
 <p class="footer-links">
-<a href="/fr/hydratation-intraveineuse/">Thérapie IV</a>
+<a href="/fr/hydratation-intraveineuse/">Hydratation IV</a>
 <a href="/fr/certificats-voyageurs/">Certificats de voyage</a>
 <a href="/fr/hotels/">Pour les hôtels</a>
 <a href="/fr/guides/urgences-mexico/">Quand aller aux urgences</a>

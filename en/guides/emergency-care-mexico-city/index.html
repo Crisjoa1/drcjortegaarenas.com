@@ -255,6 +255,7 @@
   .iv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
   .iv-card { border:1px solid var(--border); padding:36px 28px; background:var(--card); transition:transform 0.3s; }
   .iv-card:hover { transform:translateY(-4px); }
+  .iv-cards.iv-single { grid-template-columns:1fr 1.4fr; }
   .iv-card.featured { border-color:var(--border-hi); background:var(--mid); }
   .iv-level { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--silver); margin-bottom:7px; }
   .iv-name { font-family:'Bodoni Moda',serif; font-size:1.6rem; color:var(--white); margin-bottom:3px; font-weight:300; line-height:1.05; }
@@ -581,6 +582,7 @@
     .section-inner { padding:0 20px; }
     .sep,.cofepris-bar { margin:0; padding:14px 20px; }
     .profile-grid,.services-grid,.iv-cards,.iv-assist-grid,.schedule-grid,.payment-grid { grid-template-columns:1fr; }
+    .iv-cards.iv-single { grid-template-columns:1fr; }
     .hero-creds { flex-direction:column; border:none; }
     .hero-cred { border-right:none; border-bottom:1px solid var(--border); }
     .contact-items { flex-direction:column; }
@@ -651,7 +653,7 @@
     "name": "Dr. Cristóbal J. Ortega-Arenas",
     "url": "https://drcjortegaarenas.com/en/"
   },
-  "lastReviewed": "2026-10-19",
+  "lastReviewed": "2026-10-20",
   "publisher": {
     "@type": "Physician",
     "@id": "https://drcjortegaarenas.com/#medico",
@@ -702,6 +704,11 @@
       "@type": "CreativeWork",
       "name": "MedlinePlus. Recognizing medical emergencies",
       "url": "https://medlineplus.gov/ency/article/001927.htm"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "CDC. First Aid for Seizures",
+      "url": "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
     }
   ]
 }
@@ -777,7 +784,7 @@
 <div class="nav-links" id="nav-links">
 <a href="/en/hotels/">Hotel visits</a>
 <a href="/en/#servicios">Services</a>
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
 <a href="/en/guides/">Guides</a>
 <a href="/en/#tarifas">Fees</a>
@@ -807,7 +814,7 @@
 <li><strong>Trouble breathing</strong> that starts suddenly or gets worse, or shortness of breath at rest.</li>
 <li><strong>Signs of a stroke</strong>: see the BE-FAST rule below.</li>
 <li><strong>Loss of consciousness</strong>, fainting, sudden confusion or difficulty waking the person.</li>
-<li><strong>A seizure</strong>.</li>
+<li><strong>A seizure</strong> that lasts more than 5 minutes, is the first one, happens again soon after, occurs in water, during pregnancy or in a person with diabetes who loses consciousness, or comes with an injury or trouble breathing or waking up.</li>
 <li><strong>Heavy bleeding</strong> that does not stop with direct pressure, or vomit or stools with a lot of blood.</li>
 <li><strong>A severe allergic reaction</strong>: swelling of the lips, tongue or throat, trouble breathing or swallowing, or widespread hives with dizziness.</li>
 <li><strong>Severe abdominal pain</strong> or pain that does not ease, especially with a hard belly.</li>
@@ -880,8 +887,9 @@
 <li>World Health Organization (WHO). Meningitis. Fact sheet. Accessed October 19, 2026. <a href="https://www.who.int/news-room/fact-sheets/detail/meningitis" rel="noopener" target="_blank">who.int</a></li>
 <li>Foreign, Commonwealth &amp; Development Office (FCDO), UK Government. Mexico travel advice: Health. GOV.UK. Accessed October 19, 2026. <a href="https://www.gov.uk/foreign-travel-advice/mexico/health" rel="noopener" target="_blank">gov.uk</a></li>
 <li>MedlinePlus. Recognizing medical emergencies. US National Library of Medicine. Accessed October 19, 2026. <a href="https://medlineplus.gov/ency/article/001927.htm" rel="noopener" target="_blank">medlineplus.gov</a></li>
+<li>Centers for Disease Control and Prevention (CDC). First Aid for Seizures. Accessed October 20, 2026. <a href="https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html" rel="noopener" target="_blank">cdc.gov</a></li>
 </ol>
-<p class="review-meta">Written and reviewed by Dr. Cristóbal J. Ortega-Arenas, physician (UNAM), professional license 14848636. Last reviewed: October 19, 2026. General information for adult travelers; it does not replace a medical consultation.</p>
+<p class="review-meta">Written and reviewed by Dr. Cristóbal J. Ortega-Arenas, physician (UNAM), professional license 14848636. Last reviewed: October 20, 2026. General information for adult travelers; it does not replace a medical consultation.</p>
 </article>
 <aside class="side-card">
 <h3>If you have a warning sign</h3>
@@ -900,7 +908,7 @@
 </div>
 <p>Professional License (Cédula) 14848636 · DGP 411305 · Degree recognition in Spain: Cred. No. 2025-17271</p>
 <p class="footer-links">
-<a href="/en/iv-hydration-mexico-city/">IV therapy</a>
+<a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travel certificates</a>
 <a href="/en/hotels/">For hotels</a>
 <a href="/en/guides/emergency-care-mexico-city/">When to go to the ER</a>

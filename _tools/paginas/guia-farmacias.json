@@ -1,7 +1,7 @@
 {
   "plantilla": "plantilla-guia-farmacias.html",
   "tipo": "guia",
-  "revisado": "2026-10-19",
+  "revisado": "2026-10-20",
   "audiencia": {
     "es": "Viajeros adultos en la Ciudad de México",
     "en": "Adult travelers in Mexico City",
@@ -43,6 +43,10 @@
     {
       "nombre": "Foreign, Commonwealth & Development Office (FCDO). Mexico travel advice: Health. GOV.UK",
       "url": "https://www.gov.uk/foreign-travel-advice/mexico/health"
+    },
+    {
+      "nombre": "CDC. Healthy Habits: Antibiotic Do's and Don'ts",
+      "url": "https://www.cdc.gov/antibiotic-use/about/index.html"
     }
   ],
   "es": {
