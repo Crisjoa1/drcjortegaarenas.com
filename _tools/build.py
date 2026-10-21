@@ -389,6 +389,7 @@ def tarifas():
       anticipo:Polanco       → 50 % de la consulta en esa sede (lo que se paga al reservar en Cal.com)
       anticipo-domicilio:Polanco → 50 % de la tarifa ordinaria a domicilio (anticipo por transferencia)
       asistente-frances      → asistente de traducción al francés (tabla de procedimientos)
+      asistente-frances-hotel-especial → la misma asistente en visita a hotel en horario especial o festivo
       subsecuente:Del Valle  → segundo precio de la celda del consultorio (consulta subsecuente)
       seguimiento:Del Valle  → segundo precio de la celda de domicilio ordinario (seguimiento*)
       paquete:Del Valle      → Paquete Viajero cuya etiqueta menciona ese nombre
@@ -432,6 +433,8 @@ def tarifas():
                 t[f'paquete-sin-certificado:{area}'] = m.group(1)
     for row in soup.select('[data-tarifa-frances]'):  # asistente de traducción al francés
         t['asistente-frances'] = row.select_one('.proc-price').get_text(strip=True)
+    for row in soup.select('[data-tarifa-frances-especial]'):  # en hotel, horario especial o festivo
+        t['asistente-frances-hotel-especial'] = row.select_one('.proc-price').get_text(strip=True)
     for div in soup.select('.offer-price[data-es]'):
         oferta = BeautifulSoup(div['data-es'], 'html.parser')
         for area in ('Del Valle',):
@@ -487,7 +490,7 @@ def render(page, lang):
             for l in ('en', 'fr'):
                 if el.has_attr(f'data-{kind}-{l}'):
                     del el[f'data-{kind}-{l}']
-    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio', 'data-tarifa-frances'):
+    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio', 'data-tarifa-frances', 'data-tarifa-frances-especial'):
         for el in soup.select(f'[{attr}]'):
             del el[attr]
     for el in soup.select('[data-sede]'):

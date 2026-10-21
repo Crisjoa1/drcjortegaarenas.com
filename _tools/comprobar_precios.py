@@ -71,7 +71,8 @@ def publicados():
     fr = ROOT / 'fr' / 'index.html'  # la asistente de traducción solo se publica en la portada en francés
     fr_rows = BeautifulSoup(fr.read_text(encoding='utf-8'), 'html.parser').select('.proc-row') if fr.exists() else []
     for row in soup.select('.proc-row') + fr_rows:  # válida en todas las zonas
-        if 'Francés' in row.get_text(' ') or 'francophone' in row.get_text(' ').lower() or 'Traduction' in row.get_text(' '):
+        texto = row.get_text(' ').lower()
+        if 'francés' in texto or 'francophone' in texto or 'traduction' in texto or 'traducción' in texto:
             for area in list(extras):
                 extras[area].add(row.select_one('.proc-price').get_text(strip=True))
     return hotel, zona_de, consultorio, domicilio, extras
