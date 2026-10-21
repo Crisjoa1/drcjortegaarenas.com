@@ -583,9 +583,15 @@
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
 
+  .forms-band { margin-top:56px; }
+  .forms-title { font-family:'Bodoni Moda',serif; font-weight:400; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--white); margin-bottom:10px; }
+  .forms-title em { font-style:italic; color:var(--accent); }
+  .forms-lead { font-size:0.95rem; color:var(--silver); line-height:1.7; max-width:760px; margin-bottom:22px; }
+  .forms-ctas { justify-content:flex-start; margin:18px 0 0; gap:10px; }
+  .forms-ctas .hero-cta { animation:none; padding:12px 22px; }
   /* ── Legibilidad y conversión (oct-2026) ───── */
   body { font-weight:400; }
-  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .payment-card a:not(.hero-cta) { color:var(--offwhite); text-underline-offset:3px; }
   .svc-card { color:inherit; }
   .contact-ctas { justify-content:center; margin:0 0 32px; }
   .contact-ctas .hero-cta { animation:none; }
@@ -1122,9 +1128,34 @@
 <div class="step reveal">
 <span class="step-num">03</span>
 <h3>Atención y documentos</h3>
-<p>Receta cuando hay tratamiento indicado. Antes de su primera consulta, complete sus formularios en línea.</p>
-<a class="text-link" href="/formularios/">Ir a formularios →</a>
+<p>Receta cuando hay tratamiento indicado. Antes de su primera consulta debe llenar dos formularios: el consentimiento informado y el cuestionario de salud.</p>
+<a class="text-link" href="#formularios-previos">Ver los formularios ↓</a>
 </div>
+</div>
+<div class="forms-band" id="formularios-previos">
+<h3 class="forms-title reveal">Antes de su consulta: <em>dos formularios obligatorios</em></h3>
+<p class="forms-lead reveal">Para su primera consulta, llene ambos antes de la cita, en el idioma que prefiera. Si ya es paciente y es una consulta subsecuente, no necesita volver a llenarlos.</p>
+<div class="payment-grid">
+<div class="payment-card reveal">
+<p class="service-num">01</p>
+<h3>Consentimiento informado e historia clínica digital</h3>
+<p>Autorización para la atención médica, obligatoria antes de cualquier consulta o procedimiento. Incluye la participación del personal asistente del médico, cuando corresponde.</p>
+<div class="hero-ctas forms-ctas">
+<a class="hero-cta" href="https://forms.gle/8XM9NQMwDcrQcnse7" rel="noopener" target="_blank">Español</a>
+<a class="hero-cta ghost" href="https://forms.gle/KhgDcaVNJnv3js1M7" rel="noopener" target="_blank">English</a>
+</div>
+</div>
+<div class="payment-card reveal">
+<p class="service-num">02</p>
+<h3>Cuestionario de salud mental y metabólico</h3>
+<p>Sus enfermedades y medicamentos actuales. Puede adjuntar sus estudios previos (PDF o Word).</p>
+<div class="hero-ctas forms-ctas">
+<a class="hero-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScQ5S2RviTjLptdHAdyLv4zGaHdMkPqfHskPw-ggRC-8O20Vg/viewform" rel="noopener" target="_blank">Español</a>
+<a class="hero-cta ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdVsPNa5E015PfYp6rcc_9XhrhOa4kG5LgTn5eBa4jjp12Ouw/viewform" rel="noopener" target="_blank">English</a>
+</div>
+</div>
+</div>
+<p class="forms-lead reveal" style="margin-top:14px">Su información es confidencial. Consulte el <a class="text-link" href="/aviso-de-privacidad/">Aviso de Privacidad</a>.</p>
 </div>
 </section>
 <!-- ══ PAQUETE VIAJERO ══════════════════════ -->

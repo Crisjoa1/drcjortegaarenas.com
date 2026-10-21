@@ -587,9 +587,15 @@
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
 
+  .forms-band { margin-top:56px; }
+  .forms-title { font-family:'Bodoni Moda',serif; font-weight:400; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--white); margin-bottom:10px; }
+  .forms-title em { font-style:italic; color:var(--accent); }
+  .forms-lead { font-size:0.95rem; color:var(--silver); line-height:1.7; max-width:760px; margin-bottom:22px; }
+  .forms-ctas { justify-content:flex-start; margin:18px 0 0; gap:10px; }
+  .forms-ctas .hero-cta { animation:none; padding:12px 22px; }
   /* ── Legibilidad y conversión (oct-2026) ───── */
   body { font-weight:400; }
-  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .payment-card a:not(.hero-cta) { color:var(--offwhite); text-underline-offset:3px; }
   .svc-card { color:inherit; }
   .contact-ctas { justify-content:center; margin:0 0 32px; }
   .contact-ctas .hero-cta { animation:none; }
@@ -741,7 +747,7 @@
 <span class="svc-link">Lire le guide →</span>
 </a>
 </div>
-<p class="emergency-note"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; demandez-la lors de la réservation (case à cocher en ligne ; par WhatsApp pour une visite à domicile). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</p>
+<p class="emergency-note"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; prévenez-nous par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</p>
 
 <p class="reveal" style="margin-top:22px;font-size:0.9rem;color:var(--muted)">Informations générales fondées sur des données probantes et relues par le médecin. Elles ne remplacent pas une consultation.</p>
 </section>

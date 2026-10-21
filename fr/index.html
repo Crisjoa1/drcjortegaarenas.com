@@ -583,9 +583,15 @@
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
 
+  .forms-band { margin-top:56px; }
+  .forms-title { font-family:'Bodoni Moda',serif; font-weight:400; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--white); margin-bottom:10px; }
+  .forms-title em { font-style:italic; color:var(--accent); }
+  .forms-lead { font-size:0.95rem; color:var(--silver); line-height:1.7; max-width:760px; margin-bottom:22px; }
+  .forms-ctas { justify-content:flex-start; margin:18px 0 0; gap:10px; }
+  .forms-ctas .hero-cta { animation:none; padding:12px 22px; }
   /* ── Legibilidad y conversión (oct-2026) ───── */
   body { font-weight:400; }
-  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .payment-card a:not(.hero-cta) { color:var(--offwhite); text-underline-offset:3px; }
   .svc-card { color:inherit; }
   .contact-ctas { justify-content:center; margin:0 0 32px; }
   .contact-ctas .hero-cta { animation:none; }
@@ -1029,7 +1035,7 @@
 </div>
 <p class="hero2-note">Médecine générale ambulatoire. Ce n’est pas un service d’urgences : en cas d’urgence, appelez le 911.</p>
 <p class="hero2-note">Licence professionnelle (cédula) 14848636 · <a class="cred-verify" href="https://www.cedulaprofesional.sep.gob.mx/" rel="noopener" target="_blank">vérifier (SEP)</a></p>
-<p class="hero2-note"><strong>Consultation en espagnol ou en anglais.</strong> Une assistante de traduction francophone est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; demandez-la lors de la réservation (case à cocher en ligne ; par WhatsApp pour une visite à domicile). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</p>
+<p class="hero2-note"><strong>Consultation en espagnol ou en anglais.</strong> Une assistante de traduction francophone est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; prévenez-nous par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</p>
 </div>
 <figure class="hero2-photo">
 <img alt="Dr Cristóbal J. Ortega-Arenas portant la blouse de la Faculté de médecine de l’UNAM" decoding="async" fetchpriority="high" height="1016" sizes="(max-width:900px) 92vw, 460px" src="/assets/foto-perfil-color-813.webp" srcset="/assets/foto-perfil-color-600.webp 600w, /assets/foto-perfil-color-813.webp 813w" width="813"/>
@@ -1122,9 +1128,34 @@
 <div class="step reveal">
 <span class="step-num">03</span>
 <h3>Soins et documents</h3>
-<p>Une ordonnance lorsqu’un traitement est indiqué. Avant votre première consultation, remplissez vos formulaires en ligne.</p>
-<a class="text-link" href="/formularios/">Accéder aux formulaires →</a>
+<p>Une ordonnance lorsqu’un traitement est indiqué. Avant votre première consultation, vous devez remplir deux formulaires : le consentement éclairé et le questionnaire de santé.</p>
+<a class="text-link" href="#formularios-previos">Voir les formulaires ↓</a>
 </div>
+</div>
+<div class="forms-band" id="formularios-previos">
+<h3 class="forms-title reveal">Avant la consultation : <em>deux formulaires obligatoires</em></h3>
+<p class="forms-lead reveal">Pour votre première consultation, remplissez les deux avant le rendez-vous. Ils sont en espagnol ou en anglais. Si vous êtes déjà patient et qu’il s’agit d’un suivi, inutile de les remplir à nouveau.</p>
+<div class="payment-grid">
+<div class="payment-card reveal">
+<p class="service-num">01</p>
+<h3>Consentement éclairé et dossier médical numérique</h3>
+<p>Autorisation des soins, obligatoire avant toute consultation ou tout acte. Elle couvre la participation du personnel assistant du médecin, le cas échéant.</p>
+<div class="hero-ctas forms-ctas">
+<a class="hero-cta" href="https://forms.gle/8XM9NQMwDcrQcnse7" rel="noopener" target="_blank">Espagnol</a>
+<a class="hero-cta ghost" href="https://forms.gle/KhgDcaVNJnv3js1M7" rel="noopener" target="_blank">Anglais</a>
+</div>
+</div>
+<div class="payment-card reveal">
+<p class="service-num">02</p>
+<h3>Questionnaire de santé mentale et métabolique</h3>
+<p>Vos maladies et traitements actuels. Vous pouvez joindre vos examens antérieurs (PDF ou Word).</p>
+<div class="hero-ctas forms-ctas">
+<a class="hero-cta" href="https://docs.google.com/forms/d/e/1FAIpQLScQ5S2RviTjLptdHAdyLv4zGaHdMkPqfHskPw-ggRC-8O20Vg/viewform" rel="noopener" target="_blank">Espagnol</a>
+<a class="hero-cta ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSdVsPNa5E015PfYp6rcc_9XhrhOa4kG5LgTn5eBa4jjp12Ouw/viewform" rel="noopener" target="_blank">Anglais</a>
+</div>
+</div>
+</div>
+<p class="forms-lead reveal" style="margin-top:14px">Vos informations sont confidentielles. Voir l’<a class="text-link" href="/aviso-de-privacidad/">avis de confidentialité</a> (en espagnol).</p>
 </div>
 </section>
 <!-- ══ PAQUETE VIAJERO ══════════════════════ -->
@@ -1238,7 +1269,7 @@
 </div>
 <div class="payment-card reveal faq-item">
 <h3>Recevez-vous des patients francophones ?</h3>
-<p>Oui, avec une assistante francophone qui traduit pendant la consultation ; le médecin consulte en anglais ou en espagnol. Cela coûte <span>$1,000</span> MXN de plus par consultation, ce qui couvre les honoraires de traduction. Selon disponibilité ; merci de la demander lors de la réservation : case à cocher en ligne (cabinet ou hôtel) ou par WhatsApp au +52 595 109 3969 (visite à domicile). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé que vous remplissez avant votre première consultation, et elle respecte la confidentialité de la consultation.</p>
+<p>Oui, avec une assistante francophone qui traduit pendant la consultation ; le médecin consulte en anglais ou en espagnol. Cela coûte <span>$1,000</span> MXN de plus par consultation, ce qui couvre les honoraires de traduction. Selon disponibilité ; merci de nous prévenir par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé que vous remplissez avant votre première consultation, et elle respecte la confidentialité de la consultation.</p>
 </div>
 <div class="payment-card reveal faq-item">
 <h3>Où se trouvent les cabinets ?</h3>
@@ -1292,7 +1323,7 @@
       "name": "Recevez-vous des patients francophones ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, avec une assistante francophone qui traduit pendant la consultation ; le médecin consulte en anglais ou en espagnol. Cela coûte $1,000 MXN de plus par consultation, ce qui couvre les honoraires de traduction. Selon disponibilité ; merci de la demander lors de la réservation : case à cocher en ligne (cabinet ou hôtel) ou par WhatsApp au +52 595 109 3969 (visite à domicile). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé que vous remplissez avant votre première consultation, et elle respecte la confidentialité de la consultation."
+        "text": "Oui, avec une assistante francophone qui traduit pendant la consultation ; le médecin consulte en anglais ou en espagnol. Cela coûte $1,000 MXN de plus par consultation, ce qui couvre les honoraires de traduction. Selon disponibilité ; merci de nous prévenir par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé que vous remplissez avant votre première consultation, et elle respecte la confidentialité de la consultation."
       }
     },
     {

@@ -589,9 +589,15 @@
     footer { flex-direction:column; text-align:center; padding:22px 20px; }
   }
 
+  .forms-band { margin-top:56px; }
+  .forms-title { font-family:'Bodoni Moda',serif; font-weight:400; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--white); margin-bottom:10px; }
+  .forms-title em { font-style:italic; color:var(--accent); }
+  .forms-lead { font-size:0.95rem; color:var(--silver); line-height:1.7; max-width:760px; margin-bottom:22px; }
+  .forms-ctas { justify-content:flex-start; margin:18px 0 0; gap:10px; }
+  .forms-ctas .hero-cta { animation:none; padding:12px 22px; }
   /* ── Legibilidad y conversión (oct-2026) ───── */
   body { font-weight:400; }
-  .payment-card a { color:var(--offwhite); text-underline-offset:3px; }
+  .payment-card a:not(.hero-cta) { color:var(--offwhite); text-underline-offset:3px; }
   .svc-card { color:inherit; }
   .contact-ctas { justify-content:center; margin:0 0 32px; }
   .contact-ctas .hero-cta { animation:none; }
@@ -743,7 +749,7 @@
       "name": "Que dois-je faire pour que le médecin puisse accéder à ma chambre ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Réservez en ligne sur cal.com/drcjortegaarenas ou par WhatsApp au +52 595 109 3969 ; par WhatsApp, une heure d’arrivée estimée vous est confirmée. Prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Pour une première consultation, vous pouvez remplir les formulaires à l’avance pour gagner du temps."
+        "text": "Réservez en ligne sur cal.com/drcjortegaarenas ou par WhatsApp au +52 595 109 3969 ; par WhatsApp, une heure d’arrivée estimée vous est confirmée. Prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Avant une première consultation, vous devez remplir les deux formulaires : consentement éclairé et questionnaire de santé."
       }
     },
     {
@@ -800,7 +806,7 @@
 <a class="hero-cta ghost" href="https://cal.com/drcjortegaarenas" rel="noopener" target="_blank">Réserver en ligne</a>
 </div>
 <div class="emergency-note"><strong>Ce n’est pas un service d’urgences.</strong> En cas de douleur thoracique, de difficulté à respirer, de perte de connaissance, de saignement abondant ou de toute autre urgence, appelez le <strong>911</strong> ou rendez-vous aux urgences d’un hôpital. N’attendez pas le médecin.</div>
-<div class="callout"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; demandez-la lors de la réservation (case à cocher en ligne ; par WhatsApp pour une visite à domicile). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</div>
+<div class="callout"><strong>Consultation en espagnol ou en anglais.</strong> Pour les patients francophones, une assistante de traduction est présente pendant la consultation (<span>$1,000</span> MXN en supplément), sous réserve de disponibilité ; prévenez-nous par WhatsApp au +52 595 109 3969 (si vous réservez en ligne, cochez aussi l’option). Non disponible en téléconsultation. Sa présence est couverte par le consentement éclairé, obligatoire avant la consultation. Les échanges par WhatsApp se font en espagnol ou en anglais.</div>
 </header>
 <div class="sep"></div>
 <main class="page-body">
@@ -824,7 +830,7 @@
 <p><strong>Acompte et annulation.</strong> La visite à l’hôtel ne nécessite pas d’acompte : elle se paie directement au médecin, en pesos mexicains. La consultation à domicile se demande par WhatsApp et se confirme par un virement de <span>$900</span>, soit 50 % du tarif ordinaire. Le solde, ainsi que la différence en cas de visite hors horaires ou un jour férié, se paie au médecin lors de la visite. Si vous annulez au moins 3 heures à l’avance, l’acompte est remboursé ; à moins de 3 heures, ou si vous n’êtes pas à l’adresse à l’heure convenue, il n’est pas remboursable.</p>
 <h2>Délai d’arrivée</h2>
 <p>Sous réserve de disponibilité, le délai d’arrivée estimé à Polanco est de <strong>60 à 90 minutes</strong>, selon la circulation ; il peut être moins long. Lors de la réservation, envoyez un WhatsApp au +52 595 109 3969 et une heure estimée vous sera confirmée.</p>
-<p>Si vous êtes à l’hôtel, prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Pour une première consultation, vous pouvez remplir à l’avance les <a href="/formularios/">formulaires</a> pour gagner du temps.</p>
+<p>Si vous êtes à l’hôtel, prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Avant une première consultation, vous devez remplir les deux <a href="/fr/#formularios-previos">formulaires</a> (consentement éclairé et questionnaire de santé).</p>
 <h2>Cabinet à Polanco</h2>
 <p>Sur rendez-vous, du lundi au vendredi en fin de journée et le samedi matin. Le cabinet se trouve chez Briyam Coworking Médico, site Masaryk : <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Presidente+Masaryk+134%2C+Polanco%2C+Miguel+Hidalgo%2C+Ciudad+de+M%C3%A9xico" rel="noopener" target="_blank">Av. Presidente Masaryk 134, piso 4, Polanco, Miguel Hidalgo, CDMX</a></span>. Votre rendez-vous est confirmé une fois l’acompte de 50 % payé en ligne par carte (<span>$750</span> sur <span>$1,500</span>) ; le solde se paie au cabinet. Horaires détaillés et conditions d’annulation dans la <a href="/fr/#tarifas">section des tarifs</a>.</p>
 <h2>Ce que le médecin peut prendre en charge, et ce qu’il ne peut pas</h2>
@@ -838,7 +844,7 @@
 </div>
 <div class="faq-item">
 <h3>Que dois-je faire pour que le médecin puisse accéder à ma chambre ?</h3>
-<p>Réservez en ligne sur cal.com/drcjortegaarenas ou par WhatsApp au +52 595 109 3969 ; par WhatsApp, une heure d’arrivée estimée vous est confirmée. Prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Pour une première consultation, vous pouvez remplir les formulaires à l’avance pour gagner du temps.</p>
+<p>Réservez en ligne sur cal.com/drcjortegaarenas ou par WhatsApp au +52 595 109 3969 ; par WhatsApp, une heure d’arrivée estimée vous est confirmée. Prévenez la réception que vous attendez le médecin et indiquez votre numéro de chambre. Avant une première consultation, vous devez remplir les deux formulaires : consentement éclairé et questionnaire de santé.</p>
 </div>
 <div class="faq-item">
 <h3>Si je préfère aller au cabinet, où se trouve-t-il et quels sont ses horaires ?</h3>
