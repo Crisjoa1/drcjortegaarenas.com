@@ -4,7 +4,8 @@
   "revisado": "2026-10-19",
   "audiencia": {
     "es": "Viajeros en la Ciudad de México",
-    "en": "Travelers in Mexico City"
+    "en": "Travelers in Mexico City",
+    "fr": "Voyageurs à Mexico"
   },
   "es": {
     "path": "/certificados-y-viajeros/",
@@ -17,5 +18,11 @@
     "title": "Medical Certificates in Mexico City | Fit-to-Fly Assessment",
     "description": "Medical certificate in Mexico City from $500 MXN (digital, by video call). Fit-to-fly certificate, Traveler Clinical Summary in English, Traveler Package.",
     "crumb": "Travel medical certificates"
+  },
+  "fr": {
+    "path": "/fr/certificats-voyageurs/",
+    "title": "Certificat médical à Mexico et fit to fly | Dr Ortega-Arenas",
+    "description": "Certificat médical à Mexico dès $500 MXN (numérique, par appel vidéo). Fit to fly, Résumé clinique du voyageur rédigé en anglais et Forfait Voyageur.",
+    "crumb": "Certificats médicaux de voyage"
   }
 }
