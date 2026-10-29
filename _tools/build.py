@@ -611,8 +611,8 @@ def build_llms():
              '> Médico Cirujano (UNAM, cédula profesional 14848636), título homologado en España (2025-17271). '
              'Medicina general ambulatoria en español e inglés: visitas a hotel (24 h) y a domicilio, consultorio '
              '(Del Valle, Roma, Polanco, Santa Fe), teleconsulta, hidratación intravenosa con valoración previa, '
-             'certificados médicos y Resumen Clínico del Viajero. Honorarios publicados en MXN. No es un servicio '
-             'de urgencias. Contacto: WhatsApp +52 595 109 3969. Aviso de publicidad COFEPRIS 2515192002A00033.', '',
+             'certificados médicos y Resumen Clínico del Viajero. Honorarios publicados en MXN. Atiende a personas de 15 años o más; no atiende a '
+             'menores de 15 años ni a personas embarazadas. No es un servicio de urgencias. Contacto: WhatsApp +52 595 109 3969. Aviso de publicidad COFEPRIS 2515192002A00033.', '',
              '## Consultorios / Clinics (Briyam Coworking Médico, con cita / by appointment)', '',
              *[f'- {sede}: {sede_texto(sede)}' for sede in SEDES], '',
              '## Páginas / Pages', '']
