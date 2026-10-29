@@ -119,6 +119,10 @@
   }
   .lang-btn.active { background:var(--white); color:var(--black); border-color:var(--white); }
   .lang-btn:first-child { border-right:none; }
+  .lang-btn { display:inline-flex; align-items:center; gap:6px; }
+  .lang-flag { width:16px; height:12px; flex:none; filter:grayscale(0.65) brightness(0.9); opacity:0.75; transition:filter 0.2s, opacity 0.2s; }
+  .lang-btn.active .lang-flag, .lang-btn:hover .lang-flag, .lang-btn:focus-visible .lang-flag { filter:none; opacity:1; }
+  .lang-btn.active .lang-flag { box-shadow:0 0 0 1px rgba(0,0,0,0.18); }
 
 
   /* ── NAV ─────────────────────────────────── */
