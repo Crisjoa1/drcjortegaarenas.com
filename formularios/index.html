@@ -7,7 +7,7 @@
 <link rel="canonical" href="https://drcjortegaarenas.com/formularios/">
 <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="description" content="Formularios previos a tu consulta con el Dr. Cristóbal J. Ortega-Arenas: consentimiento informado y cuestionario de salud (español e inglés).">
+<meta name="description" content="Formularios previos a tu consulta con el Dr. Cristóbal J. Ortega-Arenas: consentimiento informado y cuestionario de salud (español, inglés y francés).">
 <link rel="preload" href="/assets/fonts/bodoni-moda-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
@@ -52,6 +52,10 @@
   .back:hover{color:var(--white);}
 
   @media(max-width:600px){ nav{padding:13px 18px;} .wrap{padding:50px 18px 70px;} }
+  .btn-fr{background:transparent;color:var(--silver);border:1px solid var(--border-hi);}
+  .btn-fr:hover{border-color:var(--accent);color:var(--white);}
+  .pie{margin-top:46px;padding-top:22px;border-top:1px solid var(--border);font-size:0.72rem;color:var(--muted);line-height:1.8;}
+  .pie strong{color:var(--silver);font-weight:500;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN7Z5TM576"></script>
@@ -63,63 +67,43 @@
 </script>
 </head>
 <body>
-
 <nav>
-  <a href="/" class="brand">Dr. Cristóbal J. Ortega-Arenas<span data-es="Médico e Investigador Clínico" data-en="Physician &amp; Clinical Researcher">Médico e Investigador Clínico</span></a>
+  <a href="/" class="brand">Dr. Cristóbal J. Ortega-Arenas<span data-es="Médico e Investigador Clínico" data-en="Physician &amp;amp; Clinical Researcher" data-fr="Médecin et chercheur clinique">Médico e Investigador Clínico</span></a>
   <div class="lang-toggle">
     <button type="button" class="lang-btn active" onclick="setLang('es')">ES</button>
     <button type="button" class="lang-btn" onclick="setLang('en')">EN</button>
+    <button type="button" class="lang-btn" onclick="setLang('fr')">FR</button>
   </div>
 </nav>
-
 <div class="wrap">
-  <p class="tag" data-es="Antes de tu consulta" data-en="Before your appointment">Antes de tu consulta</p>
-  <h1 data-es="Formularios para <em>Pacientes</em>" data-en="Patient <em>Forms</em>">Formularios para <em>Pacientes</em></h1>
-  <p class="intro" data-es="Por favor completa los siguientes formularios antes de tu cita. Elige la versión en tu idioma. Solo toma unos minutos y nos permite brindarte una atención segura y personalizada."
-     data-en="Please complete the following forms before your appointment. Choose the version in your language. It only takes a few minutes and allows us to provide safe, personalized care.">
-    Por favor completa los siguientes formularios antes de tu cita. Elige la versión en tu idioma. Solo toma unos minutos y nos permite brindarte una atención segura y personalizada.
-  </p>
-
-  <div class="note" style="margin-top:0;margin-bottom:42px;border-left-color:#5fce7d"
-       data-es="<strong>Solo para tu primera consulta.</strong> Si ya eres paciente y es una cita subsecuente (de seguimiento), no necesitas volver a llenar estos formularios."
-       data-en="<strong>First appointment only.</strong> If you're already a patient and this is a follow-up (subsequent) visit, you don't need to fill out these forms again.">
-    <strong>Solo para tu primera consulta.</strong> Si ya eres paciente y es una cita subsecuente (de seguimiento), no necesitas volver a llenar estos formularios.
-  </div>
-
+  <p class="tag" data-es="Antes de su consulta" data-en="Before your appointment" data-fr="Avant votre consultation">Antes de su consulta</p>
+  <h1 data-es="Formularios para &lt;em&gt;pacientes&lt;/em&gt;" data-en="Patient &lt;em&gt;forms&lt;/em&gt;" data-fr="Formulaires pour les &lt;em&gt;patients&lt;/em&gt;">Formularios para <em>pacientes</em></h1>
+  <p class="intro" data-es="Por favor, llene los siguientes formularios antes de su cita. Elija la versión en su idioma: español, inglés o francés. Solo toma unos minutos y nos permite brindarle una atención segura y personalizada." data-en="Please complete the following forms before your appointment. Choose the version in your language: Spanish, English or French. It only takes a few minutes and allows us to provide safe, personalized care." data-fr="Veuillez remplir les formulaires suivants avant votre rendez-vous. Choisissez la version dans votre langue : espagnol, anglais ou français. Cela ne prend que quelques minutes et nous permet de vous offrir des soins sûrs et personnalisés.">Por favor, llene los siguientes formularios antes de su cita. Elija la versión en su idioma: español, inglés o francés. Solo toma unos minutos y nos permite brindarle una atención segura y personalizada.</p>
+  <div class="note" style="margin-top:0;margin-bottom:42px;border-left-color:#5fce7d" data-es="&lt;strong&gt;Solo para su primera consulta.&lt;/strong&gt; Si ya es paciente y es una cita subsecuente (de seguimiento), no necesita volver a llenar estos formularios." data-en="&lt;strong&gt;First appointment only.&lt;/strong&gt; If you are already a patient and this is a follow-up visit, you do not need to fill in these forms again." data-fr="&lt;strong&gt;Uniquement pour votre première consultation.&lt;/strong&gt; Si vous êtes déjà patient et qu’il s’agit d’un suivi, inutile de remplir à nouveau ces formulaires."><strong>Solo para su primera consulta.</strong> Si ya es paciente y es una cita subsecuente (de seguimiento), no necesita volver a llenar estos formularios.</div>
   <div class="card">
     <p class="card-num">01</p>
-    <h2 data-es="Consentimiento informado e historia clínica digital" data-en="Informed consent and digital medical history">Consentimiento informado e historia clínica digital</h2>
-    <p data-es="Autorización para la atención médica. Es obligatorio antes de cualquier consulta o procedimiento. Incluye la participación del personal asistente del médico, cuando corresponde."
-       data-en="Authorization for medical care. Required before any consultation or procedure. It includes the participation of the doctor's assistant staff, when applicable.">
-      Autorización para la atención médica. Es obligatorio antes de cualquier consulta o procedimiento. Incluye la participación del personal asistente del médico, cuando corresponde.
-    </p>
+    <h2 data-es="Consentimiento informado e historia clínica digital" data-en="Informed consent and digital medical history" data-fr="Consentement éclairé et dossier médical numérique">Consentimiento informado e historia clínica digital</h2>
+    <p data-es="Autorización para la atención médica, obligatoria antes de cualquier consulta o procedimiento. Incluye la participación de la enfermera, que sigue las órdenes del médico (hidratación intravenosa), y de la asistente administrativa, que traduce al francés y puede firmar como testigo, cuando corresponde." data-en="Authorization for medical care, required before any visit or procedure. It includes the participation of the nurse, who follows the physician’s orders (IV hydration), and of the administrative assistant, who interprets into French and may sign as a witness, when applicable." data-fr="Autorisation des soins, obligatoire avant toute consultation ou tout acte. Elle couvre la participation de l’infirmière, qui suit les prescriptions du médecin (hydratation intraveineuse), et de l’assistante administrative, qui traduit en français et peut signer comme témoin, le cas échéant.">Autorización para la atención médica, obligatoria antes de cualquier consulta o procedimiento. Incluye la participación de la enfermera, que sigue las órdenes del médico (hidratación intravenosa), y de la asistente administrativa, que traduce al francés y puede firmar como testigo, cuando corresponde.</p>
     <div class="btn-row">
-      <a class="btn btn-es" href="https://forms.gle/8XM9NQMwDcrQcnse7" target="_blank" rel="noopener">Español</a>
-      <a class="btn btn-en" href="https://forms.gle/KhgDcaVNJnv3js1M7" target="_blank" rel="noopener">English</a>
+      <a class="btn btn-es" href="https://forms.gle/8XM9NQMwDcrQcnse7" target="_blank" rel="noopener" lang="es">Español</a>
+      <a class="btn btn-en" href="https://forms.gle/KhgDcaVNJnv3js1M7" target="_blank" rel="noopener" lang="en">English</a>
+      <a class="btn btn-fr" href="https://forms.gle/nr39kzJWXbeWM7zp7" target="_blank" rel="noopener" lang="fr">Français</a>
     </div>
   </div>
-
   <div class="card">
     <p class="card-num">02</p>
-    <h2 data-es="Cuestionario de salud mental y metabólico" data-en="Mental and metabolic health questionnaire">Cuestionario de salud mental y metabólico</h2>
-    <p data-es="Cuestionario de salud mental y metabólica. Aquí puedes indicar tus enfermedades y medicamentos, y adjuntar tus estudios (PDF o Word)."
-       data-en="Mental and metabolic health questionnaire. Here you can list your conditions and medications, and attach your medical records (PDF or Word).">
-      Cuestionario de salud mental y metabólica. Aquí puedes indicar tus enfermedades y medicamentos, y adjuntar tus estudios (PDF o Word).
-    </p>
+    <h2 data-es="Cuestionario de salud mental y metabólico" data-en="Mental and metabolic health questionnaire" data-fr="Questionnaire de santé mentale et métabolique">Cuestionario de salud mental y metabólico</h2>
+    <p data-es="Sus enfermedades, medicamentos y alergias, su peso y estatura (opcionales), y una detección breve de ansiedad y depresión (PHQ-4) y del riesgo de apnea del sueño (STOP-Bang). No es un diagnóstico: el médico revisa sus respuestas en la consulta. Puede adjuntar sus estudios previos (PDF, Word o foto)." data-en="Your conditions, medications and allergies, your weight and height (optional), and a brief screening for anxiety and depression (PHQ-4) and for sleep apnea risk (STOP-Bang). It is not a diagnosis: the doctor reviews your answers at your visit. You can attach your previous test results (PDF, Word or photo)." data-fr="Vos maladies, traitements et allergies, votre poids et votre taille (facultatifs), ainsi qu’un bref dépistage de l’anxiété et de la dépression (PHQ-4) et du risque d’apnée du sommeil (STOP-Bang). Ce n’est pas un diagnostic : le médecin examine vos réponses lors de la consultation. Vous pouvez joindre vos examens antérieurs (PDF, Word ou photo).">Sus enfermedades, medicamentos y alergias, su peso y estatura (opcionales), y una detección breve de ansiedad y depresión (PHQ-4) y del riesgo de apnea del sueño (STOP-Bang). No es un diagnóstico: el médico revisa sus respuestas en la consulta. Puede adjuntar sus estudios previos (PDF, Word o foto).</p>
     <div class="btn-row">
-      <a class="btn btn-es" href="https://docs.google.com/forms/d/e/1FAIpQLScQ5S2RviTjLptdHAdyLv4zGaHdMkPqfHskPw-ggRC-8O20Vg/viewform" target="_blank" rel="noopener">Español</a>
-      <a class="btn btn-en" href="https://docs.google.com/forms/d/e/1FAIpQLSdVsPNa5E015PfYp6rcc_9XhrhOa4kG5LgTn5eBa4jjp12Ouw/viewform" target="_blank" rel="noopener">English</a>
+      <a class="btn btn-es" href="https://docs.google.com/forms/d/e/1FAIpQLScQ5S2RviTjLptdHAdyLv4zGaHdMkPqfHskPw-ggRC-8O20Vg/viewform" target="_blank" rel="noopener" lang="es">Español</a>
+      <a class="btn btn-en" href="https://docs.google.com/forms/d/e/1FAIpQLSdVsPNa5E015PfYp6rcc_9XhrhOa4kG5LgTn5eBa4jjp12Ouw/viewform" target="_blank" rel="noopener" lang="en">English</a>
+      <a class="btn btn-fr" href="https://forms.gle/mByFAKuE5L6QLGkv6" target="_blank" rel="noopener" lang="fr">Français</a>
     </div>
   </div>
-
-  <div class="note" data-es="<strong>Tus estudios médicos:</strong> dentro del Cuestionario de Salud encontrarás un apartado para adjuntar archivos (PDF o Word) de tus análisis, recetas o estudios previos. Tu información es estrictamente confidencial. Consulta nuestro <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Aviso de Privacidad</a>."
-       data-en="<strong>Your medical records:</strong> inside the Health Questionnaire you'll find a section to attach files (PDF or Word) of your lab results, prescriptions, or prior studies. Your information is strictly confidential. See our <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Privacy Notice</a>.">
-    <strong>Tus estudios médicos:</strong> dentro del Cuestionario de Salud encontrarás un apartado para adjuntar archivos (PDF o Word) de tus análisis, recetas o estudios previos. Tu información es estrictamente confidencial. Consulta nuestro <a href="/aviso-de-privacidad/" style="color:var(--accent)">Aviso de Privacidad</a>.
-  </div>
-
-  <a class="back" href="/" data-es="← Volver al sitio" data-en="← Back to site">← Volver al sitio</a>
+  <div class="note" data-es="&lt;strong&gt;Sus estudios médicos:&lt;/strong&gt; en el cuestionario de salud encontrará un apartado para adjuntar sus análisis, recetas o estudios previos (PDF, Word o foto). Su información es estrictamente confidencial. Consulte nuestro &lt;a href=&#x27;/aviso-de-privacidad/&#x27; style=&#x27;color:var(--accent)&#x27;&gt;Aviso de Privacidad&lt;/a&gt;." data-en="&lt;strong&gt;Your medical records:&lt;/strong&gt; in the health questionnaire you will find a section to attach your lab results, prescriptions or previous studies (PDF, Word or photo). Your information is strictly confidential. See our &lt;a href=&#x27;/aviso-de-privacidad/&#x27; style=&#x27;color:var(--accent)&#x27;&gt;Privacy Notice&lt;/a&gt; (in Spanish)." data-fr="&lt;strong&gt;Vos documents médicaux :&lt;/strong&gt; dans le questionnaire de santé, une section vous permet de joindre vos analyses, ordonnances ou examens antérieurs (PDF, Word ou photo). Vos informations sont strictement confidentielles. Consultez notre &lt;a href=&#x27;/aviso-de-privacidad/&#x27; style=&#x27;color:var(--accent)&#x27;&gt;avis de confidentialité&lt;/a&gt; (en espagnol)."><strong>Sus estudios médicos:</strong> en el cuestionario de salud encontrará un apartado para adjuntar sus análisis, recetas o estudios previos (PDF, Word o foto). Su información es estrictamente confidencial. Consulte nuestro <a href='/aviso-de-privacidad/' style='color:var(--accent)'>Aviso de Privacidad</a>.</div>
+  <a class="back" href="/" data-es="← Volver al sitio" data-en="← Back to site" data-fr="← Retour au site">← Volver al sitio</a>
+  <p class="pie" data-es="&lt;strong&gt;No se atienden menores de 15 años ni personas embarazadas.&lt;/strong&gt; No es un servicio de urgencias: ante una emergencia, llame al 911.&lt;br&gt;Aviso de publicidad COFEPRIS: &lt;strong&gt;2515192002A00033&lt;/strong&gt; · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional 14848636 · Medicina General · CDMX, México" data-en="&lt;strong&gt;We do not see patients under 15 years of age or pregnant patients.&lt;/strong&gt; Not an emergency service: in an emergency, call 911.&lt;br&gt;COFEPRIS Advertising Notice: &lt;strong&gt;2515192002A00033&lt;/strong&gt; · Dr. Cristóbal J. Ortega-Arenas · Professional License (Cédula) 14848636 · General Medicine · Mexico City, Mexico" data-fr="&lt;strong&gt;Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.&lt;/strong&gt; Ce n’est pas un service d’urgences : en cas d’urgence, appelez le 911.&lt;br&gt;Avis de publicité COFEPRIS : &lt;strong&gt;2515192002A00033&lt;/strong&gt; · Dr Cristóbal J. Ortega-Arenas · Licence professionnelle (Cédula) 14848636 · Médecine générale · Mexico, Mexique"><strong>No se atienden menores de 15 años ni personas embarazadas.</strong> No es un servicio de urgencias: ante una emergencia, llame al 911.<br>Aviso de publicidad COFEPRIS: <strong>2515192002A00033</strong> · Dr. Cristóbal J. Ortega-Arenas · Cédula Profesional 14848636 · Medicina General · CDMX, México</p>
 </div>
-
 <script>
 function setLang(lang){
   document.documentElement.lang=lang;
@@ -130,12 +114,13 @@ function setLang(lang){
     if(t!==null) el.innerHTML=t;
   });
 }
-// Auto-detecta el idioma del paciente: preferencia guardada > idioma del navegador (inglés => EN, resto => ES)
+// Idioma: preferencia guardada > idioma del navegador (inglés => EN, francés => FR, resto => ES)
 (function(){
   var saved;
   try{ saved = localStorage.getItem('lang'); }catch { /* localStorage no disponible */ }
-  var lang = saved || (((navigator.language||navigator.userLanguage||'es').toLowerCase().indexOf('en')===0) ? 'en' : 'es');
-  if(lang==='en') setLang('en');
+  var nav = (navigator.language||navigator.userLanguage||'es').toLowerCase();
+  var lang = saved || (nav.indexOf('en')===0 ? 'en' : nav.indexOf('fr')===0 ? 'fr' : 'es');
+  if(lang!=='es') setLang(lang);
 })();
 </script>
 </body>
