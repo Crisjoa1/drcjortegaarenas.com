@@ -6,6 +6,7 @@
 <!--HEAD_META-->
 <link rel="preload" href="/assets/fonts/bodoni-moda-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/planear.css?v=20261102b">
 <style>
 /* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
 @font-face {
@@ -137,7 +138,7 @@
   .nav-logo-wrap { --dr-sz:0.58em; --nm-sz:1.05rem; --sb-sz:0.38rem; --dr-ln:28px; color:var(--white); text-decoration:none; }
   .nav-right { display:flex; align-items:center; gap:28px; }
   .nav-links { display:flex; gap:28px; }
-  .nav-links a { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--silver); text-decoration:none; transition:color 0.25s; }
+  .nav-links a { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--silver); text-decoration:none; transition:color 0.25s; white-space:nowrap; }
   .nav-links a:hover { color:var(--white); }
 
   /* ── HERO ────────────────────────────────── */
@@ -370,8 +371,10 @@
 
   /* ── Menú móvil ──────────────────────────── */
   .nav-menu-btn { display:none; background:transparent; border:1px solid var(--border); color:var(--offwhite); width:38px; height:32px; cursor:pointer; font-size:1rem; line-height:1; }
-  @media(max-width:900px){
+  @media(max-width:1440px){ .nav-links { gap:20px; } }
+  @media(max-width:1260px){
     .nav-menu-btn { display:block; }
+    .nav-links { display:none; }
     .nav-links.open { display:flex; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,10,10,0.98); border-bottom:1px solid var(--border); }
     .nav-links.open a { padding:16px 22px; border-top:1px solid var(--border); font-size:0.72rem; }
     .nav-right { gap:12px; }
@@ -635,6 +638,7 @@
     <div class="hero-ctas">
       <a href="https://wa.me/525951093969?text=Hola%20Dr.%20Ortega-Arenas%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." data-href-en="https://wa.me/525951093969?text=Hello%20Dr.%20Ortega-Arenas%2C%20I%27d%20like%20to%20book%20a%20visit." data-href-fr="https://wa.me/525951093969?text=Bonjour%20Dr%20Ortega-Arenas%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" rel="noopener" class="hero-cta" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp" data-fr="Écrire sur WhatsApp"></a>
       <a href="https://cal.com/drcjortegaarenas" target="_blank" rel="noopener" class="hero-cta ghost" data-es="Reservar en línea" data-en="Book online" data-fr="Réserver en ligne"></a>
+      <a href="#planear" class="hero-cta ghost pl-cta-planear" data-es="Calcule su costo" data-en="Estimate your cost" data-fr="Estimez le coût"></a>
     </div>
     <p class="hero2-note" data-es="Medicina general ambulatoria. &lt;strong&gt;No se atienden menores de 15 años ni personas embarazadas.&lt;/strong&gt; No es un servicio de urgencias: ante una emergencia, llame al 911." data-en="Outpatient general medicine. &lt;strong&gt;We do not see patients under 15 years of age or pregnant patients.&lt;/strong&gt; Not an emergency service: in an emergency, call 911." data-fr="Médecine générale ambulatoire. &lt;strong&gt;Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.&lt;/strong&gt; Ce n’est pas un service d’urgences : en cas d’urgence, appelez le 911."></p>
     <p class="hero2-note" data-es="Cédula profesional 14848636 · <a href='https://www.cedulaprofesional.sep.gob.mx/' target='_blank' rel='noopener' class='cred-verify'>verificar en SEP</a>" data-en="Professional license (Cédula) 14848636 · <a href='https://www.cedulaprofesional.sep.gob.mx/' target='_blank' rel='noopener' class='cred-verify'>verify (SEP)</a>" data-fr="Licence professionnelle (cédula) 14848636 · <a href='https://www.cedulaprofesional.sep.gob.mx/' target='_blank' rel='noopener' class='cred-verify'>vérifier (SEP)</a>"></p>
@@ -712,6 +716,20 @@
       <span class="svc-link" data-es="Ver documentos →" data-en="See documents →" data-fr="Voir les documents →"></span>
     </a>
   </div>
+</section>
+
+<!-- ══ PLANEE SU CONSULTA (assets/planear.js) ══ -->
+<section class="section" id="planear">
+  <div class="section-header reveal">
+    <p class="section-tag" data-es="Planee su consulta" data-en="Plan your visit" data-fr="Préparez votre consultation"></p>
+    <h2 class="section-title" data-es="Calcule su costo y <em>prepare su consulta</em>" data-en="Estimate your cost and <em>prepare your visit</em>" data-fr="Estimez le coût et <em>préparez votre consultation</em>"></h2>
+    <p class="section-subtitle" data-es="Tres herramientas rápidas con los honorarios publicados. No sustituyen la valoración médica y no guardan sus datos." data-en="Three quick tools based on the published fees. They do not replace a medical assessment and do not store your data." data-fr="Trois outils rapides basés sur les honoraires publiés. Ils ne remplacent pas l’évaluation médicale et ne conservent pas vos données."></p>
+  </div>
+  <div class="planear reveal" id="planear-app">
+    <noscript><p data-es="Active JavaScript para usar el cotizador, o consulte las <a href='#tarifas' class='text-link'>tarifas</a>." data-en="Enable JavaScript to use the estimator, or see the <a href='#tarifas' class='text-link'>fees</a>." data-fr="Activez JavaScript pour utiliser l’estimation, ou consultez les <a href='#tarifas' class='text-link'>honoraires</a>."></p></noscript>
+  </div>
+  <script type="application/json" id="planear-datos"><!--PLANEAR_DATOS--></script>
+  <script src="/assets/planear.js?v=20261102b" defer></script>
 </section>
 
 <!-- ══ CÓMO FUNCIONA ════════════════════════ -->
@@ -945,11 +963,11 @@
             <td class="price-col">$2,500</td><td class="price-col">$3,000</td>
           </tr>
           <tr>
-            <td data-es="Especial / Fuera de horario<br><span class='t-sub'>Noches 20:01–08:59 · Sáb 15:01+ · Dom</span>" data-en="After-Hours &amp; Special<br><span class='t-sub'>Nights 20:01–08:59 · Sat 15:01+ · Sun</span>" data-fr="Horaire spécial<br><span class='t-sub'>Nuits 20:01–08:59 · Sam 15:01+ · Dim</span>">Especial / Fuera de horario<br><span class="t-sub">Noches 20:01–08:59 · Sáb 15:01+ · Dom</span></td>
+            <td data-es="Especial / Fuera de horario<br><span class='t-sub'>Noches 20:01–08:59 · Sáb 15:01+ · Dom · Festivos tradicionales</span>" data-en="After-Hours &amp; Special<br><span class='t-sub'>Nights 20:01–08:59 · Sat 15:01+ · Sun · Traditional holidays</span>" data-fr="Horaire spécial<br><span class='t-sub'>Nuits 20:01–08:59 · Sam 15:01+ · Dim · Jours fériés traditionnels</span>">Especial / Fuera de horario<br><span class="t-sub">Noches 20:01–08:59 · Sáb 15:01+ · Dom · Festivos tradicionales</span></td>
             <td class="price-col">$4,000</td><td class="price-col">$4,500</td>
           </tr>
           <tr>
-            <td data-es="Festivos Oficiales &amp; Tradicionales<br><span class='t-sub'>24 horas</span>" data-en="Official &amp; Traditional Holidays<br><span class='t-sub'>24 Hours</span>" data-fr="Jours fériés officiels et traditionnels<br><span class='t-sub'>24 heures</span>">Festivos Oficiales &amp; Tradicionales<br><span class="t-sub">24 horas</span></td>
+            <td data-es="Festivos Oficiales<br><span class='t-sub'>24 horas</span>" data-en="Official Public Holidays<br><span class='t-sub'>24 Hours</span>" data-fr="Jours fériés officiels<br><span class='t-sub'>24 heures</span>">Festivos Oficiales<br><span class="t-sub">24 horas</span></td>
             <td class="price-col">$5,500</td><td class="price-col">$6,000</td>
           </tr>
         </tbody>
@@ -1025,6 +1043,7 @@
           <tr><td>Santa Fe</td><td class="price-col" style="font-size:0.85rem">$2,100</td><td class="price-col" style="font-size:0.85rem">$4,000</td><td class="price-col" style="font-size:0.85rem">$5,000</td></tr>
         </tbody>
       </table>
+      <p class="price-note" data-es="<strong>Horarios</strong> (iguales a la visita a hotel): ordinario, lunes a viernes de 09:00 a 20:00 y sábado de 09:00 a 15:00; especial, noches de 20:01 a 08:59, sábado desde las 15:01, domingo y festivos tradicionales; festivo, festivos oficiales las 24 horas." data-en="<strong>Hours</strong> (same as hotel visits): standard, Monday to Friday 9 am–8 pm and Saturday 9 am–3 pm; after-hours, nights 8:01 pm–8:59 am, Saturdays from 3:01 pm, Sundays and traditional holidays; holiday, official public holidays, 24 hours." data-fr="<strong>Horaires</strong> (identiques à la visite à l’hôtel) : standard, du lundi au vendredi de 9 h à 20 h et le samedi de 9 h à 15 h ; spécial, la nuit de 20 h 01 à 8 h 59, le samedi à partir de 15 h 01, le dimanche et les jours fériés traditionnels ; jour férié, jours fériés officiels, 24 heures."></p>
       <p class="price-note" data-es="*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario." data-en="*$900 MXN rate applies only to follow-up visits in the Local Zone during standard hours." data-fr="*Le tarif de $900 MXN s’applique uniquement aux consultations de suivi dans la Zone locale pendant les horaires standard.">*Tarifa $900 MXN solo para seguimiento en Zona Local en horario ordinario.</p>
       <p class="price-note" data-es="<strong>Anticipo por zona</strong> (50 % de la tarifa ordinaria, por transferencia; se solicita por WhatsApp): Del Valle y Texcoco (<span data-tarifa='anticipo-domicilio:Del Valle'></span>) · Pedregal, Coyoacán, Roma y Condesa (<span data-tarifa='anticipo-domicilio:Condesa'></span>) · Reforma y Polanco (<span data-tarifa='anticipo-domicilio:Polanco'></span>) · Santa Fe (<span data-tarifa='anticipo-domicilio:Santa Fe'></span>). El resto, y en horario especial o festivo la diferencia, se paga al médico en la visita." data-en="<strong>Deposit by zone</strong> (50% of the standard fee, by bank transfer; request via WhatsApp): Del Valle &amp; Texcoco (<span data-tarifa='anticipo-domicilio:Del Valle'></span>) · Pedregal, Coyoacán, Roma &amp; Condesa (<span data-tarifa='anticipo-domicilio:Condesa'></span>) · Reforma &amp; Polanco (<span data-tarifa='anticipo-domicilio:Polanco'></span>) · Santa Fe (<span data-tarifa='anticipo-domicilio:Santa Fe'></span>). The rest, and the difference for after-hours or holiday visits, is paid to the doctor at the visit." data-fr="<strong>Acompte par zone</strong> (50 % des honoraires standard, par virement bancaire ; à demander par WhatsApp) : Del Valle et Texcoco (<span data-tarifa='anticipo-domicilio:Del Valle'></span>) · Pedregal, Coyoacán, Roma et Condesa (<span data-tarifa='anticipo-domicilio:Condesa'></span>) · Reforma et Polanco (<span data-tarifa='anticipo-domicilio:Polanco'></span>) · Santa Fe (<span data-tarifa='anticipo-domicilio:Santa Fe'></span>). Le reste, ainsi que la différence pour les visites hors horaires ou les jours fériés, est réglé au médecin lors de la visite."></p>
     </div>

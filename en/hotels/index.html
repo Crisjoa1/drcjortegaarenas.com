@@ -163,7 +163,7 @@
   .nav-logo-wrap { --dr-sz:0.58em; --nm-sz:1.05rem; --sb-sz:0.38rem; --dr-ln:28px; color:var(--white); text-decoration:none; }
   .nav-right { display:flex; align-items:center; gap:28px; }
   .nav-links { display:flex; gap:28px; }
-  .nav-links a { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--silver); text-decoration:none; transition:color 0.25s; }
+  .nav-links a { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--silver); text-decoration:none; transition:color 0.25s; white-space:nowrap; }
   .nav-links a:hover { color:var(--white); }
 
   /* ── HERO ────────────────────────────────── */
@@ -396,8 +396,10 @@
 
   /* ── Menú móvil ──────────────────────────── */
   .nav-menu-btn { display:none; background:transparent; border:1px solid var(--border); color:var(--offwhite); width:38px; height:32px; cursor:pointer; font-size:1rem; line-height:1; }
-  @media(max-width:900px){
+  @media(max-width:1440px){ .nav-links { gap:20px; } }
+  @media(max-width:1260px){
     .nav-menu-btn { display:block; }
+    .nav-links { display:none; }
     .nav-links.open { display:flex; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,10,10,0.98); border-bottom:1px solid var(--border); }
     .nav-links.open a { padding:16px 22px; border-top:1px solid var(--border); font-size:0.72rem; }
     .nav-right { gap:12px; }
@@ -1053,6 +1055,7 @@
 <a href="/en/iv-hydration-mexico-city/">IV hydration</a>
 <a href="/en/travel-medical-certificates/">Travelers</a>
 <a href="/en/guides/">Guides</a>
+<a href="/en/#planear">Quote</a>
 <a href="/en/#tarifas">Fees</a>
 <a href="/en/#contacto">Contact</a>
 </div>
@@ -1129,11 +1132,11 @@
 <td class="price-col">$2,500</td><td class="price-col">$3,000</td>
 </tr>
 <tr>
-<td>After-Hours &amp; Special<br/><span class="t-sub">Nights 20:01–08:59 · Sat 15:01+ · Sun</span></td>
+<td>After-Hours &amp; Special<br/><span class="t-sub">Nights 20:01–08:59 · Sat 15:01+ · Sun · Traditional holidays</span></td>
 <td class="price-col">$4,000</td><td class="price-col">$4,500</td>
 </tr>
 <tr>
-<td>Official &amp; Traditional Holidays<br/><span class="t-sub">24 Hours</span></td>
+<td>Official Public Holidays<br/><span class="t-sub">24 Hours</span></td>
 <td class="price-col">$5,500</td><td class="price-col">$6,000</td>
 </tr>
 </tbody>

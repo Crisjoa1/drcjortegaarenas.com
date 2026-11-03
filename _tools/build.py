@@ -446,6 +446,69 @@ def tarifas():
     return t
 
 
+MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco',
+               'Santa Fe': 'consultorio-santa-fe', 'teleconsulta': 'teleconsulta'}
+
+
+def planear_datos():
+    """Precios y calendario de plantilla.html para el cotizador de la portada (assets/planear.js).
+    Nada se escribe a mano: si cambia una tabla, cambia el cotizador."""
+    soup = BeautifulSoup(main_template(), 'html.parser')
+    num = lambda txt: int(re.search(r'\$([\d,]+)', txt).group(1).replace(',', ''))
+    t = tarifas()
+    zonas = {k.split(':', 1)[1]: v for k, v in t.items() if k.startswith('zona:')}
+    hotel = {'zonas': zonas}
+    for area, letra in zonas.items():
+        hotel[letra] = [num(t[f'hotel:{area}:{i}']) for i in range(3)]
+    domicilio = {}
+    for k in t:
+        if k.startswith('domicilio:') and k.endswith(':0'):
+            area = k.split(':')[1]
+            domicilio[area] = {'precios': [num(t[f'domicilio:{area}:{i}']) for i in range(3)]}
+            if f'seguimiento:{area}' in t:
+                domicilio[area]['seguimiento'] = num(t[f'seguimiento:{area}'])
+    consultorio = {}
+    for k in t:
+        if k.startswith('consultorio:') and k != 'consultorio:Días Festivos':
+            sede = k.split(':', 1)[1]
+            consultorio[sede] = {'precio': num(t[k])}
+            if f'subsecuente:{sede}' in t:
+                consultorio[sede]['subsecuente'] = num(t[f'subsecuente:{sede}'])
+    tele = next(c for c in soup.select('.service-card') if c.select_one('h3') and c.select_one('h3').get('data-es') == 'Teleconsulta')
+    teleconsulta = [num(td.get_text()) for td in tele.select('tbody .price-col')]
+    iv = num(soup.select_one('.iv-formula-eq')['data-es'])
+    enfermeria = [num(x.get_text()) for x in soup.select('.iv-assist-item .fee-val')]
+    asistente = [num(t[k]) for k in ('asistente-frances', 'asistente-frances-especial', 'asistente-frances-festivo')]
+
+    anio_base = int(re.search(r'(\d{4})', soup.select_one('.schedule-card h3')['data-es']).group(1))
+
+    def fechas(card):
+        anio, out, previo = anio_base, [], 0
+        for li in card.select('.schedule-list li'):
+            spans = li.find_all('span', recursive=False)
+            m = re.match(r'(\w{3}) (\d+)(?:–(\d+))?', spans[0]['data-es'])
+            mes = MESES_ES.index(m.group(1)) + 1
+            if mes < previo:
+                anio += 1
+            previo = mes
+            desde = re.search(r'(\d{1,2}:\d{2})', spans[1].get('data-es', '')) if len(spans) > 1 else None
+            for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1):
+                out.append({'fecha': f'{anio}-{mes:02d}-{dia:02d}', 'desde': desde.group(1) if desde else '00:00'})
+        return out
+    tarjetas = {k: soup.select_one(f'.schedule-card:has(.schedule-type.{k})') for k in ('official', 'traditional', 'unavail')}
+    return json.dumps({
+        'hotel': hotel, 'domicilio': domicilio, 'consultorio': consultorio,
+        'consultorioFestivo': num(t['consultorio:Días Festivos']),
+        'teleconsulta': teleconsulta, 'iv': iv, 'enfermeria': enfermeria, 'asistente': asistente,
+        'oficiales': [f['fecha'] for f in fechas(tarjetas['official'])],
+        'tradicionales': [f['fecha'] for f in fechas(tarjetas['traditional'])],
+        'sinServicio': fechas(tarjetas['unavail']),
+        'cal': {k: f'https://cal.com/drcjortegaarenas/{v}' for k, v in CAL_EVENTOS.items()},
+        'whatsapp': '525951093969',
+    }, ensure_ascii=False, separators=(',', ':'))
+
+
 def render(page, lang):
     meta = page['meta']
     src = (ROOT / '_tools' / page['template']).read_text(encoding='utf-8')
@@ -460,6 +523,7 @@ def render(page, lang):
         '<!--BREADCRUMB_JSONLD-->\n': lambda: breadcrumb(meta, lang),
         '<!--BASE_CSS-->\n': base_css,
         '<!--HOTEL_PRICES-->\n': hotel_prices_html,
+        '<!--PLANEAR_DATOS-->': planear_datos,
     }
     for mark, fill in fills.items():
         if mark in src:
@@ -493,7 +557,7 @@ def render(page, lang):
             for l in ('en', 'fr'):
                 if el.has_attr(f'data-{kind}-{l}'):
                     del el[f'data-{kind}-{l}']
-    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio', 'data-tarifa-frances', 'data-tarifa-frances-especial'):
+    for attr in ('data-tarifas-hotel', 'data-tarifas-consultorio', 'data-tarifas-domicilio', 'data-tarifa-frances', 'data-tarifa-frances-especial', 'data-tarifa-frances-festivo'):
         for el in soup.select(f'[{attr}]'):
             del el[attr]
     for el in soup.select('[data-sede]'):
