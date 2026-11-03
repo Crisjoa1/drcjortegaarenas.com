@@ -448,7 +448,7 @@ def tarifas():
 
 MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
 CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco',
-               'Santa Fe': 'consultorio-santa-fe', 'teleconsulta': 'teleconsulta'}
+               'Santa Fe': 'consultorio-santa-fe'}  # teleconsulta, hotel y domicilio: solo por WhatsApp
 
 
 def planear_datos():

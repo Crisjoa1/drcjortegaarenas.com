@@ -36,10 +36,10 @@
         consultorioFestivo: 'Los días festivos se coordinan por WhatsApp; no se reservan en línea.',
         hotel: 'Sin anticipo: se paga directamente al médico, en pesos (tarjeta, transferencia o efectivo).',
         domicilio: 'Se solicita por WhatsApp y se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona ({a}); el resto se paga al médico en la visita.',
-        teleconsulta: 'Pago completo en línea al reservar.', teleFestivo: 'En días festivos, la teleconsulta se coordina por WhatsApp.'
+        teleconsulta: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada y ahí se le indica cómo pagar.', teleFestivo: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada.'
       },
       aviso: 'Estimación con los honorarios publicados. El médico confirma el total al coordinar su cita. No incluye procedimientos, medicamentos ni documentos. No se atienden menores de 15 años ni personas embarazadas.',
-      wa: 'Enviar por WhatsApp', reservar: 'Reservar en línea', reiniciar: 'Empezar de nuevo',
+      wa: 'Enviar por WhatsApp', reservar: 'Reservar consultorio', reiniciar: 'Empezar de nuevo',
       waHola: 'Hola Dr. Ortega-Arenas, quiero solicitar', waTotal: 'Total estimado en la web', waCierre: '¿Tiene disponibilidad?',
       g: {
         alarmaT: '¿Tiene alguno de estos signos ahora?', alarmaS: 'Marque los que apliquen. Esta lista no es completa: si cree que es una emergencia, llame al 911.',
@@ -55,7 +55,7 @@
           hotel: 'El médico va a su habitación, según disponibilidad. Escriba por WhatsApp para coordinar la hora de llegada.',
           domicilio: 'El médico va a su casa. Se solicita por WhatsApp.',
           consultorio: 'Consulta en Del Valle, Roma, Polanco o Santa Fe, con cita en línea.',
-          teleconsulta: 'Por videollamada, sin traslados. Si en la llamada se necesita una exploración física, el médico se lo indicará.',
+          teleconsulta: 'Por videollamada, sin traslados; se agenda por WhatsApp. Si en la llamada se necesita una exploración física, el médico se lo indicará.',
           lejos: 'Si no puede trasladarse a la Ciudad de México, la opción es la teleconsulta. Si necesita una exploración física, acuda con un médico local.'
         },
         frances: 'Si quiere la consulta enteramente en francés, avise por WhatsApp para confirmar a la asistente de traducción.'
@@ -66,7 +66,7 @@
         consultorio: [['res', 'Reservar en línea y pagar el anticipo del 50 %'], ['wa', 'Enviar un WhatsApp después de reservar']],
         hotel: [['wa', 'Escribir por WhatsApp para coordinar la visita'], ['recep', 'Avisar a la recepción que espera al médico y dar su número de habitación'], ['pago', 'Tener lista la forma de pago en pesos: tarjeta, transferencia o efectivo']],
         domicilio: [['wa', 'Solicitar la visita por WhatsApp'], ['ant', 'Hacer la transferencia del anticipo (50 % de la tarifa ordinaria de su zona)'], ['dir', 'Tener lista su dirección completa y una referencia']],
-        teleconsulta: [['res', 'Reservar y pagar en línea'], ['app', 'Tener lista la app de la videollamada (Google Meet, WhatsApp o FaceTime) y buena conexión']],
+        teleconsulta: [['wa', 'Agendar la teleconsulta por WhatsApp'], ['pago', 'Hacer el pago antes de la videollamada (por WhatsApp se le indica cómo)'], ['app', 'Tener lista la app de la videollamada (Google Meet, WhatsApp o FaceTime) y buena conexión']],
         fr: ['fr', 'Avisar por WhatsApp con anticipación para confirmar a la asistente de traducción'], frNo: 'La asistente de traducción no está disponible en teleconsulta ni a domicilio.'
       }
     },
@@ -94,10 +94,10 @@
         consultorioFestivo: 'Holidays are arranged on WhatsApp; they cannot be booked online.',
         hotel: 'No deposit: you pay the physician directly, in Mexican pesos (card, transfer or cash).',
         domicilio: 'Requested on WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your area ({a}); the rest is paid to the physician at the visit.',
-        teleconsulta: 'Paid in full online when booking.', teleFestivo: 'On holidays, telemedicine is arranged on WhatsApp.'
+        teleconsulta: 'Booked on WhatsApp; full payment is made before the video call, and we tell you how to pay there.', teleFestivo: 'Booked on WhatsApp; full payment is made before the video call.'
       },
       aviso: 'Estimate based on the published fees. The physician confirms the total when arranging your visit. Procedures, medications and documents are not included. We do not see patients under 15 years of age or pregnant patients.',
-      wa: 'Send on WhatsApp', reservar: 'Book online', reiniciar: 'Start over',
+      wa: 'Send on WhatsApp', reservar: 'Book a clinic visit', reiniciar: 'Start over',
       waHola: 'Hello Dr. Ortega-Arenas, I would like to request', waTotal: 'Estimated total on the website', waCierre: 'Are you available?',
       g: {
         alarmaT: 'Do you have any of these signs right now?', alarmaS: 'Tick any that apply. This list is not complete: if you think it is an emergency, call 911.',
@@ -113,7 +113,7 @@
           hotel: 'The physician comes to your room, subject to availability. Send a WhatsApp message to arrange the arrival time.',
           domicilio: 'The physician comes to your home. Requested on WhatsApp.',
           consultorio: 'A clinic visit in Del Valle, Roma, Polanco or Santa Fe, booked online.',
-          teleconsulta: 'By video call, no travel needed. If a physical examination is needed during the call, the physician will tell you.',
+          teleconsulta: 'By video call, no travel needed; booked on WhatsApp. If a physical examination is needed during the call, the physician will tell you.',
           lejos: 'If you cannot travel to Mexico City, the option is telemedicine. If you need a physical examination, please see a local doctor.'
         },
         frances: 'If you want the visit entirely in French, let us know on WhatsApp so we can confirm the translation assistant.'
@@ -124,7 +124,7 @@
         consultorio: [['res', 'Book online and pay the 50% deposit'], ['wa', 'Send a WhatsApp message after booking']],
         hotel: [['wa', 'Send a WhatsApp message to arrange the visit'], ['recep', 'Tell the front desk you are expecting the physician and give your room number'], ['pago', 'Have your payment ready in Mexican pesos: card, transfer or cash']],
         domicilio: [['wa', 'Request the visit on WhatsApp'], ['ant', 'Make the deposit transfer (50% of the standard fee for your area)'], ['dir', 'Have your full address and a landmark ready']],
-        teleconsulta: [['res', 'Book and pay online'], ['app', 'Have the video call app ready (Google Meet, WhatsApp or FaceTime) and a good connection']],
+        teleconsulta: [['wa', 'Book the video call on WhatsApp'], ['pago', 'Pay before the video call (we tell you how on WhatsApp)'], ['app', 'Have the video call app ready (Google Meet, WhatsApp or FaceTime) and a good connection']],
         fr: ['fr', 'Let us know on WhatsApp in advance so we can confirm the translation assistant'], frNo: 'The translation assistant is not available for telemedicine or house calls.'
       }
     },
@@ -152,10 +152,10 @@
         consultorioFestivo: 'Les jours fériés se planifient par WhatsApp ; ils ne se réservent pas en ligne.',
         hotel: 'Sans acompte : vous payez directement le médecin, en pesos (carte, virement ou espèces).',
         domicilio: 'Se demande par WhatsApp et se confirme par un virement de 50 % du tarif ordinaire de votre quartier ({a}) ; le reste se règle au médecin lors de la visite.',
-        teleconsulta: 'Paiement complet en ligne lors de la réservation.', teleFestivo: 'Les jours fériés, la téléconsultation se planifie par WhatsApp.'
+        teleconsulta: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo et nous vous indiquons comment payer.', teleFestivo: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo.'
       },
       aviso: 'Estimation selon les honoraires publiés. Le médecin confirme le total en planifiant votre rendez-vous. Les actes, les médicaments et les documents ne sont pas inclus. Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.',
-      wa: 'Envoyer par WhatsApp', reservar: 'Réserver en ligne', reiniciar: 'Recommencer',
+      wa: 'Envoyer par WhatsApp', reservar: 'Réserver au cabinet', reiniciar: 'Recommencer',
       waHola: 'Bonjour Dr Ortega-Arenas, je souhaite demander', waTotal: 'Total estimé sur le site', waCierre: 'Avez-vous des disponibilités ?',
       g: {
         alarmaT: 'Avez-vous l’un de ces signes en ce moment ?', alarmaS: 'Cochez ce qui s’applique. Cette liste n’est pas exhaustive : si vous pensez qu’il s’agit d’une urgence, appelez le 911.',
@@ -171,7 +171,7 @@
           hotel: 'Le médecin vient dans votre chambre, selon disponibilité. Écrivez par WhatsApp pour convenir de l’heure d’arrivée.',
           domicilio: 'Le médecin vient chez vous. Se demande par WhatsApp.',
           consultorio: 'Consultation à Del Valle, Roma, Polanco ou Santa Fe, sur rendez-vous en ligne.',
-          teleconsulta: 'Par appel vidéo, sans déplacement. Si un examen physique est nécessaire pendant l’appel, le médecin vous le dira.',
+          teleconsulta: 'Par appel vidéo, sans déplacement ; se réserve par WhatsApp. Si un examen physique est nécessaire pendant l’appel, le médecin vous le dira.',
           lejos: 'Si vous ne pouvez pas vous rendre à Mexico, l’option est la téléconsultation. Si vous avez besoin d’un examen physique, consultez un médecin sur place.'
         },
         frances: 'Pour une consultation entièrement en français, prévenez-nous par WhatsApp pour confirmer l’assistante de traduction.'
@@ -182,7 +182,7 @@
         consultorio: [['res', 'Réserver en ligne et payer l’acompte de 50 %'], ['wa', 'Envoyer un message WhatsApp après la réservation']],
         hotel: [['wa', 'Écrire par WhatsApp pour organiser la visite'], ['recep', 'Prévenir la réception que vous attendez le médecin et donner votre numéro de chambre'], ['pago', 'Prévoir le paiement en pesos : carte, virement ou espèces']],
         domicilio: [['wa', 'Demander la visite par WhatsApp'], ['ant', 'Faire le virement de l’acompte (50 % du tarif ordinaire de votre quartier)'], ['dir', 'Préparer votre adresse complète et un point de repère']],
-        teleconsulta: [['res', 'Réserver et payer en ligne'], ['app', 'Préparer l’application d’appel vidéo (Google Meet, WhatsApp ou FaceTime) et une bonne connexion']],
+        teleconsulta: [['wa', 'Réserver la téléconsultation par WhatsApp'], ['pago', 'Payer avant l’appel vidéo (nous vous indiquons comment par WhatsApp)'], ['app', 'Préparer l’application d’appel vidéo (Google Meet, WhatsApp ou FaceTime) et une bonne connexion']],
         fr: ['fr', 'Prévenir à l’avance par WhatsApp pour confirmer l’assistante de traduction'], frNo: 'L’assistante de traduction n’est pas disponible en téléconsultation ni à domicile.'
       }
     }
@@ -268,7 +268,7 @@
       r.notas.push(L.pago.domicilio.replace('{a}', mxn(area.precios[0] / 2)));
     } else if (s.svc === 'teleconsulta') {
       if (hz.n === 2) { add(L.linea.tele, D.teleconsulta[1]); r.notas.push(L.pago.teleFestivo); }
-      else { add(L.linea.tele, D.teleconsulta[0]); r.notas.push(L.pago.teleconsulta); r.reservar = D.cal.teleconsulta; }
+      else { add(L.linea.tele, D.teleconsulta[0]); r.notas.push(L.pago.teleconsulta); }
     }
     if ((s.svc === 'hotel' || s.svc === 'domicilio') && s.iv) {
       r.base = r.total + (s.junto ? D.enfermeria[hz.n] : 0);
