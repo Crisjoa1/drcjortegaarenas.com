@@ -81,7 +81,7 @@ META_HOTELES = {
         'path': '/hoteles/',
         'html_lang': 'es-MX',
         'title': 'Médico a hotel en CDMX: información para hoteles y concierges',
-        'description': 'Visita médica bilingüe para huéspedes en CDMX: cómo solicitarla por WhatsApp o en línea, '
+        'description': 'Visita médica bilingüe para huéspedes en CDMX: cómo solicitarla por WhatsApp, '
                        'llegada estimada por zona, tarifas y documentos para el seguro.',
         'og_title': 'Para hoteles y concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
@@ -91,8 +91,8 @@ META_HOTELES = {
         'path': '/en/hotels/',
         'html_lang': 'en',
         'title': 'Hotel Doctor in Mexico City: Info for Hotels & Concierges',
-        'description': 'Bilingual doctor visits for hotel guests in Mexico City: how to request one by WhatsApp '
-                       'or online, arrival time by area, fees and travel insurance documents.',
+        'description': 'Bilingual doctor visits for hotel guests in Mexico City: how to request one by WhatsApp, '
+                       'arrival time by area, fees and travel insurance documents.',
         'og_title': 'For hotels & concierges — Dr. Cristóbal J. Ortega-Arenas',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
         'crumb': 'For hotels & concierges', 'home': 'Home',
@@ -101,7 +101,7 @@ META_HOTELES = {
         'path': '/fr/hotels/',
         'html_lang': 'fr',
         'title': 'Médecin à l’hôtel à Mexico : infos pour hôtels et concierges',
-        'description': 'Visite médicale pour vos clients à Mexico : demande par WhatsApp ou en ligne, arrivée '
+        'description': 'Visite médicale pour vos clients à Mexico : demande par WhatsApp, arrivée '
                        'estimée selon le quartier, tarifs et documents pour l’assurance.',
         'og_title': 'Pour hôtels et concierges — Dr Cristóbal J. Ortega-Arenas',
         'og_locale': 'fr_FR', 'og_alt': 'es_MX',
