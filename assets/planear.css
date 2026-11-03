@@ -61,6 +61,10 @@
 .pl-total-l { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--silver); }
 .pl-total-n { font-family:'Bodoni Moda',serif; font-size:clamp(2rem,4vw,2.6rem); color:var(--white); line-height:1.15; font-variant-numeric:tabular-nums; }
 .pl-sub { font-size:0.74rem; color:var(--silver); margin-bottom:6px; }
+.pl-pagos { margin:12px 0 4px; border-top:1px solid var(--border-hi); }
+.pl-pagos div { border-bottom:1px dashed var(--border); }
+.pl-pagos dt { color:var(--offwhite); }
+.pl-pagos dd { color:var(--white); font-weight:500; }
 .pl-notes { list-style:none; margin:14px 0 18px; padding:0; }
 .pl-notes li { font-size:0.72rem; color:var(--muted); line-height:1.7; padding-left:14px; position:relative; margin-bottom:6px; }
 .pl-notes li::before { content:'—'; position:absolute; left:0; color:var(--border-hi); }

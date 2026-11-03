@@ -21,7 +21,7 @@
       seguimiento: 'Es una consulta de seguimiento', fecha: 'Fecha', hora: 'Hora',
       iv: 'Hidratación intravenosa, si el médico la indica', ivNota: 'Solo adultos (18 años o más). El médico valora primero; si no está indicada, no se cobran los {iv}; la enfermería tampoco, salvo que haya pedido que la enfermera llegue junto con el médico.',
       junto: 'Prefiero que la enfermera llegue junto con el médico', juntoNota: 'Así evita esperar alrededor de 1 h 30 min, pero el honorario de enfermería se cobra aunque la hidratación no esté indicada.',
-      asistente: 'Asistente de traducción al francés', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
+      asistente: 'Asistente de traducción al francés', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no forma parte del anticipo: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
       cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 17:00 a 20:00 y sábado de 11:00 a 15:00.',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
@@ -31,11 +31,12 @@
       motivo: { oficial: 'festivo oficial', tradicional: 'festivo tradicional', domingo: 'domingo', sabado: 'sábado después de las 15:00', noche: 'noche (20:01 a 08:59)' },
       linea: { consulta: 'Consulta', subsecuente: 'Consulta subsecuente', festivo: 'Consulta en día festivo', visita: 'Visita', seguimiento: 'Seguimiento a domicilio', iv: 'Hidratación intravenosa (si está indicada)', enf: 'Honorario de enfermería', asis: 'Asistente de traducción al francés', tele: 'Teleconsulta' },
       total: 'Total estimado', sinIV: 'Si la hidratación no está indicada',
+      cuando: { consultorio: ['Al reservar en línea (anticipo, 50 % de la consulta)', 'En el consultorio, el día de la cita'], domicilio: ['Anticipo por transferencia (50 % de la tarifa ordinaria)', 'Al médico, en la visita'], hotel: [null, 'Al médico, en la visita (sin anticipo)'], teleconsulta: ['Antes de la videollamada', null] },
       pago: {
-        consultorio: 'Al reservar en línea paga un anticipo del 50 % ({a}); el resto, en el consultorio. Después de reservar, envíe un WhatsApp.',
+        consultorio: 'El anticipo del 50 % ({a}) es solo de la consulta y se paga al reservar en línea. El resto de la consulta y, si la eligió, la asistente de traducción se pagan directamente en el consultorio. Después de reservar, envíe un WhatsApp.',
         consultorioFestivo: 'Los días festivos se coordinan por WhatsApp; no se reservan en línea.',
         hotel: 'Sin anticipo: se paga directamente al médico, en pesos (tarjeta, transferencia o efectivo).',
-        domicilio: 'Se solicita por WhatsApp y se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona ({a}); el resto se paga al médico en la visita.',
+        domicilio: 'Se solicita por WhatsApp y se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona ({a}); el resto, incluidas la hidratación intravenosa y la enfermería si se aplican, se paga al médico en la visita.',
         teleconsulta: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada y ahí se le indica cómo pagar.', teleFestivo: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada.'
       },
       aviso: 'Estimación con los honorarios publicados. El médico confirma el total al coordinar su cita. No incluye procedimientos, medicamentos ni documentos. No se atienden menores de 15 años ni personas embarazadas.',
@@ -79,7 +80,7 @@
       seguimiento: 'This is a follow-up visit', fecha: 'Date', hora: 'Time',
       iv: 'IV hydration, if the physician prescribes it', ivNota: 'Adults only (18 and older). The physician assesses first; if it is not indicated, the {iv} fee is not charged, and neither is the nursing fee unless you asked for the nurse to arrive with the physician.',
       junto: 'I prefer the nurse to arrive together with the physician', juntoNota: 'This avoids waiting about 1 h 30 min, but the nursing fee is charged even if IV hydration is not indicated.',
-      asistente: 'French translation assistant', asistenteNota: 'Administrative and translation support only; she does not perform any medical act. Same fee as the nurse. Let us know in advance on WhatsApp so we can confirm her availability.',
+      asistente: 'French translation assistant', asistenteNota: 'Administrative and translation support only; she does not perform any medical act. Same fee as the nurse; it is not part of the deposit and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
       cerrado: 'The clinic is closed that day. Hours: Monday to Friday 5–8 pm and Saturday 11 am–3 pm.',
       sinServicio: 'No service on that date and time. Please choose another date.', fueraAnio: 'For later dates, please ask on WhatsApp.',
@@ -89,11 +90,12 @@
       motivo: { oficial: 'official public holiday', tradicional: 'traditional holiday', domingo: 'Sunday', sabado: 'Saturday after 3:00 pm', noche: 'night (8:01 pm–8:59 am)' },
       linea: { consulta: 'Visit', subsecuente: 'Follow-up visit', festivo: 'Holiday visit', visita: 'Visit', seguimiento: 'Follow-up house call', iv: 'IV hydration (if indicated)', enf: 'Nursing fee', asis: 'French translation assistant', tele: 'Telemedicine' },
       total: 'Estimated total', sinIV: 'If IV hydration is not indicated',
+      cuando: { consultorio: ['When booking online (deposit, 50% of the consultation)', 'At the clinic, on the day of the visit'], domicilio: ['Deposit by bank transfer (50% of the standard fee)', 'To the physician, at the visit'], hotel: [null, 'To the physician, at the visit (no deposit)'], teleconsulta: ['Before the video call', null] },
       pago: {
-        consultorio: 'When booking online you pay a 50% deposit ({a}); the rest is paid at the clinic. After booking, please send a WhatsApp message.',
+        consultorio: 'The 50% deposit ({a}) covers the consultation only and is paid when booking online. The rest of the consultation and, if you chose it, the translation assistant are paid directly at the clinic. After booking, please send a WhatsApp message.',
         consultorioFestivo: 'Holidays are arranged on WhatsApp; they cannot be booked online.',
         hotel: 'No deposit: you pay the physician directly, in Mexican pesos (card, transfer or cash).',
-        domicilio: 'Requested on WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your area ({a}); the rest is paid to the physician at the visit.',
+        domicilio: 'Requested on WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your area ({a}); the rest, including IV hydration and nursing if given, is paid to the physician at the visit.',
         teleconsulta: 'Booked on WhatsApp; full payment is made before the video call, and we tell you how to pay there.', teleFestivo: 'Booked on WhatsApp; full payment is made before the video call.'
       },
       aviso: 'Estimate based on the published fees. The physician confirms the total when arranging your visit. Procedures, medications and documents are not included. We do not see patients under 15 years of age or pregnant patients.',
@@ -137,7 +139,7 @@
       seguimiento: 'Il s’agit d’une visite de suivi', fecha: 'Date', hora: 'Heure',
       iv: 'Hydratation intraveineuse, si le médecin la prescrit', ivNota: 'Adultes uniquement (18 ans ou plus). Le médecin évalue d’abord ; si elle n’est pas indiquée, les {iv} ne sont pas facturés, ni les honoraires infirmiers, sauf si vous avez demandé que l’infirmière arrive avec le médecin.',
       junto: 'Je préfère que l’infirmière arrive avec le médecin', juntoNota: 'Vous évitez ainsi d’attendre environ 1 h 30, mais ses honoraires sont facturés même si l’hydratation n’est pas indiquée.',
-      asistente: 'Assistante de traduction en français', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
+      asistente: 'Assistante de traduction en français', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne font pas partie de l’acompte et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
       cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 17 h à 20 h et le samedi de 11 h à 15 h.',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
@@ -147,11 +149,12 @@
       motivo: { oficial: 'jour férié officiel', tradicional: 'jour férié traditionnel', domingo: 'dimanche', sabado: 'samedi après 15 h', noche: 'nuit (20 h 01 – 8 h 59)' },
       linea: { consulta: 'Consultation', subsecuente: 'Consultation de suivi', festivo: 'Consultation un jour férié', visita: 'Visite', seguimiento: 'Visite de suivi à domicile', iv: 'Hydratation intraveineuse (si indiquée)', enf: 'Honoraires infirmiers', asis: 'Assistante de traduction en français', tele: 'Téléconsultation' },
       total: 'Total estimé', sinIV: 'Si l’hydratation n’est pas indiquée',
+      cuando: { consultorio: ['En réservant en ligne (acompte, 50 % de la consultation)', 'Au cabinet, le jour du rendez-vous'], domicilio: ['Acompte par virement (50 % du tarif ordinaire)', 'Au médecin, lors de la visite'], hotel: [null, 'Au médecin, lors de la visite (sans acompte)'], teleconsulta: ['Avant l’appel vidéo', null] },
       pago: {
-        consultorio: 'En réservant en ligne, vous payez un acompte de 50 % ({a}) ; le reste se règle au cabinet. Après la réservation, envoyez un message WhatsApp.',
+        consultorio: 'L’acompte de 50 % ({a}) ne concerne que la consultation et se paie en réservant en ligne. Le reste de la consultation et, si vous l’avez choisie, l’assistante de traduction se règlent directement au cabinet. Après la réservation, envoyez un message WhatsApp.',
         consultorioFestivo: 'Les jours fériés se planifient par WhatsApp ; ils ne se réservent pas en ligne.',
         hotel: 'Sans acompte : vous payez directement le médecin, en pesos (carte, virement ou espèces).',
-        domicilio: 'Se demande par WhatsApp et se confirme par un virement de 50 % du tarif ordinaire de votre quartier ({a}) ; le reste se règle au médecin lors de la visite.',
+        domicilio: 'Se demande par WhatsApp et se confirme par un virement de 50 % du tarif ordinaire de votre quartier ({a}) ; le reste, y compris l’hydratation intraveineuse et les soins infirmiers le cas échéant, se règle au médecin lors de la visite.',
         teleconsulta: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo et nous vous indiquons comment payer.', teleFestivo: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo.'
       },
       aviso: 'Estimation selon les honoraires publiés. Le médecin confirme le total en planifiant votre rendez-vous. Les actes, les médicaments et les documents ne sont pas inclus. Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.',
@@ -253,7 +256,8 @@
       else {
         var sub = s.tipo === 'subsecuente' && sede.subsecuente;
         add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
-        r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.total / 2)));
+        r.ahora = r.total / 2;
+        r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)));
         r.reservar = D.cal[s.sede];
       }
       if (s.asistente) { add(L.linea.asis, D.asistente[hz.n]); r.notas.push(L.asistenteNota); }
@@ -265,7 +269,8 @@
       var area = D.domicilio[s.zona];
       if (s.seguimiento && area.seguimiento && hz.n === 0) add(L.linea.seguimiento + ' · ' + s.zona, area.seguimiento);
       else add(L.linea.visita + ' · ' + s.zona, area.precios[hz.n]);
-      r.notas.push(L.pago.domicilio.replace('{a}', mxn(area.precios[0] / 2)));
+      r.ahora = area.precios[0] / 2;
+      r.notas.push(L.pago.domicilio.replace('{a}', mxn(r.ahora)));
     } else if (s.svc === 'teleconsulta') {
       if (hz.n === 2) { add(L.linea.tele, D.teleconsulta[1]); r.notas.push(L.pago.teleFestivo); }
       else { add(L.linea.tele, D.teleconsulta[0]); r.notas.push(L.pago.teleconsulta); }
@@ -278,6 +283,9 @@
       if (s.junto) r.notas.push(L.juntoNota);
     }
     if (s.svc === 'hotel' && s.asistente) { add(L.linea.asis, D.asistente[hz.n]); r.notas.push(L.asistenteNota); }
+    if (s.svc === 'hotel') r.ahora = 0;
+    if (s.svc === 'teleconsulta') r.ahora = r.total;
+    if (r.ahora != null) r.despues = r.total - r.ahora;
     return r;
   }
 
@@ -422,6 +430,13 @@
     resultado.appendChild(h('div', { class: 'pl-total' }, [h('p', { class: 'pl-total-l', text: L.total }), totalEl]));
     contar(totalEl, r.total);
     if (r.base != null) resultado.appendChild(h('p', { class: 'pl-sub', text: L.sinIV + ': ' + mxn(r.base) }));
+    var cuando = L.cuando[S.svc];
+    if (r.ahora != null && cuando) {
+      var pagos = h('dl', { class: 'pl-lines pl-pagos' });
+      if (cuando[0] && r.ahora) pagos.appendChild(h('div', {}, [h('dt', { text: cuando[0] }), h('dd', { text: mxn(r.ahora) })]));
+      if (cuando[1] && r.despues) pagos.appendChild(h('div', {}, [h('dt', { text: cuando[1] }), h('dd', { text: mxn(r.despues) })]));
+      if (pagos.children.length) resultado.appendChild(pagos);
+    }
     var notas = h('ul', { class: 'pl-notes' });
     r.notas.concat([L.aviso]).forEach(function (t) { notas.appendChild(h('li', { text: t })); });
     resultado.appendChild(notas);
