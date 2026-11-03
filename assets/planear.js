@@ -24,7 +24,7 @@
       asistente: 'Asistente de traducción al francés', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no forma parte del anticipo: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
       cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 17:00 a 20:00 y sábado de 11:00 a 15:00.',
-      sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
+      sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
       solo20: 'La cita de las 20:00 es solo para consultas subsecuentes.',
       zonaOtra: 'Esa zona se cotiza por WhatsApp.',
       horario: ['Horario ordinario', 'Horario especial', 'Festivo oficial'],
@@ -62,7 +62,7 @@
         frances: 'Si quiere la consulta enteramente en francés, avise por WhatsApp para confirmar a la asistente de traducción.'
       },
       l: {
-        titulo: 'Su lista', servicio: 'Su servicio', frances: 'Quiero la consulta en francés', listo: '¡Todo listo para su consulta!', borrar: 'Borrar marcas', local: 'Sus marcas se guardan solo en este dispositivo.',
+        titulo: 'Su lista', servicio: 'Su servicio', frances: 'Quiero la consulta en francés', listo: '¡Todo listo para su consulta!', borrar: 'Borrar marcas', enviar: 'Enviar por WhatsApp', copiar: 'Copiar lista', copiado: 'Lista copiada.', compartirT: 'Lista para mi consulta con el Dr. Ortega-Arenas ({s}):', compartirF: 'Formularios: drcjortegaarenas.com/formularios', local: 'Sus marcas se guardan solo en este dispositivo.',
         comun: [['form1', 'Llenar el consentimiento informado', '/formularios/'], ['form2', 'Llenar el cuestionario de salud', '/formularios/'], ['id', 'Tener a la mano su identificación oficial (INE o pasaporte): el consentimiento pide una foto'], ['meds', 'Anotar sus medicamentos con dosis, y sus alergias'], ['estudios', 'Reunir sus estudios previos (puede adjuntarlos en el cuestionario)']],
         consultorio: [['res', 'Reservar en línea y pagar el anticipo del 50 %'], ['wa', 'Enviar un WhatsApp después de reservar']],
         hotel: [['wa', 'Escribir por WhatsApp para coordinar la visita'], ['recep', 'Avisar a la recepción que espera al médico y dar su número de habitación'], ['pago', 'Tener lista la forma de pago en pesos: tarjeta, transferencia o efectivo']],
@@ -83,7 +83,7 @@
       asistente: 'French translation assistant', asistenteNota: 'Administrative and translation support only; she does not perform any medical act. Same fee as the nurse; it is not part of the deposit and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
       cerrado: 'The clinic is closed that day. Hours: Monday to Friday 5–8 pm and Saturday 11 am–3 pm.',
-      sinServicio: 'No service on that date and time. Please choose another date.', fueraAnio: 'For later dates, please ask on WhatsApp.',
+      sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
       solo20: 'The 8:00 pm slot is for follow-up visits only.',
       zonaOtra: 'That area is quoted on WhatsApp.',
       horario: ['Standard hours', 'Special hours', 'Official public holiday'],
@@ -121,7 +121,7 @@
         frances: 'If you want the visit entirely in French, let us know on WhatsApp so we can confirm the translation assistant.'
       },
       l: {
-        titulo: 'Your checklist', servicio: 'Your service', frances: 'I want the visit in French', listo: 'You are all set for your visit!', borrar: 'Clear ticks', local: 'Your ticks are saved only on this device.',
+        titulo: 'Your checklist', servicio: 'Your service', frances: 'I want the visit in French', listo: 'You are all set for your visit!', borrar: 'Clear ticks', enviar: 'Send on WhatsApp', copiar: 'Copy list', copiado: 'List copied.', compartirT: 'Checklist for my visit with Dr. Ortega-Arenas ({s}):', compartirF: 'Forms: drcjortegaarenas.com/formularios', local: 'Your ticks are saved only on this device.',
         comun: [['form1', 'Fill in the informed consent form', '/formularios/'], ['form2', 'Fill in the health questionnaire', '/formularios/'], ['id', 'Have your official ID (passport or INE) at hand: the consent form asks for a photo'], ['meds', 'Write down your medications with doses, and your allergies'], ['estudios', 'Gather your previous test results (you can attach them to the questionnaire)']],
         consultorio: [['res', 'Book online and pay the 50% deposit'], ['wa', 'Send a WhatsApp message after booking']],
         hotel: [['wa', 'Send a WhatsApp message to arrange the visit'], ['recep', 'Tell the front desk you are expecting the physician and give your room number'], ['pago', 'Have your payment ready in Mexican pesos: card, transfer or cash']],
@@ -142,7 +142,7 @@
       asistente: 'Assistante de traduction en français', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne font pas partie de l’acompte et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
       cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 17 h à 20 h et le samedi de 11 h à 15 h.',
-      sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
+      sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
       solo20: 'Le créneau de 20 h est réservé aux consultations de suivi.',
       zonaOtra: 'Ce quartier fait l’objet d’un devis par WhatsApp.',
       horario: ['Horaires ordinaires', 'Horaires spéciaux', 'Jour férié officiel'],
@@ -180,7 +180,7 @@
         frances: 'Pour une consultation entièrement en français, prévenez-nous par WhatsApp pour confirmer l’assistante de traduction.'
       },
       l: {
-        titulo: 'Votre liste', servicio: 'Votre service', frances: 'Je souhaite la consultation en français', listo: 'Tout est prêt pour votre consultation !', borrar: 'Effacer les coches', local: 'Vos coches sont enregistrées uniquement sur cet appareil.',
+        titulo: 'Votre liste', servicio: 'Votre service', frances: 'Je souhaite la consultation en français', listo: 'Tout est prêt pour votre consultation !', borrar: 'Effacer les coches', enviar: 'Envoyer par WhatsApp', copiar: 'Copier la liste', copiado: 'Liste copiée.', compartirT: 'Liste pour ma consultation avec le Dr Ortega-Arenas ({s}) :', compartirF: 'Formulaires : drcjortegaarenas.com/formularios', local: 'Vos coches sont enregistrées uniquement sur cet appareil.',
         comun: [['form1', 'Remplir le consentement éclairé', '/formularios/'], ['form2', 'Remplir le questionnaire de santé', '/formularios/'], ['id', 'Avoir votre pièce d’identité (passeport ou carte d’identité) : le consentement demande une photo'], ['meds', 'Noter vos médicaments avec les doses, et vos allergies'], ['estudios', 'Rassembler vos examens antérieurs (vous pouvez les joindre au questionnaire)']],
         consultorio: [['res', 'Réserver en ligne et payer l’acompte de 50 %'], ['wa', 'Envoyer un message WhatsApp après la réservation']],
         hotel: [['wa', 'Écrire par WhatsApp pour organiser la visite'], ['recep', 'Prévenir la réception que vous attendez le médecin et donner votre numéro de chambre'], ['pago', 'Prévoir le paiement en pesos : carte, virement ou espèces']],
@@ -221,8 +221,8 @@
     if (dia === 6) return (m >= 540 && m <= 900) ? { n: 0 } : { n: 1, por: m > 900 ? 'sabado' : 'noche' };
     return (m >= 540 && m <= 1200) ? { n: 0 } : { n: 1, por: 'noche' };
   }
-  function sinServicio(f, hora) {
-    return D.sinServicio.some(function (s) { return s.fecha === f && minutos(hora) >= minutos(s.desde); });
+  function sinServicio(f, hora, svc) {
+    return D.sinServicio.some(function (s) { return s.fecha === f && minutos(hora) >= minutos(s.desde) && !(s.teleconsulta && svc === 'teleconsulta'); });
   }
   function horasConsultorio(f) {
     var dia = diaSemana(f);
@@ -244,7 +244,7 @@
     if (s.svc !== 'teleconsulta' && s.svc !== 'consultorio' && s.zona === 'otra') { r.error = L.zonaOtra; return r; }
     if (!s.fecha || !s.hora) { r.error = L.faltaFecha; return r; }
     if (s.fecha > ULTIMA) { r.error = L.fueraAnio; return r; }
-    if (sinServicio(s.fecha, s.hora)) { r.error = L.sinServicio; return r; }
+    if (sinServicio(s.fecha, s.hora, s.svc)) { r.error = s.svc !== 'teleconsulta' && D.sinServicio.some(function (x) { return x.fecha === s.fecha && x.teleconsulta; }) ? L.soloTele : L.sinServicio; return r; }
     var hz = horario(s.fecha, s.hora);
     r.horario = hz;
     var add = function (txt, monto) { r.lineas.push([txt, monto]); r.total += monto; };
@@ -256,9 +256,12 @@
       else {
         var sub = s.tipo === 'subsecuente' && sede.subsecuente;
         add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
-        r.ahora = r.total / 2;
-        r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)));
-        r.reservar = D.cal[s.sede];
+        if (hz.por === 'tradicional') r.notas.push(L.pago.consultorioFestivo);  // ese día no se reserva en línea
+        else {
+          r.ahora = r.total / 2;
+          r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)));
+          r.reservar = D.cal[s.sede];
+        }
       }
       if (s.asistente) { add(L.linea.asis, D.asistente[hz.n]); r.notas.push(L.asistenteNota); }
     } else if (s.svc === 'hotel') {
@@ -339,6 +342,17 @@
 
   /* ── cotizador ────────────────────────────── */
   var S = { svc: null, sede: 'Del Valle', tipo: 'primera', zona: null, fecha: '', hora: '', iv: false, junto: false, asistente: false, seguimiento: false };
+  var URLP = new URLSearchParams(location.search), PREF = URLP.get('zona');
+  function zonaPara(svc) {
+    var lista = svc === 'hotel' ? D.hotel.zonas : svc === 'domicilio' ? D.domicilio : null;
+    if (!lista) return null;
+    return PREF && lista[PREF] ? PREF : (svc === 'hotel' ? 'Roma' : 'Del Valle');
+  }
+  if (PREF && D.consultorio[PREF]) S.sede = PREF;
+  if (['consultorio', 'hotel', 'domicilio', 'teleconsulta'].indexOf(URLP.get('cotizar')) >= 0) {
+    S.svc = URLP.get('cotizar'); S.zona = zonaPara(S.svc);
+    S.iv = URLP.get('iv') === '1' && (S.svc === 'hotel' || S.svc === 'domicilio');
+  }
   var P0 = paneles[0];
   var formulario = h('div', { class: 'pl-form' });
   var resultado = h('div', { class: 'pl-result', 'aria-live': 'polite' });
@@ -371,7 +385,7 @@
     formulario.appendChild(paso(1, L.paso[0], [chips(L.paso[0], ['consultorio', 'hotel', 'domicilio', 'teleconsulta'].map(function (k) { return { v: k, t: L.svc[k], d: L.svcDesc[k] }; }), S.svc, function (v) {
       var nuevo = S.svc !== v;
       S.svc = v;
-      if (nuevo) { S.hora = ''; S.zona = v === 'hotel' ? 'Roma' : v === 'domicilio' ? 'Del Valle' : null; S.iv = S.junto = S.asistente = S.seguimiento = false; }
+      if (nuevo) { S.hora = ''; S.zona = zonaPara(v); S.iv = S.junto = S.asistente = S.seguimiento = false; }
       dibujarForm(); calcular(); entrar(formulario.lastElementChild);
     }, true)]));
     if (!S.svc) return;
@@ -453,6 +467,11 @@
     if (S.iv) partes.push(L.linea.iv);
     if (S.asistente) partes.push(L.linea.asis);
     if (r && r.total) partes.push(L.waTotal + ': ' + mxn(r.total));
+    var cuando = r && L.cuando[S.svc];
+    if (cuando && r.ahora != null) {
+      if (cuando[0] && r.ahora) partes.push(cuando[0] + ': ' + mxn(r.ahora));
+      if (cuando[1] && r.despues) partes.push(cuando[1] + ': ' + mxn(r.despues));
+    }
     return partes.join(' · ') + '. ' + L.waCierre;
   }
   function botonWA(texto) {
@@ -529,7 +548,7 @@
     var tarjeta = h('div', { class: 'pl-reco' }, [h('p', { class: 'pl-label', text: G.resT }), h('h3', { class: 'pl-reco-t', text: L.svc[svc] }), h('p', { text: texto })]);
     if (lang === 'fr' && svc !== 'teleconsulta' && svc !== 'domicilio') tarjeta.appendChild(h('p', { class: 'pl-note', text: G.frances }));
     var acciones = h('div', { class: 'pl-actions' }, [
-      h('button', { type: 'button', class: 'hero-cta', text: G.calcular, onclick: function () { S.svc = svc; S.zona = svc === 'hotel' ? 'Roma' : svc === 'domicilio' ? 'Del Valle' : null; S.hora = ''; dibujarForm(); calcular(); lServicio = svc; dibujarLista(); abrir(0); } }),
+      h('button', { type: 'button', class: 'hero-cta', text: G.calcular, onclick: function () { S.svc = svc; S.zona = zonaPara(svc); S.hora = ''; dibujarForm(); calcular(); lServicio = svc; dibujarLista(); abrir(0); } }),
       h('a', { class: 'hero-cta ghost', href: 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(L.waHola + ': ' + L.svc[svc] + '. ' + L.waCierre), target: '_blank', rel: 'noopener', text: L.wa })
     ]);
     tarjeta.appendChild(acciones);
@@ -575,15 +594,58 @@
     cajaLista.appendChild(ul);
     cajaLista.appendChild(h('p', { class: 'pl-done-msg', text: LL.listo }));
     cajaLista.appendChild(h('p', { class: 'pl-note', text: LL.local }));
+    var texto = function () {
+      return LL.compartirT.replace('{s}', L.svc[lServicio]) + '\n' + items.map(function (it) { return (guardado[lServicio + ':' + it[0]] ? '✅ ' : '⬜ ') + it[1]; }).join('\n') + '\n' + LL.compartirF;
+    };
+    var aviso = h('span', { class: 'pl-note', role: 'status' });
+    cajaLista.appendChild(h('div', { class: 'pl-actions' }, [
+      h('a', { class: 'hero-cta', href: '#', text: LL.enviar, onclick: function (e) { e.preventDefault(); window.open('https://wa.me/?text=' + encodeURIComponent(texto()), '_blank', 'noopener'); } }),
+      h('button', { type: 'button', class: 'hero-cta ghost', text: LL.copiar, onclick: function () {
+        var t = texto();
+        (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { aviso.textContent = LL.copiado; }, function () {
+          var ta = h('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); aviso.textContent = LL.copiado; } catch (e) { aviso.textContent = ''; }
+          ta.remove();
+        });
+      } }), aviso
+    ]));
     cajaLista.appendChild(h('button', { type: 'button', class: 'pl-back', text: LL.borrar, onclick: function () { items.forEach(function (it) { delete guardado[lServicio + ':' + it[0]]; }); guardar(); dibujarLista(); } }));
     actualizar();
   }
   dibujarLista();
   requestAnimationFrame(moverIndicador);
 
+  /* ── buscador de preguntas frecuentes ────── */
+  (function () {
+    var seccion = document.getElementById('faq'), items = seccion ? seccion.querySelectorAll('.faq-item') : [];
+    if (!items.length) return;
+    var B = { es: ['Buscar en las preguntas', 'Por ejemplo: hotel, horario, seguro, niños', 'No encontramos esa pregunta.', 'Escríbanos por WhatsApp'],
+              en: ['Search the questions', 'For example: hotel, hours, insurance, children', 'We could not find that question.', 'Message us on WhatsApp'],
+              fr: ['Rechercher dans les questions', 'Par exemple : hôtel, horaires, assurance, enfants', 'Nous n’avons pas trouvé cette question.', 'Écrivez-nous par WhatsApp'] }[lang] || [];
+    var sin = function (t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
+    // Sinónimos: lo que el paciente escribe → palabras que sí están en las respuestas.
+    var SIN = { es: { nino: ['menor', '15 anos'], ninos: ['menor', '15 anos'], nina: ['menor'], hijo: ['menor'], hija: ['menor'], bebe: ['menor'], embarazo: ['embaraz'], pago: ['anticipo', 'pag', '$'], pagar: ['anticipo', 'pag'], precio: ['$'], precios: ['$'], costo: ['$'], cuesta: ['$'], tarjeta: ['anticipo', 'tarjeta'], cita: ['agend', 'cita'], reservar: ['agend', 'reserv'], llegar: ['llegada', 'tarda'], direccion: ['consultorio'] },
+                en: { child: ['under 15'], children: ['under 15'], kid: ['under 15'], kids: ['under 15'], baby: ['under 15'], pregnancy: ['pregnan'], price: ['$'], prices: ['$'], cost: ['$'], payment: ['deposit', 'pay', '$'], pay: ['deposit', 'pay'], appointment: ['book'], address: ['clinic'], arrive: ['reach', 'arrival'] },
+                fr: { enfant: ['moins de 15'], enfants: ['moins de 15'], bebe: ['moins de 15'], grossesse: ['enceinte'], prix: ['$'], cout: ['$'], paiement: ['acompte', 'pai', '$'], payer: ['acompte', 'pai'], 'rendez-vous': ['reserv'], adresse: ['cabinet'], arriver: ['arriv'] } }[lang] || {};
+    var campo = h('input', { type: 'search', class: 'pl-input pl-faq-input', placeholder: B[1], 'aria-label': B[0] });
+    var vacio = h('p', { class: 'pl-empty pl-faq-vacio', hidden: true }, [B[2] + ' ', h('a', { class: 'text-link', href: 'https://wa.me/' + D.whatsapp, target: '_blank', rel: 'noopener', text: B[3] })]);
+    var caja = h('div', { class: 'pl-faq-search reveal visible' }, [h('label', { class: 'pl-label', text: B[0] }), campo]);
+    seccion.querySelector('.section-header').after(caja);
+    items[items.length - 1].parentNode.after(vacio);
+    campo.addEventListener('input', function () {
+      var q = sin(campo.value.trim()), n = 0;
+      Array.prototype.forEach.call(items, function (it) {
+        var txt = sin(it.textContent);
+        var ok = !q || q.split(/\s+/).every(function (w) { return [w].concat(SIN[w] || []).some(function (x) { return txt.indexOf(sin(x)) >= 0; }); });
+        it.hidden = !ok; if (ok) n++;
+      });
+      vacio.hidden = n > 0;
+    });
+  })();
+
   /* ── portada más dinámica ─────────────────── */
   if (!quieto) {
-    // Contador del dato principal del hero ("Desde 55 min").
+    // Contador del dato principal del hero ("Desde 60 min").
     var dato = document.querySelector('.hero2-facts li strong');
     if (dato) {
       var m = dato.textContent.match(/(\d+)/);

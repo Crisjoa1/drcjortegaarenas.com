@@ -494,7 +494,10 @@ def planear_datos():
             previo = mes
             desde = re.search(r'(\d{1,2}:\d{2})', spans[1].get('data-es', '')) if len(spans) > 1 else None
             for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1):
-                out.append({'fecha': f'{anio}-{mes:02d}-{dia:02d}', 'desde': desde.group(1) if desde else '00:00'})
+                f = {'fecha': f'{anio}-{mes:02d}-{dia:02d}', 'desde': desde.group(1) if desde else '00:00'}
+                if li.get('data-teleconsulta') == 'si':  # sin atención presencial, pero con teleconsulta
+                    f['teleconsulta'] = True
+                out.append(f)
         return out
     tarjetas = {k: soup.select_one(f'.schedule-card:has(.schedule-type.{k})') for k in ('official', 'traditional', 'unavail')}
     return json.dumps({

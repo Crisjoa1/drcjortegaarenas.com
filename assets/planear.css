@@ -128,3 +128,8 @@
   .pl-entra, .pl-done .pl-done-msg { animation:none; }
   .pl-tab-ind, .pl-progress span, .pl-chip, .pl-option { transition:none; }
 }
+
+/* Buscador de preguntas frecuentes */
+.pl-faq-search { max-width:560px; margin:0 0 26px; }
+.pl-faq-vacio { margin-top:6px; }
+.faq-item[hidden] { display:none !important; }
