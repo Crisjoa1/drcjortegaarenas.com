@@ -18,7 +18,6 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 ZONAS = {
     'Polanco': (('zonas/polanco', 'en/doctor-polanco', 'fr/medecin-polanco'), 'Polanco', 'Polanco', 'Polanco'),
     'Roma-Condesa': (('zonas/roma-condesa', 'en/doctor-roma-condesa', 'fr/medecin-roma-condesa'), 'Roma', 'Roma', 'Condesa'),
-    'Santa Fe': (('zonas/santa-fe', 'en/doctor-santa-fe', 'fr/medecin-santa-fe'), 'Santa Fe', 'Santa Fe', 'Santa Fe'),
     'Del Valle': (('zonas/del-valle', 'en/doctor-del-valle', 'fr/medecin-del-valle'), 'Del Valle', 'Del Valle', 'Del Valle'),
 }
 MONTO = re.compile(r'\$\s?\d{1,3}(?:,\d{3})+|MXN\s\d{1,3}(?:,\d{3})+')

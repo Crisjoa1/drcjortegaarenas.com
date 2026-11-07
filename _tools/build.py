@@ -43,7 +43,7 @@ META = {
         'html_lang': 'es-MX',
         'title': 'Médico general bilingüe en CDMX | Dr. Ortega-Arenas',
         'description': 'Médico general bilingüe en CDMX: visita a su hotel, a domicilio, en consultorio '
-                       '(Del Valle, Roma, Polanco, Santa Fe) y teleconsulta. Honorarios publicados en MXN.',
+                       '(Del Valle, Roma, Polanco) y teleconsulta. Honorarios publicados en MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en CDMX',
         'og_locale': 'es_MX', 'og_alt': 'en_US',
         'crumb_home': 'Inicio',
@@ -55,7 +55,7 @@ META = {
         'html_lang': 'en',
         'title': 'English-Speaking Doctor in Mexico City | Hotel, Home & Clinic',
         'description': 'English-speaking doctor in Mexico City: hotel visits, house calls, clinics in Polanco, '
-                       'Roma, Del Valle and Santa Fe, and telemedicine. Fees published in MXN.',
+                       'Roma and Del Valle, and telemedicine. Fees published in MXN.',
         'og_title': 'Dr. Cristóbal J. Ortega-Arenas — English-speaking doctor in Mexico City',
         'og_locale': 'en_US', 'og_alt': 'es_MX',
         'crumb_home': 'Home',
@@ -159,7 +159,6 @@ SEDES = {  # sede: (sede en Briyam, calle y número con piso, colonia o None, al
     'Del Valle': ('Florida del Valle', 'Av. Río Mixcoac 25, piso 8', None, 'Benito Juárez', 'Benito Juárez'),
     'Roma': ('Roma Sur', 'Monterrey 243, piso 5', 'Roma Sur', 'Cuauhtémoc', 'Cuauhtémoc'),
     'Polanco': ('Masaryk', 'Av. Presidente Masaryk 134, piso 4', 'Polanco', 'Miguel Hidalgo', 'Miguel Hidalgo'),
-    'Santa Fe': ('Santa Fe', 'Vasco de Quiroga 3900, Torre B, piso 5', 'Santa Fe', 'Cuajimalpa', 'Cuajimalpa de Morelos'),
 }
 
 
@@ -187,7 +186,7 @@ def clinica(sede):
             'name': f'Consultorio {sede} — Dr. Cristóbal J. Ortega-Arenas',
             'telephone': '+52 595 109 3969', 'hasMap': sede_maps(sede),
             'url': SITE + {'Polanco': '/zonas/polanco/', 'Roma': '/zonas/roma-condesa/',
-                           'Del Valle': '/zonas/del-valle/', 'Santa Fe': '/zonas/santa-fe/'}[sede],
+                           'Del Valle': '/zonas/del-valle/'}[sede],
             'openingHoursSpecification': [  # el mismo horario publicado en la tarjeta de consultorio
                 {'@type': 'OpeningHoursSpecification', 'opens': '17:00', 'closes': '20:00',
                  'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']},
@@ -196,7 +195,7 @@ def clinica(sede):
             'containedInPlace': {'@type': 'Place', 'name': f'Briyam Coworking Médico, sede {briyam}', 'address': direccion}}
 
 
-AREAS = ['Polanco', 'Roma', 'Condesa', 'Del Valle', 'Santa Fe', 'Reforma', 'Coyoacán', 'Pedregal',
+AREAS = ['Polanco', 'Roma', 'Condesa', 'Del Valle', 'Reforma', 'Coyoacán', 'Pedregal',
          'Centro Histórico', 'Texcoco']
 
 
@@ -447,8 +446,7 @@ def tarifas():
 
 
 MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco',
-               'Santa Fe': 'consultorio-santa-fe'}  # teleconsulta, hotel y domicilio: solo por WhatsApp
+CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco'}  # teleconsulta, hotel y domicilio: solo por WhatsApp
 
 
 def planear_datos():
@@ -686,7 +684,7 @@ def build_llms():
     lines = ['# Dr. Cristóbal J. Ortega-Arenas — Médico general bilingüe en Ciudad de México', '',
              '> Médico Cirujano (UNAM, cédula profesional 14848636), título homologado en España (2025-17271). '
              'Medicina general ambulatoria en español e inglés: visitas a hotel (24 h) y a domicilio, consultorio '
-             '(Del Valle, Roma, Polanco, Santa Fe), teleconsulta, hidratación intravenosa con valoración previa, '
+             '(Del Valle, Roma, Polanco), teleconsulta, hidratación intravenosa con valoración previa, '
              'certificados médicos y Resumen Clínico del Viajero. Honorarios publicados en MXN. Atiende a personas de 15 años o más; no atiende a '
              'menores de 15 años ni a personas embarazadas. No es un servicio de urgencias. Contacto: WhatsApp +52 595 109 3969. Aviso de publicidad COFEPRIS 2515192002A00033.', '',
              '## Consultorios / Clinics (Briyam Coworking Médico, con cita / by appointment)', '',
@@ -701,6 +699,39 @@ def build_llms():
     print('llms.txt')
 
 
+# Páginas retiradas: su dirección sigue respondiendo con un aviso breve y redirige a la página vigente,
+# sin indexar, para que los enlaces antiguos y Google no den error.
+RETIRADAS = {
+    'zonas/santa-fe': ('es', '/zonas/', 'Ya no damos consulta en Santa Fe',
+                       'Desde noviembre de 2026 ya no damos consulta en Santa Fe (consultorio, hotel ni domicilio). '
+                       'Vea las zonas donde sí atendemos.', 'Ver zonas'),
+    'en/doctor-santa-fe': ('en', '/en/areas/', 'We no longer see patients in Santa Fe',
+                           'Since November 2026 we no longer see patients in Santa Fe (clinic, hotel or house calls). '
+                           'See the areas we cover.', 'See areas'),
+    'fr/medecin-santa-fe': ('fr', '/fr/zones/', 'Nous ne consultons plus à Santa Fe',
+                            'Depuis novembre 2026, nous ne consultons plus à Santa Fe (cabinet, hôtel ou domicile). '
+                            'Voir les quartiers desservis.', 'Voir les quartiers'),
+}
+
+
+def build_retiradas():
+    for ruta, (lang, destino, titulo, texto, boton) in RETIRADAS.items():
+        html = (f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
+                f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+                f'<meta name="robots" content="noindex, follow">\n<title>{titulo} | Dr. Ortega-Arenas</title>\n'
+                f'<link rel="canonical" href="{SITE}{destino}">\n<meta http-equiv="refresh" content="4; url={destino}">\n'
+                f'<style>body{{margin:0;background:#0b0b0b;color:#e8e8e8;font:16px/1.6 system-ui,sans-serif;'
+                f'display:grid;place-items:center;min-height:100vh;padding:16px}}main{{max-width:520px}}'
+                f'a{{color:#c8c8c8}}</style>\n</head>\n<body>\n<main>\n<h1>{titulo}</h1>\n<p>{texto}</p>\n'
+                f'<p><a href="{destino}">{boton} →</a></p>\n'
+                f'<p style="font-size:12px;color:#888">Aviso de publicidad COFEPRIS 2515192002A00033</p>\n'
+                f'</main>\n</body>\n</html>\n')
+        out = ROOT / ruta / 'index.html'
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(html, encoding='utf-8')
+    print(f'retiradas ({len(RETIRADAS)})')
+
+
 if __name__ == '__main__':
     for page in PAGES:
         for lang in LANGS:
@@ -709,3 +740,4 @@ if __name__ == '__main__':
     build_pdf()
     build_sitemap()
     build_llms()
+    build_retiradas()

@@ -15,7 +15,7 @@
     es: {
       tabs: ['Cotizador', '¿Qué servicio me conviene?', 'Prepare su consulta'],
       svc: { consultorio: 'Consultorio', hotel: 'Visita a hotel', domicilio: 'Consulta a domicilio', teleconsulta: 'Teleconsulta' },
-      svcDesc: { consultorio: 'Del Valle, Roma, Polanco o Santa Fe', hotel: 'En su habitación, 24 h según disponibilidad', domicilio: 'En su casa, en la Ciudad de México', teleconsulta: 'Por videollamada' },
+      svcDesc: { consultorio: 'Del Valle, Roma o Polanco', hotel: 'En su habitación, 24 h según disponibilidad', domicilio: 'En su casa, en la Ciudad de México', teleconsulta: 'Por videollamada' },
       paso: ['¿Qué servicio necesita?', '¿Dónde?', '¿Cuándo?', 'Extras'],
       sede: 'Sede', zona: 'Zona', otraZona: 'Otra zona', tipo: 'Tipo de consulta', primera: 'Primera vez', subsecuente: 'Subsecuente',
       seguimiento: 'Es una consulta de seguimiento', fecha: 'Fecha', hora: 'Hora',
@@ -56,7 +56,7 @@
         res: {
           hotel: 'El médico va a su habitación, según disponibilidad. Escriba por WhatsApp para coordinar la hora de llegada.',
           domicilio: 'El médico va a su casa. Se solicita por WhatsApp.',
-          consultorio: 'Consulta en Del Valle, Roma, Polanco o Santa Fe, con cita en línea o por WhatsApp.',
+          consultorio: 'Consulta en Del Valle, Roma o Polanco, con cita en línea o por WhatsApp.',
           teleconsulta: 'Por videollamada, sin traslados; se agenda por WhatsApp. Si en la llamada se necesita una exploración física, el médico se lo indicará.',
           lejos: 'Si no puede trasladarse a la Ciudad de México, la opción es la teleconsulta. Si necesita una exploración física, acuda con un médico local.'
         },
@@ -75,7 +75,7 @@
     en: {
       tabs: ['Cost estimator', 'Which service is right for me?', 'Prepare your visit'],
       svc: { consultorio: 'Clinic visit', hotel: 'Hotel visit', domicilio: 'House call', teleconsulta: 'Telemedicine' },
-      svcDesc: { consultorio: 'Del Valle, Roma, Polanco or Santa Fe', hotel: 'In your room, 24 h subject to availability', domicilio: 'At your home in Mexico City', teleconsulta: 'By video call' },
+      svcDesc: { consultorio: 'Del Valle, Roma or Polanco', hotel: 'In your room, 24 h subject to availability', domicilio: 'At your home in Mexico City', teleconsulta: 'By video call' },
       paso: ['Which service do you need?', 'Where?', 'When?', 'Extras'],
       sede: 'Location', zona: 'Area', otraZona: 'Other area', tipo: 'Type of visit', primera: 'First visit', subsecuente: 'Follow-up',
       seguimiento: 'This is a follow-up visit', fecha: 'Date', hora: 'Time',
@@ -116,7 +116,7 @@
         res: {
           hotel: 'The physician comes to your room, subject to availability. Send a WhatsApp message to arrange the arrival time.',
           domicilio: 'The physician comes to your home. Requested on WhatsApp.',
-          consultorio: 'A clinic visit in Del Valle, Roma, Polanco or Santa Fe, booked online or on WhatsApp.',
+          consultorio: 'A clinic visit in Del Valle, Roma or Polanco, booked online or on WhatsApp.',
           teleconsulta: 'By video call, no travel needed; booked on WhatsApp. If a physical examination is needed during the call, the physician will tell you.',
           lejos: 'If you cannot travel to Mexico City, the option is telemedicine. If you need a physical examination, please see a local doctor.'
         },
@@ -135,7 +135,7 @@
     fr: {
       tabs: ['Estimation du coût', 'Quel service me convient ?', 'Préparez votre consultation'],
       svc: { consultorio: 'Cabinet', hotel: 'Visite à l’hôtel', domicilio: 'Visite à domicile', teleconsulta: 'Téléconsultation' },
-      svcDesc: { consultorio: 'Del Valle, Roma, Polanco ou Santa Fe', hotel: 'Dans votre chambre, 24 h/24 selon disponibilité', domicilio: 'Chez vous, à Mexico', teleconsulta: 'Par appel vidéo' },
+      svcDesc: { consultorio: 'Del Valle, Roma ou Polanco', hotel: 'Dans votre chambre, 24 h/24 selon disponibilité', domicilio: 'Chez vous, à Mexico', teleconsulta: 'Par appel vidéo' },
       paso: ['De quel service avez-vous besoin ?', 'Où ?', 'Quand ?', 'Options'],
       sede: 'Cabinet', zona: 'Quartier', otraZona: 'Autre quartier', tipo: 'Type de consultation', primera: 'Première consultation', subsecuente: 'Suivi',
       seguimiento: 'Il s’agit d’une visite de suivi', fecha: 'Date', hora: 'Heure',
@@ -176,7 +176,7 @@
         res: {
           hotel: 'Le médecin vient dans votre chambre, selon disponibilité. Écrivez par WhatsApp pour convenir de l’heure d’arrivée.',
           domicilio: 'Le médecin vient chez vous. Se demande par WhatsApp.',
-          consultorio: 'Consultation à Del Valle, Roma, Polanco ou Santa Fe, sur rendez-vous en ligne ou par WhatsApp.',
+          consultorio: 'Consultation à Del Valle, Roma ou Polanco, sur rendez-vous en ligne ou par WhatsApp.',
           teleconsulta: 'Par appel vidéo, sans déplacement ; se réserve par WhatsApp. Si un examen physique est nécessaire pendant l’appel, le médecin vous le dira.',
           lejos: 'Si vous ne pouvez pas vous rendre à Mexico, l’option est la téléconsultation. Si vous avez besoin d’un examen physique, consultez un médecin sur place.'
         },
@@ -251,6 +251,8 @@
     var r = { lineas: [], total: 0, notas: [], error: null, horario: null, reservar: null };
     if (!s.svc) { r.error = L.elija; return r; }
     if (s.svc !== 'teleconsulta' && s.svc !== 'consultorio' && s.zona === 'otra') { r.error = L.zonaOtra; return r; }
+    var lista = s.svc === 'hotel' ? D.hotel.zonas : s.svc === 'domicilio' ? D.domicilio : null;  // zona retirada o desconocida
+    if ((lista && !lista[s.zona]) || (s.svc === 'consultorio' && !D.consultorio[s.sede])) { r.error = L.zonaOtra; return r; }
     if (!s.fecha || !s.hora) { r.error = L.faltaFecha; return r; }
     if (s.fecha > ULTIMA) { r.error = L.fueraAnio; return r; }
     if (sinServicio(s.fecha, s.hora, s.svc)) { r.error = s.svc !== 'teleconsulta' && D.sinServicio.some(function (x) { return x.fecha === s.fecha && x.teleconsulta; }) ? L.soloTele : L.sinServicio; return r; }

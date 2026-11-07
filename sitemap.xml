@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://drcjortegaarenas.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/en/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/fr/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/hoteles/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/en/hotels/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/fr/hotels/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/hoteles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/hotels/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/hotels/"/>
@@ -317,30 +317,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-roma-condesa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-roma-condesa/"/>
-  </url>
-  <url>
-    <loc>https://drcjortegaarenas.com/zonas/santa-fe/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
-  </url>
-  <url>
-    <loc>https://drcjortegaarenas.com/en/doctor-santa-fe/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
-  </url>
-  <url>
-    <loc>https://drcjortegaarenas.com/fr/medecin-santa-fe/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <xhtml:link rel="alternate" hreflang="es" href="https://drcjortegaarenas.com/zonas/santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://drcjortegaarenas.com/fr/medecin-santa-fe/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://drcjortegaarenas.com/en/doctor-santa-fe/"/>
   </url>
   <url>
     <loc>https://drcjortegaarenas.com/formularios/</loc>
