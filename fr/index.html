@@ -32,7 +32,7 @@
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
-<link href="/assets/planear.css?v=20261107b" rel="stylesheet"/>
+<link href="/assets/planear.css?v=20261107c" rel="stylesheet"/>
 <style>
 /* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
 @font-face {
@@ -302,6 +302,8 @@
   .schedule-list { list-style:none; }
   .schedule-list li { font-size:0.72rem; color:var(--muted); padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:10px; }
   .schedule-list li:last-child { border-bottom:none; }
+  .schedule-list li[hidden], .schedule-card[hidden] { display:none; }
+  .schedule-list li.s-anio { color:var(--silver); letter-spacing:0.12em; padding-top:14px; border-bottom:1px solid var(--border); }
   .schedule-list .sdate { color:var(--silver); flex-shrink:0; width:70px; }
   .schedule-list li.range { color:#b07868; }
   .schedule-list li.range .sdate { color:#c08878; }
@@ -1080,8 +1082,8 @@
 <div class="planear reveal" id="planear-app">
 <noscript><p>Activez JavaScript pour utiliser l’estimation, ou consultez les <a class="text-link" href="#tarifas">honoraires</a>.</p></noscript>
 </div>
-<script id="planear-datos" type="application/json">{"hotel":{"zonas":{"Pedregal":"A","Coyoacán":"A","Del Valle":"A","Roma":"A","Condesa":"A","Centro":"B","Reforma":"B","Polanco":"B"},"A":[2500,4000,5500],"B":[3000,4500,6000]},"domicilio":{"Del Valle":{"precios":[1000,2500,3500]},"Texcoco":{"precios":[1000,2500,3500]},"Pedregal":{"precios":[1300,3000,4000]},"Coyoacán":{"precios":[1300,3000,4000]},"Roma":{"precios":[1300,3000,4000]},"Condesa":{"precios":[1300,3000,4000]},"Reforma":{"precios":[1800,3500,4500]},"Polanco":{"precios":[1800,3500,4500]}},"consultorio":{"Del Valle":{"precio":1000},"Roma":{"precio":1200},"Polanco":{"precio":1500}},"consultorioFestivo":2500,"teleconsulta":[700,1000],"iv":1800,"enfermeria":[1500,2500,3500],"asistente":[1500,2500,3500],"oficiales":["2026-01-01","2026-02-02","2026-03-16","2026-05-01","2026-09-16","2026-11-16","2026-12-25"],"tradicionales":["2026-04-02","2026-04-03","2026-05-10","2026-11-02","2026-12-12","2026-12-24","2026-12-31"],"sinServicio":[{"fecha":"2026-11-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-11-24","desde":"00:00"},{"fecha":"2026-11-30","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-01","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-02","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-03","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-04","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-06","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-10","desde":"00:00"},{"fecha":"2026-12-24","desde":"16:00"},{"fecha":"2026-12-25","desde":"00:00"},{"fecha":"2026-12-31","desde":"16:00"},{"fecha":"2027-01-01","desde":"00:00"}],"sinAsistente":["2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14"],"cal":{"Del Valle":"https://cal.com/drcjortegaarenas/consultorio-del-valle","Roma":"https://cal.com/drcjortegaarenas/consultorio-roma","Polanco":"https://cal.com/drcjortegaarenas/consultorio-polanco"},"whatsapp":"525951093969"}</script>
-<script defer="" src="/assets/planear.js?v=20261107b"></script>
+<script id="planear-datos" type="application/json">{"hotel":{"zonas":{"Pedregal":"A","Coyoacán":"A","Del Valle":"A","Roma":"A","Condesa":"A","Centro":"B","Reforma":"B","Polanco":"B"},"A":[2500,4000,5500],"B":[3000,4500,6000]},"domicilio":{"Del Valle":{"precios":[1000,2500,3500]},"Texcoco":{"precios":[1000,2500,3500]},"Pedregal":{"precios":[1300,3000,4000]},"Coyoacán":{"precios":[1300,3000,4000]},"Roma":{"precios":[1300,3000,4000]},"Condesa":{"precios":[1300,3000,4000]},"Reforma":{"precios":[1800,3500,4500]},"Polanco":{"precios":[1800,3500,4500]}},"consultorio":{"Del Valle":{"precio":1000},"Roma":{"precio":1200},"Polanco":{"precio":1500}},"consultorioFestivo":2500,"teleconsulta":[700,1000],"iv":1800,"enfermeria":[1500,2500,3500],"asistente":[1500,2500,3500],"oficiales":["2026-01-01","2026-02-02","2026-03-16","2026-05-01","2026-09-16","2026-11-16","2026-12-25","2027-01-01","2027-02-01","2027-03-15","2027-05-01","2027-09-16","2027-11-15","2027-12-25"],"tradicionales":["2026-04-02","2026-04-03","2026-05-10","2026-11-02","2026-12-12","2026-12-24","2026-12-31","2027-03-25","2027-03-26","2027-05-10","2027-11-02","2027-12-12","2027-12-24","2027-12-31"],"sinServicio":[{"fecha":"2026-11-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-11-24","desde":"00:00"},{"fecha":"2026-11-30","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-01","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-02","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-03","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-04","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-06","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-10","desde":"00:00"},{"fecha":"2026-12-24","desde":"16:00"},{"fecha":"2026-12-25","desde":"00:00"},{"fecha":"2026-12-31","desde":"16:00"},{"fecha":"2027-01-01","desde":"00:00"}],"sinAsistente":["2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14"],"cal":{"Del Valle":"https://cal.com/drcjortegaarenas/consultorio-del-valle","Roma":"https://cal.com/drcjortegaarenas/consultorio-roma","Polanco":"https://cal.com/drcjortegaarenas/consultorio-polanco"},"whatsapp":"525951093969"}</script>
+<script defer="" src="/assets/planear.js?v=20261107c"></script>
 </section>
 <!-- ══ CÓMO FUNCIONA ════════════════════════ -->
 <section class="section" id="como-funciona">
@@ -1469,49 +1471,65 @@
 </div>
 </div>
 <details class="more reveal">
-<summary>Jours fériés 2026 et dates d’indisponibilité</summary>
+<summary>Jours fériés 2026–2027 et dates d’indisponibilité</summary>
 <div class="important-note reveal" style="margin-bottom:28px"><strong>Jours fériés :</strong> des tarifs spéciaux s’appliquent et sont convenus directement par WhatsApp (+52 595 109 3969) ; pas de réservation en ligne. <strong>Dates d’indisponibilité :</strong> certains jours, pas de présentiel mais la téléconsultation reste possible ; d’autres jours, aucun service ; voir les dates ci-dessous.</div>
 <div class="schedule-grid">
 <div class="schedule-card reveal">
 <span class="schedule-type official">Jours fériés officiels — Tarif 24 h</span>
-<h3>Jours fériés officiels 2026</h3>
+<h3>Jours fériés officiels 2026–2027</h3>
 <ul class="schedule-list">
-<li><span class="sdate">1er janv.</span><span>Jour de l’An</span></li>
-<li><span class="sdate">2 févr.</span><span>Jour de la Constitution</span></li>
-<li><span class="sdate">16 mars</span><span>Jour de Benito Juárez</span></li>
-<li><span class="sdate">1er mai</span><span>Fête du Travail</span></li>
-<li><span class="sdate">16 sept.</span><span>Jour de l’Indépendance</span></li>
-<li><span class="sdate">16 nov.</span><span>Jour de la Révolution</span></li>
-<li><span class="sdate">25 déc.</span><span>Noël · <em>pas de service</em></span></li>
+<li data-hasta="2026-01-01"><span class="sdate">1er janv.</span><span>Jour de l’An</span></li>
+<li data-hasta="2026-02-02"><span class="sdate">2 févr.</span><span>Jour de la Constitution</span></li>
+<li data-hasta="2026-03-16"><span class="sdate">16 mars</span><span>Jour de Benito Juárez</span></li>
+<li data-hasta="2026-05-01"><span class="sdate">1er mai</span><span>Fête du Travail</span></li>
+<li data-hasta="2026-09-16"><span class="sdate">16 sept.</span><span>Jour de l’Indépendance</span></li>
+<li data-hasta="2026-11-16"><span class="sdate">16 nov.</span><span>Jour de la Révolution</span></li>
+<li data-hasta="2026-12-25"><span class="sdate">25 déc.</span><span>Noël · <em>pas de service</em></span></li>
+<li class="s-anio"><span>2027</span></li>
+<li data-hasta="2027-01-01"><span class="sdate">1er janv.</span><span>Jour de l’An · <em>pas de service</em></span></li>
+<li data-hasta="2027-02-01"><span class="sdate">1er févr.</span><span>Jour de la Constitution</span></li>
+<li data-hasta="2027-03-15"><span class="sdate">15 mars</span><span>Jour de Benito Juárez</span></li>
+<li data-hasta="2027-05-01"><span class="sdate">1er mai</span><span>Fête du Travail</span></li>
+<li data-hasta="2027-09-16"><span class="sdate">16 sept.</span><span>Jour de l’Indépendance</span></li>
+<li data-hasta="2027-11-15"><span class="sdate">15 nov.</span><span>Jour de la Révolution</span></li>
+<li data-hasta="2027-12-25"><span class="sdate">25 déc.</span><span>Noël</span></li>
 </ul>
 </div>
 <div class="schedule-card reveal">
 <span class="schedule-type traditional">Jours fériés traditionnels — Tarif spécial</span>
-<h3>Non officiels / traditionnels 2026</h3>
+<h3>Non officiels / traditionnels 2026–2027</h3>
 <ul class="schedule-list">
-<li><span class="sdate">2 avr.</span><span>Jeudi saint</span></li>
-<li><span class="sdate">3 avr.</span><span>Vendredi saint</span></li>
-<li><span class="sdate">10 mai</span><span>Fête des mères</span></li>
-<li><span class="sdate">2 nov.</span><span>Jour des Morts</span></li>
-<li><span class="sdate">12 déc.</span><span>Jour de la Vierge de Guadalupe</span></li>
-<li><span class="sdate">24 déc.</span><span>Réveillon de Noël · <em>pas de service à partir de 16 h</em></span></li>
-<li><span class="sdate">31 déc.</span><span>Saint-Sylvestre · <em>pas de service à partir de 16 h</em></span></li>
+<li data-hasta="2026-04-02"><span class="sdate">2 avr.</span><span>Jeudi saint</span></li>
+<li data-hasta="2026-04-03"><span class="sdate">3 avr.</span><span>Vendredi saint</span></li>
+<li data-hasta="2026-05-10"><span class="sdate">10 mai</span><span>Fête des mères</span></li>
+<li data-hasta="2026-11-02"><span class="sdate">2 nov.</span><span>Jour des Morts</span></li>
+<li data-hasta="2026-12-12"><span class="sdate">12 déc.</span><span>Jour de la Vierge de Guadalupe</span></li>
+<li data-hasta="2026-12-24"><span class="sdate">24 déc.</span><span>Réveillon de Noël · <em>pas de service à partir de 16 h</em></span></li>
+<li data-hasta="2026-12-31"><span class="sdate">31 déc.</span><span>Saint-Sylvestre · <em>pas de service à partir de 16 h</em></span></li>
+<li class="s-anio"><span>2027</span></li>
+<li data-hasta="2027-03-25"><span class="sdate">25 mars</span><span>Jeudi saint</span></li>
+<li data-hasta="2027-03-26"><span class="sdate">26 mars</span><span>Vendredi saint</span></li>
+<li data-hasta="2027-05-10"><span class="sdate">10 mai</span><span>Fête des mères</span></li>
+<li data-hasta="2027-11-02"><span class="sdate">2 nov.</span><span>Jour des Morts</span></li>
+<li data-hasta="2027-12-12"><span class="sdate">12 déc.</span><span>Jour de la Vierge de Guadalupe</span></li>
+<li data-hasta="2027-12-24"><span class="sdate">24 déc.</span><span>Réveillon de Noël</span></li>
+<li data-hasta="2027-12-31"><span class="sdate">31 déc.</span><span>Saint-Sylvestre</span></li>
 </ul>
 </div>
 <div class="schedule-card unavail reveal">
 <span class="schedule-type unavail">⚠ Dates d’indisponibilité</span>
 <h3>Aucun service</h3>
 <ul class="schedule-list">
-<li data-teleconsulta="si"><span class="sdate">5 nov.</span><span>Pas de présentiel · téléconsultation possible</span></li>
-<li data-asistente="no"><span class="sdate">6–14 nov.</span><span>Pas d’assistante francophone · consultations assurées</span></li>
-<li><span class="sdate">24 nov.</span><span>Toute la journée</span></li>
-<li data-teleconsulta="si"><span class="sdate">30 nov.</span><span>Pas de présentiel · téléconsultation possible</span></li>
-<li data-teleconsulta="si"><span class="sdate">1er–6 déc.</span><span>Pas de présentiel · téléconsultation possible</span></li>
-<li><span class="sdate">10 déc.</span><span>Toute la journée</span></li>
-<li><span class="sdate">24 déc.</span><span>À partir de 16 h</span></li>
-<li><span class="sdate">25 déc.</span><span>Toute la journée</span></li>
-<li><span class="sdate">31 déc.</span><span>À partir de 16 h</span></li>
-<li><span class="sdate">1er janv.</span><span>Nouvel An 2027 · toute la journée</span></li>
+<li data-hasta="2026-11-05" data-teleconsulta="si"><span class="sdate">5 nov.</span><span>Pas de présentiel · téléconsultation possible</span></li>
+<li data-asistente="no" data-hasta="2026-11-14"><span class="sdate">6–14 nov.</span><span>Pas d’assistante francophone · consultations assurées</span></li>
+<li data-hasta="2026-11-24"><span class="sdate">24 nov.</span><span>Toute la journée</span></li>
+<li data-hasta="2026-11-30" data-teleconsulta="si"><span class="sdate">30 nov.</span><span>Pas de présentiel · téléconsultation possible</span></li>
+<li data-hasta="2026-12-06" data-teleconsulta="si"><span class="sdate">1er–6 déc.</span><span>Pas de présentiel · téléconsultation possible</span></li>
+<li data-hasta="2026-12-10"><span class="sdate">10 déc.</span><span>Toute la journée</span></li>
+<li data-hasta="2026-12-24"><span class="sdate">24 déc.</span><span>À partir de 16 h</span></li>
+<li data-hasta="2026-12-25"><span class="sdate">25 déc.</span><span>Toute la journée</span></li>
+<li data-hasta="2026-12-31"><span class="sdate">31 déc.</span><span>À partir de 16 h</span></li>
+<li data-hasta="2027-01-01"><span class="sdate">1er janv.</span><span>Nouvel An 2027 · toute la journée</span></li>
 </ul>
 <p style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px">Les 5 et 30 novembre, et du 1er au 6 décembre, pas de consultation au cabinet, à l’hôtel ni à domicile ; la téléconsultation reste possible et se réserve par WhatsApp. Le 24 novembre, le 10 décembre, les 24 et 31 décembre à partir de 16 h, le 25 décembre et le 1er janvier, aucun service, ni en présentiel ni à distance ; les 24 et 31 décembre avant 16 h, les soins sont à convenir uniquement par WhatsApp, comme pour tous les jours fériés. Du 6 au 14 novembre 2026, les consultations sont assurées, mais sans l’assistante de traduction en français. Pour toute autre date, vérifiez les disponibilités dans le calendrier en ligne ou par WhatsApp.</p>
 </div>

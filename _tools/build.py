@@ -449,6 +449,24 @@ MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct'
 CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco'}  # teleconsulta, hotel y domicilio: solo por WhatsApp
 
 
+def fechas_lista(card, anio_base):
+    """Recorre una tarjeta de calendario: (li, fechas ISO que cubre, hora desde). El año sube cuando el mes
+    retrocede; las filas sin fecha (separadores de año) se saltan."""
+    anio, previo = anio_base, 0
+    for li in card.select('.schedule-list li'):
+        spans = li.find_all('span', recursive=False)
+        m = re.match(r'(\w{3}) (\d+)(?:–(\d+))?', spans[0].get('data-es', '')) if spans else None
+        if not m:
+            continue
+        mes = MESES_ES.index(m.group(1)) + 1
+        if mes < previo:
+            anio += 1
+        previo = mes
+        desde = re.search(r'(\d{1,2}:\d{2})', spans[1].get('data-es', '')) if len(spans) > 1 else None
+        dias = [f'{anio}-{mes:02d}-{dia:02d}' for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1)]
+        yield li, dias, desde.group(1) if desde else '00:00'
+
+
 def planear_datos():
     """Precios y calendario de plantilla.html para el cotizador de la portada (assets/planear.js).
     Nada se escribe a mano: si cambia una tabla, cambia el cotizador."""
@@ -484,20 +502,13 @@ def planear_datos():
     sin_asistente = []
 
     def fechas(card):
-        anio, out, previo = anio_base, [], 0
-        for li in card.select('.schedule-list li'):
-            spans = li.find_all('span', recursive=False)
-            m = re.match(r'(\w{3}) (\d+)(?:–(\d+))?', spans[0]['data-es'])
-            mes = MESES_ES.index(m.group(1)) + 1
-            if mes < previo:
-                anio += 1
-            previo = mes
-            desde = re.search(r'(\d{1,2}:\d{2})', spans[1].get('data-es', '')) if len(spans) > 1 else None
+        out = []
+        for li, dias, desde in fechas_lista(card, anio_base):
             if li.get('data-asistente') == 'no':  # hay consultas, pero sin la asistente de francés
-                sin_asistente.extend(f'{anio}-{mes:02d}-{dia:02d}' for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1))
+                sin_asistente.extend(dias)
                 continue
-            for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1):
-                f = {'fecha': f'{anio}-{mes:02d}-{dia:02d}', 'desde': desde.group(1) if desde else '00:00'}
+            for dia in dias:
+                f = {'fecha': dia, 'desde': desde}
                 if li.get('data-teleconsulta') == 'si':  # sin atención presencial, pero con teleconsulta
                     f['teleconsulta'] = True
                 out.append(f)
@@ -537,6 +548,12 @@ def render(page, lang):
             src = src.replace(mark, fill())
     soup = BeautifulSoup(src, 'html.parser')
     soup.html['lang'] = meta[lang]['html_lang']
+    tarjeta0 = soup.select_one('.schedule-card h3')
+    if tarjeta0:  # portada: calendario de festivos y fechas sin servicio
+        anio_base = int(re.search(r'(\d{4})', tarjeta0['data-es']).group(1))
+        for card in soup.select('.schedule-card'):
+            for li, dias, _ in fechas_lista(card, anio_base):
+                li['data-hasta'] = dias[-1]
     for el in soup.select('[data-solo]'):  # bloques que existen en un solo idioma
         if el['data-solo'] != lang:
             el.decompose()

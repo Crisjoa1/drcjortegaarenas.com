@@ -6,7 +6,7 @@
 <!--HEAD_META-->
 <link rel="preload" href="/assets/fonts/bodoni-moda-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/planear.css?v=20261107b">
+<link rel="stylesheet" href="/assets/planear.css?v=20261107c">
 <style>
 /* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
 @font-face {
@@ -276,6 +276,8 @@
   .schedule-list { list-style:none; }
   .schedule-list li { font-size:0.72rem; color:var(--muted); padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:10px; }
   .schedule-list li:last-child { border-bottom:none; }
+  .schedule-list li[hidden], .schedule-card[hidden] { display:none; }
+  .schedule-list li.s-anio { color:var(--silver); letter-spacing:0.12em; padding-top:14px; border-bottom:1px solid var(--border); }
   .schedule-list .sdate { color:var(--silver); flex-shrink:0; width:70px; }
   .schedule-list li.range { color:#b07868; }
   .schedule-list li.range .sdate { color:#c08878; }
@@ -729,7 +731,7 @@
     <noscript><p data-es="Active JavaScript para usar el cotizador, o consulte las <a href='#tarifas' class='text-link'>tarifas</a>." data-en="Enable JavaScript to use the estimator, or see the <a href='#tarifas' class='text-link'>fees</a>." data-fr="Activez JavaScript pour utiliser l’estimation, ou consultez les <a href='#tarifas' class='text-link'>honoraires</a>."></p></noscript>
   </div>
   <script type="application/json" id="planear-datos"><!--PLANEAR_DATOS--></script>
-  <script src="/assets/planear.js?v=20261107b" defer></script>
+  <script src="/assets/planear.js?v=20261107c" defer></script>
 </section>
 
 <!-- ══ CÓMO FUNCIONA ════════════════════════ -->
@@ -1046,7 +1048,7 @@
     </div>
   </div>
   <details class="more reveal">
-    <summary data-es="Días festivos 2026 y fechas sin servicio" data-en="2026 holidays and unavailable dates" data-fr="Jours fériés 2026 et dates d’indisponibilité"></summary>
+    <summary data-es="Días festivos 2026–2027 y fechas sin servicio" data-en="2026–2027 holidays and unavailable dates" data-fr="Jours fériés 2026–2027 et dates d’indisponibilité"></summary>
     <div class="important-note reveal" style="margin-bottom:28px"
     data-es="<strong>Días festivos:</strong> aplican tarifas especiales y se coordinan directamente por WhatsApp (+52 595 109 3969); no se reservan en línea. <strong>Fechas sin servicio:</strong> algunos días no hay atención presencial pero sí teleconsulta, y otros no hay ningún servicio; vea las fechas abajo."
     data-en="<strong>Holidays:</strong> special rates apply and are arranged directly via WhatsApp (+52 595 109 3969); not bookable online. <strong>Unavailable dates:</strong> on some days there is no in-person care but telemedicine is available, and on others there is no service at all; see the dates below." data-fr="<strong>Jours fériés :</strong> des tarifs spéciaux s’appliquent et sont convenus directement par WhatsApp (+52 595 109 3969) ; pas de réservation en ligne. <strong>Dates d’indisponibilité :</strong> certains jours, pas de présentiel mais la téléconsultation reste possible ; d’autres jours, aucun service ; voir les dates ci-dessous.">
@@ -1055,7 +1057,7 @@
     <div class="schedule-grid">
     <div class="schedule-card reveal">
       <span class="schedule-type official" data-es="Festivos Oficiales — Tarifa 24 Hrs" data-en="Official Public Holidays — 24 Hr Rate" data-fr="Jours fériés officiels — Tarif 24 h">Festivos Oficiales — Tarifa 24 Hrs</span>
-      <h3 data-es="Días Oficiales 2026" data-en="Official Holidays 2026" data-fr="Jours fériés officiels 2026">Días Oficiales 2026</h3>
+      <h3 data-es="Días Oficiales 2026–2027" data-en="Official Holidays 2026–2027" data-fr="Jours fériés officiels 2026–2027">Días Oficiales 2026–2027</h3>
       <ul class="schedule-list">
         <li><span class="sdate" data-es="Ene 01" data-en="Jan 01" data-fr="1er janv.">Ene 01</span><span data-es="Año Nuevo" data-en="New Year's Day" data-fr="Jour de l’An">Año Nuevo</span></li>
         <li><span class="sdate" data-es="Feb 02" data-en="Feb 02" data-fr="2 févr.">Feb 02</span><span data-es="Día de la Constitución" data-en="Constitution Day" data-fr="Jour de la Constitution">Día de la Constitución</span></li>
@@ -1064,11 +1066,19 @@
         <li><span class="sdate" data-es="Sep 16" data-en="Sep 16" data-fr="16 sept.">Sep 16</span><span data-es="Día de la Independencia" data-en="Independence Day" data-fr="Jour de l’Indépendance">Día de la Independencia</span></li>
         <li><span class="sdate" data-es="Nov 16" data-en="Nov 16" data-fr="16 nov.">Nov 16</span><span data-es="Aniversario de la Revolución" data-en="Revolution Day" data-fr="Jour de la Révolution">Aniversario de la Revolución</span></li>
         <li><span class="sdate" data-es="Dic 25" data-en="Dec 25" data-fr="25 déc.">Dic 25</span><span data-es="Navidad · <em>sin servicio</em>" data-en="Christmas Day · <em>no service</em>" data-fr="Noël · <em>pas de service</em>"></span></li>
+        <li class="s-anio"><span data-es="2027" data-en="2027" data-fr="2027">2027</span></li>
+        <li><span class="sdate" data-es="Ene 01" data-en="Jan 01" data-fr="1er janv.">Ene 01</span><span data-es="Año Nuevo · <em>sin servicio</em>" data-en="New Year's Day · <em>no service</em>" data-fr="Jour de l’An · <em>pas de service</em>">Año Nuevo · <em>sin servicio</em></span></li>
+        <li><span class="sdate" data-es="Feb 01" data-en="Feb 01" data-fr="1er févr.">Feb 01</span><span data-es="Día de la Constitución" data-en="Constitution Day" data-fr="Jour de la Constitution">Día de la Constitución</span></li>
+        <li><span class="sdate" data-es="Mar 15" data-en="Mar 15" data-fr="15 mars">Mar 15</span><span data-es="Natalicio de Benito Juárez" data-en="Benito Juárez Day" data-fr="Jour de Benito Juárez">Natalicio de Benito Juárez</span></li>
+        <li><span class="sdate" data-es="May 01" data-en="May 01" data-fr="1er mai">May 01</span><span data-es="Día del Trabajo" data-en="Labor Day" data-fr="Fête du Travail">Día del Trabajo</span></li>
+        <li><span class="sdate" data-es="Sep 16" data-en="Sep 16" data-fr="16 sept.">Sep 16</span><span data-es="Día de la Independencia" data-en="Independence Day" data-fr="Jour de l’Indépendance">Día de la Independencia</span></li>
+        <li><span class="sdate" data-es="Nov 15" data-en="Nov 15" data-fr="15 nov.">Nov 15</span><span data-es="Aniversario de la Revolución" data-en="Revolution Day" data-fr="Jour de la Révolution">Aniversario de la Revolución</span></li>
+        <li><span class="sdate" data-es="Dic 25" data-en="Dec 25" data-fr="25 déc.">Dic 25</span><span data-es="Navidad" data-en="Christmas Day" data-fr="Noël">Navidad</span></li>
       </ul>
     </div>
     <div class="schedule-card reveal">
       <span class="schedule-type traditional" data-es="Festivos Tradicionales — Tarifa Especial" data-en="Traditional Holidays — Special Rate" data-fr="Jours fériés traditionnels — Tarif spécial">Festivos Tradicionales — Tarifa Especial</span>
-      <h3 data-es="No Oficiales / Tradicionales 2026" data-en="Non-Official / Traditional 2026" data-fr="Non officiels / traditionnels 2026">No Oficiales / Tradicionales 2026</h3>
+      <h3 data-es="No Oficiales / Tradicionales 2026–2027" data-en="Non-Official / Traditional 2026–2027" data-fr="Non officiels / traditionnels 2026–2027">No Oficiales / Tradicionales 2026–2027</h3>
       <ul class="schedule-list">
         <li><span class="sdate" data-es="Abr 02" data-en="Apr 02" data-fr="2 avr.">Abr 02</span><span data-es="Jueves Santo" data-en="Maundy Thursday" data-fr="Jeudi saint">Jueves Santo</span></li>
         <li><span class="sdate" data-es="Abr 03" data-en="Apr 03" data-fr="3 avr.">Abr 03</span><span data-es="Viernes Santo" data-en="Good Friday" data-fr="Vendredi saint">Viernes Santo</span></li>
@@ -1077,6 +1087,14 @@
         <li><span class="sdate" data-es="Dic 12" data-en="Dec 12" data-fr="12 déc.">Dic 12</span><span data-es="Día de la Virgen de Guadalupe" data-en="Guadalupe Day" data-fr="Jour de la Vierge de Guadalupe">Día de la Virgen de Guadalupe</span></li>
         <li><span class="sdate" data-es="Dic 24" data-en="Dec 24" data-fr="24 déc.">Dic 24</span><span data-es="Nochebuena · <em>sin servicio desde las 16:00</em>" data-en="Christmas Eve · <em>no service from 4:00 pm</em>" data-fr="Réveillon de Noël · <em>pas de service à partir de 16 h</em>"></span></li>
         <li><span class="sdate" data-es="Dic 31" data-en="Dec 31" data-fr="31 déc.">Dic 31</span><span data-es="Víspera de Año Nuevo · <em>sin servicio desde las 16:00</em>" data-en="New Year's Eve · <em>no service from 4:00 pm</em>" data-fr="Saint-Sylvestre · <em>pas de service à partir de 16 h</em>"></span></li>
+        <li class="s-anio"><span data-es="2027" data-en="2027" data-fr="2027">2027</span></li>
+        <li><span class="sdate" data-es="Mar 25" data-en="Mar 25" data-fr="25 mars">Mar 25</span><span data-es="Jueves Santo" data-en="Maundy Thursday" data-fr="Jeudi saint">Jueves Santo</span></li>
+        <li><span class="sdate" data-es="Mar 26" data-en="Mar 26" data-fr="26 mars">Mar 26</span><span data-es="Viernes Santo" data-en="Good Friday" data-fr="Vendredi saint">Viernes Santo</span></li>
+        <li><span class="sdate" data-es="May 10" data-en="May 10" data-fr="10 mai">May 10</span><span data-es="Día de la Madre" data-en="Mother's Day" data-fr="Fête des mères">Día de la Madre</span></li>
+        <li><span class="sdate" data-es="Nov 02" data-en="Nov 02" data-fr="2 nov.">Nov 02</span><span data-es="Día de Muertos" data-en="Day of the Dead" data-fr="Jour des Morts">Día de Muertos</span></li>
+        <li><span class="sdate" data-es="Dic 12" data-en="Dec 12" data-fr="12 déc.">Dic 12</span><span data-es="Día de la Virgen de Guadalupe" data-en="Guadalupe Day" data-fr="Jour de la Vierge de Guadalupe">Día de la Virgen de Guadalupe</span></li>
+        <li><span class="sdate" data-es="Dic 24" data-en="Dec 24" data-fr="24 déc.">Dic 24</span><span data-es="Nochebuena" data-en="Christmas Eve" data-fr="Réveillon de Noël">Nochebuena</span></li>
+        <li><span class="sdate" data-es="Dic 31" data-en="Dec 31" data-fr="31 déc.">Dic 31</span><span data-es="Víspera de Año Nuevo" data-en="New Year's Eve" data-fr="Saint-Sylvestre">Víspera de Año Nuevo</span></li>
       </ul>
     </div>
     <div class="schedule-card unavail reveal">

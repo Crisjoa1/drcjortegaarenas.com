@@ -686,5 +686,15 @@
   }
 
   // Para pruebas automáticas (no afecta a la página).
+  /* ── calendario: oculta las fechas que ya pasaron ── */
+  (function () {
+    var ya = hoy();
+    document.querySelectorAll('.schedule-list li[data-hasta]').forEach(function (li) { if (li.getAttribute('data-hasta') < ya) li.hidden = true; });
+    document.querySelectorAll('.schedule-card').forEach(function (card) {
+      var filas = card.querySelectorAll('.schedule-list li[data-hasta]');
+      if (filas.length && !card.querySelector('.schedule-list li[data-hasta]:not([hidden])')) card.hidden = true;
+    });
+  })();
+
   window.__planear = { cotizar: cotizar, horario: horario, datos: D };
 })();

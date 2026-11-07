@@ -307,6 +307,8 @@
   .schedule-list { list-style:none; }
   .schedule-list li { font-size:0.72rem; color:var(--muted); padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); display:flex; gap:10px; }
   .schedule-list li:last-child { border-bottom:none; }
+  .schedule-list li[hidden], .schedule-card[hidden] { display:none; }
+  .schedule-list li.s-anio { color:var(--silver); letter-spacing:0.12em; padding-top:14px; border-bottom:1px solid var(--border); }
   .schedule-list .sdate { color:var(--silver); flex-shrink:0; width:70px; }
   .schedule-list li.range { color:#b07868; }
   .schedule-list li.range .sdate { color:#c08878; }
