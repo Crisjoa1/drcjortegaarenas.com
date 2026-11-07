@@ -40,7 +40,7 @@
         cancelaWA: 'Si cancela con 24 horas o más de anticipación, se le devuelve la transferencia, siempre que haya sido SPEI desde una cuenta bancaria (la app de su banco sí cuenta), no por Mercado Pago, PayPal u otras plataformas de pago.',
         teleconsulta: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada y ahí se le indica cómo pagar.', teleFestivo: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada.'
       },
-      aviso: 'Estimación con los honorarios publicados. El médico confirma el total al coordinar su cita. No incluye procedimientos, medicamentos ni documentos. No se atienden menores de 15 años ni personas embarazadas.',
+      aviso: 'Estimación con los honorarios publicados. El médico confirma el total al coordinar su cita. No incluye procedimientos, medicamentos ni documentos. Atención desde los 12 años; los menores de 18 vienen con madre, padre o tutor. No se atiende a personas embarazadas.',
       wa: 'Enviar por WhatsApp', reservar: 'Reservar consultorio', reiniciar: 'Empezar de nuevo',
       waHola: 'Hola, Dr. Ortega-Arenas, quiero solicitar', waTotal: 'Total estimado en la web', waCierre: '¿Tiene disponibilidad?',
       g: {
@@ -48,8 +48,8 @@
         alarma: ['Dolor u opresión en el pecho, o dolor en brazo, mandíbula, cuello o espalda, con falta de aire, debilidad o sensación de desmayo", "Dificultad para respirar que aparece de pronto o empeora, o falta de aire en reposo", "Signos de EVC de aparición súbita: cara caída, brazo débil, habla arrastrada, pérdida de equilibrio o de la visión", "Pérdida del estado de alerta, desmayo, confusión súbita o dificultad para despertar a la persona", "Convulsión", "Sangrado abundante que no se detiene con presión directa, o vómito o evacuaciones con mucha sangre", "Reacción alérgica grave: hinchazón de labios, lengua o garganta, dificultad para respirar o tragar, o ronchas extensas con mareo", "Dolor abdominal intenso o que no cede, sobre todo con el abdomen duro", "Fiebre con rigidez de nuca, dolor de cabeza intenso, confusión o sensibilidad a la luz", "Deshidratación grave: no poder beber ni retener líquidos, orinar muy poco o nada, somnolencia o confusión", "Golpe en la cabeza con vómito, somnolencia o confusión; accidente de tránsito; posible fractura o herida profunda'],
         ninguno: 'Ninguno de estos', continuar: 'Continuar',
         urgT: 'Llame al 911 o acuda a urgencias ahora', urgS: 'Estos signos necesitan atención de urgencias. Este servicio es ambulatorio y no atiende urgencias. Si está en un hotel, avise también a la recepción.', urgLink: 'Ver la guía: cuándo ir a urgencias →',
-        quienT: '¿Quién es el paciente?', quien: ['Tiene 15 años o más y no está embarazada', 'Es menor de 15 años', 'Está embarazada'],
-        noT: 'Este servicio no atiende a menores de 15 años ni a personas embarazadas', noS: 'Acuda con un pediatra o con su ginecólogo-obstetra. Ante una emergencia, llame al 911.',
+        quienT: '¿Quién es el paciente?', quien: ['Tiene 18 años o más y no está embarazada', 'Tiene entre 12 y 17 años y no está embarazada', 'Es menor de 12 años', 'Está embarazada'], menor: 'Durante la consulta debe estar presente su madre, padre o tutor, quien firma el consentimiento informado. La hidratación intravenosa es solo para adultos.',
+        noT: 'Este servicio no atiende a menores de 12 años ni a personas embarazadas', noS: 'Acuda con un pediatra o con su ginecólogo-obstetra. Ante una emergencia, llame al 911.',
         dondeT: '¿Dónde está?', donde: ['En un hotel de la Ciudad de México', 'En una casa de la Ciudad de México', 'Puedo ir a un consultorio', 'Fuera de la Ciudad de México'],
         explT: '¿Necesita que lo revisen en persona?', expl: ['Sí: tengo síntomas que hay que revisar', 'No: renovar o revisar una receta (el médico decide si procede), revisar estudios, un seguimiento o una duda'],
         resT: 'Servicio sugerido', calcular: 'Calcular el costo', atras: 'Atrás',
@@ -100,7 +100,7 @@
         cancelaWA: 'If you cancel at least 24 hours in advance, your transfer is refunded, as long as it was a SPEI transfer from a bank account (your bank’s app is fine), not via Mercado Pago, PayPal or other payment platforms.',
         teleconsulta: 'Booked on WhatsApp; full payment is made before the video call, and we tell you how to pay there.', teleFestivo: 'Booked on WhatsApp; full payment is made before the video call.'
       },
-      aviso: 'Estimate based on the published fees. The physician confirms the total when arranging your visit. Procedures, medications and documents are not included. We do not see patients under 15 years of age or pregnant patients.',
+      aviso: 'Estimate based on the published fees. The physician confirms the total when arranging your visit. Procedures, medications and documents are not included. We see patients aged 12 and older; under 18s come with a parent or legal guardian. We do not see pregnant patients.',
       wa: 'Send on WhatsApp', reservar: 'Book a clinic visit', reiniciar: 'Start over',
       waHola: 'Hello Dr. Ortega-Arenas, I would like to request', waTotal: 'Estimated total on the website', waCierre: 'Are you available?',
       g: {
@@ -108,8 +108,8 @@
         alarma: ['Chest pain or pressure, or pain in the arm, jaw, neck or back, with shortness of breath, weakness or feeling faint", "Trouble breathing that starts suddenly or gets worse, or shortness of breath at rest", "Sudden signs of a stroke: facial droop, arm weakness, slurred speech, loss of balance or vision", "Loss of consciousness, fainting, sudden confusion or difficulty waking the person", "A seizure", "Heavy bleeding that does not stop with direct pressure, or vomit or stools with a lot of blood", "A severe allergic reaction: swelling of the lips, tongue or throat, trouble breathing or swallowing, or widespread hives with dizziness", "Severe abdominal pain or pain that does not ease, especially with a hard belly", "Fever with a stiff neck, severe headache, confusion or sensitivity to light", "Severe dehydration: unable to drink or keep fluids down, passing little or no urine, drowsiness or confusion", "A blow to the head followed by vomiting, drowsiness or confusion; a traffic accident; a possible broken bone or a deep wound'],
         ninguno: 'None of these', continuar: 'Continue',
         urgT: 'Call 911 or go to an emergency room now', urgS: 'These signs need emergency care. This is an outpatient service and does not handle emergencies. If you are at a hotel, also tell the front desk.', urgLink: 'Read the guide: when to go to the ER →',
-        quienT: 'Who is the patient?', quien: ['Aged 15 or older and not pregnant', 'Under 15 years old', 'Pregnant'],
-        noT: 'This service does not see patients under 15 years of age or pregnant patients', noS: 'Please see a pediatrician or your obstetrician. In an emergency, call 911.',
+        quienT: 'Who is the patient?', quien: ['Aged 18 or older and not pregnant', 'Aged 12 to 17 and not pregnant', 'Under 12 years old', 'Pregnant'], menor: 'A parent or legal guardian must be present during the visit and signs the informed consent. IV hydration is for adults only.',
+        noT: 'This service does not see children under 12 or pregnant patients', noS: 'Please see a pediatrician or your obstetrician. In an emergency, call 911.',
         dondeT: 'Where are you?', donde: ['At a hotel in Mexico City', 'At a home in Mexico City', 'I can go to a clinic', 'Outside Mexico City'],
         explT: 'Do you need an in-person examination?', expl: ['Yes: I have symptoms that need to be checked', 'No: renewing or reviewing a prescription (the physician decides if appropriate), reviewing test results, a follow-up or a question'],
         resT: 'Suggested service', calcular: 'Estimate the cost', atras: 'Back',
@@ -160,7 +160,7 @@
         cancelaWA: 'Si vous annulez au moins 24 heures à l’avance, votre virement vous est remboursé, à condition qu’il s’agisse d’un virement SPEI depuis un compte bancaire (l’application de votre banque est acceptée), et non via Mercado Pago, PayPal ou une autre plateforme de paiement.',
         teleconsulta: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo et nous vous indiquons comment payer.', teleFestivo: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo.'
       },
-      aviso: 'Estimation selon les honoraires publiés. Le médecin confirme le total en planifiant votre rendez-vous. Les actes, les médicaments et les documents ne sont pas inclus. Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.',
+      aviso: 'Estimation selon les honoraires publiés. Le médecin confirme le total en planifiant votre rendez-vous. Les actes, les médicaments et les documents ne sont pas inclus. Consultations dès 12 ans ; les mineurs viennent avec un parent ou un tuteur légal. Nous ne recevons pas les personnes enceintes.',
       wa: 'Envoyer par WhatsApp', reservar: 'Réserver au cabinet', reiniciar: 'Recommencer',
       waHola: 'Bonjour Dr Ortega-Arenas, je souhaite demander', waTotal: 'Total estimé sur le site', waCierre: 'Avez-vous des disponibilités ?',
       g: {
@@ -168,8 +168,8 @@
         alarma: ['Douleur ou oppression dans la poitrine, ou douleur dans le bras, la mâchoire, le cou ou le dos, avec essoufflement, faiblesse ou sensation d’évanouissement", "Difficulté à respirer qui apparaît brusquement ou s’aggrave, ou essoufflement au repos", "Signes soudains d’AVC : visage qui tombe, bras faible, parole pâteuse, perte d’équilibre ou de vision", "Perte de connaissance, évanouissement, confusion soudaine ou difficulté à réveiller la personne", "Crise convulsive", "Saignement abondant qui ne s’arrête pas par une pression directe, ou vomissements ou selles contenant beaucoup de sang", "Réaction allergique grave : gonflement des lèvres, de la langue ou de la gorge, difficulté à respirer ou à avaler, ou urticaire étendue avec étourdissements", "Douleur abdominale intense ou qui ne cède pas, surtout si le ventre est dur", "Fièvre avec raideur de la nuque, mal de tête intense, confusion ou sensibilité à la lumière", "Déshydratation grave : impossibilité de boire ou de garder les liquides, très peu ou pas d’urine, somnolence ou confusion", "Coup à la tête suivi de vomissements, de somnolence ou de confusion ; accident de la route ; fracture possible ou plaie profonde'],
         ninguno: 'Aucun de ces signes', continuar: 'Continuer',
         urgT: 'Appelez le 911 ou allez aux urgences maintenant', urgS: 'Ces signes nécessitent des soins d’urgence. Ce service est ambulatoire et ne prend pas en charge les urgences. Si vous êtes à l’hôtel, prévenez aussi la réception.', urgLink: 'Lire le guide : quand aller aux urgences →',
-        quienT: 'Qui est le patient ?', quien: ['15 ans ou plus et pas enceinte', 'Moins de 15 ans', 'Enceinte'],
-        noT: 'Ce service ne reçoit pas les patients de moins de 15 ans ni les personnes enceintes', noS: 'Consultez un pédiatre ou votre gynécologue-obstétricien. En cas d’urgence, appelez le 911.',
+        quienT: 'Qui est le patient ?', quien: ['18 ans ou plus et pas enceinte', 'Entre 12 et 17 ans et pas enceinte', 'Moins de 12 ans', 'Enceinte'], menor: 'Un parent ou un tuteur légal doit être présent pendant la consultation et signe le consentement éclairé. L’hydratation intraveineuse est réservée aux adultes.',
+        noT: 'Ce service ne reçoit pas les enfants de moins de 12 ans ni les personnes enceintes', noS: 'Consultez un pédiatre ou votre gynécologue-obstétricien. En cas d’urgence, appelez le 911.',
         dondeT: 'Où êtes-vous ?', donde: ['Dans un hôtel à Mexico', 'Dans un logement à Mexico', 'Je peux aller au cabinet', 'En dehors de Mexico'],
         explT: 'Avez-vous besoin d’un examen en personne ?', expl: ['Oui : j’ai des symptômes à examiner', 'Non : renouveler ou revoir une ordonnance (le médecin décide si c’est approprié), des résultats à revoir, un suivi ou une question'],
         resT: 'Service suggéré', calcular: 'Estimer le coût', atras: 'Retour',
@@ -533,7 +533,8 @@
   function guiaQuien() {
     avance(1);
     opcionesGuia(G.quienT, G.quien, function (i) {
-      if (i > 0) {
+      respuestas.menor = i === 1;
+      if (i > 1) {
         avance(4);
         guia.innerHTML = '';
         guia.appendChild(h('div', { class: 'pl-alert pl-alert-soft' }, [h('p', { class: 'pl-alert-t', text: G.noT }), h('p', { text: G.noS })]));
@@ -558,6 +559,7 @@
     avance(4);
     guia.innerHTML = '';
     var tarjeta = h('div', { class: 'pl-reco' }, [h('p', { class: 'pl-label', text: G.resT }), h('h3', { class: 'pl-reco-t', text: L.svc[svc] }), h('p', { text: texto })]);
+    if (respuestas.menor) tarjeta.appendChild(h('p', { class: 'pl-note', text: G.menor }));
     if (lang === 'fr' && svc !== 'teleconsulta' && svc !== 'domicilio') tarjeta.appendChild(h('p', { class: 'pl-note', text: G.frances }));
     var acciones = h('div', { class: 'pl-actions' }, [
       h('button', { type: 'button', class: 'hero-cta', text: G.calcular, onclick: function () { S.svc = svc; S.zona = zonaPara(svc); S.hora = ''; dibujarForm(); calcular(); lServicio = svc; dibujarLista(); abrir(0); } }),
@@ -636,9 +638,9 @@
               fr: ['Rechercher dans les questions', 'Par exemple : hôtel, horaires, assurance, enfants', 'Nous n’avons pas trouvé cette question.', 'Écrivez-nous par WhatsApp'] }[lang] || [];
     var sin = function (t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
     // Sinónimos: lo que el paciente escribe → palabras que sí están en las respuestas.
-    var SIN = { es: { nino: ['menor', '15 anos'], ninos: ['menor', '15 anos'], nina: ['menor'], hijo: ['menor'], hija: ['menor'], bebe: ['menor'], embarazo: ['embaraz'], pago: ['anticipo', 'pag', '$'], pagar: ['anticipo', 'pag'], precio: ['$'], precios: ['$'], costo: ['$'], cuesta: ['$'], tarjeta: ['anticipo', 'tarjeta'], cita: ['agend', 'cita'], reservar: ['agend', 'reserv'], llegar: ['llegada', 'tarda'], direccion: ['consultorio'] },
-                en: { child: ['under 15'], children: ['under 15'], kid: ['under 15'], kids: ['under 15'], baby: ['under 15'], pregnancy: ['pregnan'], price: ['$'], prices: ['$'], cost: ['$'], payment: ['deposit', 'pay', '$'], pay: ['deposit', 'pay'], appointment: ['book'], address: ['clinic'], arrive: ['reach', 'arrival'] },
-                fr: { enfant: ['moins de 15'], enfants: ['moins de 15'], bebe: ['moins de 15'], grossesse: ['enceinte'], prix: ['$'], cout: ['$'], paiement: ['acompte', 'pai', '$'], payer: ['acompte', 'pai'], 'rendez-vous': ['reserv'], adresse: ['cabinet'], arriver: ['arriv'] } }[lang] || {};
+    var SIN = { es: { nino: ['menor', '12 anos', 'tutor'], ninos: ['menor', '12 anos', 'tutor'], nina: ['menor'], hijo: ['menor'], hija: ['menor'], bebe: ['menor'], embarazo: ['embaraz'], pago: ['anticipo', 'pag', '$'], pagar: ['anticipo', 'pag'], precio: ['$'], precios: ['$'], costo: ['$'], cuesta: ['$'], tarjeta: ['anticipo', 'tarjeta'], cita: ['agend', 'cita'], reservar: ['agend', 'reserv'], llegar: ['llegada', 'tarda'], direccion: ['consultorio'] },
+                en: { child: ['under 12', 'guardian'], children: ['under 12', 'guardian'], kid: ['under 12', 'guardian'], kids: ['under 12', 'guardian'], baby: ['under 12', 'guardian'], pregnancy: ['pregnan'], price: ['$'], prices: ['$'], cost: ['$'], payment: ['deposit', 'pay', '$'], pay: ['deposit', 'pay'], appointment: ['book'], address: ['clinic'], arrive: ['reach', 'arrival'] },
+                fr: { enfant: ['moins de 12', 'tuteur'], enfants: ['moins de 12', 'tuteur'], bebe: ['moins de 12', 'tuteur'], grossesse: ['enceinte'], prix: ['$'], cout: ['$'], paiement: ['acompte', 'pai', '$'], payer: ['acompte', 'pai'], 'rendez-vous': ['reserv'], adresse: ['cabinet'], arriver: ['arriv'] } }[lang] || {};
     var campo = h('input', { type: 'search', class: 'pl-input pl-faq-input', placeholder: B[1], 'aria-label': B[0] });
     var vacio = h('p', { class: 'pl-empty pl-faq-vacio', hidden: true }, [B[2] + ' ', h('a', { class: 'text-link', href: 'https://wa.me/' + D.whatsapp, target: '_blank', rel: 'noopener', text: B[3] })]);
     var caja = h('div', { class: 'pl-faq-search reveal visible' }, [h('label', { class: 'pl-label', text: B[0] }), campo]);
