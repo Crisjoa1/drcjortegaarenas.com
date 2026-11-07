@@ -21,7 +21,7 @@
       seguimiento: 'Es una consulta de seguimiento', fecha: 'Fecha', hora: 'Hora',
       iv: 'Hidratación intravenosa, si el médico la indica', ivNota: 'Solo adultos (18 años o más). El médico valora primero; si no está indicada, no se cobran los {iv}; la enfermería tampoco, salvo que haya pedido que la enfermera llegue junto con el médico.',
       junto: 'Prefiero que la enfermera llegue junto con el médico', juntoNota: 'Así evita esperar alrededor de 1 h 30 min, pero el honorario de enfermería se cobra aunque la hidratación no esté indicada.',
-      asistente: 'Asistente de traducción al francés', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no forma parte del anticipo: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
+      asistente: 'Asistente de traducción al francés', sinAsistente: 'La asistente de francés no está disponible en esa fecha: la consulta será en español o inglés y no se cobra la asistente.', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no se incluye en el pago en línea: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
       cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 17:00 a 20:00 y sábado de 11:00 a 15:00.',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
@@ -31,12 +31,13 @@
       motivo: { oficial: 'festivo oficial', tradicional: 'festivo tradicional', domingo: 'domingo', sabado: 'sábado después de las 15:00', noche: 'noche (20:01 a 08:59)' },
       linea: { consulta: 'Consulta', subsecuente: 'Consulta subsecuente', festivo: 'Consulta en día festivo', visita: 'Visita', seguimiento: 'Seguimiento a domicilio', iv: 'Hidratación intravenosa (si está indicada)', enf: 'Honorario de enfermería', asis: 'Asistente de traducción al francés', tele: 'Teleconsulta' },
       total: 'Total estimado', sinIV: 'Si la hidratación no está indicada',
-      cuando: { consultorio: ['Al reservar en línea (anticipo, 50 % de la consulta)', 'En el consultorio, el día de la cita'], domicilio: ['Anticipo por transferencia (50 % de la tarifa ordinaria)', 'Al médico, en la visita'], hotel: [null, 'Al médico, en la visita (sin anticipo)'], teleconsulta: ['Antes de la videollamada', null] },
+      cuando: { consultorio: ['Al reservar en línea (100 % de la consulta)', 'En el consultorio, el día de la cita'], domicilio: ['Anticipo por transferencia (50 % de la tarifa ordinaria)', 'Al médico, en la visita'], hotel: [null, 'Al médico, en la visita (sin anticipo)'], teleconsulta: ['Antes de la videollamada', null] },
       pago: {
-        consultorio: 'El anticipo del 50 % ({a}) es solo de la consulta y se paga al reservar en línea. El resto de la consulta y, si la eligió, la asistente de traducción se pagan directamente en el consultorio. Después de reservar, envíe un WhatsApp.',
+        consultorio: 'Al reservar en línea se paga el 100 % de la consulta ({a}). Ese pago no es reembolsable, pero puede reprogramar sin costo si avisa con 24 horas o más. Si le conviene más, agende por WhatsApp: se confirma con una transferencia del 50 % ({b}), el resto se paga en el consultorio y, si cancela con 24 horas o más, se le devuelve (si fue transferencia bancaria directa). La asistente de traducción, si la eligió, se paga en el consultorio. Después de reservar, envíe un WhatsApp.',
         consultorioFestivo: 'Los días festivos se coordinan por WhatsApp; no se reservan en línea.',
         hotel: 'Sin anticipo: se paga directamente al médico, en pesos (tarjeta, transferencia o efectivo).',
         domicilio: 'Se solicita por WhatsApp y se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona ({a}); el resto, incluidas la hidratación intravenosa y la enfermería si se aplican, se paga al médico en la visita.',
+        cancelaWA: 'Si cancela con 24 horas o más de anticipación, se le devuelve la transferencia, siempre que haya sido bancaria directa, sin aplicaciones ni plataformas de pago.',
         teleconsulta: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada y ahí se le indica cómo pagar.', teleFestivo: 'Se agenda por WhatsApp; el pago completo se hace antes de la videollamada.'
       },
       aviso: 'Estimación con los honorarios publicados. El médico confirma el total al coordinar su cita. No incluye procedimientos, medicamentos ni documentos. No se atienden menores de 15 años ni personas embarazadas.',
@@ -55,7 +56,7 @@
         res: {
           hotel: 'El médico va a su habitación, según disponibilidad. Escriba por WhatsApp para coordinar la hora de llegada.',
           domicilio: 'El médico va a su casa. Se solicita por WhatsApp.',
-          consultorio: 'Consulta en Del Valle, Roma, Polanco o Santa Fe, con cita en línea.',
+          consultorio: 'Consulta en Del Valle, Roma, Polanco o Santa Fe, con cita en línea o por WhatsApp.',
           teleconsulta: 'Por videollamada, sin traslados; se agenda por WhatsApp. Si en la llamada se necesita una exploración física, el médico se lo indicará.',
           lejos: 'Si no puede trasladarse a la Ciudad de México, la opción es la teleconsulta. Si necesita una exploración física, acuda con un médico local.'
         },
@@ -64,7 +65,7 @@
       l: {
         titulo: 'Su lista', servicio: 'Su servicio', frances: 'Quiero la consulta en francés', listo: '¡Todo listo para su consulta!', borrar: 'Borrar marcas', enviar: 'Enviar por WhatsApp', copiar: 'Copiar lista', copiado: 'Lista copiada.', compartirT: 'Lista para mi consulta con el Dr. Ortega-Arenas ({s}):', compartirF: 'Formularios: drcjortegaarenas.com/formularios', local: 'Sus marcas se guardan solo en este dispositivo.',
         comun: [['form1', 'Llenar el consentimiento informado', '/formularios/'], ['form2', 'Llenar el cuestionario de salud', '/formularios/'], ['id', 'Tener a la mano su identificación oficial (INE o pasaporte): el consentimiento pide una foto'], ['meds', 'Anotar sus medicamentos con dosis, y sus alergias'], ['estudios', 'Reunir sus estudios previos (puede adjuntarlos en el cuestionario)']],
-        consultorio: [['res', 'Reservar en línea y pagar el anticipo del 50 %'], ['wa', 'Enviar un WhatsApp después de reservar']],
+        consultorio: [['res', 'Reservar en línea y pagar la consulta (o agendar por WhatsApp con anticipo del 50 %)'], ['wa', 'Enviar un WhatsApp después de reservar']],
         hotel: [['wa', 'Escribir por WhatsApp para coordinar la visita'], ['recep', 'Avisar a la recepción que espera al médico y dar su número de habitación'], ['pago', 'Tener lista la forma de pago en pesos: tarjeta, transferencia o efectivo']],
         domicilio: [['wa', 'Solicitar la visita por WhatsApp'], ['ant', 'Hacer la transferencia del anticipo (50 % de la tarifa ordinaria de su zona)'], ['dir', 'Tener lista su dirección completa y una referencia']],
         teleconsulta: [['wa', 'Agendar la teleconsulta por WhatsApp'], ['pago', 'Hacer el pago antes de la videollamada (por WhatsApp se le indica cómo)'], ['app', 'Tener lista la app de la videollamada (Google Meet, WhatsApp o FaceTime) y buena conexión']],
@@ -80,7 +81,7 @@
       seguimiento: 'This is a follow-up visit', fecha: 'Date', hora: 'Time',
       iv: 'IV hydration, if the physician prescribes it', ivNota: 'Adults only (18 and older). The physician assesses first; if it is not indicated, the {iv} fee is not charged, and neither is the nursing fee unless you asked for the nurse to arrive with the physician.',
       junto: 'I prefer the nurse to arrive together with the physician', juntoNota: 'This avoids waiting about 1 h 30 min, but the nursing fee is charged even if IV hydration is not indicated.',
-      asistente: 'French translation assistant', asistenteNota: 'Administrative and translation support only; she does not provide any medical care. Same fee as the nurse; it is not part of the deposit and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
+      asistente: 'French translation assistant', sinAsistente: 'The French assistant is not available on that date: the visit will be in Spanish or English and there is no assistant fee.', asistenteNota: 'Administrative and translation support only; she does not provide any medical care. Same fee as the nurse; it is not included in the online payment and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
       cerrado: 'The clinic is closed that day. Hours: Monday to Friday 5–8 pm and Saturday 11 am–3 pm.',
       sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
@@ -90,12 +91,13 @@
       motivo: { oficial: 'official public holiday', tradicional: 'traditional holiday', domingo: 'Sunday', sabado: 'Saturday after 3:00 pm', noche: 'night (8:01 pm–8:59 am)' },
       linea: { consulta: 'Visit', subsecuente: 'Follow-up visit', festivo: 'Holiday visit', visita: 'Visit', seguimiento: 'Follow-up house call', iv: 'IV hydration (if indicated)', enf: 'Nursing fee', asis: 'French translation assistant', tele: 'Telemedicine' },
       total: 'Estimated total', sinIV: 'If IV hydration is not indicated',
-      cuando: { consultorio: ['When booking online (deposit, 50% of the consultation)', 'At the clinic, on the day of the visit'], domicilio: ['Deposit by bank transfer (50% of the standard fee)', 'To the physician, at the visit'], hotel: [null, 'To the physician, at the visit (no deposit)'], teleconsulta: ['Before the video call', null] },
+      cuando: { consultorio: ['When booking online (100% of the consultation)', 'At the clinic, on the day of the visit'], domicilio: ['Deposit by bank transfer (50% of the standard fee)', 'To the physician, at the visit'], hotel: [null, 'To the physician, at the visit (no deposit)'], teleconsulta: ['Before the video call', null] },
       pago: {
-        consultorio: 'The 50% deposit ({a}) covers the consultation only and is paid when booking online. The rest of the consultation and, if you chose it, the translation assistant are paid directly at the clinic. After booking, please send a WhatsApp message.',
+        consultorio: 'When booking online you pay 100% of the consultation ({a}). This payment is non-refundable, but you can reschedule free of charge with at least 24 hours’ notice. If it suits you better, book on WhatsApp: it is confirmed with a 50% bank transfer ({b}), the rest is paid at the clinic and, if you cancel at least 24 hours ahead, it is refunded (if it was a direct bank transfer). The translation assistant, if you chose her, is paid at the clinic. After booking, please send a WhatsApp message.',
         consultorioFestivo: 'Holidays are arranged on WhatsApp; they cannot be booked online.',
         hotel: 'No deposit: you pay the physician directly, in Mexican pesos (card, transfer or cash).',
         domicilio: 'Requested on WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your area ({a}); the rest, including IV hydration and nursing if given, is paid to the physician at the visit.',
+        cancelaWA: 'If you cancel at least 24 hours in advance, your transfer is refunded, as long as it was a direct bank transfer, not made through an app or payment platform.',
         teleconsulta: 'Booked on WhatsApp; full payment is made before the video call, and we tell you how to pay there.', teleFestivo: 'Booked on WhatsApp; full payment is made before the video call.'
       },
       aviso: 'Estimate based on the published fees. The physician confirms the total when arranging your visit. Procedures, medications and documents are not included. We do not see patients under 15 years of age or pregnant patients.',
@@ -114,7 +116,7 @@
         res: {
           hotel: 'The physician comes to your room, subject to availability. Send a WhatsApp message to arrange the arrival time.',
           domicilio: 'The physician comes to your home. Requested on WhatsApp.',
-          consultorio: 'A clinic visit in Del Valle, Roma, Polanco or Santa Fe, booked online.',
+          consultorio: 'A clinic visit in Del Valle, Roma, Polanco or Santa Fe, booked online or on WhatsApp.',
           teleconsulta: 'By video call, no travel needed; booked on WhatsApp. If a physical examination is needed during the call, the physician will tell you.',
           lejos: 'If you cannot travel to Mexico City, the option is telemedicine. If you need a physical examination, please see a local doctor.'
         },
@@ -123,7 +125,7 @@
       l: {
         titulo: 'Your checklist', servicio: 'Your service', frances: 'I want the visit in French', listo: 'You are all set for your visit!', borrar: 'Clear checkmarks', enviar: 'Send on WhatsApp', copiar: 'Copy list', copiado: 'List copied.', compartirT: 'Checklist for my visit with Dr. Ortega-Arenas ({s}):', compartirF: 'Forms: drcjortegaarenas.com/formularios', local: 'Your checkmarks are saved only on this device.',
         comun: [['form1', 'Fill in the informed consent form', '/formularios/'], ['form2', 'Fill in the health questionnaire', '/formularios/'], ['id', 'Have your official ID (passport or INE) at hand: the consent form asks for a photo'], ['meds', 'Write down your medications with doses, and your allergies'], ['estudios', 'Gather your previous test results (you can attach them to the questionnaire)']],
-        consultorio: [['res', 'Book online and pay the 50% deposit'], ['wa', 'Send a WhatsApp message after booking']],
+        consultorio: [['res', 'Book online and pay the consultation (or book on WhatsApp with a 50% deposit)'], ['wa', 'Send a WhatsApp message after booking']],
         hotel: [['wa', 'Send a WhatsApp message to arrange the visit'], ['recep', 'Tell the front desk you are expecting the physician and give your room number'], ['pago', 'Have your payment ready in Mexican pesos: card, transfer or cash']],
         domicilio: [['wa', 'Request the visit on WhatsApp'], ['ant', 'Make the deposit transfer (50% of the standard fee for your area)'], ['dir', 'Have your full address and a landmark ready']],
         teleconsulta: [['wa', 'Book the video call on WhatsApp'], ['pago', 'Pay before the video call (we tell you how on WhatsApp)'], ['app', 'Have the video call app ready (Google Meet, WhatsApp or FaceTime) and a good connection']],
@@ -139,7 +141,7 @@
       seguimiento: 'Il s’agit d’une visite de suivi', fecha: 'Date', hora: 'Heure',
       iv: 'Hydratation intraveineuse, si le médecin la prescrit', ivNota: 'Adultes uniquement (18 ans ou plus). Le médecin évalue d’abord ; si elle n’est pas indiquée, les {iv} ne sont pas facturés, ni les honoraires infirmiers, sauf si vous avez demandé que l’infirmière arrive avec le médecin.',
       junto: 'Je préfère que l’infirmière arrive avec le médecin', juntoNota: 'Vous évitez ainsi d’attendre environ 1 h 30, mais ses honoraires sont facturés même si l’hydratation n’est pas indiquée.',
-      asistente: 'Assistante de traduction en français', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne font pas partie de l’acompte et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
+      asistente: 'Assistante de traduction en français', sinAsistente: 'L’assistante francophone n’est pas disponible à cette date : la consultation se déroulera en espagnol ou en anglais et l’assistante n’est pas facturée.', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne sont pas inclus dans le paiement en ligne et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
       cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 17 h à 20 h et le samedi de 11 h à 15 h.',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
@@ -149,12 +151,13 @@
       motivo: { oficial: 'jour férié officiel', tradicional: 'jour férié traditionnel', domingo: 'dimanche', sabado: 'samedi après 15 h', noche: 'nuit (20 h 01 – 8 h 59)' },
       linea: { consulta: 'Consultation', subsecuente: 'Consultation de suivi', festivo: 'Consultation un jour férié', visita: 'Visite', seguimiento: 'Visite de suivi à domicile', iv: 'Hydratation intraveineuse (si indiquée)', enf: 'Honoraires infirmiers', asis: 'Assistante de traduction en français', tele: 'Téléconsultation' },
       total: 'Total estimé', sinIV: 'Si l’hydratation n’est pas indiquée',
-      cuando: { consultorio: ['En réservant en ligne (acompte, 50 % de la consultation)', 'Au cabinet, le jour du rendez-vous'], domicilio: ['Acompte par virement (50 % du tarif ordinaire)', 'Au médecin, lors de la visite'], hotel: [null, 'Au médecin, lors de la visite (sans acompte)'], teleconsulta: ['Avant l’appel vidéo', null] },
+      cuando: { consultorio: ['En réservant en ligne (100 % de la consultation)', 'Au cabinet, le jour du rendez-vous'], domicilio: ['Acompte par virement (50 % du tarif ordinaire)', 'Au médecin, lors de la visite'], hotel: [null, 'Au médecin, lors de la visite (sans acompte)'], teleconsulta: ['Avant l’appel vidéo', null] },
       pago: {
-        consultorio: 'L’acompte de 50 % ({a}) ne concerne que la consultation et se paie en réservant en ligne. Le reste de la consultation et, si vous l’avez choisie, l’assistante de traduction se règlent directement au cabinet. Après la réservation, envoyez un message WhatsApp.',
+        consultorio: 'En réservant en ligne, vous payez 100 % de la consultation ({a}). Ce paiement n’est pas remboursable, mais vous pouvez reporter le rendez-vous sans frais en prévenant au moins 24 heures à l’avance. Si cela vous convient mieux, réservez par WhatsApp : le rendez-vous est confirmé par un virement de 50 % ({b}), le reste se règle au cabinet et, si vous annulez au moins 24 heures à l’avance, il vous est remboursé (s’il s’agit d’un virement bancaire direct). L’assistante de traduction, si vous l’avez choisie, se règle au cabinet. Après la réservation, envoyez un message WhatsApp.',
         consultorioFestivo: 'Les jours fériés se planifient par WhatsApp ; ils ne se réservent pas en ligne.',
         hotel: 'Sans acompte : vous payez directement le médecin, en pesos (carte, virement ou espèces).',
         domicilio: 'Se demande par WhatsApp et se confirme par un virement de 50 % du tarif ordinaire de votre quartier ({a}) ; le reste, y compris l’hydratation intraveineuse et les soins infirmiers le cas échéant, se règle au médecin lors de la visite.',
+        cancelaWA: 'Si vous annulez au moins 24 heures à l’avance, votre virement vous est remboursé, à condition qu’il s’agisse d’un virement bancaire direct, sans application ni plateforme de paiement.',
         teleconsulta: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo et nous vous indiquons comment payer.', teleFestivo: 'Se réserve par WhatsApp ; le paiement complet se fait avant l’appel vidéo.'
       },
       aviso: 'Estimation selon les honoraires publiés. Le médecin confirme le total en planifiant votre rendez-vous. Les actes, les médicaments et les documents ne sont pas inclus. Nous ne recevons pas les patients de moins de 15 ans ni les personnes enceintes.',
@@ -173,7 +176,7 @@
         res: {
           hotel: 'Le médecin vient dans votre chambre, selon disponibilité. Écrivez par WhatsApp pour convenir de l’heure d’arrivée.',
           domicilio: 'Le médecin vient chez vous. Se demande par WhatsApp.',
-          consultorio: 'Consultation à Del Valle, Roma, Polanco ou Santa Fe, sur rendez-vous en ligne.',
+          consultorio: 'Consultation à Del Valle, Roma, Polanco ou Santa Fe, sur rendez-vous en ligne ou par WhatsApp.',
           teleconsulta: 'Par appel vidéo, sans déplacement ; se réserve par WhatsApp. Si un examen physique est nécessaire pendant l’appel, le médecin vous le dira.',
           lejos: 'Si vous ne pouvez pas vous rendre à Mexico, l’option est la téléconsultation. Si vous avez besoin d’un examen physique, consultez un médecin sur place.'
         },
@@ -182,7 +185,7 @@
       l: {
         titulo: 'Votre liste', servicio: 'Votre service', frances: 'Je souhaite la consultation en français', listo: 'Tout est prêt pour votre consultation !', borrar: 'Effacer les coches', enviar: 'Envoyer par WhatsApp', copiar: 'Copier la liste', copiado: 'Liste copiée.', compartirT: 'Liste pour ma consultation avec le Dr Ortega-Arenas ({s}) :', compartirF: 'Formulaires : drcjortegaarenas.com/formularios', local: 'Vos coches sont enregistrées uniquement sur cet appareil.',
         comun: [['form1', 'Remplir le consentement éclairé', '/formularios/'], ['form2', 'Remplir le questionnaire de santé', '/formularios/'], ['id', 'Avoir votre pièce d’identité (passeport ou carte d’identité) : le consentement demande une photo'], ['meds', 'Noter vos médicaments avec les doses, et vos allergies'], ['estudios', 'Rassembler vos examens antérieurs (vous pouvez les joindre au questionnaire)']],
-        consultorio: [['res', 'Réserver en ligne et payer l’acompte de 50 %'], ['wa', 'Envoyer un message WhatsApp après la réservation']],
+        consultorio: [['res', 'Réserver en ligne et payer la consultation (ou réserver par WhatsApp avec un acompte de 50 %)'], ['wa', 'Envoyer un message WhatsApp après la réservation']],
         hotel: [['wa', 'Écrire par WhatsApp pour organiser la visite'], ['recep', 'Prévenir la réception que vous attendez le médecin et donner votre numéro de chambre'], ['pago', 'Prévoir le paiement en pesos : carte, virement ou espèces']],
         domicilio: [['wa', 'Demander la visite par WhatsApp'], ['ant', 'Faire le virement de l’acompte (50 % du tarif ordinaire de votre quartier)'], ['dir', 'Préparer votre adresse complète et un point de repère']],
         teleconsulta: [['wa', 'Réserver la téléconsultation par WhatsApp'], ['pago', 'Payer avant l’appel vidéo (nous vous indiquons comment par WhatsApp)'], ['app', 'Préparer l’application d’appel vidéo (Google Meet, WhatsApp ou FaceTime) et une bonne connexion']],
@@ -238,6 +241,12 @@
   }
 
   /* ── cálculo (puro, para poder probarlo) ──── */
+  function asistente(s, hz, add, r) {
+    if ((D.sinAsistente || []).indexOf(s.fecha) >= 0) { r.notas.push(L.sinAsistente); return; }
+    add(L.linea.asis, D.asistente[hz.n]);
+    r.notas.push(L.asistenteNota);
+  }
+
   function cotizar(s) {
     var r = { lineas: [], total: 0, notas: [], error: null, horario: null, reservar: null };
     if (!s.svc) { r.error = L.elija; return r; }
@@ -258,12 +267,12 @@
         add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
         if (hz.por === 'tradicional') r.notas.push(L.pago.consultorioFestivo);  // ese día no se reserva en línea
         else {
-          r.ahora = r.total / 2;
-          r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)));
+          r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
+          r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
           r.reservar = D.cal[s.sede];
         }
       }
-      if (s.asistente) { add(L.linea.asis, D.asistente[hz.n]); r.notas.push(L.asistenteNota); }
+      if (s.asistente) asistente(s, hz, add, r);
     } else if (s.svc === 'hotel') {
       var letra = D.hotel.zonas[s.zona];
       add(L.linea.visita + ' · ' + s.zona, D.hotel[letra][hz.n]);
@@ -273,10 +282,11 @@
       if (s.seguimiento && area.seguimiento && hz.n === 0) add(L.linea.seguimiento + ' · ' + s.zona, area.seguimiento);
       else add(L.linea.visita + ' · ' + s.zona, area.precios[hz.n]);
       r.ahora = area.precios[0] / 2;
-      r.notas.push(L.pago.domicilio.replace('{a}', mxn(r.ahora)));
+      r.notas.push(L.pago.domicilio.replace('{a}', mxn(r.ahora)), L.pago.cancelaWA);
     } else if (s.svc === 'teleconsulta') {
       if (hz.n === 2) { add(L.linea.tele, D.teleconsulta[1]); r.notas.push(L.pago.teleFestivo); }
       else { add(L.linea.tele, D.teleconsulta[0]); r.notas.push(L.pago.teleconsulta); }
+      r.notas.push(L.pago.cancelaWA);
     }
     if ((s.svc === 'hotel' || s.svc === 'domicilio') && s.iv) {
       r.base = r.total + (s.junto ? D.enfermeria[hz.n] : 0);
@@ -285,7 +295,7 @@
       r.notas.push(L.ivNota.replace('{iv}', mxn(D.iv)));
       if (s.junto) r.notas.push(L.juntoNota);
     }
-    if (s.svc === 'hotel' && s.asistente) { add(L.linea.asis, D.asistente[hz.n]); r.notas.push(L.asistenteNota); }
+    if (s.svc === 'hotel' && s.asistente) asistente(s, hz, add, r);
     if (s.svc === 'hotel') r.ahora = 0;
     if (s.svc === 'teleconsulta') r.ahora = r.total;
     if (r.ahora != null) r.despues = r.total - r.ahora;

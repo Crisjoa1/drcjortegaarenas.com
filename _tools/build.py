@@ -386,7 +386,7 @@ def tarifas():
       hotel:Polanco:0..2    → visita a hotel en esa zona (0 ordinario, 1 especial, 2 festivo)
       consultorio:Polanco   → consulta en la sede de ese nombre
       domicilio:Polanco:0..2 → consulta a domicilio en la fila que menciona ese nombre
-      anticipo:Polanco       → 50 % de la consulta en esa sede (lo que se paga al reservar en Cal.com)
+      anticipo:Polanco       → 50 % de la consulta en esa sede (anticipo por transferencia si se agenda por WhatsApp; en Cal.com se paga el 100 %)
       anticipo-domicilio:Polanco → 50 % de la tarifa ordinaria a domicilio (anticipo por transferencia)
       asistente-frances      → asistente de traducción al francés (tabla de procedimientos)
       asistente-frances-especial → la misma asistente en horario especial (mismo honorario que enfermería)
@@ -483,6 +483,8 @@ def planear_datos():
 
     anio_base = int(re.search(r'(\d{4})', soup.select_one('.schedule-card h3')['data-es']).group(1))
 
+    sin_asistente = []
+
     def fechas(card):
         anio, out, previo = anio_base, [], 0
         for li in card.select('.schedule-list li'):
@@ -493,6 +495,9 @@ def planear_datos():
                 anio += 1
             previo = mes
             desde = re.search(r'(\d{1,2}:\d{2})', spans[1].get('data-es', '')) if len(spans) > 1 else None
+            if li.get('data-asistente') == 'no':  # hay consultas, pero sin la asistente de francés
+                sin_asistente.extend(f'{anio}-{mes:02d}-{dia:02d}' for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1))
+                continue
             for dia in range(int(m.group(2)), int(m.group(3) or m.group(2)) + 1):
                 f = {'fecha': f'{anio}-{mes:02d}-{dia:02d}', 'desde': desde.group(1) if desde else '00:00'}
                 if li.get('data-teleconsulta') == 'si':  # sin atención presencial, pero con teleconsulta
@@ -507,6 +512,7 @@ def planear_datos():
         'oficiales': [f['fecha'] for f in fechas(tarjetas['official'])],
         'tradicionales': [f['fecha'] for f in fechas(tarjetas['traditional'])],
         'sinServicio': fechas(tarjetas['unavail']),
+        'sinAsistente': sin_asistente,
         'cal': {k: f'https://cal.com/drcjortegaarenas/{v}' for k, v in CAL_EVENTOS.items()},
         'whatsapp': '525951093969',
     }, ensure_ascii=False, separators=(',', ':'))
