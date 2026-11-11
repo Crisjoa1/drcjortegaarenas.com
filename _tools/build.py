@@ -411,6 +411,8 @@ def tarifas():
     for tr in soup.select('[data-tarifas-consultorio] tbody tr'):
         tds = tr.find_all('td')
         sede = first(tds[0])
+        if '$' not in tds[2].get_text():  # festivos: consultorio cerrado, sin precio
+            continue
         t[f'consultorio:{sede}'] = first(tds[2])
         t[f'anticipo:{sede}'] = f"${int(first(tds[2]).strip('$').replace(',', '')) // 2:,}"
         precios = [s for s in tds[2].stripped_strings if s.startswith('$')]
@@ -516,7 +518,6 @@ def planear_datos():
     tarjetas = {k: soup.select_one(f'.schedule-card:has(.schedule-type.{k})') for k in ('official', 'traditional', 'unavail')}
     return json.dumps({
         'hotel': hotel, 'domicilio': domicilio, 'consultorio': consultorio,
-        'consultorioFestivo': num(t['consultorio:Días Festivos']),
         'teleconsulta': teleconsulta, 'iv': iv, 'enfermeria': enfermeria, 'asistente': asistente,
         'oficiales': [f['fecha'] for f in fechas(tarjetas['official'])],
         'tradicionales': [f['fecha'] for f in fechas(tarjetas['traditional'])],

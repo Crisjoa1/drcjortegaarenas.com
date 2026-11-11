@@ -50,6 +50,8 @@ def publicados():
     for tr in tabla(soup, 'Sede').select('tbody tr'):
         tds = tr.find_all('td')
         sede = primero(tds[0])
+        if '$' not in tds[2].get_text():  # festivos: consultorio cerrado, sin precio
+            continue
         consultorio[sede] = primero(tds[2])
         extras.setdefault(sede, set()).add(f"${int(primero(tds[2]).strip('$').replace(',', '')) // 2:,}")  # anticipo 50 %
         extras.setdefault(sede, set()).update(s for s in tds[2].stripped_strings if s.startswith('$'))
@@ -84,7 +86,7 @@ def main():
         filas = {
             'hotel': [row[zona_de[h]] for row in hotel],
             'domicilio': domicilio[d],
-            'consultorio': [consultorio[c], '—', consultorio['Días Festivos']],
+            'consultorio': [consultorio[c], '—', 'Cerrado'],
         }
         validos = {m for fila in filas.values() for m in fila if m != '—'}
         validos |= extras.get(c, set()) | extras.get(d, set())  # subsecuente, seguimiento, paquete
@@ -98,7 +100,7 @@ def main():
                 etiqueta = tr.find('td').get_text(strip=True).lower()
                 tipo = ('consultorio' if any(w in etiqueta for w in ('consultorio', 'clinic', 'cabinet'))
                         else 'hotel' if ('hotel' in etiqueta or 'hôtel' in etiqueta) else 'domicilio')
-                celdas = [td.get_text(strip=True) for td in tr.find_all('td')[1:]]
+                celdas = [{'Closed': 'Cerrado', 'Fermé': 'Cerrado'}.get(c, c) for c in (td.get_text(strip=True) for td in tr.find_all('td')[1:])]
                 revisadas += len(celdas)
                 if celdas != filas[tipo]:
                     errores.append(f'{ruta}: fila {etiqueta!r} = {celdas}, publicado {filas[tipo]}')

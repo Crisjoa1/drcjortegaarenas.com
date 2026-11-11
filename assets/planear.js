@@ -34,7 +34,7 @@
       cuando: { consultorio: ['Al reservar en línea (100 % de la consulta)', 'En el consultorio, el día de la cita'], domicilio: ['Anticipo por transferencia (50 % de la tarifa ordinaria)', 'Al médico, en la visita'], hotel: [null, 'Al médico, en la visita (sin anticipo)'], teleconsulta: ['Antes de la videollamada', null] },
       pago: {
         consultorio: 'Al reservar en línea se paga el 100 % de la consulta ({a}). Si usted cancela, ese pago no es reembolsable, pero puede reprogramar sin costo si avisa con 24 horas o más. Si le conviene más, agende por WhatsApp: se confirma con una transferencia del 50 % ({b}), el resto se paga en el consultorio y, si cancela con 24 horas o más, se le devuelve (si fue transferencia SPEI desde una cuenta bancaria). La asistente de traducción, si la eligió, se paga en el consultorio. Después de reservar, envíe un WhatsApp.',
-        consultorioFestivo: 'Los días festivos se coordinan por WhatsApp; no se reservan en línea.',
+        consultorioFestivo: 'El consultorio no abre en días festivos oficiales ni tradicionales. Ese día puede pedir visita a hotel, a domicilio o teleconsulta por WhatsApp.',
         hotel: 'Sin anticipo: se paga directamente al médico, en pesos (tarjeta, transferencia o efectivo).',
         domicilio: 'Se solicita por WhatsApp y se confirma con una transferencia del 50 % de la tarifa ordinaria de su zona ({a}); el resto, incluidas la hidratación intravenosa y la enfermería si se aplican, se paga al médico en la visita.',
         cancelaWA: 'Si cancela con 24 horas o más de anticipación, se le devuelve la transferencia, siempre que haya sido SPEI desde una cuenta bancaria (la app de su banco sí cuenta), no por Mercado Pago, PayPal u otras plataformas de pago.',
@@ -94,7 +94,7 @@
       cuando: { consultorio: ['When booking online (100% of the consultation)', 'At the clinic, on the day of the visit'], domicilio: ['Deposit by bank transfer (50% of the standard fee)', 'To the physician, at the visit'], hotel: [null, 'To the physician, at the visit (no deposit)'], teleconsulta: ['Before the video call', null] },
       pago: {
         consultorio: 'When booking online you pay 100% of the consultation ({a}). If you cancel, this payment is non-refundable, but you can reschedule free of charge with at least 24 hours’ notice. If it suits you better, book on WhatsApp: it is confirmed with a 50% bank transfer ({b}), the rest is paid at the clinic and, if you cancel at least 24 hours ahead, it is refunded (if it was a SPEI transfer from a bank account). The translation assistant, if you chose her, is paid at the clinic. After booking, please send a WhatsApp message.',
-        consultorioFestivo: 'Holidays are arranged on WhatsApp; they cannot be booked online.',
+        consultorioFestivo: 'The clinic is closed on official and traditional holidays. That day you can request a hotel visit, a house call or telemedicine via WhatsApp.',
         hotel: 'No deposit: you pay the physician directly, in Mexican pesos (card, transfer or cash).',
         domicilio: 'Requested on WhatsApp and confirmed with a bank transfer of 50% of the standard fee for your area ({a}); the rest, including IV hydration and nursing if given, is paid to the physician at the visit.',
         cancelaWA: 'If you cancel at least 24 hours in advance, your transfer is refunded, as long as it was a SPEI transfer from a bank account (your bank’s app is fine), not via Mercado Pago, PayPal or other payment platforms.',
@@ -154,7 +154,7 @@
       cuando: { consultorio: ['En réservant en ligne (100 % de la consultation)', 'Au cabinet, le jour du rendez-vous'], domicilio: ['Acompte par virement (50 % du tarif ordinaire)', 'Au médecin, lors de la visite'], hotel: [null, 'Au médecin, lors de la visite (sans acompte)'], teleconsulta: ['Avant l’appel vidéo', null] },
       pago: {
         consultorio: 'En réservant en ligne, vous payez 100 % de la consultation ({a}). Si vous annulez, ce paiement n’est pas remboursable, mais vous pouvez reporter le rendez-vous sans frais en prévenant au moins 24 heures à l’avance. Si cela vous convient mieux, réservez par WhatsApp : le rendez-vous est confirmé par un virement de 50 % ({b}), le reste se règle au cabinet et, si vous annulez au moins 24 heures à l’avance, il vous est remboursé (s’il s’agit d’un virement SPEI depuis un compte bancaire). L’assistante de traduction, si vous l’avez choisie, se règle au cabinet. Après la réservation, envoyez un message WhatsApp.',
-        consultorioFestivo: 'Les jours fériés se planifient par WhatsApp ; ils ne se réservent pas en ligne.',
+        consultorioFestivo: 'Le cabinet est fermé les jours fériés officiels et traditionnels. Ce jour-là, vous pouvez demander une visite à l’hôtel, à domicile ou une téléconsultation par WhatsApp.',
         hotel: 'Sans acompte : vous payez directement le médecin, en pesos (carte, virement ou espèces).',
         domicilio: 'Se demande par WhatsApp et se confirme par un virement de 50 % du tarif ordinaire de votre quartier ({a}) ; le reste, y compris l’hydratation intraveineuse et les soins infirmiers le cas échéant, se règle au médecin lors de la visite.',
         cancelaWA: 'Si vous annulez au moins 24 heures à l’avance, votre virement vous est remboursé, à condition qu’il s’agisse d’un virement SPEI depuis un compte bancaire (l’application de votre banque est acceptée), et non via Mercado Pago, PayPal ou une autre plateforme de paiement.',
@@ -263,17 +263,12 @@
       var sede = D.consultorio[s.sede];
       if (horasConsultorio(s.fecha).length === 0) { r.error = L.cerrado; return r; }
       if (s.hora === '20:00' && s.tipo !== 'subsecuente') { r.error = L.solo20; return r; }
-      if (hz.n === 2) { add(L.linea.festivo, D.consultorioFestivo); r.notas.push(L.pago.consultorioFestivo); }
-      else {
-        var sub = s.tipo === 'subsecuente' && sede.subsecuente;
-        add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
-        if (hz.por === 'tradicional') r.notas.push(L.pago.consultorioFestivo);  // ese día no se reserva en línea
-        else {
-          r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
-          r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
-          r.reservar = D.cal[s.sede];
-        }
-      }
+      if (hz.n === 2 || hz.por === 'tradicional') { r.error = L.pago.consultorioFestivo; return r; }  // cerrado en festivos
+      var sub = s.tipo === 'subsecuente' && sede.subsecuente;
+      add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
+      r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
+      r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
+      r.reservar = D.cal[s.sede];
       if (s.asistente) asistente(s, hz, add, r);
     } else if (s.svc === 'hotel') {
       var letra = D.hotel.zonas[s.zona];
