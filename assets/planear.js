@@ -23,9 +23,9 @@
       junto: 'Prefiero que la enfermera llegue junto con el médico', juntoNota: 'Así evita esperar alrededor de 1 h 30 min, pero el honorario de enfermería se cobra aunque la hidratación no esté indicada.',
       asistente: 'Asistente de traducción al francés', sinAsistente: 'La asistente de francés no está disponible en esa fecha: la consulta será en español o inglés y no se cobra la asistente.', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no se incluye en el pago en línea: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
-      cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 17:00 a 20:00 y sábado de 11:00 a 15:00.',
+      cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 18:00 a 21:00 y sábado de 11:00 a 15:00.',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
-      solo20: 'La cita de las 20:00 es solo para consultas subsecuentes.',
+      solo20: 'La primera vez (2 horas) se agenda a las 18:00 entre semana o a las 11:00 el sábado; las subsecuentes (1 hora), a las 19:00 o 20:00 entre semana, o a las 13:00 o 14:00 el sábado.',
       zonaOtra: 'Esa zona se cotiza por WhatsApp.',
       horario: ['Horario ordinario', 'Horario especial', 'Festivo oficial'],
       motivo: { oficial: 'festivo oficial', tradicional: 'festivo tradicional', domingo: 'domingo', sabado: 'sábado después de las 15:00', noche: 'noche (20:01 a 08:59)' },
@@ -83,9 +83,9 @@
       junto: 'I prefer the nurse to arrive together with the physician', juntoNota: 'This avoids waiting about 1 h 30 min, but the nursing fee is charged even if IV hydration is not indicated.',
       asistente: 'French translation assistant', sinAsistente: 'The French assistant is not available on that date: the visit will be in Spanish or English and there is no assistant fee.', asistenteNota: 'Administrative and translation support only; she does not provide any medical care. Same fee as the nurse; it is not included in the online payment and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
-      cerrado: 'The clinic is closed that day. Hours: Monday to Friday 5–8 pm and Saturday 11 am–3 pm.',
+      cerrado: 'The clinic is closed that day. Hours: Monday to Friday 6–9 pm and Saturday 11 am–3 pm.',
       sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
-      solo20: 'The 8:00 pm slot is for follow-up visits only.',
+      solo20: 'First visits (2 hours) are booked at 6 pm on weekdays or 11 am on Saturday; follow-up visits (1 hour) at 7 or 8 pm on weekdays, or 1 or 2 pm on Saturday.',
       zonaOtra: 'That area is quoted on WhatsApp.',
       horario: ['Standard hours', 'Special hours', 'Official public holiday'],
       motivo: { oficial: 'official public holiday', tradicional: 'traditional holiday', domingo: 'Sunday', sabado: 'Saturday after 3:00 pm', noche: 'night (8:01 pm–8:59 am)' },
@@ -143,9 +143,9 @@
       junto: 'Je préfère que l’infirmière arrive avec le médecin', juntoNota: 'Vous évitez ainsi d’attendre environ 1 h 30, mais ses honoraires sont facturés même si l’hydratation n’est pas indiquée.',
       asistente: 'Assistante de traduction en français', sinAsistente: 'L’assistante francophone n’est pas disponible à cette date : la consultation se déroulera en espagnol ou en anglais et l’assistante n’est pas facturée.', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne sont pas inclus dans le paiement en ligne et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
-      cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 17 h à 20 h et le samedi de 11 h à 15 h.',
+      cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 18 h à 21 h et le samedi de 11 h à 15 h.',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
-      solo20: 'Le créneau de 20 h est réservé aux consultations de suivi.',
+      solo20: 'La première consultation (2 heures) se prend à 18 h en semaine ou à 11 h le samedi ; les consultations de suivi (1 heure), à 19 h ou 20 h en semaine, ou à 13 h ou 14 h le samedi.',
       zonaOtra: 'Ce quartier fait l’objet d’un devis par WhatsApp.',
       horario: ['Horaires ordinaires', 'Horaires spéciaux', 'Jour férié officiel'],
       motivo: { oficial: 'jour férié officiel', tradicional: 'jour férié traditionnel', domingo: 'dimanche', sabado: 'samedi après 15 h', noche: 'nuit (20 h 01 – 8 h 59)' },
@@ -227,10 +227,10 @@
   function sinServicio(f, hora, svc) {
     return D.sinServicio.some(function (s) { return s.fecha === f && minutos(hora) >= minutos(s.desde) && !(s.teleconsulta && svc === 'teleconsulta'); });
   }
-  function horasConsultorio(f) {
-    var dia = diaSemana(f);
-    if (dia >= 1 && dia <= 5) return ['17:00', '18:00', '19:00', '20:00'];
-    if (dia === 6) return ['11:00', '12:00', '13:00', '14:00'];
+  function horasConsultorio(f, tipo) {  // primera vez: 2 h; subsecuente: 1 h
+    var dia = diaSemana(f), sub = tipo === 'subsecuente';
+    if (dia >= 1 && dia <= 5) return sub ? ['19:00', '20:00'] : ['18:00'];
+    if (dia === 6) return sub ? ['13:00', '14:00'] : ['11:00'];
     return [];
   }
   function horasTele(f) {
@@ -261,14 +261,14 @@
     var add = function (txt, monto) { r.lineas.push([txt, monto]); r.total += monto; };
     if (s.svc === 'consultorio') {
       var sede = D.consultorio[s.sede];
-      if (horasConsultorio(s.fecha).length === 0) { r.error = L.cerrado; return r; }
-      if (s.hora === '20:00' && s.tipo !== 'subsecuente') { r.error = L.solo20; return r; }
+      if (horasConsultorio(s.fecha, s.tipo).length === 0) { r.error = L.cerrado; return r; }
+      if (horasConsultorio(s.fecha, s.tipo).indexOf(s.hora) < 0) { r.error = L.solo20; return r; }
       if (hz.n === 2 || hz.por === 'tradicional') { r.error = L.pago.consultorioFestivo; return r; }  // cerrado en festivos
       var sub = s.tipo === 'subsecuente' && sede.subsecuente;
       add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
       r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
       r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
-      r.reservar = D.cal[s.sede];
+      r.reservar = (s.tipo === 'subsecuente' ? D.calSub : D.cal)[s.sede];
       if (s.asistente) asistente(s, hz, add, r);
     } else if (s.svc === 'hotel') {
       var letra = D.hotel.zonas[s.zona];
@@ -400,7 +400,7 @@
     if (S.svc === 'consultorio') {
       formulario.appendChild(paso(n++, L.paso[1], [
         campo(L.sede, chips(L.sede, Object.keys(D.consultorio).map(function (k) { return { v: k, t: k }; }), S.sede, function (v) { S.sede = v; dibujarForm(); calcular(); })),
-        campo(L.tipo, chips(L.tipo, [{ v: 'primera', t: L.primera }, { v: 'subsecuente', t: L.subsecuente }], S.tipo, function (v) { S.tipo = v; dibujarForm(); calcular(); }))
+        campo(L.tipo, chips(L.tipo, [{ v: 'primera', t: L.primera }, { v: 'subsecuente', t: L.subsecuente }], S.tipo, function (v) { S.tipo = v; S.hora = ''; dibujarForm(); calcular(); }))
       ]));
     } else if (S.svc === 'hotel' || S.svc === 'domicilio') {
       var zonas = Object.keys(S.svc === 'hotel' ? D.hotel.zonas : D.domicilio);
@@ -415,7 +415,7 @@
     fecha.addEventListener('change', function () { S.fecha = fecha.value; if (S.svc === 'consultorio' || S.svc === 'teleconsulta') S.hora = ''; dibujarForm(); calcular(); });
     var hora;
     if (S.svc === 'consultorio' || S.svc === 'teleconsulta') {
-      var horas = S.fecha ? (S.svc === 'consultorio' ? horasConsultorio(S.fecha) : horasTele(S.fecha)) : [];
+      var horas = S.fecha ? (S.svc === 'consultorio' ? horasConsultorio(S.fecha, S.tipo) : horasTele(S.fecha)) : [];
       hora = h('select', { class: 'pl-select', 'aria-label': L.hora, disabled: !horas.length });
       hora.appendChild(h('option', { value: '', text: '—' }));
       horas.forEach(function (x) { hora.appendChild(h('option', { value: x, selected: x === S.hora, text: x })); });
