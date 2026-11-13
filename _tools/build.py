@@ -188,7 +188,7 @@ def clinica(sede):
             'url': SITE + {'Polanco': '/zonas/polanco/', 'Roma': '/zonas/roma-condesa/',
                            'Del Valle': '/zonas/del-valle/'}[sede],
             'openingHoursSpecification': [  # el mismo horario publicado en la tarjeta de consultorio
-                {'@type': 'OpeningHoursSpecification', 'opens': '18:00', 'closes': '21:00',
+                {'@type': 'OpeningHoursSpecification', 'opens': '18:30', 'closes': '21:00',
                  'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']},
                 {'@type': 'OpeningHoursSpecification', 'dayOfWeek': 'Saturday', 'opens': '11:00', 'closes': '15:00'}],
             'address': direccion,
@@ -448,7 +448,7 @@ def tarifas():
 
 
 MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
-CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco'}  # primera vez (2 h)
+CAL_EVENTOS = {'Del Valle': 'consultorio-del-valle', 'Roma': 'consultorio-roma', 'Polanco': 'consultorio-polanco'}  # primera vez (1 h 30 min)
 CAL_SUBSECUENTE = {sede: f'{slug}-subsecuente' for sede, slug in CAL_EVENTOS.items()}  # subsecuente (1 h)  # teleconsulta, hotel y domicilio: solo por WhatsApp
 
 

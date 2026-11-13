@@ -23,9 +23,9 @@
       junto: 'Prefiero que la enfermera llegue junto con el médico', juntoNota: 'Así evita esperar alrededor de 1 h 30 min, pero el honorario de enfermería se cobra aunque la hidratación no esté indicada.',
       asistente: 'Asistente de traducción al francés', sinAsistente: 'La asistente de francés no está disponible en esa fecha: la consulta será en español o inglés y no se cobra la asistente.', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no se incluye en el pago en línea: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
-      cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 18:00 a 21:00 y sábado de 11:00 a 15:00.',
+      cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 18:30 a 21:00 y sábado de 11:00 a 15:00.',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
-      solo20: 'La primera vez (2 horas) se agenda a las 18:00 entre semana o a las 11:00 el sábado; las subsecuentes (1 hora), a las 19:00 o 20:00 entre semana, o a las 13:00 o 14:00 el sábado.',
+      solo20: 'Entre semana: a las 18:30, primera vez (1 h 30 min) o subsecuente (1 h); a las 20:00, solo subsecuente (50 min). Sábado: primera vez a las 11:00 y subsecuentes a las 13:00 o 14:00.', sabHoy: 'Los sábados, la cita en consultorio se pide solo por WhatsApp, con al menos un día de anticipación, porque hay que apartar el consultorio y no siempre hay espacio. Por WhatsApp se confirma con un anticipo del 50 % por transferencia y el resto se paga en el consultorio.',
       zonaOtra: 'Esa zona se cotiza por WhatsApp.',
       horario: ['Horario ordinario', 'Horario especial', 'Festivo oficial'],
       motivo: { oficial: 'festivo oficial', tradicional: 'festivo tradicional', domingo: 'domingo', sabado: 'sábado después de las 15:00', noche: 'noche (20:01 a 08:59)' },
@@ -83,9 +83,9 @@
       junto: 'I prefer the nurse to arrive together with the physician', juntoNota: 'This avoids waiting about 1 h 30 min, but the nursing fee is charged even if IV hydration is not indicated.',
       asistente: 'French translation assistant', sinAsistente: 'The French assistant is not available on that date: the visit will be in Spanish or English and there is no assistant fee.', asistenteNota: 'Administrative and translation support only; she does not provide any medical care. Same fee as the nurse; it is not included in the online payment and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
-      cerrado: 'The clinic is closed that day. Hours: Monday to Friday 6–9 pm and Saturday 11 am–3 pm.',
+      cerrado: 'The clinic is closed that day. Hours: Monday to Friday 6:30–9 pm and Saturday 11 am–3 pm.',
       sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
-      solo20: 'First visits (2 hours) are booked at 6 pm on weekdays or 11 am on Saturday; follow-up visits (1 hour) at 7 or 8 pm on weekdays, or 1 or 2 pm on Saturday.',
+      solo20: 'Weekdays: at 6:30 pm, a first visit (1 h 30 min) or a follow-up (1 h); at 8 pm, follow-up only (50 min). Saturday: first visit at 11 am and follow-ups at 1 or 2 pm.', sabHoy: 'On Saturdays, clinic appointments are requested on WhatsApp only, at least one day ahead, because the room has to be reserved and is not always available. On WhatsApp it is confirmed with a 50% bank transfer and the rest is paid at the clinic.',
       zonaOtra: 'That area is quoted on WhatsApp.',
       horario: ['Standard hours', 'Special hours', 'Official public holiday'],
       motivo: { oficial: 'official public holiday', tradicional: 'traditional holiday', domingo: 'Sunday', sabado: 'Saturday after 3:00 pm', noche: 'night (8:01 pm–8:59 am)' },
@@ -143,9 +143,9 @@
       junto: 'Je préfère que l’infirmière arrive avec le médecin', juntoNota: 'Vous évitez ainsi d’attendre environ 1 h 30, mais ses honoraires sont facturés même si l’hydratation n’est pas indiquée.',
       asistente: 'Assistante de traduction en français', sinAsistente: 'L’assistante francophone n’est pas disponible à cette date : la consultation se déroulera en espagnol ou en anglais et l’assistante n’est pas facturée.', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne sont pas inclus dans le paiement en ligne et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
-      cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 18 h à 21 h et le samedi de 11 h à 15 h.',
+      cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 18 h 30 à 21 h et le samedi de 11 h à 15 h.',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
-      solo20: 'La première consultation (2 heures) se prend à 18 h en semaine ou à 11 h le samedi ; les consultations de suivi (1 heure), à 19 h ou 20 h en semaine, ou à 13 h ou 14 h le samedi.',
+      solo20: 'En semaine : à 18 h 30, première consultation (1 h 30) ou suivi (1 h) ; à 20 h, suivi uniquement (50 min). Samedi : première consultation à 11 h et suivis à 13 h ou 14 h.', sabHoy: 'Le samedi, les rendez-vous au cabinet se demandent uniquement par WhatsApp, au moins la veille, car il faut réserver le cabinet et il n’y a pas toujours de place. Par WhatsApp, le rendez-vous est confirmé par un virement de 50 % et le reste se règle au cabinet.',
       zonaOtra: 'Ce quartier fait l’objet d’un devis par WhatsApp.',
       horario: ['Horaires ordinaires', 'Horaires spéciaux', 'Jour férié officiel'],
       motivo: { oficial: 'jour férié officiel', tradicional: 'jour férié traditionnel', domingo: 'dimanche', sabado: 'samedi après 15 h', noche: 'nuit (20 h 01 – 8 h 59)' },
@@ -227,9 +227,9 @@
   function sinServicio(f, hora, svc) {
     return D.sinServicio.some(function (s) { return s.fecha === f && minutos(hora) >= minutos(s.desde) && !(s.teleconsulta && svc === 'teleconsulta'); });
   }
-  function horasConsultorio(f, tipo) {  // primera vez: 2 h; subsecuente: 1 h
+  function horasConsultorio(f, tipo) {  // primera vez: 1 h 30 min; subsecuente: 1 h (20:00: 50 min)
     var dia = diaSemana(f), sub = tipo === 'subsecuente';
-    if (dia >= 1 && dia <= 5) return sub ? ['19:00', '20:00'] : ['18:00'];
+    if (dia >= 1 && dia <= 5) return sub ? ['18:30', '20:00'] : ['18:30'];
     if (dia === 6) return sub ? ['13:00', '14:00'] : ['11:00'];
     return [];
   }
@@ -266,9 +266,12 @@
       if (hz.n === 2 || hz.por === 'tradicional') { r.error = L.pago.consultorioFestivo; return r; }  // cerrado en festivos
       var sub = s.tipo === 'subsecuente' && sede.subsecuente;
       add(sub ? L.linea.subsecuente : L.linea.consulta, sub ? sede.subsecuente : sede.precio);
-      r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
-      r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
-      r.reservar = (s.tipo === 'subsecuente' ? D.calSub : D.cal)[s.sede];
+      if (diaSemana(s.fecha) === 6) r.notas.push(L.sabHoy);  // sábado: solo por WhatsApp, con un día de anticipación
+      else {
+        r.ahora = r.total;  // en Cal.com se paga el 100 % de la consulta
+        r.notas.push(L.pago.consultorio.replace('{a}', mxn(r.ahora)).replace('{b}', mxn(r.total / 2)));
+        r.reservar = (s.tipo === 'subsecuente' ? D.calSub : D.cal)[s.sede];
+      }
       if (s.asistente) asistente(s, hz, add, r);
     } else if (s.svc === 'hotel') {
       var letra = D.hotel.zonas[s.zona];
