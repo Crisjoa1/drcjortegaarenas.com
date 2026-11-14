@@ -133,3 +133,9 @@
 .pl-faq-search { max-width:560px; margin:0 0 26px; }
 .pl-faq-vacio { margin-top:6px; }
 .faq-item[hidden] { display:none !important; }
+
+/* Calculadora dentro de una columna de texto (página de hidratación IV): una sola columna */
+.pl-incrustado { margin:36px 0 8px; }
+.pl-incrustado .pl-cot { grid-template-columns:1fr; gap:24px; }
+.pl-incrustado .pl-result { position:static; min-height:0; }
+.pl-incrustado .pl-tab { padding:18px 16px; }

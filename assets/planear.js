@@ -24,6 +24,7 @@
       asistente: 'Asistente de traducción al francés', sinAsistente: 'La asistente de francés no está disponible en esa fecha: la consulta será en español o inglés y no se cobra la asistente.', asistenteNota: 'Apoyo administrativo y de traducción; no realiza actos médicos. Mismo honorario que enfermería; no se incluye en el pago en línea: se paga directamente en la consulta. Avise por WhatsApp con anticipación para confirmar su disponibilidad.',
       elija: 'Elija un servicio para ver el costo.', faltaFecha: 'Elija fecha y hora para calcular.',
       cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 18:30 a 21:00 y sábado de 11:00 a 15:00.',
+      bloq: 'Próximas fechas sin servicio: ', bloqCons: 'El consultorio también cierra en festivos oficiales y tradicionales.', al: 'al', desdeHora: 'desde las {h}', soloTeleCorto: 'solo teleconsulta', sep: '; ',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
       solo20: 'Entre semana: a las 18:30, primera vez (1 h 30 min) o subsecuente (1 h); a las 20:00, solo subsecuente (50 min). Sábado: primera vez a las 11:00 y subsecuentes a las 13:00 o 14:00.', sabHoy: 'Los sábados, la cita en consultorio se pide solo por WhatsApp, con al menos un día de anticipación, porque hay que apartar el consultorio y no siempre hay espacio. Por WhatsApp se confirma con un anticipo del 50 % por transferencia y el resto se paga en el consultorio.',
       zonaOtra: 'Esa zona se cotiza por WhatsApp.',
@@ -84,6 +85,7 @@
       asistente: 'French translation assistant', sinAsistente: 'The French assistant is not available on that date: the visit will be in Spanish or English and there is no assistant fee.', asistenteNota: 'Administrative and translation support only; she does not provide any medical care. Same fee as the nurse; it is not included in the online payment and is paid directly at the visit. Let us know in advance on WhatsApp so we can confirm her availability.',
       elija: 'Choose a service to see the cost.', faltaFecha: 'Choose a date and time to calculate.',
       cerrado: 'The clinic is closed that day. Hours: Monday to Friday 6:30–9 pm and Saturday 11 am–3 pm.',
+      bloq: 'Upcoming dates with no service: ', bloqCons: 'The clinic is also closed on official and traditional holidays.', al: 'to', desdeHora: 'from {h}', soloTeleCorto: 'telemedicine only', sep: '; ',
       sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
       solo20: 'Weekdays: at 6:30 pm, a first visit (1 h 30 min) or a follow-up (1 h); at 8 pm, follow-up only (50 min). Saturday: first visit at 11 am and follow-ups at 1 or 2 pm.', sabHoy: 'On Saturdays, clinic appointments are requested on WhatsApp only, at least one day ahead, because the room has to be reserved and is not always available. On WhatsApp it is confirmed with a 50% bank transfer and the rest is paid at the clinic.',
       zonaOtra: 'That area is quoted on WhatsApp.',
@@ -144,6 +146,7 @@
       asistente: 'Assistante de traduction en français', sinAsistente: 'L’assistante francophone n’est pas disponible à cette date : la consultation se déroulera en espagnol ou en anglais et l’assistante n’est pas facturée.', asistenteNota: 'Soutien administratif et de traduction uniquement ; elle ne réalise aucun acte médical. Mêmes honoraires que l’infirmière ; ils ne sont pas inclus dans le paiement en ligne et se règlent directement lors de la consultation. Prévenez-nous à l’avance par WhatsApp pour vérifier sa disponibilité.',
       elija: 'Choisissez un service pour voir le coût.', faltaFecha: 'Choisissez une date et une heure pour calculer.',
       cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 18 h 30 à 21 h et le samedi de 11 h à 15 h.',
+      bloq: 'Prochaines dates sans service : ', bloqCons: 'Le cabinet est aussi fermé les jours fériés officiels et traditionnels.', al: 'au', desdeHora: 'à partir de {h}', soloTeleCorto: 'téléconsultation uniquement', sep: ' ; ',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
       solo20: 'En semaine : à 18 h 30, première consultation (1 h 30) ou suivi (1 h) ; à 20 h, suivi uniquement (50 min). Samedi : première consultation à 11 h et suivis à 13 h ou 14 h.', sabHoy: 'Le samedi, les rendez-vous au cabinet se demandent uniquement par WhatsApp, au moins la veille, car il faut réserver le cabinet et il n’y a pas toujours de place. Par WhatsApp, le rendez-vous est confirmé par un virement de 50 % et le reste se règle au cabinet.',
       zonaOtra: 'Ce quartier fait l’objet d’un devis par WhatsApp.',
@@ -223,6 +226,38 @@
     if (dia === 0) return { n: 1, por: 'domingo' };
     if (dia === 6) return (m >= 540 && m <= 900) ? { n: 0 } : { n: 1, por: m > 900 ? 'sabado' : 'noche' };
     return (m >= 540 && m <= 1200) ? { n: 0 } : { n: 1, por: 'noche' };
+  }
+  /* Próximas fechas sin servicio, para mostrarlas antes de elegir (el calendario del navegador no las puede tachar). */
+  function diaSig(f) { var p = f.split('-'), d = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + 1)); return d.toISOString().slice(0, 10); }
+  function horaTexto(hh) {
+    var m = hh.split(':'), h = +m[0];
+    if (lang === 'en') return (h % 12 || 12) + (m[1] !== '00' ? ':' + m[1] : '') + (h < 12 ? ' am' : ' pm');
+    if (lang === 'fr') return h + ' h' + (m[1] !== '00' ? ' ' + m[1] : '');
+    return hh;
+  }
+  function bloqueadasTexto(svc) {
+    var ya = hoy(), anio = ya.slice(0, 4);
+    function fmt(f) {
+      var p = f.split('-'), o = { day: 'numeric', month: 'short', timeZone: 'UTC' };
+      if (p[0] !== anio) o.year = 'numeric';
+      return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).toLocaleDateString(lang, o);
+    }
+    var grupos = [];
+    D.sinServicio.forEach(function (x) {
+      if (x.fecha < ya || (x.teleconsulta && svc === 'teleconsulta')) return;
+      var tele = !!x.teleconsulta, g = grupos[grupos.length - 1];
+      if (g && g.desde === '00:00' && x.desde === '00:00' && g.tele === tele && diaSig(g.fin) === x.fecha) g.fin = x.fecha;
+      else grupos.push({ ini: x.fecha, fin: x.fecha, desde: x.desde, tele: tele });
+    });
+    var partes = grupos.slice(0, 7).map(function (g) {
+      var t = g.ini === g.fin ? fmt(g.ini) : fmt(g.ini) + ' ' + L.al + ' ' + fmt(g.fin);
+      if (g.desde !== '00:00') t += ' ' + L.desdeHora.replace('{h}', horaTexto(g.desde));
+      if (g.tele && svc !== 'teleconsulta') t += ' (' + L.soloTeleCorto + ')';
+      return t;
+    });
+    var txt = partes.length ? L.bloq + partes.join(L.sep) + '.' : '';
+    if (svc === 'consultorio') txt += (txt ? ' ' : '') + L.bloqCons;
+    return txt;
   }
   function sinServicio(f, hora, svc) {
     return D.sinServicio.some(function (s) { return s.fecha === f && minutos(hora) >= minutos(s.desde) && !(s.teleconsulta && svc === 'teleconsulta'); });
@@ -352,16 +387,18 @@
 
   /* ── cotizador ────────────────────────────── */
   var S = { svc: null, sede: 'Del Valle', tipo: 'primera', zona: null, fecha: '', hora: '', iv: false, junto: false, asistente: false, seguimiento: false };
-  var URLP = new URLSearchParams(location.search), PREF = URLP.get('zona');
+  var URLP = new URLSearchParams(location.search), PRE = raiz.dataset || {};
+  var PREF = URLP.get('zona') || PRE.zona || null;
   function zonaPara(svc) {
     var lista = svc === 'hotel' ? D.hotel.zonas : svc === 'domicilio' ? D.domicilio : null;
     if (!lista) return null;
     return PREF && lista[PREF] ? PREF : (svc === 'hotel' ? 'Roma' : 'Del Valle');
   }
   if (PREF && D.consultorio[PREF]) S.sede = PREF;
-  if (['consultorio', 'hotel', 'domicilio', 'teleconsulta'].indexOf(URLP.get('cotizar')) >= 0) {
-    S.svc = URLP.get('cotizar'); S.zona = zonaPara(S.svc);
-    S.iv = URLP.get('iv') === '1' && (S.svc === 'hotel' || S.svc === 'domicilio');
+  var COT = URLP.get('cotizar') || PRE.cotizar, IV = URLP.get('iv') || PRE.iv;
+  if (['consultorio', 'hotel', 'domicilio', 'teleconsulta'].indexOf(COT) >= 0) {
+    S.svc = COT; S.zona = zonaPara(S.svc);
+    S.iv = IV === '1' && (S.svc === 'hotel' || S.svc === 'domicilio');
   }
   var P0 = paneles[0];
   var formulario = h('div', { class: 'pl-form' });
@@ -426,7 +463,9 @@
       hora = h('input', { type: 'time', class: 'pl-input', step: 900, value: S.hora, 'aria-label': L.hora });
     }
     hora.addEventListener('change', function () { S.hora = hora.value; calcular(); });
-    formulario.appendChild(paso(n++, L.paso[2], [h('div', { class: 'pl-row' }, [campo(L.fecha, fecha), campo(L.hora, hora)])]));
+    var avisoFechas = bloqueadasTexto(S.svc), contCuando = [h('div', { class: 'pl-row' }, [campo(L.fecha, fecha), campo(L.hora, hora)])];
+    if (avisoFechas) contCuando.push(h('p', { class: 'pl-note pl-bloqueadas', text: avisoFechas }));
+    formulario.appendChild(paso(n++, L.paso[2], contCuando));
     var extras = [];
     if (S.svc === 'hotel' || S.svc === 'domicilio') {
       extras.push(casilla(L.iv, S.iv, function (v) { S.iv = v; if (!v) S.junto = false; dibujarForm(); calcular(); }));

@@ -32,6 +32,7 @@
 <meta content="https://drcjortegaarenas.com/assets/og-image.png" name="twitter:image"/>
 <link as="font" crossorigin="" href="/assets/fonts/bodoni-moda-normal-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/dm-sans-normal-latin.woff2" rel="preload" type="font/woff2"/>
+<link href="/assets/planear.css?v=20261114d" rel="stylesheet"/>
 <style>
 /* Bodoni Moda y DM Sans (Google Fonts, licencia SIL OFL 1.1), alojadas en el sitio. */
 @font-face {
@@ -1028,7 +1029,7 @@
 <p class="page-lead">Comment demander une visite médicale bilingue (espagnol/anglais) pour un client, son coût selon la zone et l’horaire, et les documents qu’il reçoit pour son assurance voyage. Médecine générale ambulatoire.</p>
 <div class="hero-ctas">
 <a class="hero-cta" href="https://wa.me/525951093969?text=Bonjour%20Dr%20Ortega-Arenas%2C%20je%20souhaite%20prendre%20rendez-vous." rel="noopener" target="_blank">WhatsApp +52 595 109 3969</a>
-<a class="hero-cta ghost pl-cta-planear" href="/fr/?cotizar=hotel#planear">Estimez le coût</a>
+<a class="hero-cta ghost pl-cta-planear" href="#planear">Estimez le coût</a>
 </div>
 <div class="emergency-note"><strong>Ce n’est pas un service d’urgences.</strong> Si le client présente une douleur thoracique, une difficulté à respirer, une perte de connaissance, un saignement abondant, des signes d’accident vasculaire cérébral ou toute autre urgence, appelez le <strong>911</strong> ou conduisez-le aux urgences d’un hôpital.</div>
 <div class="callout"><strong>Consultations dès 12 ans ; les mineurs viennent avec un parent ou un tuteur légal. Nous ne recevons pas les personnes enceintes.</strong> Si le client a entre 12 et 17 ans, un parent ou un tuteur légal doit être présent. S’il a moins de 12 ans ou est enceinte, orientez-le vers un pédiatre, un gynécologue-obstétricien ou les urgences d’un hôpital.</div>
@@ -1100,6 +1101,18 @@
 </div>
 <div class="important-note"><strong>Jours fériés officiels et traditionnels :</strong> à organiser uniquement par WhatsApp ; ils ne se réservent pas en ligne. Dates dans la section des <a href="/fr/#tarifas" style="color:var(--silver)">tarifs</a>. Certains jours sont sans service : confirmez toujours la disponibilité.<br/><strong>Autres zones :</strong> renseignez-vous par WhatsApp.<br/><strong>Non inclus :</strong> les actes, certificats et autres documents, qui ont leur propre tarif publié dans la section <a href="/fr/#procedimientos" style="color:var(--silver)">Actes</a>.</div>
 </div>
+</section>
+<div class="sep"></div>
+<!-- ══ CALCULADORA (assets/planear.js) ══ -->
+<section class="section" id="planear">
+<div class="section-header reveal">
+<p class="section-tag">Avant d’appeler</p>
+<h2 class="section-title">Estimez le coût <em>de la visite</em></h2>
+<p class="section-subtitle">Choisissez la zone, le jour et l’heure. L’estimation utilise les mêmes honoraires publiés ; elle reste indicative et ne conserve aucune donnée.</p>
+</div>
+<div class="planear" data-cotizar="hotel" id="planear-app"><noscript><p>Activez JavaScript pour utiliser l’estimation, ou consultez les tarifs de cette page.</p></noscript></div>
+<script id="planear-datos" type="application/json">{"hotel":{"zonas":{"Pedregal":"A","Coyoacán":"A","Del Valle":"A","Roma":"A","Condesa":"A","Centro":"B","Reforma":"B","Polanco":"B"},"A":[2500,4000,5500],"B":[3000,4500,6000]},"domicilio":{"Del Valle":{"precios":[1000,2500,3500]},"Texcoco":{"precios":[1000,2500,3500]},"Pedregal":{"precios":[1300,3000,4000]},"Coyoacán":{"precios":[1300,3000,4000]},"Roma":{"precios":[1300,3000,4000]},"Condesa":{"precios":[1300,3000,4000]},"Reforma":{"precios":[1800,3500,4500]},"Polanco":{"precios":[1800,3500,4500]}},"consultorio":{"Del Valle":{"precio":1000},"Roma":{"precio":1200},"Polanco":{"precio":1500}},"teleconsulta":[700,1000],"iv":1800,"enfermeria":[1500,2500,3500],"asistente":[1500,2500,3500],"oficiales":["2026-01-01","2026-02-02","2026-03-16","2026-05-01","2026-09-16","2026-11-16","2026-12-25","2027-01-01","2027-02-01","2027-03-15","2027-05-01","2027-09-16","2027-11-15","2027-12-25"],"tradicionales":["2026-04-02","2026-04-03","2026-05-10","2026-11-02","2026-12-12","2026-12-24","2026-12-31","2027-03-25","2027-03-26","2027-05-10","2027-11-02","2027-12-12","2027-12-24","2027-12-31"],"sinServicio":[{"fecha":"2026-11-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-11-24","desde":"00:00"},{"fecha":"2026-11-30","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-01","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-02","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-03","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-04","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-05","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-06","desde":"00:00","teleconsulta":true},{"fecha":"2026-12-10","desde":"00:00"},{"fecha":"2026-12-24","desde":"16:00"},{"fecha":"2026-12-25","desde":"00:00"},{"fecha":"2026-12-31","desde":"16:00"},{"fecha":"2027-01-01","desde":"00:00"},{"fecha":"2027-12-24","desde":"16:00"},{"fecha":"2027-12-25","desde":"00:00"},{"fecha":"2027-12-31","desde":"16:00"},{"fecha":"2028-01-01","desde":"00:00"}],"sinAsistente":["2026-11-06","2026-11-07","2026-11-08","2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13","2026-11-14"],"cal":{"Del Valle":"https://cal.com/drcjortegaarenas/consultorio-del-valle","Roma":"https://cal.com/drcjortegaarenas/consultorio-roma","Polanco":"https://cal.com/drcjortegaarenas/consultorio-polanco"},"calSub":{"Del Valle":"https://cal.com/drcjortegaarenas/consultorio-del-valle-subsecuente","Roma":"https://cal.com/drcjortegaarenas/consultorio-roma-subsecuente","Polanco":"https://cal.com/drcjortegaarenas/consultorio-polanco-subsecuente"},"whatsapp":"525951093969"}</script>
+<script defer="" src="/assets/planear.js?v=20261114d"></script>
 </section>
 <div class="sep"></div>
 <!-- ══ DOCUMENTOS ═══════════════════════════ -->
