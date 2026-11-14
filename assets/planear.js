@@ -26,7 +26,7 @@
       cerrado: 'El consultorio no abre ese día. Horario: lunes a viernes de 18:30 a 21:00 y sábado de 11:00 a 15:00.',
       bloq: 'Próximas fechas sin servicio: ', bloqCons: 'El consultorio también cierra en festivos oficiales y tradicionales.', al: 'al', desdeHora: 'desde las {h}', soloTeleCorto: 'solo teleconsulta', sep: '; ',
       sinServicio: 'Sin servicio en esa fecha y hora. Elija otra fecha.', soloTele: 'Ese día no hay consulta presencial (consultorio, hotel ni domicilio). La teleconsulta sí está disponible y se agenda por WhatsApp.', fueraAnio: 'Para fechas posteriores, consulte por WhatsApp.',
-      solo20: 'Entre semana: a las 18:30, primera vez (1 h 30 min) o subsecuente (1 h); a las 20:00, solo subsecuente (50 min). Sábado: primera vez a las 11:00 y subsecuentes a las 13:00 o 14:00.', sabHoy: 'Los sábados, la cita en consultorio se pide solo por WhatsApp, con al menos un día de anticipación, porque hay que apartar el consultorio y no siempre hay espacio. Por WhatsApp se confirma con un anticipo del 50 % por transferencia y el resto se paga en el consultorio.',
+      solo20: 'Entre semana: a las 18:30, primera vez (1 h 30 min) o subsecuente (50 min); a las 20:00, solo subsecuente (50 min). Sábado: primera vez a las 11:00 y subsecuentes a las 13:00 o 14:00.', sabHoy: 'Los sábados, la cita en consultorio se pide solo por WhatsApp, con al menos un día de anticipación, porque hay que apartar el consultorio y no siempre hay espacio. Al escribir, indique si es primera vez o subsecuente. Por WhatsApp se confirma con un anticipo del 50 % por transferencia y el resto se paga en el consultorio.',
       zonaOtra: 'Esa zona se cotiza por WhatsApp.',
       horario: ['Horario ordinario', 'Horario especial', 'Festivo oficial'],
       motivo: { oficial: 'festivo oficial', tradicional: 'festivo tradicional', domingo: 'domingo', sabado: 'sábado después de las 15:00', noche: 'noche (20:01 a 08:59)' },
@@ -87,7 +87,7 @@
       cerrado: 'The clinic is closed that day. Hours: Monday to Friday 6:30–9 pm and Saturday 11 am–3 pm.',
       bloq: 'Upcoming dates with no service: ', bloqCons: 'The clinic is also closed on official and traditional holidays.', al: 'to', desdeHora: 'from {h}', soloTeleCorto: 'telemedicine only', sep: '; ',
       sinServicio: 'No service on that date and time. Please choose another date.', soloTele: 'There are no in-person visits that day (clinic, hotel or house call). Telemedicine is available and is booked on WhatsApp.', fueraAnio: 'For later dates, please ask on WhatsApp.',
-      solo20: 'Weekdays: at 6:30 pm, a first visit (1 h 30 min) or a follow-up (1 h); at 8 pm, follow-up only (50 min). Saturday: first visit at 11 am and follow-ups at 1 or 2 pm.', sabHoy: 'On Saturdays, clinic appointments are requested on WhatsApp only, at least one day ahead, because the room has to be reserved and is not always available. On WhatsApp it is confirmed with a 50% bank transfer and the rest is paid at the clinic.',
+      solo20: 'Weekdays: at 6:30 pm, a first visit (1 h 30 min) or a follow-up (50 min); at 8 pm, follow-up only (50 min). Saturday: first visit at 11 am and follow-ups at 1 or 2 pm.', sabHoy: 'On Saturdays, clinic appointments are requested on WhatsApp only, at least one day ahead, because the room has to be reserved and is not always available. When you write, please say whether it is a first visit or a follow-up. On WhatsApp it is confirmed with a 50% bank transfer and the rest is paid at the clinic.',
       zonaOtra: 'That area is quoted on WhatsApp.',
       horario: ['Standard hours', 'Special hours', 'Official public holiday'],
       motivo: { oficial: 'official public holiday', tradicional: 'traditional holiday', domingo: 'Sunday', sabado: 'Saturday after 3:00 pm', noche: 'night (8:01 pm–8:59 am)' },
@@ -148,7 +148,7 @@
       cerrado: 'Le cabinet est fermé ce jour-là. Horaires : du lundi au vendredi de 18 h 30 à 21 h et le samedi de 11 h à 15 h.',
       bloq: 'Prochaines dates sans service : ', bloqCons: 'Le cabinet est aussi fermé les jours fériés officiels et traditionnels.', al: 'au', desdeHora: 'à partir de {h}', soloTeleCorto: 'téléconsultation uniquement', sep: ' ; ',
       sinServicio: 'Aucun service à cette date et à cette heure. Choisissez une autre date.', soloTele: 'Pas de consultation en présentiel ce jour-là (cabinet, hôtel ou domicile). La téléconsultation reste possible et se réserve par WhatsApp.', fueraAnio: 'Pour des dates ultérieures, renseignez-vous par WhatsApp.',
-      solo20: 'En semaine : à 18 h 30, première consultation (1 h 30) ou suivi (1 h) ; à 20 h, suivi uniquement (50 min). Samedi : première consultation à 11 h et suivis à 13 h ou 14 h.', sabHoy: 'Le samedi, les rendez-vous au cabinet se demandent uniquement par WhatsApp, au moins la veille, car il faut réserver le cabinet et il n’y a pas toujours de place. Par WhatsApp, le rendez-vous est confirmé par un virement de 50 % et le reste se règle au cabinet.',
+      solo20: 'En semaine : à 18 h 30, première consultation (1 h 30) ou suivi (50 min) ; à 20 h, suivi uniquement (50 min). Samedi : première consultation à 11 h et suivis à 13 h ou 14 h.', sabHoy: 'Le samedi, les rendez-vous au cabinet se demandent uniquement par WhatsApp, au moins la veille, car il faut réserver le cabinet et il n’y a pas toujours de place. En écrivant, précisez s’il s’agit d’une première consultation ou d’un suivi. Par WhatsApp, le rendez-vous est confirmé par un virement de 50 % et le reste se règle au cabinet.',
       zonaOtra: 'Ce quartier fait l’objet d’un devis par WhatsApp.',
       horario: ['Horaires ordinaires', 'Horaires spéciaux', 'Jour férié officiel'],
       motivo: { oficial: 'jour férié officiel', tradicional: 'jour férié traditionnel', domingo: 'dimanche', sabado: 'samedi après 15 h', noche: 'nuit (20 h 01 – 8 h 59)' },
@@ -330,9 +330,9 @@
       r.notas.push(L.ivNota.replace('{iv}', mxn(D.iv)));
       if (s.junto) r.notas.push(L.juntoNota);
     }
-    if (s.svc === 'hotel' && s.asistente) asistente(s, hz, add, r);
     if (s.svc === 'hotel') r.ahora = 0;
-    if (s.svc === 'teleconsulta') r.ahora = r.total;
+    if (s.svc === 'teleconsulta') r.ahora = r.total;  // la intérprete no se paga por adelantado
+    if (s.svc !== 'consultorio' && s.asistente) asistente(s, hz, add, r);
     if (r.ahora != null) r.despues = r.total - r.ahora;
     return r;
   }
@@ -471,7 +471,7 @@
       extras.push(casilla(L.iv, S.iv, function (v) { S.iv = v; if (!v) S.junto = false; dibujarForm(); calcular(); }));
       if (S.iv) extras.push(casilla(L.junto, S.junto, function (v) { S.junto = v; calcular(); }, L.juntoNota));
     }
-    if (S.svc === 'consultorio' || S.svc === 'hotel') extras.push(casilla(L.asistente, S.asistente, function (v) { S.asistente = v; calcular(); }));
+    extras.push(casilla(L.asistente, S.asistente, function (v) { S.asistente = v; calcular(); }));
     if (extras.length) formulario.appendChild(paso(n++, L.paso[3], extras));
   }
 
@@ -597,7 +597,7 @@
     guia.innerHTML = '';
     var tarjeta = h('div', { class: 'pl-reco' }, [h('p', { class: 'pl-label', text: G.resT }), h('h3', { class: 'pl-reco-t', text: L.svc[svc] }), h('p', { text: texto })]);
     if (respuestas.menor) tarjeta.appendChild(h('p', { class: 'pl-note', text: G.menor }));
-    if (lang === 'fr' && svc !== 'teleconsulta' && svc !== 'domicilio') tarjeta.appendChild(h('p', { class: 'pl-note', text: G.frances }));
+    if (lang === 'fr') tarjeta.appendChild(h('p', { class: 'pl-note', text: G.frances }));
     var acciones = h('div', { class: 'pl-actions' }, [
       h('button', { type: 'button', class: 'hero-cta', text: G.calcular, onclick: function () { S.svc = svc; S.zona = zonaPara(svc); S.hora = ''; dibujarForm(); calcular(); lServicio = svc; dibujarLista(); abrir(0); } }),
       h('a', { class: 'hero-cta ghost', href: 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(L.waHola + ': ' + L.svc[svc] + '. ' + L.waCierre), target: '_blank', rel: 'noopener', text: L.wa })
@@ -623,7 +623,7 @@
     cajaLista.appendChild(campo(LL.servicio, chips(LL.servicio, ['consultorio', 'hotel', 'domicilio', 'teleconsulta'].map(function (k) { return { v: k, t: L.svc[k] }; }), lServicio, function (v) { lServicio = v; guardar(); dibujarLista(); })));
     cajaLista.appendChild(casilla(LL.frances, lFrances, function (v) { lFrances = v; guardar(); dibujarLista(); }));
     var items = LL.comun.concat(LL[lServicio]);
-    var conFr = lFrances && (lServicio === 'consultorio' || lServicio === 'hotel');
+    var conFr = lFrances;
     if (conFr) items = items.concat([LL.fr]);
     var anillo = h('div', { class: 'pl-ring' }, [h('span', { class: 'pl-ring-n' })]);
     var ul = h('ul', { class: 'pl-items' });
