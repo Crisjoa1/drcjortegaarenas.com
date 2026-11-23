@@ -24,6 +24,7 @@ no aparece en la web.
 import hashlib
 import json
 import pathlib
+import copy
 import re
 import shutil
 import subprocess
@@ -337,7 +338,10 @@ def faq(soup):
     for card in soup.select('.faq-item'):
         q = card.find('h3').get_text(' ', strip=True)
         fr = (soup.html.get('lang') or '').startswith('fr')
-        a = re.sub(r'\s+([,.])' if fr else r'\s+([;,.])', r'\1', card.find('p').get_text(' ', strip=True))  # 'CDMX ;' → 'CDMX;'
+        p = copy.copy(card.find('p'))
+        for sup in p.find_all('sup'):  # las llamadas de cita no van en el texto para buscadores
+            sup.decompose()
+        a = re.sub(r'\s+([,.])' if fr else r'\s+([;,.])', r'\1', p.get_text(' ', strip=True))  # 'CDMX ;' → 'CDMX;'
         items.append({'@type': 'Question', 'name': q,
                       'acceptedAnswer': {'@type': 'Answer', 'text': a}})
     return jsonld({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': items})
