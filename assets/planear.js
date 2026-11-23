@@ -58,8 +58,8 @@
           hotel: 'El médico va a su habitación, según disponibilidad. Escriba por WhatsApp para coordinar la hora de llegada.',
           domicilio: 'El médico va a su casa. Se solicita por WhatsApp.',
           consultorio: 'Consulta en Del Valle, Roma o Polanco, con cita en línea o por WhatsApp.',
-          teleconsulta: 'Por videollamada, sin traslados; se agenda por WhatsApp. Si en la llamada se necesita una exploración física, el médico se lo indicará. Por teleconsulta no se recetan antibióticos ni medicamentos controlados: la farmacia necesita la receta original con firma autógrafa, así que esos casos requieren consulta presencial. Si la teleconsulta termina en una consulta presencial, se cobran las dos; si cree que puede necesitar uno de estos medicamentos, le conviene agendar directamente la consulta presencial.',
-          lejos: 'Si no puede trasladarse a la Ciudad de México, la opción es la teleconsulta. Si necesita una exploración física, acuda con un médico local.'
+          teleconsulta: 'Por videollamada, sin traslados; se agenda por WhatsApp. Solo para pacientes subsecuentes o, si es la primera vez, como entrevista previa; después, si así se decide, se agenda una consulta presencial. Por teleconsulta no se recetan antibióticos ni medicamentos controlados: la farmacia necesita la receta original con firma autógrafa, así que esos casos requieren consulta presencial. Si la teleconsulta termina en una consulta presencial, se cobran las dos; si cree que puede necesitar uno de estos medicamentos, le conviene agendar directamente la consulta presencial.',
+          lejos: 'Si no puede trasladarse a la Ciudad de México, la teleconsulta solo es posible si ya es paciente o como entrevista previa. Para una valoración completa o una receta, acuda con un médico local.'
         },
         frances: 'Si quiere la consulta enteramente en francés, avise por WhatsApp para confirmar a la asistente de traducción.'
       },
@@ -119,8 +119,8 @@
           hotel: 'The physician comes to your room, subject to availability. Send a WhatsApp message to arrange the arrival time.',
           domicilio: 'The physician comes to your home. Requested on WhatsApp.',
           consultorio: 'A clinic visit in Del Valle, Roma or Polanco, booked online or on WhatsApp.',
-          teleconsulta: 'By video call, no travel needed; booked on WhatsApp. If a physical examination is needed during the call, the physician will tell you. Antibiotics and controlled medicines are not prescribed by telemedicine: the pharmacy needs the original prescription with a handwritten signature, so those cases require an in-person visit. If the telemedicine visit ends up requiring an in-person visit, both are charged; if you think you may need one of these medicines, it is better to book the in-person visit directly.',
-          lejos: 'If you cannot travel to Mexico City, the option is telemedicine. If you need a physical examination, please see a local doctor.'
+          teleconsulta: 'By video call, no travel needed; booked on WhatsApp. Only for follow-up patients or, for a first contact, as a preliminary interview; afterwards, if so decided, an in-person visit is booked. Antibiotics and controlled medicines are not prescribed by telemedicine: the pharmacy needs the original prescription with a handwritten signature, so those cases require an in-person visit. If the telemedicine visit ends up requiring an in-person visit, both are charged; if you think you may need one of these medicines, it is better to book the in-person visit directly.',
+          lejos: 'If you cannot travel to Mexico City, telemedicine is only possible if you are already a patient or as a preliminary interview. For a full assessment or a prescription, see a local doctor.'
         },
         frances: 'If you want the visit entirely in French, let us know on WhatsApp so we can confirm the translation assistant.'
       },
@@ -180,8 +180,8 @@
           hotel: 'Le médecin vient dans votre chambre, selon disponibilité. Écrivez par WhatsApp pour convenir de l’heure d’arrivée.',
           domicilio: 'Le médecin vient chez vous. Se demande par WhatsApp.',
           consultorio: 'Consultation à Del Valle, Roma ou Polanco, sur rendez-vous en ligne ou par WhatsApp.',
-          teleconsulta: 'Par appel vidéo, sans déplacement ; se réserve par WhatsApp. Si un examen physique est nécessaire pendant l’appel, le médecin vous le dira. Les antibiotiques et les médicaments contrôlés ne sont pas prescrits en téléconsultation : la pharmacie a besoin de l’ordonnance originale avec signature manuscrite, ces cas nécessitent donc une consultation en présentiel. Si la téléconsultation aboutit à une consultation en présentiel, les deux sont facturées ; si vous pensez avoir besoin de l’un de ces médicaments, mieux vaut réserver directement une consultation en présentiel.',
-          lejos: 'Si vous ne pouvez pas vous rendre à Mexico, l’option est la téléconsultation. Si vous avez besoin d’un examen physique, consultez un médecin sur place.'
+          teleconsulta: 'Par appel vidéo, sans déplacement ; se réserve par WhatsApp. Uniquement pour les patients déjà suivis ou, la première fois, comme entretien préalable ; ensuite, si cela est décidé, une consultation en présentiel est programmée. Les antibiotiques et les médicaments contrôlés ne sont pas prescrits en téléconsultation : la pharmacie a besoin de l’ordonnance originale avec signature manuscrite, ces cas nécessitent donc une consultation en présentiel. Si la téléconsultation aboutit à une consultation en présentiel, les deux sont facturées ; si vous pensez avoir besoin de l’un de ces médicaments, mieux vaut réserver directement une consultation en présentiel.',
+          lejos: 'Si vous ne pouvez pas vous rendre à Mexico, la téléconsultation n’est possible que si vous êtes déjà patient(e) ou comme entretien préalable. Pour une évaluation complète ou une ordonnance, consultez un médecin local.'
         },
         frances: 'Pour une consultation entièrement en français, prévenez-nous par WhatsApp pour confirmer l’assistante de traduction.'
       },
